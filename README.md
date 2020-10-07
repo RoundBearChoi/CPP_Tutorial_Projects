@@ -1,3 +1,3 @@
 # CPP_Tutorial_Projects
-C++ Tutorial Projects
-https://youtube.com/roundbeargames
+<br>
+https://www.youtube.com/playlist?list=PLWYGofN_jX5Apmb8pJUD8NN3KskHW2lcy
