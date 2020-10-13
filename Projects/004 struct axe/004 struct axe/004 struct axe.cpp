@@ -8,7 +8,14 @@ struct Axe
 
 	void HitTarget()
 	{
-		std::cout << name << " hits target with damage: " << damage << std::endl;
+		if (isOnFire == true)
+		{
+			std::cout << name << " hits target with damage: " << damage + 5 << std::endl;
+		}
+		else
+		{
+			std::cout << name << " hits target with damage: " << damage << std::endl;
+		}
 	}
 
 	void CriticalHitTarget(int criticalInt)
@@ -26,9 +33,11 @@ int main()
 {
 	Axe GreatAxe{ "Really Great Axe", 50, false };
 	Axe SmallAxe{ "Really Small Axe", 1, false };
+	Axe BurningAxe{ "A Burning Axe", 1, true };
 
 	GreatAxe.HitTarget();
 	SmallAxe.HitTarget();
+	BurningAxe.HitTarget();
 
 	std::cout << "GreatAxe double damage: " << GreatAxe.GetDoubleDamage() << std::endl;
 
