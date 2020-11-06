@@ -3,7 +3,12 @@
 # Getting Started
 
 1. Download ZIP (or use whatever Git client you're familiar with)
-2. Open .sln files using Visual Studio 2019 Community (https://visualstudio.microsoft.com/downloads/)
+
+https://github.com/RoundBearChoi/CPP_Tutorial_Projects.git
+
+2. Open .sln files using Visual Studio 2019 Community 
+
+https://visualstudio.microsoft.com/downloads
 
 # Videos
 
