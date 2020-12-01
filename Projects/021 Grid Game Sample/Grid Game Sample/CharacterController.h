@@ -1,11 +1,23 @@
 #pragma once
 #include "Scene.h"
+#include "PlayerInput.h"
 
 class CharacterController
 {
+private:
+    PlayerInput playerInput;
+    char inputChar = '0';
+
 public:
-    void MovePlayer(char inputChar, Scene& scene)
+    char GetInputCharacter()
     {
+        return inputChar;
+    }
+
+    void MovePlayer(Scene& scene)
+    {
+        inputChar = playerInput.GetInput();
+
         if (inputChar == 'w')
         {
             scene.GetObject(GridObjType::PLAYER)->MoveWest();

@@ -1,7 +1,6 @@
 #pragma once
 #include "Scene.h"
 #include "Renderer.h"
-#include "PlayerInput.h"
 #include "CharacterController.h"
 
 class GameProcessor
@@ -9,9 +8,7 @@ class GameProcessor
 private:
     Scene scene;
     Renderer renderer;
-    PlayerInput input;
     CharacterController characterController;
-    char inputChar = '0';
 
 public:
     void Run()
@@ -24,14 +21,13 @@ public:
         scene.GetObject(GridObjType::ITEM)->SetPosition(2, 2);
         scene.GetObject(GridObjType::ENEMY)->SetPosition(6, 7);
 
-        while (inputChar != 'q')
+        while (characterController.GetInputCharacter() != 'q')
         {
-            characterController.MovePlayer(inputChar, scene);
-
             renderer.AddEmptyLines(20);
             renderer.RenderObjImage(scene);
             renderer.RenderScene(scene);
-            inputChar = input.GetInput();
+
+            characterController.MovePlayer(scene);
         }
     }
 };
