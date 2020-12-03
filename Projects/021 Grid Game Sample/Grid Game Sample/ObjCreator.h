@@ -9,6 +9,14 @@ class ObjCreator
 private:
     std::vector<GridObject*> ObjPtrs;
 
+    void DeleteAll()
+    {
+        for (GridObject* obj : ObjPtrs)
+        {
+            delete obj;
+        }
+    }
+
 public:
     void CreateObj(GridObjType objType)
     {
@@ -67,11 +75,9 @@ public:
         return '.';
     }
 
-    void DeleteAll()
+    ~ObjCreator()
     {
-        for (GridObject* obj : ObjPtrs)
-        {
-            delete obj;
-        }
+        std::cout << "destroying objcreator.." << std::endl;
+        DeleteAll();
     }
 };

@@ -40,7 +40,5 @@ public:
     {
         std::cout << std::endl;
         std::cout << "destroying scene.." << std::endl;
-
-        objCreator.DeleteAll();
     }
 };
