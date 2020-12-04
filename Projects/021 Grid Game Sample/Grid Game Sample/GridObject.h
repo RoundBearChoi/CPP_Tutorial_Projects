@@ -3,57 +3,61 @@
 #include "GridObjectType.h"
 #include "Vec2.h"
 
-class GridObject
+namespace Roundbeargames
 {
-protected:
-    char symbol = '0';
-    Vec2 position;
-    GridObjType objType = GridObjType::NONE;
 
-public:
-    void SetPosition(int positionX, int positionY)
+    class GridObject
     {
-        position.x = positionX;
-        position.y = positionY;
-    }
+    protected:
+        char symbol = '0';
+        Vec2 position;
+        GridObjType objType = GridObjType::NONE;
 
-    void MoveEast()
-    {
-        position.x += 1;
-    }
+    public:
+        void SetPosition(int positionX, int positionY)
+        {
+            position.x = positionX;
+            position.y = positionY;
+        }
 
-    void MoveWest()
-    {
-        position.x -= 1;
-    }
+        void MoveEast()
+        {
+            position.x += 1;
+        }
 
-    void MoveNorth()
-    {
-        position.y -= 1;
-    }
+        void MoveWest()
+        {
+            position.x -= 1;
+        }
 
-    void MoveSouth()
-    {
-        position.y += 1;
-    }
+        void MoveNorth()
+        {
+            position.y -= 1;
+        }
 
-    Vec2 GetPosition()
-    {
-        return position;
-    }
+        void MoveSouth()
+        {
+            position.y += 1;
+        }
 
-    char GetSymbol()
-    {
-        return symbol;
-    }
+        Vec2 GetPosition()
+        {
+            return position;
+        }
 
-    GridObjType GetType()
-    {
-        return objType;
-    }
+        char GetSymbol()
+        {
+            return symbol;
+        }
 
-    ~GridObject()
-    {
-        std::cout << "destroying obj: " << symbol << std::endl;
-    }
-};
+        GridObjType GetType()
+        {
+            return objType;
+        }
+
+        ~GridObject()
+        {
+            std::cout << "destroying obj: " << symbol << std::endl;
+        }
+    };
+}

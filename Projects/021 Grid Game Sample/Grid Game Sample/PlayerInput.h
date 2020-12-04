@@ -1,15 +1,17 @@
 #pragma once
 #include <iostream>
 
-
-class PlayerInput
+namespace Roundbeargames
 {
-private:
-	std::string yourString;
-public:
-	char GetInput()
+	class PlayerInput
 	{
-		std::cin >> yourString;
-		return yourString[0];
-	}
-};
+	private:
+		std::string yourString;
+	public:
+		char GetInput()
+		{
+			std::cin >> yourString;
+			return yourString[0];
+		}
+	};
+}

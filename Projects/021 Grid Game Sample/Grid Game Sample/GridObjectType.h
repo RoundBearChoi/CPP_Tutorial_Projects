@@ -1,9 +1,12 @@
 #pragma once
 
-enum class GridObjType
+namespace Roundbeargames
 {
-    NONE,
-    PLAYER,
-    ITEM,
-    ENEMY,
-};
+    enum class GridObjType
+    {
+        NONE,
+        PLAYER,
+        ITEM,
+        ENEMY,
+    };
+}

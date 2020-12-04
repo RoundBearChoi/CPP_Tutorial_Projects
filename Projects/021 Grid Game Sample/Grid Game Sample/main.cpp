@@ -2,6 +2,6 @@
 
 int main()
 {
-	GameProcessor p;
+	Roundbeargames::GameProcessor p;
 	p.Run();
 }

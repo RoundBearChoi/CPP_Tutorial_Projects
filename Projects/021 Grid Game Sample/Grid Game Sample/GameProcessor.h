@@ -3,31 +3,34 @@
 #include "Renderer.h"
 #include "CharacterController.h"
 
-class GameProcessor
+namespace Roundbeargames
 {
-private:
-    Scene scene;
-    Renderer renderer;
-    CharacterController characterController;
-
-public:
-    void Run()
+    class GameProcessor
     {
-        scene.CreateObject(GridObjType::PLAYER);
-        scene.CreateObject(GridObjType::ITEM);
-        scene.CreateObject(GridObjType::ENEMY);
+    private:
+        Scene scene;
+        Renderer renderer;
+        CharacterController characterController;
 
-        scene.GetObject(GridObjType::PLAYER)->SetPosition(1, 4);
-        scene.GetObject(GridObjType::ITEM)->SetPosition(2, 2);
-        scene.GetObject(GridObjType::ENEMY)->SetPosition(6, 7);
-
-        while (characterController.GetInputCharacter() != 'q')
+    public:
+        void Run()
         {
-            renderer.AddEmptyLines(20);
-            renderer.RenderObjImage(scene);
-            renderer.RenderScene(scene);
+            scene.CreateObject(GridObjType::PLAYER);
+            scene.CreateObject(GridObjType::ITEM);
+            scene.CreateObject(GridObjType::ENEMY);
 
-            characterController.MovePlayer(scene);
+            scene.GetObject(GridObjType::PLAYER)->SetPosition(1, 4);
+            scene.GetObject(GridObjType::ITEM)->SetPosition(2, 2);
+            scene.GetObject(GridObjType::ENEMY)->SetPosition(6, 7);
+
+            while (characterController.GetInputCharacter() != 'q')
+            {
+                renderer.AddEmptyLines(20);
+                renderer.RenderObjImage(scene);
+                renderer.RenderScene(scene);
+
+                characterController.MovePlayer(scene);
+            }
         }
-    }
-};
+    };
+}

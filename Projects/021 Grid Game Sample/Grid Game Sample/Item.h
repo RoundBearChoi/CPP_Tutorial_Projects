@@ -1,13 +1,16 @@
 #pragma once
 #include "GridObject.h"
 
-class Item : public GridObject
+namespace Roundbeargames
 {
-public:
-    Item()
+    class Item : public GridObject
     {
-        std::cout << "creating item.." << std::endl;
-        objType = GridObjType::ITEM;
-        symbol = 'i';
-    }
-};
+    public:
+        Item()
+        {
+            std::cout << "creating item.." << std::endl;
+            objType = GridObjType::ITEM;
+            symbol = 'i';
+        }
+    };
+}

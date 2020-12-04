@@ -2,20 +2,23 @@
 #include <vector>
 #include "Vec2.h"
 
-class Grid
+namespace Roundbeargames
 {
-private:
-    Vec2 size;
-
-public:
-    void SetSize(int rowSize, int colSize)
+    class Grid
     {
-        size.x = rowSize;
-        size.y = colSize;
-    }
+    private:
+        Vec2 size;
 
-    Vec2 GetSize()
-    {
-        return size;
-    }
-};
+    public:
+        void SetSize(int rowSize, int colSize)
+        {
+            size.x = rowSize;
+            size.y = colSize;
+        }
+
+        Vec2 GetSize()
+        {
+            return size;
+        }
+    };
+}

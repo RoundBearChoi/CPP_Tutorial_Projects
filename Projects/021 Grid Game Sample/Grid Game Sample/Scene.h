@@ -2,43 +2,46 @@
 #include "Grid.h"
 #include "ObjCreator.h"
 
-class Scene
+namespace Roundbeargames
 {
-private:
-    Grid grid;
-    ObjCreator objCreator;
-
-public:
-    void CreateObject(GridObjType objType)
+    class Scene
     {
-        objCreator.CreateObj(objType);
-    }
+    private:
+        Grid grid;
+        ObjCreator objCreator;
 
-    GridObject* GetObject(GridObjType targetType)
-    {
-        return objCreator.GetObj(targetType);
-    }
+    public:
+        void CreateObject(GridObjType objType)
+        {
+            objCreator.CreateObj(objType);
+        }
 
-    Vec2 GetGridSize()
-    {
-        return grid.GetSize();
-    }
+        GridObject* GetObject(GridObjType targetType)
+        {
+            return objCreator.GetObj(targetType);
+        }
 
-    char GetSymbol(int x, int y)
-    {
-        return objCreator.GetSym(x, y);
-    }
+        Vec2 GetGridSize()
+        {
+            return grid.GetSize();
+        }
 
-    Scene()
-    {
-        std::cout << "creating scene.." << std::endl;
+        char GetSymbol(int x, int y)
+        {
+            return objCreator.GetSym(x, y);
+        }
 
-        grid.SetSize(12, 12);
-    }
+        Scene()
+        {
+            std::cout << "creating scene.." << std::endl;
 
-    ~Scene()
-    {
-        std::cout << std::endl;
-        std::cout << "destroying scene.." << std::endl;
-    }
-};
+            grid.SetSize(12, 12);
+        }
+
+        ~Scene()
+        {
+            std::cout << std::endl;
+            std::cout << "destroying scene.." << std::endl;
+        }
+    };
+}

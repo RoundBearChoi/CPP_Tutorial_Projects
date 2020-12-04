@@ -1,13 +1,16 @@
 #pragma once
 #include "GridObject.h"
 
-class Enemy : public GridObject
+namespace Roundbeargames
 {
-public:
-    Enemy()
+    class Enemy : public GridObject
     {
-        std::cout << "creating enemy.." << std::endl;
-        objType = GridObjType::ENEMY;
-        symbol = 'e';
-    }
-};
+    public:
+        Enemy()
+        {
+            std::cout << "creating enemy.." << std::endl;
+            objType = GridObjType::ENEMY;
+            symbol = 'e';
+        }
+    };
+}

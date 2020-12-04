@@ -4,80 +4,83 @@
 #include "Item.h"
 #include "Enemy.h"
 
-class ObjCreator
+namespace Roundbeargames
 {
-private:
-    std::vector<GridObject*> ObjPtrs;
-
-    void DeleteAll()
+    class ObjCreator
     {
-        for (GridObject* obj : ObjPtrs)
-        {
-            delete obj;
-        }
-    }
+    private:
+        std::vector<GridObject*> ObjPtrs;
 
-public:
-    void CreateObj(GridObjType objType)
-    {
-        for (GridObject* obj : ObjPtrs)
+        void DeleteAll()
         {
-            if (obj->GetType() == objType)
+            for (GridObject* obj : ObjPtrs)
             {
-                throw "Object type already exists..";
+                delete obj;
             }
         }
 
-        if (objType == GridObjType::PLAYER)
+    public:
+        void CreateObj(GridObjType objType)
         {
-            Player* player = new Player();
-            ObjPtrs.push_back(player);
-        }
-        else if (objType == GridObjType::ITEM)
-        {
-            Item* item = new Item();
-            ObjPtrs.push_back(item);
-        }
-        else if (objType == GridObjType::ENEMY)
-        {
-            Enemy* enemy = new Enemy();
-            ObjPtrs.push_back(enemy);
-        }
-    }
-
-    GridObject* GetObj(GridObjType targetType)
-    {
-        for (GridObject* obj : ObjPtrs)
-        {
-            if (obj->GetType() == targetType)
+            for (GridObject* obj : ObjPtrs)
             {
-                return obj;
+                if (obj->GetType() == objType)
+                {
+                    throw "Object type already exists..";
+                }
+            }
+
+            if (objType == GridObjType::PLAYER)
+            {
+                Player* player = new Player();
+                ObjPtrs.push_back(player);
+            }
+            else if (objType == GridObjType::ITEM)
+            {
+                Item* item = new Item();
+                ObjPtrs.push_back(item);
+            }
+            else if (objType == GridObjType::ENEMY)
+            {
+                Enemy* enemy = new Enemy();
+                ObjPtrs.push_back(enemy);
             }
         }
 
-        throw "Object type not found";
-    }
-
-    char GetSym(int x, int y)
-    {
-        for (GridObject* obj : ObjPtrs)
+        GridObject* GetObj(GridObjType targetType)
         {
-            Vec2 pos = obj->GetPosition();
-
-            if (pos.x == x &&
-                pos.y == y)
+            for (GridObject* obj : ObjPtrs)
             {
-                return obj->GetSymbol();
+                if (obj->GetType() == targetType)
+                {
+                    return obj;
+                }
             }
+
+            throw "Object type not found";
         }
 
-        // return default grid symbol if nothing matches
-        return '.';
-    }
+        char GetSym(int x, int y)
+        {
+            for (GridObject* obj : ObjPtrs)
+            {
+                Vec2 pos = obj->GetPosition();
 
-    ~ObjCreator()
-    {
-        std::cout << "destroying objcreator.." << std::endl;
-        DeleteAll();
-    }
-};
+                if (pos.x == x &&
+                    pos.y == y)
+                {
+                    return obj->GetSymbol();
+                }
+            }
+
+            // return default grid symbol if nothing matches
+            return '.';
+        }
+
+        ~ObjCreator()
+        {
+            std::cout << "destroying objcreator.." << std::endl;
+            DeleteAll();
+        }
+    };
+}
