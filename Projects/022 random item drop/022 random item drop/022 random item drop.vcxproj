@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="ItemRender.h" />
     <ClInclude Include="RandomInteger.h" />
+    <ClInclude Include="Shuffle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

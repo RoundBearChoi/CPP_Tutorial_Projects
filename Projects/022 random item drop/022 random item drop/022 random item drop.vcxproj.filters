@@ -16,6 +16,9 @@
     <ClInclude Include="RandomInteger.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Shuffle.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="022 random item drop.cpp">
