@@ -93,6 +93,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -143,9 +144,25 @@
     <ClCompile Include="022 random item drop.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AssaultRifleData.h" />
+    <ClInclude Include="AssaultRifleRender.h" />
+    <ClInclude Include="Category1_Mod.h" />
+    <ClInclude Include="Category2_Mod.h" />
+    <ClInclude Include="Category3_Mod.h" />
+    <ClInclude Include="ItemCreator.h" />
+    <ClInclude Include="ItemProcessor.h" />
     <ClInclude Include="ItemRender.h" />
+    <ClInclude Include="LegendaryAlert.h" />
+    <ClInclude Include="ModifierType.h" />
+    <ClInclude Include="PistolData.h" />
+    <ClInclude Include="PistolRender.h" />
+    <ClInclude Include="PlayerInput.h" />
     <ClInclude Include="RandomInteger.h" />
+    <ClInclude Include="ShotgunData.h" />
+    <ClInclude Include="ShotgunRender.h" />
     <ClInclude Include="Shuffle.h" />
+    <ClInclude Include="ModsData.h" />
+    <ClInclude Include="WeaponData.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

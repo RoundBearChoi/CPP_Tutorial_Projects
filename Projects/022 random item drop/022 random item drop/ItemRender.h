@@ -4,24 +4,20 @@ namespace Roundbeargames
 {
 	class ItemRender
 	{
-	public:
-		void Render()
-		{
-			std::cout << R"(
-Here's a random pistol.
+	protected:
+		int renderID = 0;
 
- +--^----------,--------,-----,--------^-,
- | |||||||||   `--------'     |          O
- `+---------------------------^----------|
-   `\_,---------,---------,--------------'
-     / XXXXXX /'|       /'
-    / XXXXXX /  `\    /'
-   / XXXXXX /`-------'
-  / XXXXXX /
- / XXXXXX /
-(________(                
- `------'
-)" << std::endl;
+	public:
+		virtual void ShowImage() = 0;
+
+		virtual ~ItemRender()
+		{
+
+		}
+
+		void SetRenderID(int nIndex)
+		{
+			renderID = nIndex;
 		}
 	};
 }

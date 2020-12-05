@@ -8,16 +8,103 @@
     <Filter Include="Source Files\Main">
       <UniqueIdentifier>{cc26f833-0db9-4e1d-9ba5-b68c727d96e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\WeaponData">
+      <UniqueIdentifier>{11672acf-0b4d-4733-8dd7-77b98e20bf51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WeaponData\Base">
+      <UniqueIdentifier>{d767aaa8-3f3e-487c-a7d4-81c9ba629837}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WeaponData\Implentation">
+      <UniqueIdentifier>{81b2ac65-5196-4d5d-b3e8-35275660c612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{925eb993-b1cd-47c1-953a-8026bc9d5391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render\Base">
+      <UniqueIdentifier>{cd75b044-cd9f-4966-80ac-519f179a816c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render\Implementation">
+      <UniqueIdentifier>{d64de729-37c3-49ee-a81d-bd906f48a2d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerInput">
+      <UniqueIdentifier>{b434203b-190a-4460-8da0-77ad3d36ecca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WeaponMods">
+      <UniqueIdentifier>{1e1a8414-b9d1-4c82-93da-88965f87d9c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WeaponMods\Base">
+      <UniqueIdentifier>{a512b3ca-eb7f-4a64-8041-0b028b9fffa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\WeaponMods\Implemntation">
+      <UniqueIdentifier>{383191e3-9d39-488e-938f-e66e2a97d069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ItemCreator">
+      <UniqueIdentifier>{4cb6dbce-e624-4ea0-9cfa-9423ca23a445}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TBD">
+      <UniqueIdentifier>{8d5bb842-1e13-4902-a7f9-a5096ec09a20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RandomInteger">
+      <UniqueIdentifier>{39ce5bc8-e182-4a69-a3ee-cbbfcb83fcaa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ItemRender.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="WeaponData.h">
+      <Filter>Source Files\WeaponData\Base</Filter>
     </ClInclude>
-    <ClInclude Include="RandomInteger.h">
-      <Filter>Source Files</Filter>
+    <ClInclude Include="ItemRender.h">
+      <Filter>Source Files\Render\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PistolRender.h">
+      <Filter>Source Files\Render\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="AssaultRifleRender.h">
+      <Filter>Source Files\Render\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="PistolData.h">
+      <Filter>Source Files\WeaponData\Implentation</Filter>
+    </ClInclude>
+    <ClInclude Include="AssaultRifleData.h">
+      <Filter>Source Files\WeaponData\Implentation</Filter>
+    </ClInclude>
+    <ClInclude Include="ModsData.h">
+      <Filter>Source Files\WeaponMods\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Category1_Mod.h">
+      <Filter>Source Files\WeaponMods\Implemntation</Filter>
+    </ClInclude>
+    <ClInclude Include="Category2_Mod.h">
+      <Filter>Source Files\WeaponMods\Implemntation</Filter>
+    </ClInclude>
+    <ClInclude Include="Category3_Mod.h">
+      <Filter>Source Files\WeaponMods\Implemntation</Filter>
+    </ClInclude>
+    <ClInclude Include="LegendaryAlert.h">
+      <Filter>Source Files\TBD</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInput.h">
+      <Filter>Source Files\PlayerInput</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemProcessor.h">
+      <Filter>Source Files\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="ItemCreator.h">
+      <Filter>Source Files\ItemCreator</Filter>
+    </ClInclude>
+    <ClInclude Include="ModifierType.h">
+      <Filter>Source Files\TBD</Filter>
     </ClInclude>
     <ClInclude Include="Shuffle.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\TBD</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomInteger.h">
+      <Filter>Source Files\RandomInteger</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotgunRender.h">
+      <Filter>Source Files\Render\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotgunData.h">
+      <Filter>Source Files\WeaponData\Implentation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
