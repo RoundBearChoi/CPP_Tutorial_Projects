@@ -4,7 +4,7 @@
 
 namespace Roundbeargames
 {
-	class ItemProcessor
+	class Game
 	{
 	public:
 		void Run()
@@ -22,16 +22,16 @@ namespace Roundbeargames
 			}
 		}
 
-		ItemProcessor()
+		Game()
 		{
-			std::cout << "constructing item processor.." << std::endl;
+			std::cout << "constructing game.." << std::endl;
 			std::cout << std::endl;
 		}
 
-		~ItemProcessor()
+		~Game()
 		{
 			std::cout << std::endl;
-			std::cout << "destructing item processor.." << std::endl;
+			std::cout << "destructing game.." << std::endl;
 		}
 	};
 }

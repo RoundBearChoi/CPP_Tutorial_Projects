@@ -1,7 +1,7 @@
-#include "ItemProcessor.h"
+#include "Game.h"
 
 int main()
 {
-	Roundbeargames::ItemProcessor itemProcessor;
-	itemProcessor.Run();
+	Roundbeargames::Game game;
+	game.Run();
 }
