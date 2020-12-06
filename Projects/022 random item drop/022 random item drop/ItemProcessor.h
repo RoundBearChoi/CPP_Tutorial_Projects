@@ -1,6 +1,6 @@
 #pragma once
 #include "PlayerInput.h"
-#include "ItemCreator.h"
+#include "RandomWeaponGenerator.h"
 
 namespace Roundbeargames
 {
@@ -9,13 +9,13 @@ namespace Roundbeargames
 	public:
 		void Run()
 		{
-			ItemCreator itemCreator;
+			RandomWeaponGenerator weaponGenerator;
 			PlayerInput playerInput;
 			char input = '0';
 
 			while (input != 'q')
 			{
-				WeaponData* weaponData = itemCreator.CreateRandomWeapon();
+				WeaponData* weaponData = weaponGenerator.GetWeaponDrop();
 				weaponData->Render();
 
 				input = playerInput.GetInput();

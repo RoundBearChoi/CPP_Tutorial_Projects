@@ -38,14 +38,14 @@
     <Filter Include="Source Files\WeaponMods\Implemntation">
       <UniqueIdentifier>{383191e3-9d39-488e-938f-e66e2a97d069}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ItemCreator">
-      <UniqueIdentifier>{4cb6dbce-e624-4ea0-9cfa-9423ca23a445}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\TBD">
       <UniqueIdentifier>{8d5bb842-1e13-4902-a7f9-a5096ec09a20}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\RandomInteger">
       <UniqueIdentifier>{39ce5bc8-e182-4a69-a3ee-cbbfcb83fcaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\RandomWeapon">
+      <UniqueIdentifier>{4cb6dbce-e624-4ea0-9cfa-9423ca23a445}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -88,9 +88,6 @@
     <ClInclude Include="ItemProcessor.h">
       <Filter>Source Files\Main</Filter>
     </ClInclude>
-    <ClInclude Include="ItemCreator.h">
-      <Filter>Source Files\ItemCreator</Filter>
-    </ClInclude>
     <ClInclude Include="ModifierType.h">
       <Filter>Source Files\TBD</Filter>
     </ClInclude>
@@ -105,6 +102,9 @@
     </ClInclude>
     <ClInclude Include="ShotgunData.h">
       <Filter>Source Files\WeaponData\Implentation</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomWeaponGenerator.h">
+      <Filter>Source Files\RandomWeapon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

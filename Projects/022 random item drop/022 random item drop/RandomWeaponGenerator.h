@@ -7,14 +7,13 @@
 
 namespace Roundbeargames
 {
-	class ItemCreator
+	class RandomWeaponGenerator
 	{
 	private:
 		std::vector<WeaponData*> vecWeaponData;
 		RandomInteger randomInteger;
 
-	public:
-		WeaponData* CreateRandomWeapon()
+		WeaponData* Generate()
 		{
 			int n = randomInteger.GetInteger(0, 2);
 			int weaponIndex = vecWeaponData.size();
@@ -25,47 +24,44 @@ namespace Roundbeargames
 			if (n == 0)
 			{
 				PistolData* pistolData = new PistolData();
-				pistolData->InitWeaponData(weaponIndex);
-				pistolData->ToggleInitialized();
-				vecWeaponData.push_back(pistolData);
-
-				std::cout << "PistolData address: " << pistolData << std::endl;
-
 				return pistolData;
 			}
 			else if (n == 1)
 			{
 				AssaultRifleData* assaultRifleData = new AssaultRifleData();
-				assaultRifleData->InitWeaponData(weaponIndex);
-				assaultRifleData->ToggleInitialized();
-				vecWeaponData.push_back(assaultRifleData);
-
-				std::cout << "AssaultRifleData address: " << assaultRifleData << std::endl;
-
 				return assaultRifleData;
 			}
 			else
 			{
 				ShotgunData* shotgunData = new ShotgunData();
-				shotgunData->InitWeaponData(weaponIndex);
-				shotgunData->ToggleInitialized();
-				vecWeaponData.push_back(shotgunData);
-
-				std::cout << "ShotgunData address: " << shotgunData << std::endl;
-
 				return shotgunData;
 			}
 		}
 
-		ItemCreator()
+	public:
+		WeaponData* GetWeaponDrop()
 		{
-			std::cout << "constructing item creator.." << std::endl;
+			WeaponData* data = Generate();
+
+			int weaponIndex = vecWeaponData.size();
+			data->InitWeaponData(weaponIndex);
+			data->ToggleInitialized();
+			vecWeaponData.push_back(data);
+
+			std::cout << "weapon address: " << data << std::endl;
+
+			return data;
 		}
 
-		~ItemCreator()
+		RandomWeaponGenerator()
+		{
+			std::cout << "constructing weapon generator.." << std::endl;
+		}
+
+		~RandomWeaponGenerator()
 		{
 			std::cout << std::endl;
-			std::cout << "destructing item creator.." << std::endl;
+			std::cout << "destructing weapon generator.." << std::endl;
 
 			for (int i = 0; i < vecWeaponData.size(); i++)
 			{

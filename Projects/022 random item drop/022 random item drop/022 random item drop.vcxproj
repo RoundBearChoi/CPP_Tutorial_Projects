@@ -149,7 +149,7 @@
     <ClInclude Include="Category1_Mod.h" />
     <ClInclude Include="Category2_Mod.h" />
     <ClInclude Include="Category3_Mod.h" />
-    <ClInclude Include="ItemCreator.h" />
+    <ClInclude Include="RandomWeaponGenerator.h" />
     <ClInclude Include="ItemProcessor.h" />
     <ClInclude Include="ItemRender.h" />
     <ClInclude Include="LegendaryAlert.h" />
