@@ -16,9 +16,9 @@ namespace Roundbeargames
 		int Recoil = 0;
 		int ReloadTime = 0;
 
-		ModsData* modData = nullptr;
 		ItemRender* itemRender = nullptr;
-
+		ModsData* modData = nullptr;
+		
 	public:
 		virtual void InitWeaponData(int nIndex) = 0;
 
