@@ -18,5 +18,17 @@ namespace Roundbeargames
 
 			return distribution(generator);
 		}
+
+		RandomInteger()
+		{
+			std::cout << "constructing randominteger.." << std::endl;
+			std::cout << std::endl;
+		}
+
+		~RandomInteger()
+		{
+			std::cout << std::endl;
+			std::cout << "destructing randominteger.." << std::endl;
+		}
 	};
 }
