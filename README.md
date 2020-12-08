@@ -5,7 +5,7 @@ Indie game developer from South Korea
 
 # Getting Started (Windows)
 
-1. Download ZIP (or use whatever Git client you're familiar with)
+1. Download ZIP (or clone using a Git client of your choice)
 
 > https://github.com/RoundBearChoi/CPP_Tutorial_Projects.git
 
