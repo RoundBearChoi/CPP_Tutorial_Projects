@@ -1,3 +1,4 @@
+/*
 #pragma once
 #include <Windows.h>
 //#include <filesystem>
@@ -13,7 +14,7 @@ namespace Roundbeargames
 			// (and putting .wav file in that location)
 			// std::filesystem::path currentPath = std::filesystem::current_path();
 
-			// Winmm.lib is required ("Additional Depencies" under Linker)
+			// Winmm.lib is required ("Additional Depencies" under Linker, Input)
 			// https://youtu.be/9WeDQHi6sJs
 			bool played = PlaySound(
 				TEXT("legendarydrop.wav"),
@@ -22,3 +23,4 @@ namespace Roundbeargames
 		}
 	};
 }
+*/
