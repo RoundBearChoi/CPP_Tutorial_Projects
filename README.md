@@ -2,6 +2,8 @@
 
 Indie game developer from South Korea
 
+> https://youtube.com/roundbeargames
+
 
 # Getting Started (Windows)
 
@@ -14,6 +16,6 @@ Indie game developer from South Korea
 > https://visualstudio.microsoft.com/downloads
 
 
-# Videos
+# Tutorial Videos
 
 > https://youtube.com/playlist?list=PLWYGofN_jX5Apmb8pJUD8NN3KskHW2lcy
