@@ -8,6 +8,8 @@ class Game : public olc::PixelGameEngine
 private:
 	olc::Sprite* spritePtr = nullptr;
 	olc::Decal* decalPtr = nullptr;
+	olc::vf2d decalPos;
+	float speed = 50.0f;
 
 public:
 	~Game()
@@ -21,6 +23,8 @@ public:
 		//std::filesystem::path startingPath = std::filesystem::current_path();
 		spritePtr = new olc::Sprite("synthetikcharacter.png");
 		decalPtr = new olc::Decal(spritePtr);
+		decalPos.x = 0.0f;
+		decalPos.y = 0.0f;
 
 		return true;
 	}
@@ -29,9 +33,27 @@ public:
 	{
 		Clear(olc::DARK_BLUE);
 
-		olc::vf2d position(10, 20);
+		if (GetKey(olc::Key::A).bHeld)
+		{
+			decalPos.x -= (speed * fElapsedTime);
+		}
+		if (GetKey(olc::Key::D).bHeld)
+		{
+			decalPos.x += (speed * fElapsedTime);
+		}
+		if (GetKey(olc::Key::W).bHeld)
+		{
+			decalPos.y -= (speed * fElapsedTime);
+		}
+		if (GetKey(olc::Key::S).bHeld)
+		{
+			decalPos.y += (speed * fElapsedTime);
+		}
+
+		//decalPos = GetMousePos();
+
 		//DrawSprite(position, spritePtr);
-		DrawDecal(position, decalPtr);
+		DrawDecal(decalPos, decalPtr);
 
 		olc::vf2d stringposition(0, 0);
 		DrawString(stringposition, "this is a string", olc::DARK_RED);
