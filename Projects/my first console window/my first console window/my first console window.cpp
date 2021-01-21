@@ -17,6 +17,9 @@ d
 e
 )" << std::endl;
     std::cout << "symbols (consolas): " << "бсбр" << std::endl;
+
+    // don't worry about symbols not showing up
+    // https://youtu.be/w3SgUkDdBWU
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
