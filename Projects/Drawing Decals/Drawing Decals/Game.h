@@ -7,17 +7,20 @@ class Game : public olc::PixelGameEngine
 {
 private:
 	olc::Sprite* spritePtr = nullptr;
+	olc::Decal* decalPtr = nullptr;
 
 public:
 	~Game()
 	{
 		delete spritePtr;
+		delete decalPtr;
 	}
 
 	bool OnUserCreate() override
 	{
 		//std::filesystem::path startingPath = std::filesystem::current_path();
-		spritePtr = new olc::Sprite("smiley.png");
+		spritePtr = new olc::Sprite("titanfallmech.png");
+		decalPtr = new olc::Decal(spritePtr);
 
 		return true;
 	}
@@ -26,8 +29,8 @@ public:
 	{
 		Clear(olc::DARK_BLUE);
 
-		olc::vf2d position(10, 50);
-		DrawSprite(position, spritePtr);
+		olc::vf2d position(0, 0);
+		DrawDecal(position, decalPtr);
 
 		olc::vf2d stringposition(0, 0);
 		DrawString(stringposition, "this is a string", olc::DARK_RED);
