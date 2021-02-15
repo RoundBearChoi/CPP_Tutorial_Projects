@@ -8,6 +8,8 @@ class Game : public olc::PixelGameEngine
 private:
 	olc::Sprite* spritePtr = nullptr;
 	olc::Decal* decalPtr = nullptr;
+	olc::vf2d position;
+	float speed = 50.0f;
 
 public:
 	~Game()
@@ -21,6 +23,8 @@ public:
 		//std::filesystem::path startingPath = std::filesystem::current_path();
 		spritePtr = new olc::Sprite("titanfallmech.png");
 		decalPtr = new olc::Decal(spritePtr);
+		position.x = 0.0f;
+		position.y = 0.0f;
 
 		return true;
 	}
@@ -29,7 +33,30 @@ public:
 	{
 		Clear(olc::DARK_BLUE);
 
-		olc::vf2d position(0, 0);
+		if (GetKey(olc::Key::D).bHeld)
+		{
+			position.x += (speed * fElapsedTime);
+		}
+
+		if (GetKey(olc::Key::A).bHeld)
+		{
+			position.x -= (speed * fElapsedTime);
+		}
+
+		if (GetKey(olc::Key::W).bHeld)
+		{
+			position.y -= (speed * fElapsedTime);
+		}
+
+		if (GetKey(olc::Key::S).bHeld)
+		{
+			position.y += (speed * fElapsedTime);
+		}
+
+		//position = GetMousePos();
+		//position.x -= decalPtr->sprite->width / 2;
+		//position.y -= decalPtr->sprite->height / 2;
+
 		DrawDecal(position, decalPtr);
 
 		olc::vf2d stringposition(0, 0);
