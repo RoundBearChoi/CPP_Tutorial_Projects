@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Keyboard and Mouse Input", "Keyboard and Mouse Input\Keyboard and Mouse Input.vcxproj", "{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Debug|x64.ActiveCfg = Debug|x64
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Debug|x64.Build.0 = Debug|x64
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Debug|x86.ActiveCfg = Debug|Win32
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Debug|x86.Build.0 = Debug|Win32
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Release|x64.ActiveCfg = Release|x64
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Release|x64.Build.0 = Release|x64
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Release|x86.ActiveCfg = Release|Win32
+		{BABC28FF-FCD8-43C5-BEB2-80ECBBB875E0}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5939DDD5-EAEC-4EBD-8568-E086F359E7B7}
+	EndGlobalSection
+EndGlobal
