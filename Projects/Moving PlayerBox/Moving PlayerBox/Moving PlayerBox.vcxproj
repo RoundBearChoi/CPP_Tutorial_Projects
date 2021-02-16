@@ -26,6 +26,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameProcessor.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="InputData.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="Obj.h" />
   </ItemGroup>

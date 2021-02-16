@@ -25,8 +25,8 @@ namespace RB
 
 		void Update(float fElapsedTime)
 		{
-			input.GetUserInput(engine);
-			player.UpdatePos(fElapsedTime, input.GetXAxis());
+			InputData inputData = input.GetUserInput(engine);
+			player.UpdatePos(fElapsedTime, inputData.xAxis);
 			
 			background.Render(engine, decalLoader.background_decal, RenderOffsetType::NONE);
 			player.Render(engine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);

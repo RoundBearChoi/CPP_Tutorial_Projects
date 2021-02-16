@@ -34,5 +34,8 @@
     <ClInclude Include="Input.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="InputData.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
