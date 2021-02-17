@@ -1,5 +1,6 @@
 #pragma once
 #include "AnimationData.h"
+#include <cmath>
 
 class SpriteAnimation
 {
@@ -8,17 +9,21 @@ private:
 	int mTotalWidth = 0;
 	int mTotalHeight = 0;
 	int mTileCountX = 0;
+	int mTileCountY = 0;
+	int mTotalTileCount = 0;
 
 	float mCurrentTime = 0.0f;
-	int mCurrentTileX = 0;
+	int mCurrentTile = 0;
 
 public:
-	void SetParams(float interval, int totalWith, int totalHeight, int tileCountX)
+	void SetParams(float interval, int totalWith, int totalHeight, int tileCountX, int tileCountY, int totalTiles)
 	{
 		mInterval = interval;
 		mTotalWidth = totalWith;
 		mTotalHeight = totalHeight;
 		mTileCountX = tileCountX;
+		mTileCountY = tileCountY;
+		mTotalTileCount = totalTiles;
 	}
 
 	AnimationData GetInfo(float fElapsedTime)
@@ -28,20 +33,21 @@ public:
 		if (mCurrentTime >= mInterval)
 		{
 			mCurrentTime = 0.0f;
-			mCurrentTileX++;
+			mCurrentTile++;
 		}
 
-		if (mCurrentTileX >= mTileCountX)
+		if (mCurrentTile >= mTotalTileCount)
 		{
-			mCurrentTileX = 0;
+			mCurrentTile = 0;
 		}
 
 		AnimationData data;
 
-		data.sourcePos.x = mCurrentTileX * (mTotalWidth / mTileCountX);
-		data.sourcePos.y = 0.0f;
 		data.sourceSize.x = mTotalWidth / mTileCountX;
-		data.sourceSize.y = mTotalHeight;
+		data.sourceSize.y = mTotalHeight / mTileCountY;
+
+		data.sourcePos.x = (mCurrentTile % mTileCountX) * data.sourceSize.x;
+		data.sourcePos.y = floorf(mCurrentTile / mTileCountX) * data.sourceSize.y;
 
 		return data;
 	}

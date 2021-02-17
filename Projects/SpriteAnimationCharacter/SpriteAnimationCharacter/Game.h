@@ -21,10 +21,10 @@ public:
 
 	bool OnUserCreate() override
 	{
-		spritePtr = new olc::Sprite("ryuback_spritesheet.png");
+		spritePtr = new olc::Sprite("hadouken_sprite_sheet.png");
 		decalPtr = new olc::Decal(spritePtr);
 
-		spriteAnimation.SetParams(0.2f, spritePtr->width, spritePtr->height, 6);
+		spriteAnimation.SetParams(0.125f, spritePtr->width, spritePtr->height, 6, 5, 26);
 
 		return true;
 	}
@@ -54,7 +54,7 @@ public:
 		}
 
 		AnimationData animationData = spriteAnimation.GetInfo(fElapsedTime);
-		olc::vf2d size = { 3000.0f / 3.0f / 5.0f, 728.0f / 3.0f };
+		olc::vf2d size = { 480.0f, 228.0f };
 		DrawPartialDecal(position, size, decalPtr, animationData.sourcePos, animationData.sourceSize);
 
 		olc::vf2d stringposition(0, 0);
