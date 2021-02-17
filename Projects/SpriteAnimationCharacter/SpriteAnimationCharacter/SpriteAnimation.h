@@ -43,11 +43,11 @@ public:
 
 		AnimationData data;
 
-		data.sourceSize.x = mTotalWidth / mTileCountX;
-		data.sourceSize.y = mTotalHeight / mTileCountY;
+		data.sourceSize.x = (float)mTotalWidth / (float)mTileCountX;
+		data.sourceSize.y = (float)mTotalHeight / (float)mTileCountY;
 
 		data.sourcePos.x = (mCurrentTile % mTileCountX) * data.sourceSize.x;
-		data.sourcePos.y = floorf(mCurrentTile / mTileCountX) * data.sourceSize.y;
+		data.sourcePos.y = floorf((float)mCurrentTile / (float)mTileCountX) * data.sourceSize.y;
 
 		return data;
 	}
