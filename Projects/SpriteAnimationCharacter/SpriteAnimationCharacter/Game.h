@@ -54,8 +54,24 @@ public:
 		}
 
 		AnimationData animationData = spriteAnimation.GetInfo(fElapsedTime);
+
 		olc::vf2d size = { 480.0f, 228.0f };
 		DrawPartialDecal(position, size, decalPtr, animationData.sourcePos, animationData.sourceSize);
+		
+		// warping
+		//std::array<olc::vf2d, 4> points;
+		//points[0] = { 0.0f, 0.0f };
+		//points[1] = { 0.0f, 228.0f };
+		//points[2] = { 480.0f, 228.0f };
+		//points[3] = { 480.0f, 0.0f };
+		//DrawPartialWarpedDecal(decalPtr, points, animationData.sourcePos, animationData.sourceSize);
+
+		//std::array<olc::vf2d, 4> points;
+		//points[0] = { 480.0f, 0.0f };
+		//points[1] = { 480.0f, 228.0f };
+		//points[2] = { 0.0f, 228.0f };
+		//points[3] = { 0.0f, 0.0f };
+		//DrawPartialWarpedDecal(decalPtr, points, animationData.sourcePos, animationData.sourceSize);
 
 		olc::vf2d stringposition(0, 0);
 		DrawString(stringposition, "this is a string", olc::DARK_RED);
