@@ -1,4 +1,5 @@
 #pragma once
+#include "StateController.h"
 
 namespace RB
 {
@@ -19,13 +20,44 @@ namespace RB
 		BOTTOM_RIGHT,
 	};
 
-	class Obj
+	class SceneObj
 	{
 	private:
 		olc::vf2d pos = olc::vf2d(0.0f, 0.0f);
 		olc::vf2d speed = olc::vf2d(0.0f, 0.0f);
+		StateController* controller = nullptr;
 
 	public:
+		~SceneObj()
+		{
+			delete controller;
+		}
+
+		template<class T>
+		void SetController()
+		{
+			//only set once
+			if (controller == nullptr)
+			{
+				if (std::is_base_of<StateController, T>::value)
+				{
+					controller = new T();
+				}
+			}
+		}
+
+		void TransitionController(int index)
+		{
+			controller->MakeTransition(index);
+		}
+
+		void UpdateController()
+		{
+			controller->Update();
+		}
+
+		//temp
+
 		void SetPos(float x, float y)
 		{
 			pos.x = x;

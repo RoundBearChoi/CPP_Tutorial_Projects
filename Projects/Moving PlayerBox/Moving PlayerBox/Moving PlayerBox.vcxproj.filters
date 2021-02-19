@@ -9,6 +9,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\States">
+      <UniqueIdentifier>{bbedee71-7695-4c0a-be5c-7c0a935716d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Player">
+      <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Player\Controller">
+      <UniqueIdentifier>{f1b41ccf-5356-4d16-bb1c-c9f0bce9de58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Player\Concrete States">
+      <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Base">
+      <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -22,9 +37,6 @@
     <ClInclude Include="Game.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Obj.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameProcessor.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -35,6 +47,24 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="InputData.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Source Files\States\Player\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGameStart.h">
+      <Filter>Source Files\States\Player\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerIdle.h">
+      <Filter>Source Files\States\Player\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Source Files\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="StateController.h">
+      <Filter>Source Files\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneObj.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
