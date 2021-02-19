@@ -1,6 +1,6 @@
 #pragma once
 #include "StateController.h"
-#include "PositionalData.h"
+#include "VecData.h"
 #include "InputData.h"
 
 namespace RB
@@ -25,7 +25,7 @@ namespace RB
 	class SceneObj
 	{
 	private:
-		PositionalData positionalData;
+		VecData vecData;
 		StateController* stateController = nullptr;
 
 	public:
@@ -42,14 +42,9 @@ namespace RB
 				if (std::is_base_of<StateController, T>::value)
 				{
 					stateController = new T();
-					stateController->TargetPositionalData(positionalData);
+					stateController->TargetVecData(vecData);
 				}
 			}
-		}
-
-		void TransitionController(int index)
-		{
-			stateController->MakeTransition(index);
 		}
 
 		StateController* GetController()
@@ -78,42 +73,42 @@ namespace RB
 				offset.y = -(decalHeight);
 			}
 
-			engine->DrawDecal(positionalData.pos + offset, decal);
+			engine->DrawDecal(vecData.pos + offset, decal);
 		}
 
 		//temp
 
 		void SetPos(float x, float y)
 		{
-			positionalData.pos.x = x;
-			positionalData.pos.y = y;
+			vecData.pos.x = x;
+			vecData.pos.y = y;
 		}
 		
 		void SetSpeed(float x, float y)
 		{
-			positionalData.speed.x = x;
-			positionalData.speed.y = y;
+			vecData.speed.x = x;
+			vecData.speed.y = y;
 		}
 		
 		olc::vf2d GetPos()
 		{
-			return positionalData.pos;
+			return vecData.pos;
 		}
 		
 		olc::vf2d GetSpeed()
 		{
-			return positionalData.speed;
+			return vecData.speed;
 		}
 
 		void UpdatePos(float fElapsedTime, float xAxis)
 		{
 			if (xAxis > 0.0f)
 			{
-				positionalData.pos += positionalData.speed * fElapsedTime;
+				vecData.pos += vecData.speed * fElapsedTime;
 			}
 			else if (xAxis < 0.0f)
 			{
-				positionalData.pos -= positionalData.speed * fElapsedTime;
+				vecData.pos -= vecData.speed * fElapsedTime;
 			}
 		}
 	};

@@ -27,6 +27,9 @@
     <Filter Include="Source Files\SceneObj">
       <UniqueIdentifier>{4151f4af-5e03-4852-bdac-705808a90515}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Player\Enum">
+      <UniqueIdentifier>{18b25780-249e-44e5-96b3-53b3ee3e8e5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -70,7 +73,13 @@
     <ClInclude Include="SceneObj.h">
       <Filter>Source Files\SceneObj</Filter>
     </ClInclude>
-    <ClInclude Include="PositionalData.h">
+    <ClInclude Include="StateData.h">
+      <Filter>Source Files\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerStateType.h">
+      <Filter>Source Files\States\Player\Enum</Filter>
+    </ClInclude>
+    <ClInclude Include="VecData.h">
       <Filter>Source Files\SceneObj</Filter>
     </ClInclude>
   </ItemGroup>

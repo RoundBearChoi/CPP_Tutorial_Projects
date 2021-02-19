@@ -1,5 +1,5 @@
 #pragma once
-#include "State.h"
+#include "StateData.h"
 #include "InputData.h"
 
 namespace RB
@@ -7,38 +7,21 @@ namespace RB
     class StateController
     {
     protected:
-        State* currentState = nullptr;
-        PositionalData* positionalData = nullptr;
-        int id = 0;
+        StateData stateData;
+        VecData* vecDataHandle = nullptr;
 
     public:
-        virtual void MakeTransition(int index) = 0;
-
-        ~StateController()
-        {
-            delete currentState;
-        }
-
-        template<class T>
-        State* CreateState()
-        {
-            delete currentState;
-
-            if (std::is_base_of<State, T>::value)
-            {
-                currentState = new T();
-                return currentState;
-            }
-        }
+        virtual bool MakeTransition(int index) = 0;
+        virtual void CheckNextTransition() = 0;
 
         void Update(InputData &_inputData)
         {
-            currentState->UpdateState(_inputData, *positionalData);
+            stateData.currentState->UpdateState(_inputData, *vecDataHandle);
         }
 
-        void TargetPositionalData(PositionalData &_positionalData)
+        void TargetVecData(VecData &vecData)
         {
-            positionalData = &_positionalData;
+            vecDataHandle = &vecData;
         }
     };
 }

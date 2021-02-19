@@ -1,5 +1,5 @@
 #pragma once
-#include "PositionalData.h"
+#include "VecData.h"
 #include "InputData.h"
 
 namespace RB
@@ -7,7 +7,8 @@ namespace RB
 	class State
 	{
 	public:
-		virtual void UpdateState(InputData &_inputData, PositionalData &_positionalData) = 0;
+		virtual void UpdateState(InputData &_inputData, VecData &vecData) = 0;
+		int* nextStatePtr = nullptr;
 
 		//unused for now
 		virtual ~State()

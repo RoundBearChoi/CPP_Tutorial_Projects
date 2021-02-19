@@ -2,37 +2,24 @@
 #include "StateController.h"
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
+#include "PlayerStateType.h"
 
 namespace RB
 {
-	enum class PlayerStateType
-	{
-		GAME_START,
-		IDLE,
-		MOVE_LEFT,
-		MOVE_RIGHT,
-		DEAD,
-	};
-
 	class PlayerController : public StateController
 	{
 	public:
-		PlayerController()
+		bool MakeTransition(int index) override
 		{
-			id = 1;
-		}
-
-		void MakeTransition(int index) override
-		{
-			State* newState = nullptr;
-
 			if (index == (int)PlayerStateType::GAME_START)
 			{
-				newState = CreateState<PlayerGameStart>();
+				stateData.CreateState<PlayerGameStart>();
+				return true;
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				newState = CreateState<PlayerIdle>();
+				stateData.CreateState<PlayerIdle>();
+				return true;
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
@@ -45,6 +32,19 @@ namespace RB
 			else if (index == (int)PlayerStateType::DEAD)
 			{
 
+			}
+
+			return false;
+		}
+
+		void CheckNextTransition() override
+		{
+			if (stateData.nextState != 0)
+			{
+				if (MakeTransition(stateData.nextState))
+				{
+					stateData.nextState = 0;
+				}
 			}
 		}
 	};

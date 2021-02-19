@@ -3,7 +3,7 @@
 
 namespace RB
 {
-	class PositionalData
+	class VecData
 	{
 	public:
 		olc::vf2d pos = olc::vf2d(0.0f, 0.0f);

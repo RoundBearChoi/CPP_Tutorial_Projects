@@ -22,7 +22,7 @@ namespace RB
 			decalLoader.LoadAll();
 
 			player.SetController<PlayerController>();
-			player.TransitionController((int)PlayerStateType::GAME_START);
+			player.GetController()->MakeTransition((int)PlayerStateType::GAME_START);
 
 			//temp
 			player.SetPos(300.0f, 650.0f);
@@ -34,6 +34,7 @@ namespace RB
 			InputData inputData = input.GetUserInput(engine);
 
 			player.GetController()->Update(inputData);
+			player.GetController()->CheckNextTransition();
 
 			player.UpdatePos(fElapsedTime, inputData.xAxis); //temp
 			
