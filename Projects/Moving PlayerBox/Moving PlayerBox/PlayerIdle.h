@@ -6,7 +6,7 @@ namespace RB
 	class PlayerIdle : public State
 	{
 	public:
-		void UpdateState() override
+		void UpdateState(InputData &_inputData, PositionalData &_positionalData) override
 		{
 
 		}

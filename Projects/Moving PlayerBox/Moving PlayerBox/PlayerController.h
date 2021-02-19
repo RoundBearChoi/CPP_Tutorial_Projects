@@ -24,13 +24,15 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
+			State* newState = nullptr;
+
 			if (index == (int)PlayerStateType::GAME_START)
 			{
-				CreateState<PlayerGameStart>();
+				newState = CreateState<PlayerGameStart>();
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				CreateState<PlayerIdle>();
+				newState = CreateState<PlayerIdle>();
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{

@@ -24,6 +24,9 @@
     <Filter Include="Source Files\States\Base">
       <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SceneObj">
+      <UniqueIdentifier>{4151f4af-5e03-4852-bdac-705808a90515}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,7 +68,10 @@
       <Filter>Source Files\States\Base</Filter>
     </ClInclude>
     <ClInclude Include="SceneObj.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\SceneObj</Filter>
+    </ClInclude>
+    <ClInclude Include="PositionalData.h">
+      <Filter>Source Files\SceneObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

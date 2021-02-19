@@ -1,5 +1,7 @@
 #pragma once
 #include "StateController.h"
+#include "PositionalData.h"
+#include "InputData.h"
 
 namespace RB
 {
@@ -23,73 +25,36 @@ namespace RB
 	class SceneObj
 	{
 	private:
-		olc::vf2d pos = olc::vf2d(0.0f, 0.0f);
-		olc::vf2d speed = olc::vf2d(0.0f, 0.0f);
-		StateController* controller = nullptr;
+		PositionalData positionalData;
+		StateController* stateController = nullptr;
 
 	public:
 		~SceneObj()
 		{
-			delete controller;
+			delete stateController;
 		}
 
 		template<class T>
 		void SetController()
 		{
-			//only set once
-			if (controller == nullptr)
+			if (stateController == nullptr)
 			{
 				if (std::is_base_of<StateController, T>::value)
 				{
-					controller = new T();
+					stateController = new T();
+					stateController->TargetPositionalData(positionalData);
 				}
 			}
 		}
 
 		void TransitionController(int index)
 		{
-			controller->MakeTransition(index);
+			stateController->MakeTransition(index);
 		}
 
-		void UpdateController()
+		StateController* GetController()
 		{
-			controller->Update();
-		}
-
-		//temp
-
-		void SetPos(float x, float y)
-		{
-			pos.x = x;
-			pos.y = y;
-		}
-
-		void SetSpeed(float x, float y)
-		{
-			speed.x = x;
-			speed.y = y;
-		}
-
-		olc::vf2d GetPos()
-		{
-			return pos;
-		}
-
-		olc::vf2d GetSpeed()
-		{
-			return speed;
-		}
-
-		void UpdatePos(float fElapsedTime, float xAxis)
-		{
-			if (xAxis > 0.0f)
-			{
-				pos += speed * fElapsedTime;
-			}
-			else if (xAxis < 0.0f)
-			{
-				pos -= speed * fElapsedTime;
-			}
+			return stateController;
 		}
 
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)
@@ -113,7 +78,43 @@ namespace RB
 				offset.y = -(decalHeight);
 			}
 
-			engine->DrawDecal(pos + offset, decal);
+			engine->DrawDecal(positionalData.pos + offset, decal);
+		}
+
+		//temp
+
+		void SetPos(float x, float y)
+		{
+			positionalData.pos.x = x;
+			positionalData.pos.y = y;
+		}
+		
+		void SetSpeed(float x, float y)
+		{
+			positionalData.speed.x = x;
+			positionalData.speed.y = y;
+		}
+		
+		olc::vf2d GetPos()
+		{
+			return positionalData.pos;
+		}
+		
+		olc::vf2d GetSpeed()
+		{
+			return positionalData.speed;
+		}
+
+		void UpdatePos(float fElapsedTime, float xAxis)
+		{
+			if (xAxis > 0.0f)
+			{
+				positionalData.pos += positionalData.speed * fElapsedTime;
+			}
+			else if (xAxis < 0.0f)
+			{
+				positionalData.pos -= positionalData.speed * fElapsedTime;
+			}
 		}
 	};
 }

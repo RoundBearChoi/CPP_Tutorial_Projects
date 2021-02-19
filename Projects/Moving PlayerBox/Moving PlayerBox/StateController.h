@@ -1,5 +1,6 @@
 #pragma once
 #include "State.h"
+#include "InputData.h"
 
 namespace RB
 {
@@ -7,6 +8,7 @@ namespace RB
     {
     protected:
         State* currentState = nullptr;
+        PositionalData* positionalData = nullptr;
         int id = 0;
 
     public:
@@ -15,22 +17,28 @@ namespace RB
             delete currentState;
         }
 
-        void Update()
+        void Update(InputData &_inputData)
         {
-            currentState->UpdateState();
+            currentState->UpdateState(_inputData, *positionalData);
         }
 
         virtual void MakeTransition(int index) = 0;
 
         template<class T>
-        void CreateState()
+        State* CreateState()
         {
             delete currentState;
         
             if (std::is_base_of<State, T>::value)
             {
                 currentState = new T();
+                return currentState;
             }
+        }
+
+        void TargetPositionalData(PositionalData &_positionalData)
+        {
+            positionalData = &_positionalData;
         }
     };
 }
