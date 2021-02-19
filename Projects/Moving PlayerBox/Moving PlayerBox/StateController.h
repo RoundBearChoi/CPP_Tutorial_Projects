@@ -12,28 +12,28 @@ namespace RB
         int id = 0;
 
     public:
+        virtual void MakeTransition(int index) = 0;
+
         ~StateController()
         {
             delete currentState;
         }
 
-        void Update(InputData &_inputData)
-        {
-            currentState->UpdateState(_inputData, *positionalData);
-        }
-
-        virtual void MakeTransition(int index) = 0;
-
         template<class T>
         State* CreateState()
         {
             delete currentState;
-        
+
             if (std::is_base_of<State, T>::value)
             {
                 currentState = new T();
                 return currentState;
             }
+        }
+
+        void Update(InputData &_inputData)
+        {
+            currentState->UpdateState(_inputData, *positionalData);
         }
 
         void TargetPositionalData(PositionalData &_positionalData)
