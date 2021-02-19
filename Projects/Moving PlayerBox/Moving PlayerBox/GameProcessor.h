@@ -19,7 +19,7 @@ namespace RB
 		{
 			engine = olcEngine;
 			decalLoader.LoadAll();
-			player.SetPos(275.0f, 650.0f);
+			player.SetPos(300.0f, 650.0f);
 			player.SetSpeed(200.0f, 0.0f);
 		}
 

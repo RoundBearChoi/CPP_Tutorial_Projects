@@ -25,7 +25,7 @@ namespace RB
 
 		void Run()
 		{
-			if (Construct(550, 700, 1, 1))
+			if (Construct(600, 700, 1, 1))
 			{
 				Start();
 			}
