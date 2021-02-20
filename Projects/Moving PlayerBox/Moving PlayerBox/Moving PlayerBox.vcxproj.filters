@@ -24,11 +24,23 @@
     <Filter Include="Source Files\States\Base">
       <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\SceneObj">
-      <UniqueIdentifier>{4151f4af-5e03-4852-bdac-705808a90515}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\States\Player\Enum">
       <UniqueIdentifier>{18b25780-249e-44e5-96b3-53b3ee3e8e5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene">
+      <UniqueIdentifier>{b208759f-7e20-49a1-91a0-2cbad4117edf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\SceneObj">
+      <UniqueIdentifier>{4151f4af-5e03-4852-bdac-705808a90515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\List">
+      <UniqueIdentifier>{aa026cff-0556-4801-9c20-50a7c8cfe33e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\SceneDataset">
+      <UniqueIdentifier>{82483d5d-fe67-4876-acde-edbbf06e61ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\Updater">
+      <UniqueIdentifier>{96c1b92d-362a-4528-80d1-3db224c3a1da}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -71,7 +83,7 @@
       <Filter>Source Files\States\Base</Filter>
     </ClInclude>
     <ClInclude Include="SceneObj.h">
-      <Filter>Source Files\SceneObj</Filter>
+      <Filter>Source Files\Scene\SceneObj</Filter>
     </ClInclude>
     <ClInclude Include="StateData.h">
       <Filter>Source Files\States\Base</Filter>
@@ -80,10 +92,16 @@
       <Filter>Source Files\States\Player\Enum</Filter>
     </ClInclude>
     <ClInclude Include="VecData.h">
-      <Filter>Source Files\SceneObj</Filter>
+      <Filter>Source Files\Scene\SceneObj</Filter>
     </ClInclude>
     <ClInclude Include="SceneObjList.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Scene\List</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneDataset.h">
+      <Filter>Source Files\Scene\SceneDataset</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneUpdater.h">
+      <Filter>Source Files\Scene\Updater</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

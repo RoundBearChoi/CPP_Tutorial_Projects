@@ -5,6 +5,8 @@
 #include "PlayerController.h"
 
 #include "SceneObjList.h"
+#include "SceneDataset.h"
+#include "SceneUpdater.h"
 
 namespace RB
 {
@@ -18,6 +20,9 @@ namespace RB
 		Input input;
 
 		SceneObjList sceneObjList;
+		SceneDataset sceneDataset;
+
+		SceneUpdater sceneUpdater;
 
 	public:
 		void Init(olc::PixelGameEngine* olcEngine)
@@ -34,6 +39,9 @@ namespace RB
 			sceneObjList.GetObj(0)->SetController<PlayerController>();
 			sceneObjList.GetObj(0)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
 
+			sceneDataset.ptrObjList = &sceneObjList;
+			sceneDataset.ptrInput = &input;
+
 			//temp
 			player.SetPos(300.0f, 650.0f);
 			player.SetSpeed(200.0f, 0.0f);
@@ -41,14 +49,13 @@ namespace RB
 
 		void Update(float fElapsedTime)
 		{
-			InputData inputData = input.GetUserInput(engine);
+			sceneUpdater.Update(sceneDataset);
 
+			InputData inputData = input.GetUserInput(engine);
 			player.GetController()->Update(inputData);
 			player.GetController()->CheckNextTransition();
-
-			sceneObjList.UpdateAll();
-
-			player.UpdatePos(fElapsedTime, inputData.xAxis); //temp
+			//sceneObjList.UpdateAll();
+			player.UpdatePos(fElapsedTime, inputData.xAxis);
 			
 			background.Render(engine, decalLoader.background_decal, RenderOffsetType::NONE);
 			player.Render(engine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
