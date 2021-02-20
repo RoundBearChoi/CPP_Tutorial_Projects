@@ -1,25 +1,26 @@
 #pragma once
 #define OLC_PGE_APPLICATION 0
 #include "olcPixelGameEngine.h"
-#include "GameProcessor.h"
+#include "SceneController.h"
+#include "GameScene.h"
 
 namespace RB
 {
 	class Game : public olc::PixelGameEngine
 	{
 	private:
-		GameProcessor gameProcessor;
+		SceneController sceneController;
 
 	public:
 		bool OnUserCreate() override
 		{
-			gameProcessor.Init();
+			sceneController.CreateScene<GameScene>();
 			return true;
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			gameProcessor.Update(this, fElapsedTime);
+			sceneController.UpdateCurrentScene(this, fElapsedTime);
 			return true;
 		}
 

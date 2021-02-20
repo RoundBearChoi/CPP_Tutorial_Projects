@@ -33,11 +33,14 @@
     <Filter Include="Source Files\Scene\SceneObj">
       <UniqueIdentifier>{4151f4af-5e03-4852-bdac-705808a90515}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Scene\List">
-      <UniqueIdentifier>{aa026cff-0556-4801-9c20-50a7c8cfe33e}</UniqueIdentifier>
+    <Filter Include="Source Files\Scene\Base">
+      <UniqueIdentifier>{e589672a-55b3-40c7-8c83-9a972fd8a947}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Scene\Instance">
-      <UniqueIdentifier>{76432f32-9479-4a32-85bc-9cedd9874145}</UniqueIdentifier>
+    <Filter Include="Source Files\Scene\Concrete Scenes">
+      <UniqueIdentifier>{62aaa189-e859-4c05-879c-02f33a7a776f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scene\ObjList">
+      <UniqueIdentifier>{aa026cff-0556-4801-9c20-50a7c8cfe33e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -50,9 +53,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameProcessor.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="DecalLoader.h">
@@ -86,7 +86,7 @@
       <Filter>Source Files\States\Player\Enum</Filter>
     </ClInclude>
     <ClInclude Include="SceneObjList.h">
-      <Filter>Source Files\Scene\List</Filter>
+      <Filter>Source Files\Scene\ObjList</Filter>
     </ClInclude>
     <ClInclude Include="UpdateData.h">
       <Filter>Source Files\Scene\SceneObj</Filter>
@@ -97,8 +97,14 @@
     <ClInclude Include="PlayerMoveRight.h">
       <Filter>Source Files\States\Player\Concrete States</Filter>
     </ClInclude>
+    <ClInclude Include="SceneController.h">
+      <Filter>Source Files\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Source Files\Scene\Concrete Scenes</Filter>
+    </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>Source Files\Scene\Instance</Filter>
+      <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
