@@ -21,17 +21,23 @@
     <Filter Include="Source Files\GameObj">
       <UniqueIdentifier>{9780838e-ea8c-45ff-8f52-c71cada44b7d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Player">
+    <Filter Include="Source Files\ObjControllers">
       <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Player\Concrete States">
+    <Filter Include="Source Files\ObjControllers\Player">
+      <UniqueIdentifier>{6c045469-dcb4-45f2-968b-7ae4e922b955}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjControllers\Player\Concrete States">
       <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Player\Enum">
+    <Filter Include="Source Files\ObjControllers\Player\Enum">
       <UniqueIdentifier>{18b25780-249e-44e5-96b3-53b3ee3e8e5a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Player\Base">
+    <Filter Include="Source Files\ObjControllers\Player\PlayerControllerBase">
       <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjControllers\Base">
+      <UniqueIdentifier>{e267ff07-237a-4651-96b4-8a4f1d11ab29}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -53,19 +59,19 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerGameStart.h">
-      <Filter>Source Files\Player\Concrete States</Filter>
+      <Filter>Source Files\ObjControllers\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerIdle.h">
-      <Filter>Source Files\Player\Concrete States</Filter>
+      <Filter>Source Files\ObjControllers\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerStateType.h">
-      <Filter>Source Files\Player\Enum</Filter>
+      <Filter>Source Files\ObjControllers\Player\Enum</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveLeft.h">
-      <Filter>Source Files\Player\Concrete States</Filter>
+      <Filter>Source Files\ObjControllers\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveRight.h">
-      <Filter>Source Files\Player\Concrete States</Filter>
+      <Filter>Source Files\ObjControllers\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="SceneController.h">
       <Filter>Source Files\Scene\Base</Filter>
@@ -77,10 +83,10 @@
       <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
-      <Filter>Source Files\Player\Base</Filter>
+      <Filter>Source Files\ObjControllers\Player\PlayerControllerBase</Filter>
     </ClInclude>
     <ClInclude Include="PlayerState.h">
-      <Filter>Source Files\Player\Base</Filter>
+      <Filter>Source Files\ObjControllers\Player\PlayerControllerBase</Filter>
     </ClInclude>
     <ClInclude Include="GameObj.h">
       <Filter>Source Files\GameObj</Filter>
@@ -90,6 +96,9 @@
     </ClInclude>
     <ClInclude Include="GameObjList.h">
       <Filter>Source Files\GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjController.h">
+      <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

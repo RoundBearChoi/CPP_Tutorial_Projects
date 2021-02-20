@@ -30,13 +30,13 @@ namespace RB
 		{
 			for (int i = 0; i < vecObjPtr.size(); i++)
 			{
-				PlayerController* controller = vecObjPtr[i]->GetController();
+				ObjController* controller = vecObjPtr[i]->GetController();
 				vecObjPtr[i]->updateData.elapsedTime = deltaTime;
 				vecObjPtr[i]->updateData.inputXAxis = xAxis;
 
 				if (controller != nullptr)
 				{
-					controller->Update(vecObjPtr[i]->updateData);
+					controller->UpdateObj(vecObjPtr[i]->updateData);
 					controller->CheckNextTransition();
 				}
 			}

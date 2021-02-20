@@ -25,7 +25,7 @@ namespace RB
 	private:
 		int id = 0;
 		std::string name = "unassigned";
-		PlayerController* playerController = nullptr;
+		ObjController* ptrController = nullptr;
 
 	public:
 		UpdateData updateData;
@@ -39,24 +39,24 @@ namespace RB
 		~GameObj()
 		{
 			std::cout << "destructing GameObj: " << id << std::endl;
-			delete playerController;
+			delete ptrController;
 		}
 
 		template<class T>
 		void SetController()
 		{
-			if (playerController == nullptr)
+			if (ptrController == nullptr)
 			{
-				if (std::is_base_of<PlayerController, T>::value)
+				if (std::is_base_of<ObjController, T>::value)
 				{
-					playerController = new T();
+					ptrController = new T();
 				}
 			}
 		}
 
-		PlayerController* GetController()
+		ObjController* GetController()
 		{
-			return playerController;
+			return ptrController;
 		}
 
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)

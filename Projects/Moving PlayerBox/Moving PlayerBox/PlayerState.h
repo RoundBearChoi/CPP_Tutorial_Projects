@@ -15,12 +15,12 @@ namespace RB
 		PlayerState()
 		{
 			std::cout << std::endl;
-			std::cout << "constructing State" << std::endl;
+			std::cout << "constructing PlayerState" << std::endl;
 		}
 
 		virtual ~PlayerState()
 		{
-			std::cout << "destructing State" << std::endl;
+			std::cout << "destructing PlayerState" << std::endl;
 		}
 	};
 }

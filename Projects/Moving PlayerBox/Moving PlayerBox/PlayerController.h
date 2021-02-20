@@ -1,4 +1,5 @@
 #pragma once
+#include "ObjController.h"
 #include "PlayerState.h"
 #include "PlayerStateType.h"
 #include "PlayerGameStart.h"
@@ -8,34 +9,35 @@
 
 namespace RB
 {
-	class PlayerController
+	class PlayerController : public ObjController
 	{
 	public:
 		PlayerState* currentState = nullptr;
 		int nextState = 0;
 
-		~PlayerController()
+		~PlayerController() override
 		{
 			std::cout << "destructing PlayerController" << std::endl;
 			delete currentState;
 		}
 
-		template<class T>
-		bool CreateState()
+		void UpdateObj(UpdateData& updateData) override
 		{
-			delete currentState;
-
-			if (std::is_base_of<PlayerState, T>::value)
-			{
-				currentState = new T();
-				currentState->nextStatePtr = &nextState;
-				return true;
-			}
-
-			return false;
+			currentState->UpdateState(updateData);
 		}
 
-		bool MakeTransition(int index)
+		void CheckNextTransition() override
+		{
+			if (nextState != 0)
+			{
+				if (MakeTransition(nextState))
+				{
+					nextState = 0;
+				}
+			}
+		}
+
+		bool MakeTransition(int index) override
 		{
 			if (index == (int)PlayerStateType::GAME_START)
 			{
@@ -61,20 +63,19 @@ namespace RB
 			return false;
 		}
 
-		void Update(UpdateData& updateData)
+		template<class T>
+		bool CreateState()
 		{
-			currentState->UpdateState(updateData);
-		}
+			delete currentState;
 
-		void CheckNextTransition()
-		{
-			if (nextState != 0)
+			if (std::is_base_of<PlayerState, T>::value)
 			{
-				if (MakeTransition(nextState))
-				{
-					nextState = 0;
-				}
+				currentState = new T();
+				currentState->nextStatePtr = &nextState;
+				return true;
 			}
+
+			return false;
 		}
 	};
 }

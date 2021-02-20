@@ -25,6 +25,7 @@
     <ClInclude Include="DecalLoader.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="ObjController.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerMoveRight.h" />
