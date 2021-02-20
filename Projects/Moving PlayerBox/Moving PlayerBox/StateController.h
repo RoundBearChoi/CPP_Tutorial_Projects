@@ -1,27 +1,40 @@
 #pragma once
-#include "StateData.h"
 #include "UpdateData.h"
+#include "State.h"
 #include <iostream>
 
 namespace RB
 {
     class StateController
     {
-    protected:
-        StateData stateData;
-
     public:
+        State* currentState = nullptr;
+        int nextState = 0;
         virtual bool MakeTransition(int index) = 0;
         virtual void CheckNextTransition() = 0;
 
         virtual ~StateController()
         {
             std::cout << "destructing StateController (virtual)" << std::endl;
+            delete currentState;
+        }
+
+        template<class T>
+        bool CreateState()
+        {
+            delete currentState;
+
+            if (std::is_base_of<State, T>::value)
+            {
+                currentState = new T();
+                currentState->nextStatePtr = &nextState;
+                return true;
+            }
         }
 
         void Update(UpdateData &updateData)
         {
-            stateData.currentState->UpdateState(updateData);
+            currentState->UpdateState(updateData);
         }
     };
 }

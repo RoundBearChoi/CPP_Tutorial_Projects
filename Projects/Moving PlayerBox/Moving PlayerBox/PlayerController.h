@@ -20,22 +20,22 @@ namespace RB
 		{
 			if (index == (int)PlayerStateType::GAME_START)
 			{
-				stateData.CreateState<PlayerGameStart>();
+				CreateState<PlayerGameStart>();
 				return true;
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				stateData.CreateState<PlayerIdle>();
+				CreateState<PlayerIdle>();
 				return true;
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
-				stateData.CreateState<PlayerMoveLeft>();
+				CreateState<PlayerMoveLeft>();
 				return true;
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{
-				stateData.CreateState<PlayerMoveRight>();
+				CreateState<PlayerMoveRight>();
 				return true;
 			}
 			else if (index == (int)PlayerStateType::DEAD)
@@ -48,11 +48,11 @@ namespace RB
 
 		void CheckNextTransition() override
 		{
-			if (stateData.nextState != 0)
+			if (nextState != 0)
 			{
-				if (MakeTransition(stateData.nextState))
+				if (MakeTransition(nextState))
 				{
-					stateData.nextState = 0;
+					nextState = 0;
 				}
 			}
 		}

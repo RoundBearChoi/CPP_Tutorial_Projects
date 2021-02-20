@@ -79,9 +79,6 @@
     <ClInclude Include="SceneObj.h">
       <Filter>Source Files\Scene\SceneObj</Filter>
     </ClInclude>
-    <ClInclude Include="StateData.h">
-      <Filter>Source Files\States\Base</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerStateType.h">
       <Filter>Source Files\States\Player\Enum</Filter>
     </ClInclude>
