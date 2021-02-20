@@ -21,7 +21,10 @@ namespace RB
 
         void UU()
         {
-            stateData.currentState->UUState();
+            if (stateData.currentState != nullptr)
+            {
+                stateData.currentState->UUState();
+            }
         }
 
         void TargetVecData(VecData &vecData)

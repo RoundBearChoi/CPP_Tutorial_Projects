@@ -33,6 +33,9 @@ namespace RB
 			sceneObjList.CreateObj("player");
 			sceneObjList.CreateObj("background");
 
+			sceneObjList.GetObj(0)->SetController<PlayerController>();
+			sceneObjList.GetObj(0)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
+
 			sceneDataset.ptrObjList = &sceneObjList;
 			sceneDataset.ptrInput = &input;
 
@@ -48,7 +51,7 @@ namespace RB
 			player.GetController()->Update(inputData);
 			player.GetController()->CheckNextTransition();
 
-			player.GetController()->UU();
+			sceneObjList.UpdateAll();
 
 			player.UpdatePos(fElapsedTime, inputData.xAxis); //temp
 			
