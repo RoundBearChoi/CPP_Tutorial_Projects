@@ -1,24 +1,24 @@
 #pragma once
 #include <vector>
-#include "SceneObj.h"
+#include "GameObj.h"
 #include <iostream>
 
 namespace RB
 {
-	class SceneObjList
+	class GameObjList
 	{
 	private:
-		std::vector<SceneObj*> vecObjPtr;
+		std::vector<GameObj*> vecObjPtr;
 
 	public:
-		SceneObjList()
+		GameObjList()
 		{
-			std::cout << "constructing SceneObjList" << std::endl;
+			std::cout << "constructing GameObjList" << std::endl;
 		}
 
-		~SceneObjList()
+		~GameObjList()
 		{
-			std::cout << "destructing SceneObjList" << std::endl;
+			std::cout << "destructing GameObjList" << std::endl;
 
 			for (int i = 0; i < vecObjPtr.size(); i++)
 			{
@@ -44,12 +44,12 @@ namespace RB
 
 		void CreateObj(const std::string& _name)
 		{
-			SceneObj* obj = new SceneObj(vecObjPtr.size());
+			GameObj* obj = new GameObj(vecObjPtr.size());
 			obj->SetName(_name);
 			vecObjPtr.push_back(obj);
 		}
 
-		SceneObj* GetObj(int _id)
+		GameObj* GetObj(int _id)
 		{
 			return vecObjPtr[_id];
 		}

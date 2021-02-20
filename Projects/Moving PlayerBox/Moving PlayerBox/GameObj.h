@@ -20,7 +20,7 @@ namespace RB
 		BOTTOM_RIGHT,
 	};
 
-	class SceneObj
+	class GameObj
 	{
 	private:
 		int id = 0;
@@ -30,15 +30,15 @@ namespace RB
 	public:
 		UpdateData updateData;
 
-		SceneObj(int _id)
+		GameObj(int _id)
 		{
-			std::cout << "construcing SceneObj: " << _id << std::endl;
+			std::cout << "construcing GameObj: " << _id << std::endl;
 			id = _id;
 		}
 
-		~SceneObj()
+		~GameObj()
 		{
-			std::cout << "destructing SceneObj: " << id << std::endl;
+			std::cout << "destructing GameObj: " << id << std::endl;
 			delete playerController;
 		}
 

@@ -67,14 +67,8 @@
     <ClInclude Include="PlayerIdle.h">
       <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
     </ClInclude>
-    <ClInclude Include="SceneObj.h">
-      <Filter>Source Files\Scene\SceneObj</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerStateType.h">
       <Filter>Source Files\PlayerStates\Player\Enum</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneObjList.h">
-      <Filter>Source Files\Scene\ObjList</Filter>
     </ClInclude>
     <ClInclude Include="UpdateData.h">
       <Filter>Source Files\Scene\SceneObj</Filter>
@@ -99,6 +93,12 @@
     </ClInclude>
     <ClInclude Include="PlayerState.h">
       <Filter>Source Files\PlayerStates\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObj.h">
+      <Filter>Source Files\Scene\SceneObj</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjList.h">
+      <Filter>Source Files\Scene\ObjList</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

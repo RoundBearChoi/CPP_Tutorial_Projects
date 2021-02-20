@@ -2,7 +2,7 @@
 #include "Scene.h"
 #include "DecalLoader.h"
 #include "Input.h"
-#include "SceneObjList.h"
+#include "GameObjList.h"
 #include "PlayerController.h"
 
 namespace RB
@@ -12,7 +12,7 @@ namespace RB
 	private:
 		DecalLoader decalLoader;
 		Input input;
-		SceneObjList sceneObjList;
+		GameObjList gameObjList;
 
 	public:
 		GameScene()
@@ -29,20 +29,20 @@ namespace RB
 		{
 			decalLoader.LoadAll();
 
-			sceneObjList.CreateObj("player");
-			sceneObjList.CreateObj("background");
+			gameObjList.CreateObj("player");
+			gameObjList.CreateObj("background");
 
-			sceneObjList.GetObj(0)->SetController<PlayerController>();
-			sceneObjList.GetObj(0)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
+			gameObjList.GetObj(0)->SetController<PlayerController>();
+			gameObjList.GetObj(0)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, float deltaTime) override
 		{
-			sceneObjList.UpdateAll(deltaTime, input.GetHorizontalAxis(ptrEngine));
+			gameObjList.UpdateAll(deltaTime, input.GetHorizontalAxis(ptrEngine));
 
-			sceneObjList.GetObj(1)->Render(ptrEngine, decalLoader.background_decal, RenderOffsetType::NONE);
-			sceneObjList.GetObj(0)->Render(ptrEngine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
-			sceneObjList.GetObj(0)->Render(ptrEngine, decalLoader.diamond_red_decal, RenderOffsetType::CENTER_CENTER);
+			gameObjList.GetObj(1)->Render(ptrEngine, decalLoader.background_decal, RenderOffsetType::NONE);
+			gameObjList.GetObj(0)->Render(ptrEngine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
+			gameObjList.GetObj(0)->Render(ptrEngine, decalLoader.diamond_red_decal, RenderOffsetType::CENTER_CENTER);
 
 			if (input.QuitGame(ptrEngine))
 			{
