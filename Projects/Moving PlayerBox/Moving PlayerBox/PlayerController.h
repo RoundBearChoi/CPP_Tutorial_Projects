@@ -4,6 +4,7 @@
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
 #include "PlayerMoveLeft.h"
+#include "PlayerMoveRight.h"
 
 namespace RB
 {
@@ -29,7 +30,8 @@ namespace RB
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{
-
+				stateData.CreateState<PlayerMoveRight>();
+				return true;
 			}
 			else if (index == (int)PlayerStateType::DEAD)
 			{

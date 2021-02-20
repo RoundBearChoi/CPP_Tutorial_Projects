@@ -91,5 +91,8 @@
     <ClInclude Include="PlayerMoveLeft.h">
       <Filter>Source Files\States\Player\Concrete States</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerMoveRight.h">
+      <Filter>Source Files\States\Player\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

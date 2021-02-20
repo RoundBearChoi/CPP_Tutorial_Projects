@@ -14,6 +14,11 @@ namespace RB
 			{
 				*nextStatePtr = (int)PlayerStateType::MOVE_LEFT;
 			}
+
+			if (updateData.inputXAxis > 0.01f)
+			{
+				*nextStatePtr = (int)PlayerStateType::MOVE_RIGHT;
+			}
 		}
 	};
 }
