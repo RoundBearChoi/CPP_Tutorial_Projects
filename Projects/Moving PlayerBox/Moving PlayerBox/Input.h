@@ -49,5 +49,15 @@ namespace RB
 
 			return 0.0f;
 		}
+
+		bool QuitGame(olc::PixelGameEngine* engine)
+		{
+			if (engine->GetKey(olc::Key::ESCAPE).bHeld)
+			{
+				return true;
+			}
+
+			return false;
+		}
 	};
 }

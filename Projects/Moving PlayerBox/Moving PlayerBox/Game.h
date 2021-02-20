@@ -20,8 +20,15 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			sceneController.UpdateCurrentScene(this, fElapsedTime);
-			return true;
+			if (!sceneController.QuitGame())
+			{
+				sceneController.UpdateCurrentScene(this, fElapsedTime);
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		void Run()

@@ -8,6 +8,16 @@ namespace RB
 	class PlayerMoveLeft : public State
 	{
 	public:
+		PlayerMoveLeft()
+		{
+			std::cout << "constructing PlayerMoveLeft" << std::endl;
+		}
+
+		~PlayerMoveLeft()
+		{
+			std::cout << "destructing PlayerMoveLeft" << std::endl;
+		}
+
 		void UpdateState(UpdateData& updateData) override
 		{
 			updateData.pos.x -= updateData.elapsedTime * 200.0f;

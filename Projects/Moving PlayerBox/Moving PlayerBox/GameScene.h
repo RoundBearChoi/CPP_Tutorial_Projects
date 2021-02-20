@@ -15,6 +15,16 @@ namespace RB
 		SceneObjList sceneObjList;
 
 	public:
+		GameScene()
+		{
+			std::cout << "constructing GameScene" << std::endl;
+		}
+
+		~GameScene()
+		{
+			std::cout << "destructing GameScene" << std::endl;
+		}
+
 		void InitScene() override
 		{
 			decalLoader.LoadAll();
@@ -33,6 +43,12 @@ namespace RB
 			sceneObjList.GetObj(1)->Render(ptrEngine, decalLoader.background_decal, RenderOffsetType::NONE);
 			sceneObjList.GetObj(0)->Render(ptrEngine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
 			sceneObjList.GetObj(0)->Render(ptrEngine, decalLoader.diamond_red_decal, RenderOffsetType::CENTER_CENTER);
+
+			if (input.QuitGame(ptrEngine))
+			{
+				bQuit = true;
+				std::cout << "---quit triggered---" << std::endl;
+			}
 		}
 	};
 }

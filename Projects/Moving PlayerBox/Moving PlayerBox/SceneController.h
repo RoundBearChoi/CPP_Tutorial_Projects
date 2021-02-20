@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include <iostream>
 
 namespace RB
 {
@@ -9,8 +10,14 @@ namespace RB
 		Scene* currentScene = nullptr;
 
 	public:
+		SceneController()
+		{
+			std::cout << "constructing SceneController" << std::endl;
+		}
+
 		~SceneController()
 		{
+			std::cout << "destructing SceneController" << std::endl;
 			delete currentScene;
 		}
 
@@ -29,6 +36,11 @@ namespace RB
 		void UpdateCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
 		{
 			currentScene->UpdateScene(ptrEngine, deltaTime);
+		}
+
+		bool QuitGame()
+		{
+			return currentScene->QuitGame();
 		}
 	};
 }

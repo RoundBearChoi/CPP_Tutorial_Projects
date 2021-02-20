@@ -30,8 +30,15 @@ namespace RB
 	public:
 		UpdateData updateData;
 
+		SceneObj(int _id)
+		{
+			std::cout << "construcing SceneObj: " << _id << std::endl;
+			id = _id;
+		}
+
 		~SceneObj()
 		{
+			std::cout << "destructing SceneObj: " << id << std::endl;
 			delete stateController;
 		}
 
@@ -74,11 +81,6 @@ namespace RB
 			}
 
 			engine->DrawDecal(updateData.pos + offset, decal);
-		}
-
-		void SetID(int _id)
-		{
-			id = _id;
 		}
 
 		void SetName(const std::string& _name)

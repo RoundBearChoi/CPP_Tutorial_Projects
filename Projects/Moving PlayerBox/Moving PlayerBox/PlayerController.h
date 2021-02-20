@@ -11,6 +11,11 @@ namespace RB
 	class PlayerController : public StateController
 	{
 	public:
+		~PlayerController() override
+		{
+			std::cout << "destructing PlayerController" << std::endl;
+		}
+
 		bool MakeTransition(int index) override
 		{
 			if (index == (int)PlayerStateType::GAME_START)
