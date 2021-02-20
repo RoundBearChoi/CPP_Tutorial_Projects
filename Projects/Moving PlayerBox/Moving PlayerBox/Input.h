@@ -50,7 +50,7 @@ namespace RB
 			return 0.0f;
 		}
 
-		bool QuitGame(olc::PixelGameEngine* engine)
+		bool ESCPressed(olc::PixelGameEngine* engine)
 		{
 			if (engine->GetKey(olc::Key::ESCAPE).bHeld)
 			{

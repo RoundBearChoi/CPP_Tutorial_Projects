@@ -48,7 +48,7 @@ namespace RB
 			gameObjList.GetObj(0)->Render(ptrEngine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
 			gameObjList.GetObj(0)->Render(ptrEngine, decalLoader.diamond_red_decal, RenderOffsetType::CENTER_CENTER);
 
-			if (input.QuitGame(ptrEngine))
+			if (input.ESCPressed(ptrEngine))
 			{
 				bQuit = true;
 				std::cout << std::endl;
