@@ -36,6 +36,9 @@
     <Filter Include="Source Files\Scene\List">
       <UniqueIdentifier>{aa026cff-0556-4801-9c20-50a7c8cfe33e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Scene\Instance">
+      <UniqueIdentifier>{76432f32-9479-4a32-85bc-9cedd9874145}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -93,6 +96,9 @@
     </ClInclude>
     <ClInclude Include="PlayerMoveRight.h">
       <Filter>Source Files\States\Player\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Source Files\Scene\Instance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -30,6 +30,7 @@
     <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerMoveRight.h" />
     <ClInclude Include="PlayerStateType.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneObj.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="PlayerGameStart.h" />

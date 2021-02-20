@@ -13,13 +13,13 @@ namespace RB
 	public:
 		bool OnUserCreate() override
 		{
-			gameProcessor.Init(this);
+			gameProcessor.Init();
 			return true;
 		}
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			gameProcessor.Update(fElapsedTime);
+			gameProcessor.Update(this, fElapsedTime);
 			return true;
 		}
 
