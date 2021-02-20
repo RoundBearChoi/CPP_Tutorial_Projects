@@ -1,5 +1,6 @@
 #pragma once
 #include "StateData.h"
+#include "UpdateData.h"
 
 namespace RB
 {
@@ -9,14 +10,12 @@ namespace RB
         StateData stateData;
 
     public:
-        UpdateData* ptrUpdateData = nullptr;
         virtual bool MakeTransition(int index) = 0;
         virtual void CheckNextTransition() = 0;
 
-        void Update(float deltaTime, float inputXAxis)
+        void Update(UpdateData &updateData)
         {
-            ptrUpdateData->elapsedTime = deltaTime;
-            stateData.currentState->UpdateState(*ptrUpdateData);
+            stateData.currentState->UpdateState(updateData);
         }
     };
 }

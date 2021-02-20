@@ -26,10 +26,11 @@ namespace RB
 	private:
 		int id = 0;
 		std::string name = "unassigned";
-		UpdateData updateData;
 		StateController* stateController = nullptr;
 
 	public:
+		UpdateData updateData;
+
 		~SceneObj()
 		{
 			delete stateController;
@@ -43,20 +44,8 @@ namespace RB
 				if (std::is_base_of<StateController, T>::value)
 				{
 					stateController = new T();
-					stateController->ptrUpdateData = &updateData;
 				}
 			}
-		}
-
-		bool SetUpdateData()
-		{
-			if (stateController != nullptr)
-			{
-				stateController->ptrUpdateData = &updateData;
-				return true;
-			}
-
-			return false;
 		}
 
 		StateController* GetController()

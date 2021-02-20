@@ -12,14 +12,15 @@ namespace RB
 	public:
 		void UpdateAll(float deltaTime, float xAxis)
 		{
-			
 			for (int i = 0; i < vecObjects.size(); i++)
 			{
 				StateController* controller = vecObjects[i].GetController();
-		
+				vecObjects[i].updateData.elapsedTime = deltaTime;
+				vecObjects[i].updateData.inputXAxis = xAxis;
+
 				if (controller != nullptr)
 				{
-					controller->Update(deltaTime, xAxis);
+					controller->Update(vecObjects[i].updateData);
 					controller->CheckNextTransition();
 				}
 			}

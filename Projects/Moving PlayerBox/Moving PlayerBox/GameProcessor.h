@@ -26,7 +26,6 @@ namespace RB
 			decalLoader.LoadAll();
 
 			player.SetController<PlayerController>();
-			player.SetUpdateData();
 			player.GetController()->MakeTransition((int)PlayerStateType::GAME_START);
 			
 			sceneObjList.CreateObj("player");
