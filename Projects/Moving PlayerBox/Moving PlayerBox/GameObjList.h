@@ -26,17 +26,15 @@ namespace RB
 			}
 		}
 
-		void UpdateAll(float deltaTime, float xAxis)
+		void UpdateAll(const GameData& gameData)
 		{
 			for (int i = 0; i < vecObjPtr.size(); i++)
 			{
 				ObjController* controller = vecObjPtr[i]->GetController();
-				vecObjPtr[i]->updateData.elapsedTime = deltaTime;
-				vecObjPtr[i]->updateData.inputXAxis = xAxis;
 
 				if (controller != nullptr)
 				{
-					controller->UpdateObj(vecObjPtr[i]->updateData);
+					controller->UpdateObj(vecObjPtr[i]->position, gameData);
 					controller->CheckNextTransition();
 				}
 			}

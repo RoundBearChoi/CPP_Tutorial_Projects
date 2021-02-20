@@ -4,6 +4,7 @@
 #include "Input.h"
 #include "GameObjList.h"
 #include "PlayerController.h"
+#include "GameData.h"
 
 namespace RB
 {
@@ -36,9 +37,12 @@ namespace RB
 			gameObjList.GetObj(0)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
 		}
 
-		void UpdateScene(olc::PixelGameEngine* ptrEngine, float deltaTime) override
+		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
 		{
-			gameObjList.UpdateAll(deltaTime, input.GetHorizontalAxis(ptrEngine));
+			GameData gameData;
+			gameData.deltaTime = _deltaTime;
+			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
+			gameObjList.UpdateAll(gameData);
 
 			gameObjList.GetObj(1)->Render(ptrEngine, decalLoader.background_decal, RenderOffsetType::NONE);
 			gameObjList.GetObj(0)->Render(ptrEngine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);

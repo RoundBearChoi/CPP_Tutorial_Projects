@@ -21,9 +21,9 @@ namespace RB
 			delete currentState;
 		}
 
-		void UpdateObj(UpdateData& updateData) override
+		void UpdateObj(olc::vf2d& position, const GameData& gameData) override
 		{
-			currentState->UpdateState(updateData);
+			currentState->UpdateState(position, gameData);
 		}
 
 		void CheckNextTransition() override

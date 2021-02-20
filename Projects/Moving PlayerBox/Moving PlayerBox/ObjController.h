@@ -1,13 +1,13 @@
 #pragma once
 #include <iostream>
-#include "UpdateData.h"
+#include "GameData.h"
 
 namespace RB
 {
 	class ObjController
 	{
 	public:
-		virtual void UpdateObj(UpdateData& updateData) = 0;
+		virtual void UpdateObj(olc::vf2d& position, const GameData& updateData) = 0;
 		virtual void CheckNextTransition() = 0;
 		virtual bool MakeTransition(int index) = 0;
 

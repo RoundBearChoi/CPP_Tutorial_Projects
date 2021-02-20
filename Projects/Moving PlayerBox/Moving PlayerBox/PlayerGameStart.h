@@ -1,6 +1,6 @@
 #pragma once
 #include "PlayerState.h"
-#include "UpdateData.h"
+#include "GameData.h"
 #include "PlayerStateType.h"
 
 namespace RB
@@ -13,9 +13,9 @@ namespace RB
 			std::cout << "player state: GameStart" << std::endl;
 		}
 
-		void UpdateState(UpdateData &updateData) override
+		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
 		{
-			updateData.pos = { 300.0f, 650.0f };
+			pos = { 300.0f, 650.0f };
 			*nextStatePtr = (int)PlayerStateType::IDLE;
 		}
 	};

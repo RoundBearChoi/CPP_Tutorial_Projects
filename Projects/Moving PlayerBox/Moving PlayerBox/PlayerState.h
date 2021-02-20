@@ -1,5 +1,5 @@
 #pragma once
-#include "UpdateData.h"
+#include "GameData.h"
 
 namespace RB
 {
@@ -9,7 +9,7 @@ namespace RB
 		std::string name = "unassigned";
 
 	public:
-		virtual void UpdateState(UpdateData &updateData) = 0;
+		virtual void UpdateState(olc::vf2d& pos, const GameData& gameData) = 0;
 		int* nextStatePtr = nullptr;
 
 		PlayerState()

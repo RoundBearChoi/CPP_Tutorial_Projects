@@ -91,14 +91,14 @@
     <ClInclude Include="GameObj.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
-    <ClInclude Include="UpdateData.h">
-      <Filter>Source Files\GameObj</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjList.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
     <ClInclude Include="ObjController.h">
       <Filter>Source Files\ObjControllers\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

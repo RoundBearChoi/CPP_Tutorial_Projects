@@ -28,7 +28,7 @@ namespace RB
 		ObjController* ptrController = nullptr;
 
 	public:
-		UpdateData updateData;
+		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
 
 		GameObj(int _id)
 		{
@@ -80,7 +80,7 @@ namespace RB
 				offset.y = -(decalHeight);
 			}
 
-			engine->DrawDecal(updateData.pos + offset, decal);
+			engine->DrawDecal(position + offset, decal);
 		}
 
 		void SetName(const std::string& _name)
