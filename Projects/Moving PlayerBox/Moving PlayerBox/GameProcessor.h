@@ -12,7 +12,6 @@ namespace RB
 		olc::PixelGameEngine* engine = nullptr;
 		DecalLoader decalLoader;
 		Input input;
-
 		SceneObjList sceneObjList;
 
 	public:
