@@ -1,7 +1,6 @@
 #pragma once
 #include "StateController.h"
-#include "VecData.h"
-#include "InputData.h"
+#include "UpdateData.h"
 
 namespace RB
 {
@@ -27,7 +26,7 @@ namespace RB
 	private:
 		int id = 0;
 		std::string name = "unassigned";
-		VecData vecData;
+		UpdateData updateData;
 		StateController* stateController = nullptr;
 
 	public:
@@ -44,9 +43,20 @@ namespace RB
 				if (std::is_base_of<StateController, T>::value)
 				{
 					stateController = new T();
-					stateController->ptrVecData = &vecData;
+					stateController->ptrUpdateData = &updateData;
 				}
 			}
+		}
+
+		bool SetUpdateData()
+		{
+			if (stateController != nullptr)
+			{
+				stateController->ptrUpdateData = &updateData;
+				return true;
+			}
+
+			return false;
 		}
 
 		StateController* GetController()
@@ -75,7 +85,7 @@ namespace RB
 				offset.y = -(decalHeight);
 			}
 
-			engine->DrawDecal(vecData.pos + offset, decal);
+			engine->DrawDecal(updateData.pos + offset, decal);
 		}
 
 		void SetID(int _id)
@@ -92,35 +102,35 @@ namespace RB
 
 		void SetPos(float x, float y)
 		{
-			vecData.pos.x = x;
-			vecData.pos.y = y;
+			updateData.pos.x = x;
+			updateData.pos.y = y;
 		}
 		
 		void SetSpeed(float x, float y)
 		{
-			vecData.speed.x = x;
-			vecData.speed.y = y;
+			updateData.speed.x = x;
+			updateData.speed.y = y;
 		}
 		
 		olc::vf2d GetPos()
 		{
-			return vecData.pos;
+			return updateData.pos;
 		}
 		
 		olc::vf2d GetSpeed()
 		{
-			return vecData.speed;
+			return updateData.speed;
 		}
 
 		void UpdatePos(float fElapsedTime, float xAxis)
 		{
 			if (xAxis > 0.0f)
 			{
-				vecData.pos += vecData.speed * fElapsedTime;
+				updateData.pos += updateData.speed * fElapsedTime;
 			}
 			else if (xAxis < 0.0f)
 			{
-				vecData.pos -= vecData.speed * fElapsedTime;
+				updateData.pos -= updateData.speed * fElapsedTime;
 			}
 		}
 	};

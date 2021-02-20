@@ -1,20 +1,15 @@
 #pragma once
 #include "State.h"
-#include "InputData.h"
 #include "PlayerStateType.h"
+#include "UpdateData.h"
 
 namespace RB
 {
 	class PlayerGameStart : public State
 	{
-		void UpdateState(InputData &_inputData, VecData &vecData) override
+		void UpdateState(UpdateData &updateData) override
 		{
 			*nextStatePtr = (int)PlayerStateType::IDLE;
-		}
-
-		void UUState() override
-		{
-
 		}
 	};
 }

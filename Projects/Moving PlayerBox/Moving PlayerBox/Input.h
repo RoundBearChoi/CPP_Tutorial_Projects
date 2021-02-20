@@ -1,6 +1,5 @@
 #pragma once
 #include "olcPixelGameEngine.h"
-#include "InputData.h"
 
 namespace RB
 {
@@ -11,7 +10,7 @@ namespace RB
 		bool bHeldRight = false;
 
 	public:
-		InputData GetUserInput(olc::PixelGameEngine* engine)
+		float GetHorizontalAxis(olc::PixelGameEngine* engine)
 		{
 			if (engine->GetKey(olc::Key::A).bHeld)
 			{
@@ -31,26 +30,24 @@ namespace RB
 				bHeldRight = false;
 			}
 
-			InputData data;
-
 			// both pressed OR nothing pressed
 			if (bHeldLeft && bHeldRight || !bHeldLeft && !bHeldRight)
 			{
-				data.xAxis = 0.0f;
+				return 0.0f;
 			}
 			else
 			{
 				if (bHeldLeft)
 				{
-					data.xAxis = -0.1f;
+					return -0.1f;
 				}
 				else if (bHeldRight)
 				{
-					data.xAxis = 0.1f;
+					return 0.1f;
 				}
 			}
 
-			return data;
+			return 0.0f;
 		}
 	};
 }

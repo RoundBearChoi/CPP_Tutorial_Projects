@@ -26,8 +26,9 @@ namespace RB
 			decalLoader.LoadAll();
 
 			player.SetController<PlayerController>();
+			player.SetUpdateData();
 			player.GetController()->MakeTransition((int)PlayerStateType::GAME_START);
-
+			
 			sceneObjList.CreateObj("player");
 			sceneObjList.CreateObj("background");
 
@@ -41,11 +42,9 @@ namespace RB
 
 		void Update(float fElapsedTime)
 		{
-			InputData inputData = input.GetUserInput(engine);
-			player.GetController()->Update(inputData);
-			player.GetController()->CheckNextTransition();
-			//sceneObjList.UpdateAll();
-			player.UpdatePos(fElapsedTime, inputData.xAxis);
+			sceneObjList.UpdateAll(fElapsedTime, input.GetHorizontalAxis(engine));
+
+			player.UpdatePos(fElapsedTime, input.GetHorizontalAxis(engine)); //temp
 			
 			background.Render(engine, decalLoader.background_decal, RenderOffsetType::NONE);
 			player.Render(engine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);

@@ -1,17 +1,13 @@
 #pragma once
 #include "State.h"
+#include "UpdateData.h"
 
 namespace RB
 {
 	class PlayerIdle : public State
 	{
 	public:
-		void UpdateState(InputData &_inputData, VecData &vecData) override
-		{
-
-		}
-
-		void UUState() override
+		void UpdateState(UpdateData &updateData) override
 		{
 
 		}

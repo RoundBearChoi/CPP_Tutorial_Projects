@@ -10,18 +10,20 @@ namespace RB
 		std::vector<SceneObj> vecObjects;
 
 	public:
-		//void UpdateAll()
-		//{
-		//	for (int i = 0; i < vecObjects.size(); i++)
-		//	{
-		//		StateController* controller = vecObjects[i].GetController();
-		//
-		//		if (controller != nullptr)
-		//		{
-		//			controller->UU();
-		//		}
-		//	}
-		//}
+		void UpdateAll(float deltaTime, float xAxis)
+		{
+			
+			for (int i = 0; i < vecObjects.size(); i++)
+			{
+				StateController* controller = vecObjects[i].GetController();
+		
+				if (controller != nullptr)
+				{
+					controller->Update(deltaTime, xAxis);
+					controller->CheckNextTransition();
+				}
+			}
+		}
 
 		void CreateObj(const std::string& _name)
 		{

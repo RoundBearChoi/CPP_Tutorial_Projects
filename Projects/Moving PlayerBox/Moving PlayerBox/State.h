@@ -1,14 +1,12 @@
 #pragma once
-#include "VecData.h"
-#include "InputData.h"
+#include "UpdateData.h"
 
 namespace RB
 {
 	class State
 	{
 	public:
-		virtual void UpdateState(InputData &_inputData, VecData &vecData) = 0;
-		virtual void UUState() = 0;
+		virtual void UpdateState(UpdateData &updateData) = 0;
 		int* nextStatePtr = nullptr;
 
 		//unused for now

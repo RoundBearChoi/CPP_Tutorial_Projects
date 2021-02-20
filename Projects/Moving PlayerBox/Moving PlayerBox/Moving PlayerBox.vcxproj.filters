@@ -58,9 +58,6 @@
     <ClInclude Include="Input.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputData.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerController.h">
       <Filter>Source Files\States\Player\Controller</Filter>
     </ClInclude>
@@ -85,11 +82,11 @@
     <ClInclude Include="PlayerStateType.h">
       <Filter>Source Files\States\Player\Enum</Filter>
     </ClInclude>
-    <ClInclude Include="VecData.h">
-      <Filter>Source Files\Scene\SceneObj</Filter>
-    </ClInclude>
     <ClInclude Include="SceneObjList.h">
       <Filter>Source Files\Scene\List</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateData.h">
+      <Filter>Source Files\Scene\SceneObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
