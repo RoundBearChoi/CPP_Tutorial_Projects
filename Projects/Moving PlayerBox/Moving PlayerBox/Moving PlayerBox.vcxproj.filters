@@ -36,12 +36,6 @@
     <Filter Include="Source Files\Scene\List">
       <UniqueIdentifier>{aa026cff-0556-4801-9c20-50a7c8cfe33e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Scene\SceneDataset">
-      <UniqueIdentifier>{82483d5d-fe67-4876-acde-edbbf06e61ea}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Scene\Updater">
-      <UniqueIdentifier>{96c1b92d-362a-4528-80d1-3db224c3a1da}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -96,12 +90,6 @@
     </ClInclude>
     <ClInclude Include="SceneObjList.h">
       <Filter>Source Files\Scene\List</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneDataset.h">
-      <Filter>Source Files\Scene\SceneDataset</Filter>
-    </ClInclude>
-    <ClInclude Include="SceneUpdater.h">
-      <Filter>Source Files\Scene\Updater</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

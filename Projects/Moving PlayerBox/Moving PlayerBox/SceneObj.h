@@ -44,7 +44,7 @@ namespace RB
 				if (std::is_base_of<StateController, T>::value)
 				{
 					stateController = new T();
-					stateController->TargetVecData(vecData);
+					stateController->ptrVecData = &vecData;
 				}
 			}
 		}

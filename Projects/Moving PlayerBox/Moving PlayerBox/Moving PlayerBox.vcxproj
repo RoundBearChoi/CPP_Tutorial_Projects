@@ -29,13 +29,11 @@
     <ClInclude Include="InputData.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="PlayerStateType.h" />
-    <ClInclude Include="SceneDataset.h" />
     <ClInclude Include="SceneObj.h" />
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="PlayerGameStart.h" />
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="SceneObjList.h" />
-    <ClInclude Include="SceneUpdater.h" />
     <ClInclude Include="VecData.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateController.h" />

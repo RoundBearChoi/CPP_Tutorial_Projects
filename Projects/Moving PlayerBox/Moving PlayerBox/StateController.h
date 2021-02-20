@@ -8,15 +8,15 @@ namespace RB
     {
     protected:
         StateData stateData;
-        VecData* vecDataHandle = nullptr;
 
     public:
+        VecData* ptrVecData = nullptr;
         virtual bool MakeTransition(int index) = 0;
         virtual void CheckNextTransition() = 0;
 
         void Update(InputData &_inputData)
         {
-            stateData.currentState->UpdateState(_inputData, *vecDataHandle);
+            stateData.currentState->UpdateState(_inputData, *ptrVecData);
         }
 
         void UU()
@@ -25,11 +25,6 @@ namespace RB
             {
                 stateData.currentState->UUState();
             }
-        }
-
-        void TargetVecData(VecData &vecData)
-        {
-            vecDataHandle = &vecData;
         }
     };
 }
