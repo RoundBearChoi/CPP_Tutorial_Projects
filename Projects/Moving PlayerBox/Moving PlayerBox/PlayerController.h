@@ -20,23 +20,19 @@ namespace RB
 		{
 			if (index == (int)PlayerStateType::GAME_START)
 			{
-				CreateState<PlayerGameStart>();
-				return true;
+				return CreateState<PlayerGameStart>();
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				CreateState<PlayerIdle>();
-				return true;
+				return CreateState<PlayerIdle>();
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
-				CreateState<PlayerMoveLeft>();
-				return true;
+				return CreateState<PlayerMoveLeft>();
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{
-				CreateState<PlayerMoveRight>();
-				return true;
+				return CreateState<PlayerMoveRight>();
 			}
 			else if (index == (int)PlayerStateType::DEAD)
 			{

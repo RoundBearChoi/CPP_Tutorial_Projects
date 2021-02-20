@@ -30,6 +30,8 @@ namespace RB
                 currentState->nextStatePtr = &nextState;
                 return true;
             }
+
+            return false;
         }
 
         void Update(UpdateData &updateData)
