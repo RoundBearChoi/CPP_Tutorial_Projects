@@ -12,34 +12,25 @@
     <Filter Include="Source Files\Scene">
       <UniqueIdentifier>{b208759f-7e20-49a1-91a0-2cbad4117edf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Scene\SceneObj">
-      <UniqueIdentifier>{4151f4af-5e03-4852-bdac-705808a90515}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Scene\Base">
       <UniqueIdentifier>{e589672a-55b3-40c7-8c83-9a972fd8a947}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Scene\Concrete Scenes">
       <UniqueIdentifier>{62aaa189-e859-4c05-879c-02f33a7a776f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Scene\ObjList">
-      <UniqueIdentifier>{aa026cff-0556-4801-9c20-50a7c8cfe33e}</UniqueIdentifier>
+    <Filter Include="Source Files\GameObj">
+      <UniqueIdentifier>{9780838e-ea8c-45ff-8f52-c71cada44b7d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PlayerStates">
-      <UniqueIdentifier>{bbedee71-7695-4c0a-be5c-7c0a935716d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\PlayerStates\Player">
+    <Filter Include="Source Files\Player">
       <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PlayerStates\Player\Controller">
-      <UniqueIdentifier>{f1b41ccf-5356-4d16-bb1c-c9f0bce9de58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\PlayerStates\Player\Concrete States">
+    <Filter Include="Source Files\Player\Concrete States">
       <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PlayerStates\Player\Enum">
+    <Filter Include="Source Files\Player\Enum">
       <UniqueIdentifier>{18b25780-249e-44e5-96b3-53b3ee3e8e5a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\PlayerStates\Base">
+    <Filter Include="Source Files\Player\Base">
       <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -62,22 +53,19 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerGameStart.h">
-      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
+      <Filter>Source Files\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerIdle.h">
-      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
+      <Filter>Source Files\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerStateType.h">
-      <Filter>Source Files\PlayerStates\Player\Enum</Filter>
-    </ClInclude>
-    <ClInclude Include="UpdateData.h">
-      <Filter>Source Files\Scene\SceneObj</Filter>
+      <Filter>Source Files\Player\Enum</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveLeft.h">
-      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
+      <Filter>Source Files\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveRight.h">
-      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
+      <Filter>Source Files\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="SceneController.h">
       <Filter>Source Files\Scene\Base</Filter>
@@ -89,16 +77,19 @@
       <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
-      <Filter>Source Files\PlayerStates\Base</Filter>
+      <Filter>Source Files\Player\Base</Filter>
     </ClInclude>
     <ClInclude Include="PlayerState.h">
-      <Filter>Source Files\PlayerStates\Base</Filter>
+      <Filter>Source Files\Player\Base</Filter>
     </ClInclude>
     <ClInclude Include="GameObj.h">
-      <Filter>Source Files\Scene\SceneObj</Filter>
+      <Filter>Source Files\GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="UpdateData.h">
+      <Filter>Source Files\GameObj</Filter>
     </ClInclude>
     <ClInclude Include="GameObjList.h">
-      <Filter>Source Files\Scene\ObjList</Filter>
+      <Filter>Source Files\GameObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
