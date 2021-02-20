@@ -8,6 +8,7 @@ namespace RB
 	{
 	public:
 		virtual void UpdateState(InputData &_inputData, VecData &vecData) = 0;
+		virtual void UUState() = 0;
 		int* nextStatePtr = nullptr;
 
 		//unused for now

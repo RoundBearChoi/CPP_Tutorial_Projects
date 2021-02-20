@@ -48,6 +48,8 @@ namespace RB
 			player.GetController()->Update(inputData);
 			player.GetController()->CheckNextTransition();
 
+			player.GetController()->UU();
+
 			player.UpdatePos(fElapsedTime, inputData.xAxis); //temp
 			
 			background.Render(engine, decalLoader.background_decal, RenderOffsetType::NONE);

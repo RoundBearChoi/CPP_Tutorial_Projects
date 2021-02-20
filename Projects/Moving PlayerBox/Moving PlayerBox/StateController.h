@@ -19,6 +19,11 @@ namespace RB
             stateData.currentState->UpdateState(_inputData, *vecDataHandle);
         }
 
+        void UU()
+        {
+            stateData.currentState->UUState();
+        }
+
         void TargetVecData(VecData &vecData)
         {
             vecDataHandle = &vecData;

@@ -11,5 +11,10 @@ namespace RB
 		{
 			*nextStatePtr = (int)PlayerStateType::IDLE;
 		}
+
+		void UUState() override
+		{
+
+		}
 	};
 }
