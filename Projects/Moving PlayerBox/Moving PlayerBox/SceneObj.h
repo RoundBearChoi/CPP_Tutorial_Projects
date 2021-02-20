@@ -1,5 +1,5 @@
 #pragma once
-#include "StateController.h"
+#include "PlayerController.h"
 
 namespace RB
 {
@@ -25,7 +25,7 @@ namespace RB
 	private:
 		int id = 0;
 		std::string name = "unassigned";
-		StateController* stateController = nullptr;
+		PlayerController* playerController = nullptr;
 
 	public:
 		UpdateData updateData;
@@ -39,24 +39,24 @@ namespace RB
 		~SceneObj()
 		{
 			std::cout << "destructing SceneObj: " << id << std::endl;
-			delete stateController;
+			delete playerController;
 		}
 
 		template<class T>
 		void SetController()
 		{
-			if (stateController == nullptr)
+			if (playerController == nullptr)
 			{
-				if (std::is_base_of<StateController, T>::value)
+				if (std::is_base_of<PlayerController, T>::value)
 				{
-					stateController = new T();
+					playerController = new T();
 				}
 			}
 		}
 
-		StateController* GetController()
+		PlayerController* GetController()
 		{
-			return stateController;
+			return playerController;
 		}
 
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)

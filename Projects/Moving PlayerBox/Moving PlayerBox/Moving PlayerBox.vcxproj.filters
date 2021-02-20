@@ -9,24 +9,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\States">
-      <UniqueIdentifier>{bbedee71-7695-4c0a-be5c-7c0a935716d1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Player">
-      <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Player\Controller">
-      <UniqueIdentifier>{f1b41ccf-5356-4d16-bb1c-c9f0bce9de58}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Player\Concrete States">
-      <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Base">
-      <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Player\Enum">
-      <UniqueIdentifier>{18b25780-249e-44e5-96b3-53b3ee3e8e5a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Scene">
       <UniqueIdentifier>{b208759f-7e20-49a1-91a0-2cbad4117edf}</UniqueIdentifier>
     </Filter>
@@ -41,6 +23,24 @@
     </Filter>
     <Filter Include="Source Files\Scene\ObjList">
       <UniqueIdentifier>{aa026cff-0556-4801-9c20-50a7c8cfe33e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerStates">
+      <UniqueIdentifier>{bbedee71-7695-4c0a-be5c-7c0a935716d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerStates\Player">
+      <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerStates\Player\Controller">
+      <UniqueIdentifier>{f1b41ccf-5356-4d16-bb1c-c9f0bce9de58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerStates\Player\Concrete States">
+      <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerStates\Player\Enum">
+      <UniqueIdentifier>{18b25780-249e-44e5-96b3-53b3ee3e8e5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlayerStates\Base">
+      <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -61,26 +61,17 @@
     <ClInclude Include="Input.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerController.h">
-      <Filter>Source Files\States\Player\Controller</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerGameStart.h">
-      <Filter>Source Files\States\Player\Concrete States</Filter>
+      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerIdle.h">
-      <Filter>Source Files\States\Player\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>Source Files\States\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="StateController.h">
-      <Filter>Source Files\States\Base</Filter>
+      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="SceneObj.h">
       <Filter>Source Files\Scene\SceneObj</Filter>
     </ClInclude>
     <ClInclude Include="PlayerStateType.h">
-      <Filter>Source Files\States\Player\Enum</Filter>
+      <Filter>Source Files\PlayerStates\Player\Enum</Filter>
     </ClInclude>
     <ClInclude Include="SceneObjList.h">
       <Filter>Source Files\Scene\ObjList</Filter>
@@ -89,10 +80,10 @@
       <Filter>Source Files\Scene\SceneObj</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveLeft.h">
-      <Filter>Source Files\States\Player\Concrete States</Filter>
+      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveRight.h">
-      <Filter>Source Files\States\Player\Concrete States</Filter>
+      <Filter>Source Files\PlayerStates\Player\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="SceneController.h">
       <Filter>Source Files\Scene\Base</Filter>
@@ -102,6 +93,12 @@
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Source Files\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerController.h">
+      <Filter>Source Files\PlayerStates\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
+      <Filter>Source Files\PlayerStates\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

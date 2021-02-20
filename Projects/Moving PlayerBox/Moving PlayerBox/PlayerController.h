@@ -1,5 +1,5 @@
 #pragma once
-#include "StateController.h"
+#include "PlayerState.h"
 #include "PlayerStateType.h"
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
@@ -8,15 +8,34 @@
 
 namespace RB
 {
-	class PlayerController : public StateController
+	class PlayerController
 	{
 	public:
-		~PlayerController() override
+		PlayerState* currentState = nullptr;
+		int nextState = 0;
+
+		~PlayerController()
 		{
 			std::cout << "destructing PlayerController" << std::endl;
+			delete currentState;
 		}
 
-		bool MakeTransition(int index) override
+		template<class T>
+		bool CreateState()
+		{
+			delete currentState;
+
+			if (std::is_base_of<PlayerState, T>::value)
+			{
+				currentState = new T();
+				currentState->nextStatePtr = &nextState;
+				return true;
+			}
+
+			return false;
+		}
+
+		bool MakeTransition(int index)
 		{
 			if (index == (int)PlayerStateType::GAME_START)
 			{
@@ -42,7 +61,12 @@ namespace RB
 			return false;
 		}
 
-		void CheckNextTransition() override
+		void Update(UpdateData& updateData)
+		{
+			currentState->UpdateState(updateData);
+		}
+
+		void CheckNextTransition()
 		{
 			if (nextState != 0)
 			{

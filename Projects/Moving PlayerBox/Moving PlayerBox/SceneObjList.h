@@ -30,7 +30,7 @@ namespace RB
 		{
 			for (int i = 0; i < vecObjPtr.size(); i++)
 			{
-				StateController* controller = vecObjPtr[i]->GetController();
+				PlayerController* controller = vecObjPtr[i]->GetController();
 				vecObjPtr[i]->updateData.elapsedTime = deltaTime;
 				vecObjPtr[i]->updateData.inputXAxis = xAxis;
 

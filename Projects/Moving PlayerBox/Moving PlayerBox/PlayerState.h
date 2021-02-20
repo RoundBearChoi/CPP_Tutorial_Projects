@@ -3,7 +3,7 @@
 
 namespace RB
 {
-	class State
+	class PlayerState
 	{
 	protected:
 		std::string name = "unassigned";
@@ -12,13 +12,13 @@ namespace RB
 		virtual void UpdateState(UpdateData &updateData) = 0;
 		int* nextStatePtr = nullptr;
 
-		State()
+		PlayerState()
 		{
 			std::cout << std::endl;
 			std::cout << "constructing State" << std::endl;
 		}
 
-		virtual ~State()
+		virtual ~PlayerState()
 		{
 			std::cout << "destructing State" << std::endl;
 		}

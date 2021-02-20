@@ -1,11 +1,11 @@
 #pragma once
-#include "State.h"
+#include "PlayerState.h"
 #include "UpdateData.h"
 #include "PlayerStateType.h"
 
 namespace RB
 {
-	class PlayerGameStart : public State
+	class PlayerGameStart : public PlayerState
 	{
 	public:
 		PlayerGameStart()
