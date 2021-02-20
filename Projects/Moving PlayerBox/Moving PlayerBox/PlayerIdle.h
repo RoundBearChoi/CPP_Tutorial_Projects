@@ -10,12 +10,7 @@ namespace RB
 	public:
 		PlayerIdle()
 		{
-			std::cout << "constructing PlayerIdle" << std::endl;
-		}
-
-		~PlayerIdle()
-		{
-			std::cout << "destructing PlayerIdle" << std::endl;
+			std::cout << "player state: PlayerIdle" << std::endl;
 		}
 
 		void UpdateState(UpdateData &updateData) override

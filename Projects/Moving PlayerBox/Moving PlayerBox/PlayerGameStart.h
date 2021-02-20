@@ -10,12 +10,7 @@ namespace RB
 	public:
 		PlayerGameStart()
 		{
-			std::cout << "---constructing PlayerGameStart---" << std::endl;
-		}
-
-		~PlayerGameStart()
-		{
-			std::cout << "destructing PlayerGameStart" << std::endl;
+			std::cout << "player state: GameStart" << std::endl;
 		}
 
 		void UpdateState(UpdateData &updateData) override

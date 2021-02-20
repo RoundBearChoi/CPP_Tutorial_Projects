@@ -47,6 +47,7 @@ namespace RB
 			if (input.QuitGame(ptrEngine))
 			{
 				bQuit = true;
+				std::cout << std::endl;
 				std::cout << "---quit triggered---" << std::endl;
 			}
 		}

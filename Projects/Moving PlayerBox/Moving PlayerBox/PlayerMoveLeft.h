@@ -10,12 +10,7 @@ namespace RB
 	public:
 		PlayerMoveLeft()
 		{
-			std::cout << "constructing PlayerMoveLeft" << std::endl;
-		}
-
-		~PlayerMoveLeft()
-		{
-			std::cout << "destructing PlayerMoveLeft" << std::endl;
+			std::cout << "player state: PlayerMoveLeft" << std::endl;
 		}
 
 		void UpdateState(UpdateData& updateData) override
