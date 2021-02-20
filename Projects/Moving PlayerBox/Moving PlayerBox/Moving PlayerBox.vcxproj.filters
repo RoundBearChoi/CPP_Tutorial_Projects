@@ -85,8 +85,5 @@
     <ClInclude Include="SceneObjList.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="SceneDataset.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
