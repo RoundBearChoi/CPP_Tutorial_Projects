@@ -3,7 +3,9 @@
 #include "SceneObj.h"
 #include "Input.h"
 #include "PlayerController.h"
+
 #include "SceneObjList.h"
+#include "SceneDataset.h"
 
 namespace RB
 {
@@ -17,6 +19,7 @@ namespace RB
 		Input input;
 
 		SceneObjList sceneObjList;
+		SceneDataset sceneDataset;
 
 	public:
 		void Init(olc::PixelGameEngine* olcEngine)
@@ -29,6 +32,9 @@ namespace RB
 
 			sceneObjList.CreateObj("player");
 			sceneObjList.CreateObj("background");
+
+			sceneDataset.ptrObjList = &sceneObjList;
+			sceneDataset.ptrInput = &input;
 
 			//temp
 			player.SetPos(300.0f, 650.0f);
