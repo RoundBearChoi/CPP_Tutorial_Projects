@@ -1,8 +1,9 @@
 #pragma once
 #include "StateController.h"
+#include "PlayerStateType.h"
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
-#include "PlayerStateType.h"
+#include "PlayerMoveLeft.h"
 
 namespace RB
 {
@@ -23,7 +24,8 @@ namespace RB
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
-
+				stateData.CreateState<PlayerMoveLeft>();
+				return true;
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{

@@ -1,6 +1,5 @@
 #pragma once
 #include "StateController.h"
-#include "UpdateData.h"
 
 namespace RB
 {
@@ -85,42 +84,6 @@ namespace RB
 		void SetName(const std::string& _name)
 		{
 			name = _name;
-		}
-
-		//temp
-
-		void SetPos(float x, float y)
-		{
-			updateData.pos.x = x;
-			updateData.pos.y = y;
-		}
-		
-		void SetSpeed(float x, float y)
-		{
-			updateData.speed.x = x;
-			updateData.speed.y = y;
-		}
-		
-		olc::vf2d GetPos()
-		{
-			return updateData.pos;
-		}
-		
-		olc::vf2d GetSpeed()
-		{
-			return updateData.speed;
-		}
-
-		void UpdatePos(float fElapsedTime, float xAxis)
-		{
-			if (xAxis > 0.0f)
-			{
-				updateData.pos += updateData.speed * fElapsedTime;
-			}
-			else if (xAxis < 0.0f)
-			{
-				updateData.pos -= updateData.speed * fElapsedTime;
-			}
 		}
 	};
 }

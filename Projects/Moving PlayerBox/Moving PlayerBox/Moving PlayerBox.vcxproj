@@ -27,6 +27,7 @@
     <ClInclude Include="GameProcessor.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
+    <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerStateType.h" />
     <ClInclude Include="SceneObj.h" />
     <ClInclude Include="PlayerController.h" />

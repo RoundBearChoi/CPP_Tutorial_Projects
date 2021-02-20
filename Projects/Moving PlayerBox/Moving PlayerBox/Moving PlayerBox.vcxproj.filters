@@ -88,5 +88,8 @@
     <ClInclude Include="UpdateData.h">
       <Filter>Source Files\Scene\SceneObj</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerMoveLeft.h">
+      <Filter>Source Files\States\Player\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

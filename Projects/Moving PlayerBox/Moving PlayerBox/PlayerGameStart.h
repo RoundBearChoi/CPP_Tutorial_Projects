@@ -1,7 +1,7 @@
 #pragma once
 #include "State.h"
-#include "PlayerStateType.h"
 #include "UpdateData.h"
+#include "PlayerStateType.h"
 
 namespace RB
 {
@@ -9,6 +9,7 @@ namespace RB
 	{
 		void UpdateState(UpdateData &updateData) override
 		{
+			updateData.pos = { 300.0f, 650.0f };
 			*nextStatePtr = (int)PlayerStateType::IDLE;
 		}
 	};

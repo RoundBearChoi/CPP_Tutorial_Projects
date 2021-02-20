@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "UpdateData.h"
+#include "PlayerStateType.h"
 
 namespace RB
 {
@@ -9,7 +10,10 @@ namespace RB
 	public:
 		void UpdateState(UpdateData &updateData) override
 		{
-
+			if (updateData.inputXAxis < -0.01f)
+			{
+				*nextStatePtr = (int)PlayerStateType::MOVE_LEFT;
+			}
 		}
 	};
 }
