@@ -33,6 +33,7 @@
     <ClInclude Include="PlayerController.h" />
     <ClInclude Include="PlayerGameStart.h" />
     <ClInclude Include="PlayerIdle.h" />
+    <ClInclude Include="SceneObjList.h" />
     <ClInclude Include="VecData.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateController.h" />

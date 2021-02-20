@@ -25,6 +25,8 @@ namespace RB
 	class SceneObj
 	{
 	private:
+		int id = 0;
+		std::string name = "unassigned";
 		VecData vecData;
 		StateController* stateController = nullptr;
 
@@ -74,6 +76,16 @@ namespace RB
 			}
 
 			engine->DrawDecal(vecData.pos + offset, decal);
+		}
+
+		void SetID(int _id)
+		{
+			id = _id;
+		}
+
+		void SetName(const std::string& _name)
+		{
+			name = _name;
 		}
 
 		//temp

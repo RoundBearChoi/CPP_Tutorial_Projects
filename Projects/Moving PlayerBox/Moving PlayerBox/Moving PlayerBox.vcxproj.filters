@@ -82,5 +82,8 @@
     <ClInclude Include="VecData.h">
       <Filter>Source Files\SceneObj</Filter>
     </ClInclude>
+    <ClInclude Include="SceneObjList.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
