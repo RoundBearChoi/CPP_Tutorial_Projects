@@ -24,7 +24,6 @@ namespace RB
 	{
 	private:
 		int id = 0;
-		std::string name = "unassigned";
 		ObjController* ptrController = nullptr;
 
 	public:
@@ -81,11 +80,6 @@ namespace RB
 			}
 
 			engine->DrawDecal(position + offset, decal);
-		}
-
-		void SetName(const std::string& _name)
-		{
-			name = _name;
 		}
 	};
 }

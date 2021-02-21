@@ -40,10 +40,9 @@ namespace RB
 			}
 		}
 
-		void CreateObj(const std::string& _name)
+		void CreateObj(int _id)
 		{
-			GameObj* obj = new GameObj(vecObjPtr.size());
-			obj->SetName(_name);
+			GameObj* obj = new GameObj(_id);
 			vecObjPtr.push_back(obj);
 		}
 

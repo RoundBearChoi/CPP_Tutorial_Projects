@@ -9,6 +9,13 @@
 
 namespace RB
 {
+	enum class GameObjType
+	{
+		player,
+		background,
+		shitgroup,
+	};
+
 	class GameScene : public Scene
 	{
 	private:
@@ -29,11 +36,11 @@ namespace RB
 
 		void InitScene() override
 		{
-			gameObjList.CreateObj("player");
-			gameObjList.CreateObj("background");
+			gameObjList.CreateObj((int)GameObjType::player);
+			gameObjList.CreateObj((int)GameObjType::background);
 
-			gameObjList.GetObj(0)->SetController<PlayerController>();
-			gameObjList.GetObj(0)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
+			gameObjList.GetObj((int)GameObjType::player)->SetController<PlayerController>();
+			gameObjList.GetObj((int)GameObjType::player)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
@@ -43,9 +50,9 @@ namespace RB
 			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
 			gameObjList.UpdateAll(gameData);
 
-			gameObjList.GetObj(1)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
-			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
-			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
+			gameObjList.GetObj((int)GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
+			gameObjList.GetObj((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			gameObjList.GetObj((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
 
 			if (input.ESCPressed(ptrEngine))
 			{
