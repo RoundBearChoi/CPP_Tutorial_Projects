@@ -36,7 +36,7 @@ namespace RB
 				if (controller != nullptr)
 				{
 					controller->UpdateObj(vecObjPtr[i]->position, gameData);
-					controller->CheckNextTransition();
+					controller->CreateNextTransition();
 					
 					//temp
 					if (controller->MakeChildObj())

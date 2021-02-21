@@ -12,7 +12,7 @@ namespace RB
 		int nextState = 0;
 
 	public:
-		virtual bool MakeTransition(int index) = 0;
+		virtual bool CreateTransition(int index) = 0;
 		virtual bool MakeChildObj() = 0;
 
 		virtual ~ObjController()
@@ -25,11 +25,11 @@ namespace RB
 			currentState->UpdateState(position, gameData);
 		}
 
-		void CheckNextTransition()
+		void CreateNextTransition()
 		{
 			if (nextState != 0)
 			{
-				if (MakeTransition(nextState))
+				if (CreateTransition(nextState))
 				{
 					nextState = 0;
 				}

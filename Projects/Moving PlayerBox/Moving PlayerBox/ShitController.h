@@ -13,7 +13,7 @@ namespace RB
 		{
 			std::cout << "constructing ShitController" << std::endl;
 
-			MakeTransition((int)ShitStateType::FALL);
+			CreateTransition((int)ShitStateType::FALL);
 		}
 
 		~ShitController() override
@@ -22,7 +22,7 @@ namespace RB
 			delete currentState;
 		}
 
-		bool MakeTransition(int index) override
+		bool CreateTransition(int index) override
 		{
 			if (index == (int)ShitStateType::FALL)
 			{
