@@ -1,56 +1,37 @@
 #pragma once
+#include "ControllerType.h"
 #include "PlayerController.h"
+#include "RenderOffsetType.h"
 
 namespace RB
 {
-	enum class RenderOffsetType
-	{
-		NONE,
-
-		TOP_LEFT,
-		TOP_CENTER,
-		TOP_RIGHT,
-
-		CENTER_LEFT,
-		CENTER_CENTER,
-		CENTER_RIGHT,
-
-		BOTTOM_LEFT,
-		BOTTOM_CENTER,
-		BOTTOM_RIGHT,
-	};
-
 	class GameObj
 	{
 	private:
-		int id = 0;
+		int typeID = 0;
 		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
 
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
 
-		GameObj(int _id)
+		GameObj(int _typeID)
 		{
-			std::cout << "construcing GameObj: " << _id << std::endl;
-			id = _id;
+			std::cout << "construcing GameObj: " << _typeID << std::endl;
+			typeID = _typeID;
 		}
 
 		~GameObj()
 		{
-			std::cout << "destructing GameObj: " << id << std::endl;
+			std::cout << "destructing GameObj: " << typeID << std::endl;
 			delete ptrController;
 		}
 
-		template<class T>
-		void SetController()
+		void SetController(int _index)
 		{
-			if (ptrController == nullptr)
+			if (_index == (int)ControllerType::PLAYER)
 			{
-				if (std::is_base_of<ObjController, T>::value)
-				{
-					ptrController = new T();
-				}
+				ptrController = new PlayerController();
 			}
 		}
 
@@ -81,6 +62,11 @@ namespace RB
 			}
 
 			engine->DrawDecal(position + offset, decal);
+		}
+
+		void AddChild()
+		{
+
 		}
 	};
 }

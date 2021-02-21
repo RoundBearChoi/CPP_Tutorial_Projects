@@ -22,6 +22,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControllerType.h" />
     <ClInclude Include="DecalLoader.h" />
     <ClInclude Include="GameDecalLoader.h" />
     <ClInclude Include="Game.h" />
@@ -33,6 +34,7 @@
     <ClInclude Include="PlayerMoveRight.h" />
     <ClInclude Include="PlayerStateType.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="RenderOffsetType.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneController.h" />
     <ClInclude Include="GameObj.h" />

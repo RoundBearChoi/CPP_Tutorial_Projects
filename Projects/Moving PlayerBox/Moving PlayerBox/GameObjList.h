@@ -40,15 +40,15 @@ namespace RB
 			}
 		}
 
-		void CreateObj(int _id)
+		void CreateObj(int _typeID)
 		{
-			GameObj* obj = new GameObj(_id);
+			GameObj* obj = new GameObj(_typeID);
 			vecObjPtr.push_back(obj);
 		}
 
-		GameObj* GetObj(int _id)
+		GameObj* GetObj(int _typeID)
 		{
-			return vecObjPtr[_id];
+			return vecObjPtr[_typeID];
 		}
 	};
 }

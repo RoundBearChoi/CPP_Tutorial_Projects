@@ -15,6 +15,11 @@ namespace RB
 		PlayerState* currentState = nullptr;
 		int nextState = 0;
 
+		PlayerController()
+		{
+			MakeTransition((int)PlayerStateType::GAME_START);
+		}
+
 		~PlayerController() override
 		{
 			std::cout << "destructing PlayerController" << std::endl;

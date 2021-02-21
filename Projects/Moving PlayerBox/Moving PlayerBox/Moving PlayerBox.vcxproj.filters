@@ -33,9 +33,6 @@
     <Filter Include="Source Files\ObjControllers\Player\Enum">
       <UniqueIdentifier>{18b25780-249e-44e5-96b3-53b3ee3e8e5a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ObjControllers\Player\PlayerControllerBase">
-      <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ObjControllers\Base">
       <UniqueIdentifier>{e267ff07-237a-4651-96b4-8a4f1d11ab29}</UniqueIdentifier>
     </Filter>
@@ -51,8 +48,14 @@
     <Filter Include="Source Files\ObjControllers\Shit">
       <UniqueIdentifier>{8a7fa557-7c8b-4c25-b8c7-9f5745041e30}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ObjControllers\Shit\ShitControllerBase">
+    <Filter Include="Source Files\ObjControllers\Player\Base">
+      <UniqueIdentifier>{6c335aa7-7598-45b3-b244-a47c295b171d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjControllers\Shit\Base">
       <UniqueIdentifier>{ccb02646-21ce-4df9-a4c0-d7d2fd97509c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{a8b0b612-7706-407e-a8a1-abb908f7cd49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -95,10 +98,10 @@
       <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
-      <Filter>Source Files\ObjControllers\Player\PlayerControllerBase</Filter>
+      <Filter>Source Files\ObjControllers\Player\Base</Filter>
     </ClInclude>
     <ClInclude Include="PlayerState.h">
-      <Filter>Source Files\ObjControllers\Player\PlayerControllerBase</Filter>
+      <Filter>Source Files\ObjControllers\Player\Base</Filter>
     </ClInclude>
     <ClInclude Include="GameObj.h">
       <Filter>Source Files\GameObj</Filter>
@@ -125,10 +128,16 @@
       <Filter>Source Files\DecalLoader\Base</Filter>
     </ClInclude>
     <ClInclude Include="ShitState.h">
-      <Filter>Source Files\ObjControllers\Shit\ShitControllerBase</Filter>
+      <Filter>Source Files\ObjControllers\Shit\Base</Filter>
     </ClInclude>
     <ClInclude Include="ShitController.h">
-      <Filter>Source Files\ObjControllers\Shit\ShitControllerBase</Filter>
+      <Filter>Source Files\ObjControllers\Shit\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ControllerType.h">
+      <Filter>Source Files\ObjControllers\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderOffsetType.h">
+      <Filter>Source Files\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

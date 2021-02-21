@@ -3,7 +3,6 @@
 #include "GameDecalLoader.h"
 #include "Input.h"
 #include "GameObjList.h"
-#include "PlayerController.h"
 #include "GameData.h"
 #include "SpriteType.h"
 
@@ -40,8 +39,7 @@ namespace RB
 			gameObjList.CreateObj((int)GameObjType::background);
 			gameObjList.CreateObj((int)GameObjType::shitgroup);
 
-			gameObjList.GetObj((int)GameObjType::player)->SetController<PlayerController>();
-			gameObjList.GetObj((int)GameObjType::player)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
+			gameObjList.GetObj((int)GameObjType::player)->SetController((int)ControllerType::PLAYER);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
