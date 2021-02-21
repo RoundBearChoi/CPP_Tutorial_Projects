@@ -39,6 +39,15 @@
     <Filter Include="Source Files\ObjControllers\Base">
       <UniqueIdentifier>{e267ff07-237a-4651-96b4-8a4f1d11ab29}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\DecalLoader">
+      <UniqueIdentifier>{dc2ae99d-e6d1-4107-a520-cdf804b2d0e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DecalLoader\Base">
+      <UniqueIdentifier>{76fe0e98-f104-4caa-acd4-9d7b6d196392}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DecalLoader\Concrete Loaders">
+      <UniqueIdentifier>{3cfb5554-6874-4b27-9d4a-acd3cd8ef9ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,9 +59,6 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DecalLoader.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
@@ -102,6 +108,12 @@
     </ClInclude>
     <ClInclude Include="TitleScene.h">
       <Filter>Source Files\Scene\Concrete Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDecalLoader.h">
+      <Filter>Source Files\DecalLoader\Concrete Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="DecalLoader.h">
+      <Filter>Source Files\DecalLoader\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

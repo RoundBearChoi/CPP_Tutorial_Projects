@@ -1,6 +1,6 @@
 #pragma once
 #include "Scene.h"
-#include "DecalLoader.h"
+#include "GameDecalLoader.h"
 #include "Input.h"
 #include "GameObjList.h"
 #include "PlayerController.h"
@@ -11,7 +11,7 @@ namespace RB
 	class GameScene : public Scene
 	{
 	private:
-		DecalLoader decalLoader;
+		GameDecalLoader gameDecalLoader;
 		Input input;
 		GameObjList gameObjList;
 
@@ -42,9 +42,9 @@ namespace RB
 			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
 			gameObjList.UpdateAll(gameData);
 
-			gameObjList.GetObj(1)->Render(ptrEngine, decalLoader.background_decal, RenderOffsetType::NONE);
-			gameObjList.GetObj(0)->Render(ptrEngine, decalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
-			gameObjList.GetObj(0)->Render(ptrEngine, decalLoader.diamond_red_decal, RenderOffsetType::CENTER_CENTER);
+			gameObjList.GetObj(1)->Render(ptrEngine, gameDecalLoader.background_decal, RenderOffsetType::NONE);
+			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
+			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.diamond_red_decal, RenderOffsetType::CENTER_CENTER);
 
 			if (input.ESCPressed(ptrEngine))
 			{
