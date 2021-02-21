@@ -1,23 +1,25 @@
 #pragma once
+#include <iostream>
+#include "olcPixelGameEngine.h"
 #include "GameData.h"
 
 namespace RB
 {
-	class PlayerState
+	class ShitState
 	{
 	public:
 		virtual void UpdateState(olc::vf2d& pos, const GameData& gameData) = 0;
 		int* nextStatePtr = nullptr;
 
-		PlayerState()
+		ShitState()
 		{
 			std::cout << std::endl;
-			std::cout << "constructing PlayerState" << std::endl;
+			std::cout << "constructing ShitState" << std::endl;
 		}
 
-		virtual ~PlayerState()
+		virtual ~ShitState()
 		{
-			std::cout << "destructing PlayerState" << std::endl;
+			std::cout << "destructing ShitState" << std::endl;
 		}
 	};
 }

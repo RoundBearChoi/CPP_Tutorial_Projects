@@ -38,6 +38,7 @@ namespace RB
 		{
 			gameObjList.CreateObj((int)GameObjType::player);
 			gameObjList.CreateObj((int)GameObjType::background);
+			gameObjList.CreateObj((int)GameObjType::shitgroup);
 
 			gameObjList.GetObj((int)GameObjType::player)->SetController<PlayerController>();
 			gameObjList.GetObj((int)GameObjType::player)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);

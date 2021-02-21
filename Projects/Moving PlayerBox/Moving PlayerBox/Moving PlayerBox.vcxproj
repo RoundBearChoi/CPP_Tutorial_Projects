@@ -41,6 +41,8 @@
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="GameObjList.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="ShitController.h" />
+    <ClInclude Include="ShitState.h" />
     <ClInclude Include="SpriteType.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>

@@ -48,6 +48,12 @@
     <Filter Include="Source Files\DecalLoader\Concrete Loaders">
       <UniqueIdentifier>{3cfb5554-6874-4b27-9d4a-acd3cd8ef9ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ObjControllers\Shit">
+      <UniqueIdentifier>{8a7fa557-7c8b-4c25-b8c7-9f5745041e30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ObjControllers\Shit\ShitControllerBase">
+      <UniqueIdentifier>{ccb02646-21ce-4df9-a4c0-d7d2fd97509c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -117,6 +123,12 @@
     </ClInclude>
     <ClInclude Include="SpriteType.h">
       <Filter>Source Files\DecalLoader\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitState.h">
+      <Filter>Source Files\ObjControllers\Shit\ShitControllerBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitController.h">
+      <Filter>Source Files\ObjControllers\Shit\ShitControllerBase</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
