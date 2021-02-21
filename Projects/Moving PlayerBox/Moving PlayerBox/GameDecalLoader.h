@@ -1,20 +1,13 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "DecalLoader.h"
+#include "SpriteType.h"
 
 namespace RB
 {
 	class GameDecalLoader : public DecalLoader
 	{
 	public:
-		olc::Sprite* diamond_red_sprite = nullptr;
-		olc::Sprite* playerbox_green_sprite = nullptr;
-		olc::Sprite* background_sprite = nullptr;
-
-		olc::Decal* diamond_red_decal = nullptr;
-		olc::Decal* playerbox_green_decal = nullptr;
-		olc::Decal* background_decal = nullptr;
-
 		GameDecalLoader()
 		{
 			std::cout << "constructing GameDecalLoader" << std::endl;
@@ -27,27 +20,36 @@ namespace RB
 		{
 			std::cout << "destructing GameDecalLoader" << std::endl;
 
-			delete diamond_red_sprite;
-			delete playerbox_green_sprite;
-			delete background_sprite;
+			for (int i = 0; i < vecSpritePtr.size(); i++)
+			{
+				std::cout << "destructing Sprite: " << i << std::endl;
+				delete vecSpritePtr[i];
+			}
 
-			delete diamond_red_decal;
-			delete playerbox_green_decal;
-			delete background_decal;
+			for (int i = 0; i < vecDecalPtr.size(); i++)
+			{
+				std::cout << "destructing Decal: " << i << std::endl;
+				delete vecDecalPtr[i];
+			}
 		}
 
 		void LoadSprites()
 		{
-			diamond_red_sprite = new olc::Sprite("PNG files/diamond_red.png");
-			playerbox_green_sprite = new olc::Sprite("PNG files/playerbox_green.png");
-			background_sprite = new olc::Sprite("PNG files/background.png");
+			for (int i = 0; i < (int)GameSpriteType::COUNT; i++)
+			{
+				std::string path = SpriteType::GetStringPath((GameSpriteType)i);
+				vecSpritePtr.push_back(new olc::Sprite(path));
+				std::cout << "constructing Sprite: " << path << std::endl;
+			}
 		}
 
-		void LoadDecals()
+		void LoadDecals() override
 		{
-			diamond_red_decal = new olc::Decal(diamond_red_sprite);
-			playerbox_green_decal = new olc::Decal(playerbox_green_sprite);
-			background_decal = new olc::Decal(background_sprite);
+			for (int i = 0; i < vecSpritePtr.size(); i++)
+			{
+				std::cout << "constructing Decal: " << i << std::endl;
+				vecDecalPtr.push_back(new olc::Decal(vecSpritePtr[i]));
+			}
 		}
 	};
 }

@@ -5,6 +5,7 @@
 #include "GameObjList.h"
 #include "PlayerController.h"
 #include "GameData.h"
+#include "SpriteType.h"
 
 namespace RB
 {
@@ -42,9 +43,9 @@ namespace RB
 			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
 			gameObjList.UpdateAll(gameData);
 
-			gameObjList.GetObj(1)->Render(ptrEngine, gameDecalLoader.background_decal, RenderOffsetType::NONE);
-			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.playerbox_green_decal, RenderOffsetType::BOTTOM_CENTER);
-			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.diamond_red_decal, RenderOffsetType::CENTER_CENTER);
+			gameObjList.GetObj(1)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
+			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			gameObjList.GetObj(0)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
 
 			if (input.ESCPressed(ptrEngine))
 			{

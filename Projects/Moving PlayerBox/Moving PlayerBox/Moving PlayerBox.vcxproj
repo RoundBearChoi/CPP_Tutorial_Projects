@@ -41,6 +41,7 @@
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="GameObjList.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="SpriteType.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
