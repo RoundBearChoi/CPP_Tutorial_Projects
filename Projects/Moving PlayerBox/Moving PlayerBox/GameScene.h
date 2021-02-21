@@ -1,8 +1,8 @@
 #pragma once
+#include "GameObjContainer.h"
 #include "Scene.h"
 #include "GameDecalLoader.h"
 #include "Input.h"
-#include "GameObjList.h"
 #include "PlayerController.h"
 #include "GameData.h"
 #include "SpriteType.h"
@@ -21,7 +21,7 @@ namespace RB
 	private:
 		GameDecalLoader gameDecalLoader;
 		Input input;
-		GameObjList gameObjList;
+		GameObjContainer objContainer;
 
 	public:
 		GameScene()
@@ -36,12 +36,12 @@ namespace RB
 
 		void InitScene() override
 		{
-			gameObjList.CreateObj((int)GameObjType::player);
-			gameObjList.CreateObj((int)GameObjType::background);
-			gameObjList.CreateObj((int)GameObjType::shitgroup);
+			objContainer.CreateObj((int)GameObjType::player);
+			objContainer.CreateObj((int)GameObjType::background);
+			objContainer.CreateObj((int)GameObjType::shitgroup);
 
-			gameObjList.GetObj((int)GameObjType::player)->SetController<PlayerController>();
-			gameObjList.GetObj((int)GameObjType::player)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
+			objContainer.GetObj((int)GameObjType::player)->SetController<PlayerController>();
+			objContainer.GetObj((int)GameObjType::player)->GetController()->MakeTransition((int)PlayerStateType::GAME_START);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
@@ -49,12 +49,12 @@ namespace RB
 			GameData gameData;
 			gameData.deltaTime = _deltaTime;
 			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
-			gameObjList.UpdateAll(gameData);
+			objContainer.UpdateAll(gameData);
 
-			gameObjList.GetObj((int)GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
-			gameObjList.GetObj((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
-			gameObjList.GetObj((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
-			gameObjList.GetObj((int)GameObjType::shitgroup)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
+			objContainer.GetObj((int)GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
+			objContainer.GetObj((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			objContainer.GetObj((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
+			objContainer.GetObj((int)GameObjType::shitgroup)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
 
 			if (input.ESCPressed(ptrEngine))
 			{
