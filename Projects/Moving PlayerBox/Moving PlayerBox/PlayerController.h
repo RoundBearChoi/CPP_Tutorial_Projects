@@ -82,5 +82,18 @@ namespace RB
 
 			return false;
 		}
+
+		bool MakeChildObj() override
+		{
+			if (currentState->testing == 1)
+			{
+				currentState->testing = 0;
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	};
 }

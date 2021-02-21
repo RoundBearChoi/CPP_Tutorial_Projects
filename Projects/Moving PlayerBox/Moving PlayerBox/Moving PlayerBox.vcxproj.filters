@@ -139,5 +139,8 @@
     <ClInclude Include="GameObjTree.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
+    <ClInclude Include="GameObjType.h">
+      <Filter>Source Files\GameObj</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

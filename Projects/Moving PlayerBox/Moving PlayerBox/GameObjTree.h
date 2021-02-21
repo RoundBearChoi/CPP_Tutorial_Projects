@@ -1,7 +1,8 @@
 #pragma once
 #include <vector>
-#include "GameObj.h"
 #include <iostream>
+#include "GameObj.h"
+#include "GameObjType.h"
 
 namespace RB
 {
@@ -36,14 +37,25 @@ namespace RB
 				{
 					controller->UpdateObj(vecObjPtr[i]->position, gameData);
 					controller->CheckNextTransition();
+					
+					if (controller->MakeChildObj())
+					{
+						CreateObj((int)GameObjType::individual_shit, vecObjPtr[i]);
+					}
 				}
 			}
 		}
 
-		void CreateObj(int _typeID)
+		void CreateObj(int _typeID, GameObj* parent = nullptr)
 		{
-			GameObj* obj = new GameObj(_typeID);
-			vecObjPtr.push_back(obj);
+			if (parent == nullptr)
+			{
+				vecObjPtr.push_back(new GameObj(_typeID));
+			}
+			else
+			{
+				parent->AddChild(_typeID);
+			}
 		}
 
 		GameObj* GetObjType(int _typeID)

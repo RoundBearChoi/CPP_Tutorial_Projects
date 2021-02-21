@@ -17,14 +17,20 @@ namespace RB
 
 		GameObj(int _typeID)
 		{
-			std::cout << "construcing GameObj: " << _typeID << std::endl;
+			std::cout << "construcing GameObj - typeID: " << _typeID << std::endl;
 			typeID = _typeID;
 		}
 
 		~GameObj()
 		{
-			std::cout << "destructing GameObj: " << typeID << std::endl;
+			std::cout << "destructing GameObj - typeID: " << typeID << std::endl;
+
 			delete ptrController;
+
+			for (int i = 0; i < vecChildrenPtr.size(); i++)
+			{
+				delete vecChildrenPtr[i];
+			}
 		}
 
 		void SetController(int _index)
@@ -69,9 +75,9 @@ namespace RB
 			engine->DrawDecal(position + offset, decal);
 		}
 
-		void AddChild()
+		void AddChild(int _typeID)
 		{
-
+			vecChildrenPtr.push_back(new GameObj(_typeID));
 		}
 	};
 }

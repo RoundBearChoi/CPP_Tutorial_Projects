@@ -11,6 +11,7 @@ namespace RB
 		PlayerIdle()
 		{
 			std::cout << "player state: PlayerIdle" << std::endl;
+			testing = 1;
 		}
 
 		void UpdateState(olc::vf2d& pos, const GameData& gameData) override

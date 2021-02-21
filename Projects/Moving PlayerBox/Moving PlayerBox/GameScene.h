@@ -8,13 +8,6 @@
 
 namespace RB
 {
-	enum class GameObjType
-	{
-		player,
-		background,
-		shitgroup,
-	};
-
 	class GameScene : public Scene
 	{
 	private:

@@ -10,6 +10,7 @@ namespace RB
 		virtual void UpdateObj(olc::vf2d& position, const GameData& updateData) = 0;
 		virtual void CheckNextTransition() = 0;
 		virtual bool MakeTransition(int index) = 0;
+		virtual bool MakeChildObj() = 0;
 
 		virtual ~ObjController()
 		{

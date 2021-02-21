@@ -8,6 +8,7 @@ namespace RB
 	public:
 		virtual void UpdateState(olc::vf2d& pos, const GameData& gameData) = 0;
 		int* nextStatePtr = nullptr;
+		int testing = 0;
 
 		PlayerState()
 		{
