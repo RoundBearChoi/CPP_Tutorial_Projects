@@ -14,14 +14,18 @@ namespace RB
 		olc::Decal* playerbox_green_decal = nullptr;
 		olc::Decal* background_decal = nullptr;
 
-		void LoadAll()
+		DecalLoader()
 		{
+			std::cout << "constructing DecalLoader" << std::endl;
+
 			LoadSprites();
 			LoadDecals();
 		}
 
 		~DecalLoader()
 		{
+			std::cout << "destructing DecalLoader" << std::endl;
+
 			delete diamond_red_sprite;
 			delete playerbox_green_sprite;
 			delete background_sprite;

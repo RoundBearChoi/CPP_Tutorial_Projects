@@ -28,8 +28,6 @@ namespace RB
 
 		void InitScene() override
 		{
-			decalLoader.LoadAll();
-
 			gameObjList.CreateObj("player");
 			gameObjList.CreateObj("background");
 
