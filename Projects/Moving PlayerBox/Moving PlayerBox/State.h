@@ -6,13 +6,20 @@ namespace RB
 {
 	class State
 	{
+	protected:
+		int nextStateIndex = 0;
+
 	public:
 		virtual void UpdateState(olc::vf2d& pos, const GameData& gameData) = 0;
-		int* nextStatePtr = nullptr;
 
 		virtual ~State()
 		{
 
+		}
+
+		int GetNextStateIndex()
+		{
+			return nextStateIndex;
 		}
 	};
 }

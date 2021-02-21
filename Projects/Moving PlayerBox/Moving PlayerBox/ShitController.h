@@ -13,7 +13,7 @@ namespace RB
 		{
 			std::cout << "constructing ShitController" << std::endl;
 
-			CreateTransition((int)ShitStateType::FALL);
+			MakeTransition((int)ShitStateType::FALL);
 		}
 
 		~ShitController() override
@@ -22,14 +22,12 @@ namespace RB
 			delete currentState;
 		}
 
-		bool CreateTransition(int index) override
+		void MakeTransition(int index) override
 		{
 			if (index == (int)ShitStateType::FALL)
 			{
-				return CreateState<ShitFall>();
+				CreateState<ShitFall>();
 			}
-
-			return false;
 		}
 
 		virtual bool MakeChildObj() override

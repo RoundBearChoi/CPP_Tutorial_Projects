@@ -9,10 +9,9 @@ namespace RB
 	{
 	protected:
 		State* currentState = nullptr;
-		int nextState = 0;
 
 	public:
-		virtual bool CreateTransition(int index) = 0;
+		virtual void MakeTransition(int index) = 0;
 		virtual bool MakeChildObj() = 0;
 
 		virtual ~ObjController()
@@ -25,30 +24,20 @@ namespace RB
 			currentState->UpdateState(position, gameData);
 		}
 
-		void CreateNextTransition()
-		{
-			if (nextState != 0)
-			{
-				if (CreateTransition(nextState))
-				{
-					nextState = 0;
-				}
-			}
-		}
-
 		template<class T>
-		bool CreateState()
+		void CreateState()
 		{
 			delete currentState;
 
 			if (std::is_base_of<State, T>::value)
 			{
 				currentState = new T();
-				currentState->nextStatePtr = &nextState;
-				return true;
 			}
+		}
 
-			return false;
+		int NextStateIndex()
+		{
+			return currentState->GetNextStateIndex();
 		}
 	};
 }

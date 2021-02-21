@@ -22,7 +22,7 @@ namespace RB
 		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
 		{
 			pos = { 300.0f, 650.0f };
-			*nextStatePtr = (int)PlayerStateType::IDLE;
+			nextStateIndex = (int)PlayerStateType::IDLE;
 		}
 	};
 }

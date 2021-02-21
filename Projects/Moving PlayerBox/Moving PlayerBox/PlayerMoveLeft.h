@@ -25,7 +25,7 @@ namespace RB
 			// close to 0
 			if (gameData.inputXAxis > -0.01f && gameData.inputXAxis < 0.01f)
 			{
-				*nextStatePtr = (int)PlayerStateType::IDLE;
+				nextStateIndex = (int)PlayerStateType::IDLE;
 			}
 		}
 	};

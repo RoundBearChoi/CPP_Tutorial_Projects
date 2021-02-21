@@ -16,7 +16,7 @@ namespace RB
 		{
 			std::cout << "constructing PlayerController" << std::endl;
 
-			CreateTransition((int)PlayerStateType::GAME_START);
+			MakeTransition((int)PlayerStateType::GAME_START);
 		}
 
 		~PlayerController() override
@@ -25,30 +25,28 @@ namespace RB
 			delete currentState;
 		}
 
-		bool CreateTransition(int index) override
+		void MakeTransition(int index) override
 		{
 			if (index == (int)PlayerStateType::GAME_START)
 			{
-				return CreateState<PlayerGameStart>();
+				CreateState<PlayerGameStart>();
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				return CreateState<PlayerIdle>();
+				CreateState<PlayerIdle>();
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
-				return CreateState<PlayerMoveLeft>();
+				CreateState<PlayerMoveLeft>();
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{
-				return CreateState<PlayerMoveRight>();
+				CreateState<PlayerMoveRight>();
 			}
 			else if (index == (int)PlayerStateType::DEAD)
 			{
 
 			}
-
-			return false;
 		}
 
 		bool MakeChildObj() override
