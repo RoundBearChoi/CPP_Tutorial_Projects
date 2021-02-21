@@ -25,22 +25,6 @@ namespace RB
 			delete currentState;
 		}
 
-		void UpdateObj(olc::vf2d& position, const GameData& gameData) override
-		{
-			currentState->UpdateState(position, gameData);
-		}
-
-		void CheckNextTransition() override
-		{
-			if (nextState != 0)
-			{
-				if (MakeTransition(nextState))
-				{
-					nextState = 0;
-				}
-			}
-		}
-
 		bool MakeTransition(int index) override
 		{
 			if (index == (int)PlayerStateType::GAME_START)

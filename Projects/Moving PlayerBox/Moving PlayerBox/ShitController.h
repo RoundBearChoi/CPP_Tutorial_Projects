@@ -22,17 +22,7 @@ namespace RB
 			delete currentState;
 		}
 
-		virtual void UpdateObj(olc::vf2d& position, const GameData& updateData) override
-		{
-
-		}
-
-		virtual void CheckNextTransition() override
-		{
-
-		}
-
-		virtual bool MakeTransition(int index) override
+		bool MakeTransition(int index) override
 		{
 			if (index == (int)ShitStateType::FALL)
 			{

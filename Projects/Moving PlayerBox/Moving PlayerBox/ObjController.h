@@ -12,14 +12,28 @@ namespace RB
 		int nextState = 0;
 
 	public:
-		virtual void UpdateObj(olc::vf2d& position, const GameData& updateData) = 0;
-		virtual void CheckNextTransition() = 0;
 		virtual bool MakeTransition(int index) = 0;
 		virtual bool MakeChildObj() = 0;
 
 		virtual ~ObjController()
 		{
 			std::cout << "destructing ObjController (virtual)" << std::endl;
+		}
+
+		void UpdateObj(olc::vf2d& position, const GameData& gameData)
+		{
+			currentState->UpdateState(position, gameData);
+		}
+
+		void CheckNextTransition()
+		{
+			if (nextState != 0)
+			{
+				if (MakeTransition(nextState))
+				{
+					nextState = 0;
+				}
+			}
 		}
 
 		template<class T>
