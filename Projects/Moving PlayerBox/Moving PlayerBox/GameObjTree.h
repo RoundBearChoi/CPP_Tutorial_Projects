@@ -38,6 +38,7 @@ namespace RB
 					controller->UpdateObj(vecObjPtr[i]->position, gameData);
 					controller->CheckNextTransition();
 					
+					//temp
 					if (controller->MakeChildObj())
 					{
 						CreateObj((int)GameObjType::individual_shit, vecObjPtr[i]);
