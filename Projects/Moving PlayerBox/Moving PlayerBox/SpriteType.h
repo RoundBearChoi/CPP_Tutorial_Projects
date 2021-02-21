@@ -8,6 +8,7 @@ namespace RB
 		diamond_red = 0,
 		playerbox_green,
 		background,
+		redbox_10x10,
 
 		COUNT,
 	};
@@ -28,6 +29,10 @@ namespace RB
 			else if (spriteType == GameSpriteType::background)
 			{
 				return "PNG files/background.png";
+			}
+			else if (spriteType == GameSpriteType::redbox_10x10)
+			{
+				return "PNG files/redbox_10x10.png";
 			}
 
 			return "none";
