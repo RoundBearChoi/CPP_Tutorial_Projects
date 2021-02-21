@@ -16,7 +16,7 @@ namespace RB
 			std::cout << "destructing State: ShitFall" << std::endl;
 		}
 
-		virtual void UpdateState(olc::vf2d& pos, const GameData& gameData)
+		void UpdateState(olc::vf2d& pos, const GameData& gameData)
 		{
 
 		}
