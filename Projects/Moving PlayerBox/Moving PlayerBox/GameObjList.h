@@ -5,20 +5,20 @@
 
 namespace RB
 {
-	class GameObjContainer
+	class GameObjList
 	{
 	private:
 		std::vector<GameObj*> vecObjPtr;
 
 	public:
-		GameObjContainer()
+		GameObjList()
 		{
-			std::cout << "constructing GameObjContainer" << std::endl;
+			std::cout << "constructing GameObjList" << std::endl;
 		}
 
-		~GameObjContainer()
+		~GameObjList()
 		{
-			std::cout << "destructing GameObjContainer" << std::endl;
+			std::cout << "destructing GameObjList" << std::endl;
 
 			for (int i = 0; i < vecObjPtr.size(); i++)
 			{
