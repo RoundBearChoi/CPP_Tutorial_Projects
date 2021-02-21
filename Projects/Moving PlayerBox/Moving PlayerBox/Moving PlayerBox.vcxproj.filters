@@ -106,9 +106,6 @@
     <ClInclude Include="GameObj.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjList.h">
-      <Filter>Source Files\GameObj</Filter>
-    </ClInclude>
     <ClInclude Include="ObjController.h">
       <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
@@ -138,6 +135,9 @@
     </ClInclude>
     <ClInclude Include="RenderOffsetType.h">
       <Filter>Source Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjTree.h">
+      <Filter>Source Files\GameObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

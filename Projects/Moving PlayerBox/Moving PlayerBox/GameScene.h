@@ -2,7 +2,7 @@
 #include "Scene.h"
 #include "GameDecalLoader.h"
 #include "Input.h"
-#include "GameObjList.h"
+#include "GameObjTree.h"
 #include "GameData.h"
 #include "SpriteType.h"
 
@@ -20,7 +20,7 @@ namespace RB
 	private:
 		GameDecalLoader gameDecalLoader;
 		Input input;
-		GameObjList gameObjList;
+		GameObjTree objTree;
 
 	public:
 		GameScene()
@@ -35,11 +35,11 @@ namespace RB
 
 		void InitScene() override
 		{
-			gameObjList.CreateObj((int)GameObjType::player);
-			gameObjList.CreateObj((int)GameObjType::background);
-			gameObjList.CreateObj((int)GameObjType::shitgroup);
+			objTree.CreateObj((int)GameObjType::player);
+			objTree.CreateObj((int)GameObjType::background);
+			objTree.CreateObj((int)GameObjType::shitgroup);
 
-			gameObjList.GetObjType((int)GameObjType::player)->SetController((int)ControllerType::PLAYER);
+			objTree.GetObjType((int)GameObjType::player)->SetController((int)ControllerType::PLAYER);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
@@ -47,12 +47,12 @@ namespace RB
 			GameData gameData;
 			gameData.deltaTime = _deltaTime;
 			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
-			gameObjList.UpdateAll(gameData);
+			objTree.UpdateAll(gameData);
 
-			gameObjList.GetObjType((int)GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
-			gameObjList.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
-			gameObjList.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
-			gameObjList.GetObjType((int)GameObjType::shitgroup)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
+			objTree.GetObjType((int)GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
+			objTree.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			objTree.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
+			objTree.GetObjType((int)GameObjType::shitgroup)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
 
 			if (input.ESCPressed(ptrEngine))
 			{
