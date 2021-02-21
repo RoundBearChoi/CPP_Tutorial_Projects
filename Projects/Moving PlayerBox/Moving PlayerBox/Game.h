@@ -3,6 +3,7 @@
 #include "olcPixelGameEngine.h"
 #include "SceneController.h"
 #include "GameScene.h"
+#include "TitleScene.h"
 
 namespace RB
 {

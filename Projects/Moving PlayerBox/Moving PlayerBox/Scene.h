@@ -7,6 +7,7 @@ namespace RB
 	{
 	protected:
 		bool bQuit = false;
+		int nNextScene = 0;
 
 	public:
 		virtual void InitScene() = 0;
@@ -17,9 +18,19 @@ namespace RB
 			std::cout << "destructing Scene (virtual)" << std::endl;
 		}
 
+		int GetNextScene()
+		{
+			return nNextScene;
+		}
+
 		bool QuitGame()
 		{
 			return bQuit;
+		}
+
+		void ClearQueue()
+		{
+			nNextScene = 0;
 		}
 	};
 }

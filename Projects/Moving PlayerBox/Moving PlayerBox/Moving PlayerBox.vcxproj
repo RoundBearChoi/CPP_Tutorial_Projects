@@ -40,6 +40,7 @@
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="GameObjList.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="TitleScene.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

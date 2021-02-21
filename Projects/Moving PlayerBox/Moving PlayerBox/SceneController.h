@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include "GameScene.h"
 #include <iostream>
 
 namespace RB
@@ -36,11 +37,28 @@ namespace RB
 		void UpdateCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
 		{
 			currentScene->UpdateScene(ptrEngine, deltaTime);
+
+			int nextScene = currentScene->GetNextScene();
+
+			if (nextScene != 0)
+			{
+				CreateScene(nextScene);
+			}
 		}
 
 		bool QuitGame()
 		{
 			return currentScene->QuitGame();
+		}
+
+		void CreateScene(int _index)
+		{
+			if (_index == 2)
+			{
+				delete currentScene;
+				currentScene = new GameScene;
+				currentScene->ClearQueue();
+			}
 		}
 	};
 }

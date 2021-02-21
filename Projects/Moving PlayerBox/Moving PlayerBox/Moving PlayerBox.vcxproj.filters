@@ -100,5 +100,8 @@
     <ClInclude Include="GameData.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Source Files\Scene\Concrete Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
