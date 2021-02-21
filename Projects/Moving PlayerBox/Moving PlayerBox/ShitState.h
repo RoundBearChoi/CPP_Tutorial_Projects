@@ -19,7 +19,7 @@ namespace RB
 
 		virtual ~ShitState()
 		{
-			std::cout << "destructing ShitState" << std::endl;
+			std::cout << "destructing ShitState (virtual)" << std::endl;
 		}
 	};
 }

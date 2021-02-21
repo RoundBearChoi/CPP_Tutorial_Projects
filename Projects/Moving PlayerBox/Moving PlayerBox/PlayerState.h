@@ -18,7 +18,7 @@ namespace RB
 
 		virtual ~PlayerState()
 		{
-			std::cout << "destructing PlayerState" << std::endl;
+			std::cout << "destructing PlayerState (virtual)" << std::endl;
 		}
 	};
 }

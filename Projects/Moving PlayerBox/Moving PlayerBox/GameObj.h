@@ -1,6 +1,7 @@
 #pragma once
 #include "ControllerType.h"
 #include "PlayerController.h"
+#include "ShitController.h"
 #include "RenderOffsetType.h"
 
 namespace RB
@@ -38,6 +39,10 @@ namespace RB
 			if (_index == (int)ControllerType::PLAYER)
 			{
 				ptrController = new PlayerController();
+			}
+			else if (_index == (int)ControllerType::SHIT)
+			{
+				ptrController = new ShitController();
 			}
 		}
 
@@ -77,7 +82,9 @@ namespace RB
 
 		void AddChild(int _typeID)
 		{
-			vecChildrenPtr.push_back(new GameObj(_typeID));
+			GameObj* child = new GameObj(_typeID);
+			child->SetController((int)ControllerType::SHIT);
+			vecChildrenPtr.push_back(child);
 		}
 	};
 }

@@ -11,6 +11,8 @@ namespace RB
 		PlayerIdle()
 		{
 			std::cout << "player state: PlayerIdle" << std::endl;
+
+			//temp
 			testing = 1;
 		}
 
