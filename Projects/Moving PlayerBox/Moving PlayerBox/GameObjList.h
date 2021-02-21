@@ -46,9 +46,17 @@ namespace RB
 			vecObjPtr.push_back(obj);
 		}
 
-		GameObj* GetObj(int _typeID)
+		GameObj* GetObjType(int _typeID)
 		{
-			return vecObjPtr[_typeID];
+			for (int i = 0; i < vecObjPtr.size(); i++)
+			{
+				if (vecObjPtr[i]->GetTypeID() == _typeID)
+				{
+					return vecObjPtr[_typeID];
+				}
+			}
+			
+			return nullptr;
 		}
 	};
 }

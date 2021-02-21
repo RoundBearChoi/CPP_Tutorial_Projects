@@ -40,6 +40,11 @@ namespace RB
 			return ptrController;
 		}
 
+		int GetTypeID()
+		{
+			return typeID;
+		}
+
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)
 		{
 			olc::vf2d offset(0.0f, 0.0f);
