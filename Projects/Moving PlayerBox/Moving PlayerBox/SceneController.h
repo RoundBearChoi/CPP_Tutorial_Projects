@@ -53,15 +53,5 @@ namespace RB
 		{
 			return currentScene->QuitGame();
 		}
-
-		//void CreateScene(int _index)
-		//{
-		//	if (_index == 2)
-		//	{
-		//		delete currentScene;
-		//		currentScene = new GameScene;
-		//		currentScene->ClearQueue();
-		//	}
-		//}
 	};
 }
