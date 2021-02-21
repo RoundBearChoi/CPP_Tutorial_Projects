@@ -42,7 +42,10 @@ namespace RB
 
 			if (nextScene != 0)
 			{
-				CreateScene(nextScene);
+				if (nextScene == 2)
+				{
+					CreateScene<GameScene>();
+				}
 			}
 		}
 
@@ -51,14 +54,14 @@ namespace RB
 			return currentScene->QuitGame();
 		}
 
-		void CreateScene(int _index)
-		{
-			if (_index == 2)
-			{
-				delete currentScene;
-				currentScene = new GameScene;
-				currentScene->ClearQueue();
-			}
-		}
+		//void CreateScene(int _index)
+		//{
+		//	if (_index == 2)
+		//	{
+		//		delete currentScene;
+		//		currentScene = new GameScene;
+		//		currentScene->ClearQueue();
+		//	}
+		//}
 	};
 }

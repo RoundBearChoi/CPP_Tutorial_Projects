@@ -27,6 +27,11 @@ namespace RB
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
 		{
 			fTesting += _deltaTime;
+
+			if (fTesting >= 2.0f)
+			{
+				nNextSceneQueue = 2;
+			}
 		}
 	};
 }

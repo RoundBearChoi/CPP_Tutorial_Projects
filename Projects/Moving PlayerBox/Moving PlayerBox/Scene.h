@@ -7,11 +7,17 @@ namespace RB
 	{
 	protected:
 		bool bQuit = false;
-		int nNextScene = 0;
+		int nNextSceneQueue = 0;
 
 	public:
 		virtual void InitScene() = 0;
 		virtual void UpdateScene(olc::PixelGameEngine* ptrEngine, float deltaTime) = 0;
+
+		Scene()
+		{
+			std::cout << std::endl;
+			std::cout << "constructing Scene (virtual)" << std::endl;
+		}
 
 		virtual ~Scene()
 		{
@@ -20,7 +26,7 @@ namespace RB
 
 		int GetNextScene()
 		{
-			return nNextScene;
+			return nNextSceneQueue;
 		}
 
 		bool QuitGame()
@@ -30,7 +36,7 @@ namespace RB
 
 		void ClearQueue()
 		{
-			nNextScene = 0;
+			nNextSceneQueue = 0;
 		}
 	};
 }

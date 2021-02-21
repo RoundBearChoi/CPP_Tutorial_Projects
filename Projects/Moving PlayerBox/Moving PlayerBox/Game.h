@@ -15,7 +15,7 @@ namespace RB
 	public:
 		bool OnUserCreate() override
 		{
-			sceneController.CreateScene<GameScene>();
+			sceneController.CreateScene<TitleScene>();
 			return true;
 		}
 
