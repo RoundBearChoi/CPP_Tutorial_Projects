@@ -1,6 +1,6 @@
 #pragma once
 #include "ObjController.h"
-#include "ShitState.h"
+#include "State.h"
 #include "ShitStateType.h"
 #include "ShitFall.h"
 
@@ -9,9 +9,6 @@ namespace RB
 	class ShitController : public ObjController
 	{
 	public:
-		ShitState* currentState = nullptr;
-		int nextState = 0;
-
 		ShitController()
 		{
 			std::cout << "constructing ShitController" << std::endl;
@@ -58,21 +55,6 @@ namespace RB
 			//{
 			//	return false;
 			//}
-		}
-
-		template<class T>
-		bool CreateState()
-		{
-			delete currentState;
-
-			if (std::is_base_of<ShitState, T>::value)
-			{
-				currentState = new T();
-				currentState->nextStatePtr = &nextState;
-				return true;
-			}
-
-			return false;
 		}
 	};
 }

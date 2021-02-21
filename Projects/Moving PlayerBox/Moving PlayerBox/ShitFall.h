@@ -1,19 +1,19 @@
 #pragma once
-#include "ShitState.h"
+#include "State.h"
 
 namespace RB
 {
-	class ShitFall : public ShitState
+	class ShitFall : public State
 	{
 	public:
 		ShitFall()
 		{
-			std::cout << "constructing ShitFall (ShitState)" << std::endl;
+			std::cout << "constructing State: ShitFall" << std::endl;
 		}
 
-		~ShitFall() override
+		~ShitFall()
 		{
-			std::cout << "destructing ShitFall (ShitState)" << std::endl;
+			std::cout << "destructing State: ShitFall" << std::endl;
 		}
 
 		virtual void UpdateState(olc::vf2d& pos, const GameData& gameData)

@@ -1,6 +1,6 @@
 #pragma once
 #include "ObjController.h"
-#include "PlayerState.h"
+#include "State.h"
 #include "PlayerStateType.h"
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
@@ -12,11 +12,10 @@ namespace RB
 	class PlayerController : public ObjController
 	{
 	public:
-		PlayerState* currentState = nullptr;
-		int nextState = 0;
-
 		PlayerController()
 		{
+			std::cout << "constructing PlayerController" << std::endl;
+
 			MakeTransition((int)PlayerStateType::GAME_START);
 		}
 
@@ -63,21 +62,6 @@ namespace RB
 			else if (index == (int)PlayerStateType::DEAD)
 			{
 
-			}
-
-			return false;
-		}
-
-		template<class T>
-		bool CreateState()
-		{
-			delete currentState;
-
-			if (std::is_base_of<PlayerState, T>::value)
-			{
-				currentState = new T();
-				currentState->nextStatePtr = &nextState;
-				return true;
 			}
 
 			return false;

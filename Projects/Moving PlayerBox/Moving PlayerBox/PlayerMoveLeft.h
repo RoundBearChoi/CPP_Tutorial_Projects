@@ -1,16 +1,21 @@
 #pragma once
-#include "PlayerState.h"
+#include "State.h"
 #include "GameData.h"
 #include "PlayerStateType.h"
 
 namespace RB
 {
-	class PlayerMoveLeft : public PlayerState
+	class PlayerMoveLeft : public State
 	{
 	public:
 		PlayerMoveLeft()
 		{
-			std::cout << "player state: PlayerMoveLeft" << std::endl;
+			std::cout << "constructing State: PlayerMoveLeft" << std::endl;
+		}
+
+		~PlayerMoveLeft()
+		{
+			std::cout << "destructing State: PlayerMoveLeft" << std::endl;
 		}
 
 		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
