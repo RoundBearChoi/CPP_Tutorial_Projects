@@ -10,7 +10,7 @@ namespace RB
 		bool bHeldRight = false;
 
 	public:
-		float GetHorizontalAxis(olc::PixelGameEngine* engine)
+		int GetHorizontalAxis(olc::PixelGameEngine* engine)
 		{
 			if (engine->GetKey(olc::Key::A).bHeld)
 			{
