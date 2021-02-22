@@ -3,6 +3,7 @@
 #include "PlayerController.h"
 #include "ShitController.h"
 #include "RenderOffsetType.h"
+#include "ObjData.h"
 
 namespace RB
 {
@@ -14,7 +15,8 @@ namespace RB
 		std::vector<GameObj*> vecChildrenPtr;
 
 	public:
-		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
+		//olc::vf2d position = olc::vf2d(0.0f, 0.0f);
+		ObjData data;
 
 		GameObj(int _typeID)
 		{
@@ -77,7 +79,7 @@ namespace RB
 				offset.y = -(decalHeight);
 			}
 
-			engine->DrawDecal(position + offset, decal);
+			engine->DrawDecal(data.position + offset, decal);
 		}
 
 		void AddChild(int _typeID)

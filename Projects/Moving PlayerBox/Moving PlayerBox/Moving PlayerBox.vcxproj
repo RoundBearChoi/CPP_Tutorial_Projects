@@ -30,6 +30,8 @@
     <ClInclude Include="GameObjType.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="ObjController.h" />
+    <ClInclude Include="ObjData.h" />
+    <ClInclude Include="ObjSpecs.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
     <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerMoveRight.h" />

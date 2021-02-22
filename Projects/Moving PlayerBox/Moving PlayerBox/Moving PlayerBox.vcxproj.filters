@@ -45,6 +45,9 @@
     <Filter Include="Source Files\ObjControllers\Concrete States">
       <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameObj\Info">
+      <UniqueIdentifier>{292fb07c-a99d-409c-b1e7-78b3e1e6d7de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -135,6 +138,12 @@
     </ClInclude>
     <ClInclude Include="ShitGenerator.h">
       <Filter>Source Files\ObjControllers\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjData.h">
+      <Filter>Source Files\GameObj\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjSpecs.h">
+      <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
