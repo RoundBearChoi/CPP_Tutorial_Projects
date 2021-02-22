@@ -20,7 +20,7 @@ namespace RB
 
 		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
 		{
-			pos.x -= 5.0f;
+			pos.x -= 5.1f;
 
 			if (gameData.inputXAxis == 0)
 			{
