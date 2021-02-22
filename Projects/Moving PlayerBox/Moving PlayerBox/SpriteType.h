@@ -5,7 +5,7 @@ namespace RB
 {
 	enum class GameSpriteType
 	{
-		diamond_red = 0,
+		diamond_red,
 		playerbox_green,
 		background,
 		redbox_10x10,
