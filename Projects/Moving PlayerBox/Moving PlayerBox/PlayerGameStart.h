@@ -23,10 +23,5 @@ namespace RB
 			objData.position = { 300.0f, 650.0f };
 			nextStateIndex = (int)PlayerStateType::IDLE;
 		}
-
-		void UpdateState2(GameObj* ptrObj, const GameData& gameData) override
-		{
-
-		}
 	};
 }

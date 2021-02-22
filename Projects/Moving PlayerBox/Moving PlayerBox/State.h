@@ -5,8 +5,6 @@
 
 namespace RB
 {
-	class GameObj;
-
 	class State
 	{
 	protected:
@@ -14,7 +12,6 @@ namespace RB
 
 	public:
 		virtual void UpdateState(ObjData& objData, const GameData& gameData) = 0;
-		virtual void UpdateState2(GameObj* ptrObj, const GameData& gameData) = 0;
 
 		virtual ~State()
 		{

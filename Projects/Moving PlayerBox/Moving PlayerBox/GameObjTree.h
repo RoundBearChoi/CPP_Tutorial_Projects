@@ -36,7 +36,6 @@ namespace RB
 				if (controller != nullptr)
 				{
 					controller->UpdateObj(vecObjPtr[i]->data, gameData);
-					controller->UpdateObj2(vecObjPtr[i], gameData);
 					
 					int nextState = vecObjPtr[i]->GetController()->NextStateIndex();
 

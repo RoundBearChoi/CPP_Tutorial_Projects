@@ -23,11 +23,6 @@ namespace RB
 			currentState->UpdateState(objData, gameData);
 		}
 
-		void UpdateObj2(GameObj* ptrObj, const GameData& gameData)
-		{
-			currentState->UpdateState2(ptrObj, gameData);
-		}
-
 		template<class T>
 		void CreateState()
 		{
