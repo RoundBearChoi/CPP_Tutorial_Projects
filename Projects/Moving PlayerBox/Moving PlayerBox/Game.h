@@ -13,9 +13,8 @@ namespace RB
 	{
 	private:
 		SceneController sceneController;
-		GameData gameData;
 		Input input;
-		float fTargetFrameTime = 1.0f / 120.0f; // Virtual FPS of 120fps
+		float fTargetFrameTime = 1.0f / 120.0f; // target fixed timestep
 		float fAccumulatedTime = 0.0f;
 
 	public:
@@ -29,7 +28,7 @@ namespace RB
 		bool OnUserUpdate(float fElapsedTime) override
 		{
 			//test
-			gameData.inputXAxis = input.GetHorizontalAxis(this);
+			input.UpdateInput(this);
 			
 			if (!input.ESCPressed(this))
 			{
@@ -37,19 +36,25 @@ namespace RB
 
 				if (fAccumulatedTime >= fTargetFrameTime)
 				{
+					GameData gameData;
+					gameData.inputXAxis = input.GetHorizontalAxis();
+					
 					fAccumulatedTime -= fTargetFrameTime;
 					fElapsedTime = fTargetFrameTime;
 
 					sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
 					sceneController.RenderCurrentScene(this, fElapsedTime);
 
-					return true;
+					//only clear after update
+					input.Clear();
 				}
 				else
 				{
 					sceneController.RenderCurrentScene(this, fElapsedTime);
-					return true;
 				}
+
+				input.Queue();
+				return true;
 			}
 			else
 			{

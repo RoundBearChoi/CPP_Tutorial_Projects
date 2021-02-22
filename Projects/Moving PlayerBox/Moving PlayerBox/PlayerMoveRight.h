@@ -26,6 +26,10 @@ namespace RB
 			{
 				nextStateIndex = (int)PlayerStateType::IDLE;
 			}
+			else if (gameData.inputXAxis < 0)
+			{
+				nextStateIndex = (int)PlayerStateType::MOVE_LEFT;
+			}
 		}
 	};
 }

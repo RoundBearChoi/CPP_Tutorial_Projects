@@ -1,59 +1,108 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include <vector>
 
 namespace RB
 {
 	class Input
 	{
 	private:
-		bool bHeldLeft = false;
-		bool bHeldRight = false;
+		std::vector<int> buffer_A;
+		std::vector<int> buffer_D;
+
+		bool Pressed_A = false;
+		bool Pressed_D = false;
+
+		bool A_Queued = false;
+		bool D_Queued = false;
 
 	public:
-		int GetHorizontalAxis(olc::PixelGameEngine* engine)
+		void UpdateInput(olc::PixelGameEngine* ptrEngine)
 		{
-			if (engine->GetKey(olc::Key::A).bHeld)
+			//A
+			if (ptrEngine->GetKey(olc::Key::A).bPressed)
 			{
-				bHeldLeft = true;
+				buffer_A.push_back(1);
+				Pressed_A = true;
 			}
-			else
+			
+			if (ptrEngine->GetKey(olc::Key::A).bReleased)
 			{
-				bHeldLeft = false;
-			}
-
-			if (engine->GetKey(olc::Key::D).bHeld)
-			{
-				bHeldRight = true;
-			}
-			else
-			{
-				bHeldRight = false;
+				buffer_A.erase(buffer_A.begin());
 			}
 
-			// both pressed OR nothing pressed
-			if (bHeldLeft && bHeldRight || !bHeldLeft && !bHeldRight)
+			//D
+			if (ptrEngine->GetKey(olc::Key::D).bPressed)
+			{
+				buffer_D.push_back(1);
+				Pressed_D = true;
+			}
+
+			if (ptrEngine->GetKey(olc::Key::D).bReleased)
+			{
+				buffer_D.erase(buffer_D.begin());
+			}
+		}
+
+		int GetHorizontalAxis()
+		{
+			bool left = false;
+			bool right = false;
+
+			if (buffer_A.size() > 0 || A_Queued)
+			{
+				left = true;
+			}
+
+			if (buffer_D.size() > 0 || D_Queued)
+			{
+				right = true;
+			}
+
+			if (left && right || !left && !right)
 			{
 				return 0;
 			}
-			else
+			else if (left)
 			{
-				if (bHeldLeft)
-				{
-					return -1;
-				}
-				else if (bHeldRight)
-				{
-					return 1;
-				}
+				return -1;
+			}
+			else if (right)
+			{
+				return 1;
 			}
 
 			return 0;
 		}
 
-		bool ESCPressed(olc::PixelGameEngine* engine)
+		void Clear()
 		{
-			if (engine->GetKey(olc::Key::ESCAPE).bHeld)
+			A_Queued = false;
+			D_Queued = false;
+		}
+
+		void Queue()
+		{
+			if (Pressed_A && buffer_A.size() == 0)
 			{
+				A_Queued = true;
+			}
+
+			if (Pressed_D && buffer_D.size() == 0)
+			{
+				D_Queued = true;
+			}
+
+			Pressed_A = false;
+			Pressed_D = false;
+		}
+
+		bool ESCPressed(olc::PixelGameEngine* ptrEngine)
+		{
+			if (ptrEngine->GetKey(olc::Key::ESCAPE).bHeld)
+			{
+				std::cout << std::endl;
+				std::cout << "---quitting---" << std::endl;
 				return true;
 			}
 
