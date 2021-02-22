@@ -28,8 +28,8 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			input.UpdateInput(this);
-
+			gameData.inputXAxis = input.GetHorizontalAxis(this);
+			
 			if (!input.ESCPressed(this))
 			{
 				fAccumulatedTime += fElapsedTime;
@@ -38,8 +38,6 @@ namespace RB
 				{
 					fAccumulatedTime -= fTargetFrameTime;
 					fElapsedTime = fTargetFrameTime;
-
-					gameData.inputXAxis = input.GetxAxis();
 
 					sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
 					sceneController.RenderCurrentScene(this, fElapsedTime);
