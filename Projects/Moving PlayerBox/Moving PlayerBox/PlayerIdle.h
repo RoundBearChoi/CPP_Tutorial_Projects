@@ -20,12 +20,12 @@ namespace RB
 
 		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
 		{
-			if (gameData.inputXAxis < -0.01f)
+			if (gameData.inputXAxis < 0)
 			{
 				nextStateIndex = (int)PlayerStateType::MOVE_LEFT;
 			}
 
-			if (gameData.inputXAxis > 0.01f)
+			if (gameData.inputXAxis > 0)
 			{
 				nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
 			}

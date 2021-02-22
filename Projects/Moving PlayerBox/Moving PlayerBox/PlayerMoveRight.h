@@ -22,8 +22,7 @@ namespace RB
 		{
 			pos.x += 5.0f;
 
-			// close to 0
-			if (gameData.inputXAxis > -0.01f && gameData.inputXAxis < 0.01f)
+			if (gameData.inputXAxis == 0)
 			{
 				nextStateIndex = (int)PlayerStateType::IDLE;
 			}

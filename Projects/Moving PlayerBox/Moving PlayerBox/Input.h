@@ -33,21 +33,21 @@ namespace RB
 			// both pressed OR nothing pressed
 			if (bHeldLeft && bHeldRight || !bHeldLeft && !bHeldRight)
 			{
-				return 0.0f;
+				return 0;
 			}
 			else
 			{
 				if (bHeldLeft)
 				{
-					return -0.1f;
+					return -1;
 				}
 				else if (bHeldRight)
 				{
-					return 0.1f;
+					return 1;
 				}
 			}
 
-			return 0.0f;
+			return 0;
 		}
 
 		bool ESCPressed(olc::PixelGameEngine* engine)
