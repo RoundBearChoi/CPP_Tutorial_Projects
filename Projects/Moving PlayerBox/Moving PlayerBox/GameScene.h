@@ -30,7 +30,7 @@ namespace RB
 			objTree.CreateObj((int)GameObjType::shitgroup);
 
 			objTree.GetObjType((int)GameObjType::player)->SetController((int)ControllerType::PLAYER);
-			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT);
+			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT_GROUP);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData) override

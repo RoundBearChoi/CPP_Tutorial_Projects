@@ -5,6 +5,6 @@ namespace RB
 	enum class ControllerType
 	{
 		PLAYER,
-		SHIT,
+		SHIT_GROUP,
 	};
 }

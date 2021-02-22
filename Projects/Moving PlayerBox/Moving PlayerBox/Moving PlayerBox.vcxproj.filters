@@ -133,5 +133,8 @@
     <ClInclude Include="ShitFall.h">
       <Filter>Source Files\ObjControllers\Concrete States</Filter>
     </ClInclude>
+    <ClInclude Include="ShitGenerator.h">
+      <Filter>Source Files\ObjControllers\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -45,6 +45,7 @@
     <ClInclude Include="GameObjTree.h" />
     <ClInclude Include="ShitController.h" />
     <ClInclude Include="ShitFall.h" />
+    <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitStateType.h" />
     <ClInclude Include="SpriteType.h" />
     <ClInclude Include="State.h" />

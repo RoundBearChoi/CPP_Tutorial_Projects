@@ -40,9 +40,9 @@ namespace RB
 			{
 				ptrController = new PlayerController();
 			}
-			else if (_index == (int)ControllerType::SHIT)
+			else if (_index == (int)ControllerType::SHIT_GROUP)
 			{
-				ptrController = new ShitController();
+				ptrController = new ShitController(true);
 			}
 		}
 
@@ -83,7 +83,7 @@ namespace RB
 		void AddChild(int _typeID)
 		{
 			GameObj* child = new GameObj(_typeID);
-			child->SetController((int)ControllerType::SHIT);
+			child->SetController((int)ControllerType::SHIT_GROUP);
 			vecChildrenPtr.push_back(child);
 		}
 	};
