@@ -41,20 +41,5 @@ namespace RB
 				CreateState<ShitFall>();
 			}
 		}
-
-		virtual bool MakeChildObj() override
-		{
-			return false;
-
-			//if (currentState->testing == 1)
-			//{
-			//	currentState->testing = 0;
-			//	return true;
-			//}
-			//else
-			//{
-			//	return false;
-			//}
-		}
 	};
 }

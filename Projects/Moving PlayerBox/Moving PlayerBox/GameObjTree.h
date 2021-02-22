@@ -44,10 +44,12 @@ namespace RB
 						controller->MakeTransition(nextState);
 					}
 					
-					//temp
-					if (controller->MakeChildObj())
+					//add child from info
+					int Queues = vecObjPtr[i]->data.GetChildQueues();
+
+					for (int child = 0; child < Queues; child++)
 					{
-						CreateObj((int)GameObjType::individual_shit, vecObjPtr[i]);
+						vecObjPtr[i]->data.RemoveQueue();
 					}
 				}
 			}

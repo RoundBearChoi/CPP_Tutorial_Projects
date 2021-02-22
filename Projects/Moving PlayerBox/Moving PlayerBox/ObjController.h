@@ -12,7 +12,6 @@ namespace RB
 
 	public:
 		virtual void MakeTransition(int index) = 0;
-		virtual bool MakeChildObj() = 0;
 
 		virtual ~ObjController()
 		{

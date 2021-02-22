@@ -48,10 +48,5 @@ namespace RB
 
 			}
 		}
-
-		bool MakeChildObj() override
-		{
-			return false;
-		}
 	};
 }
