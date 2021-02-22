@@ -28,6 +28,7 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
+			//test
 			gameData.inputXAxis = input.GetHorizontalAxis(this);
 			
 			if (!input.ESCPressed(this))
