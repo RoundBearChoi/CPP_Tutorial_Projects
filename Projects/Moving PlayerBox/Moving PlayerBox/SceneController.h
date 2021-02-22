@@ -53,10 +53,5 @@ namespace RB
 		{
 			currentScene->RenderScene(ptrEngine);
 		}
-
-		bool QuitGame()
-		{
-			return currentScene->QuitGame();
-		}
 	};
 }

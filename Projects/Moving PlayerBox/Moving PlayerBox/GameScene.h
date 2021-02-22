@@ -1,9 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "GameDecalLoader.h"
-#include "Input.h"
 #include "GameObjTree.h"
-//#include "GameData.h"
 #include "SpriteType.h"
 
 namespace RB
@@ -12,7 +10,6 @@ namespace RB
 	{
 	private:
 		GameDecalLoader gameDecalLoader;
-		Input input;
 		GameObjTree objTree;
 
 	public:
@@ -36,10 +33,8 @@ namespace RB
 			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT);
 		}
 
-		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& _gameData) override
+		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData) override
 		{
-			GameData gameData;
-			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
 			objTree.UpdateAll(gameData);
 
 			//if (input.ESCPressed(ptrEngine))

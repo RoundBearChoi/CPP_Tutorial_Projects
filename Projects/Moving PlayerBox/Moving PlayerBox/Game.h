@@ -20,6 +20,7 @@ namespace RB
 	public:
 		bool OnUserCreate() override
 		{
+			sAppName = "ShitFall";
 			sceneController.CreateScene<TitleScene>();
 			return true;
 		}
@@ -29,7 +30,7 @@ namespace RB
 			GameData gameData;
 			gameData.inputXAxis = input.GetHorizontalAxis(this);
 
-			if (!sceneController.QuitGame())
+			if (!input.ESCPressed(this))
 			{
 				fAccumulatedTime += fElapsedTime;
 				if (fAccumulatedTime >= fTargetFrameTime)

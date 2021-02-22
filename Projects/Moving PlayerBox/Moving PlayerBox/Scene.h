@@ -7,12 +7,11 @@ namespace RB
 	class Scene
 	{
 	protected:
-		bool bQuit = false;
 		int nNextSceneQueue = 0;
 
 	public:
 		virtual void InitScene() = 0;
-		virtual void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& _gameData) = 0;
+		virtual void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData) = 0;
 		virtual void RenderScene(olc::PixelGameEngine* ptrEngine) = 0;
 
 		Scene()
@@ -29,11 +28,6 @@ namespace RB
 		int GetNextScene()
 		{
 			return nNextSceneQueue;
-		}
-
-		bool QuitGame()
-		{
-			return bQuit;
 		}
 
 		void ClearQueue()
