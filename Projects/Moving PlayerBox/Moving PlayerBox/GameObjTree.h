@@ -55,25 +55,31 @@ namespace RB
 			}
 		}
 
-		void CreateObj(int _typeID, GameObj* parent = nullptr)
+		void CreateObj(int _typeIndex, int _controllerTypeIndex = 0, GameObj* parent = nullptr)
 		{
 			if (parent == nullptr)
 			{
-				vecObjPtr.push_back(new GameObj(_typeID));
+				vecObjPtr.push_back(new GameObj(_typeIndex));
+
+				if (_controllerTypeIndex != 0)
+				{
+					vecObjPtr[vecObjPtr.size() - 1]->SetController(_controllerTypeIndex);
+				}
 			}
 			else
 			{
-				parent->AddChild(_typeID);
+				//temp
+				parent->AddChild(_typeIndex, _controllerTypeIndex);
 			}
 		}
 
-		GameObj* GetObjType(int _typeID)
+		GameObj* GetObjType(int _typeIndex)
 		{
 			for (int i = 0; i < vecObjPtr.size(); i++)
 			{
-				if (vecObjPtr[i]->GetTypeID() == _typeID)
+				if (vecObjPtr[i]->GetTypeID() == _typeIndex)
 				{
-					return vecObjPtr[_typeID];
+					return vecObjPtr[i];
 				}
 			}
 			

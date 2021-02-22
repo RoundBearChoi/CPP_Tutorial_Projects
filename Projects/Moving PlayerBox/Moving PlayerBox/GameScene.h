@@ -25,24 +25,14 @@ namespace RB
 
 		void InitScene() override
 		{
-			objTree.CreateObj((int)GameObjType::player);
 			objTree.CreateObj((int)GameObjType::background);
-			objTree.CreateObj((int)GameObjType::shitgroup);
-
-			objTree.GetObjType((int)GameObjType::player)->SetController((int)ControllerType::PLAYER_CONTROLLER);
-			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT_GENERATOR_CONTROLLER);
+			objTree.CreateObj((int)GameObjType::player, (int)ControllerType::PLAYER_CONTROLLER);
+			objTree.CreateObj((int)GameObjType::shitgroup, (int)ControllerType::SHIT_GENERATOR_CONTROLLER);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData) override
 		{
 			objTree.UpdateAll(gameData);
-
-			//if (input.ESCPressed(ptrEngine))
-			//{
-			//	bQuit = true;
-			//	std::cout << std::endl;
-			//	std::cout << "---quit triggered---" << std::endl;
-			//}
 		}
 
 		void RenderScene(olc::PixelGameEngine* ptrEngine) override

@@ -10,22 +10,22 @@ namespace RB
 	class GameObj
 	{
 	private:
-		int typeID = 0;
+		int typeIndex = 0;
 		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
 
 	public:
 		ObjData data;
 
-		GameObj(int _typeID)
+		GameObj(int _typeIndex)
 		{
-			std::cout << "construcing GameObj - typeID: " << _typeID << std::endl;
-			typeID = _typeID;
+			std::cout << "construcing GameObj - typeID: " << _typeIndex << std::endl;
+			typeIndex = _typeIndex;
 		}
 
 		~GameObj()
 		{
-			std::cout << "destructing GameObj - typeID: " << typeID << std::endl;
+			std::cout << "destructing GameObj - typeID: " << typeIndex << std::endl;
 
 			delete ptrController;
 
@@ -54,7 +54,7 @@ namespace RB
 
 		int GetTypeID()
 		{
-			return typeID;
+			return typeIndex;
 		}
 
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)
@@ -81,10 +81,15 @@ namespace RB
 			engine->DrawDecal(data.position + offset, decal);
 		}
 
-		void AddChild(int _typeID)
+		void AddChild(int _typeIndex, int _controllerIndex)
 		{
-			GameObj* child = new GameObj(_typeID);
-			child->SetController((int)ControllerType::SHIT_GENERATOR_CONTROLLER);
+			GameObj* child = new GameObj(_typeIndex);
+
+			if (_controllerIndex != 0)
+			{
+				child->SetController(_controllerIndex);
+			}
+			
 			vecChildrenPtr.push_back(child);
 		}
 	};
