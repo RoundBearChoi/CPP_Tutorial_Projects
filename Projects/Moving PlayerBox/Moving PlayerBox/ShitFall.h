@@ -8,11 +8,13 @@ namespace RB
 	public:
 		ShitFall()
 		{
+			std::cout << std::endl;
 			std::cout << "constructing State: ShitFall" << std::endl;
 		}
 
 		~ShitFall()
 		{
+			std::cout << std::endl;
 			std::cout << "destructing State: ShitFall" << std::endl;
 		}
 
