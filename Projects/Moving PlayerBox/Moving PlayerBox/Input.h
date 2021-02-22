@@ -28,7 +28,10 @@ namespace RB
 			
 			if (ptrEngine->GetKey(olc::Key::A).bReleased)
 			{
-				buffer_A.erase(buffer_A.begin());
+				if (buffer_A.size() > 0)
+				{
+					buffer_A.erase(buffer_A.begin());
+				}
 			}
 
 			//D
@@ -40,7 +43,10 @@ namespace RB
 
 			if (ptrEngine->GetKey(olc::Key::D).bReleased)
 			{
-				buffer_D.erase(buffer_D.begin());
+				if (buffer_D.size() > 0)
+				{
+					buffer_D.erase(buffer_D.begin());
+				}
 			}
 		}
 
