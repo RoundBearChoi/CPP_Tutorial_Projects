@@ -29,5 +29,10 @@ namespace RB
 				nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
 			}
 		}
+
+		void UpdateState2(GameObj* ptrObj, const GameData& gameData) override
+		{
+
+		}
 	};
 }

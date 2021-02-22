@@ -21,5 +21,10 @@ namespace RB
 		{
 
 		}
+
+		void UpdateState2(GameObj* ptrObj, const GameData& gameData) override
+		{
+
+		}
 	};
 }

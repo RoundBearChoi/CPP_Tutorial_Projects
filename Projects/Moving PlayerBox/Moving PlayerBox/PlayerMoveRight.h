@@ -32,5 +32,10 @@ namespace RB
 
 			std::cout << "player pos: " << objData.position.x << ", " << objData.position.y << std::endl;
 		}
+
+		void UpdateState2(GameObj* ptrObj, const GameData& gameData) override
+		{
+
+		}
 	};
 }

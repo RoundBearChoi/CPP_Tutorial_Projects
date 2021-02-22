@@ -31,5 +31,10 @@ namespace RB
 				testing = false;
 			}
 		}
+
+		void UpdateState2(GameObj* ptrObj, const GameData& gameData) override
+		{
+
+		}
 	};
 }
