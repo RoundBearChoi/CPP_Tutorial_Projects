@@ -1,6 +1,5 @@
 #pragma once
 #include "State.h"
-#include "GameData.h"
 #include "PlayerStateType.h"
 
 namespace RB
@@ -18,7 +17,7 @@ namespace RB
 			std::cout << "destructing State: PlayerIdle" << std::endl;
 		}
 
-		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
+		void UpdateState(ObjData& objData, const GameData& gameData) override
 		{
 			if (gameData.inputXAxis < 0)
 			{

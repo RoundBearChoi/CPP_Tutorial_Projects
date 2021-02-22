@@ -1,6 +1,5 @@
 #pragma once
 #include "State.h"
-#include "GameData.h"
 #include "PlayerStateType.h"
 
 namespace RB
@@ -18,9 +17,9 @@ namespace RB
 			std::cout << "destructing State: PlayerMoveRight" << std::endl;
 		}
 
-		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
+		void UpdateState(ObjData& objData, const GameData& gameData) override
 		{
-			pos.x += 5.1f;
+			objData.position.x += 5.1f;
 
 			if (gameData.inputXAxis == 0)
 			{
@@ -31,7 +30,7 @@ namespace RB
 				nextStateIndex = (int)PlayerStateType::MOVE_LEFT;
 			}
 
-			std::cout << "player pos: " << pos.x << ", " << pos.y << std::endl;
+			std::cout << "player pos: " << objData.position.x << ", " << objData.position.y << std::endl;
 		}
 	};
 }

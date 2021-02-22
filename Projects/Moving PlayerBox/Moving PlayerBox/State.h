@@ -1,6 +1,7 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "GameData.h"
+#include "ObjData.h"
 
 namespace RB
 {
@@ -10,7 +11,7 @@ namespace RB
 		int nextStateIndex = 0;
 
 	public:
-		virtual void UpdateState(olc::vf2d& pos, const GameData& gameData) = 0;
+		virtual void UpdateState(ObjData& objData, const GameData& gameData) = 0;
 
 		virtual ~State()
 		{

@@ -15,7 +15,6 @@ namespace RB
 		std::vector<GameObj*> vecChildrenPtr;
 
 	public:
-		//olc::vf2d position = olc::vf2d(0.0f, 0.0f);
 		ObjData data;
 
 		GameObj(int _typeID)
