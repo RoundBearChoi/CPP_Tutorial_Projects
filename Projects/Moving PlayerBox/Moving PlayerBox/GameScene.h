@@ -3,7 +3,7 @@
 #include "GameDecalLoader.h"
 #include "Input.h"
 #include "GameObjTree.h"
-#include "GameData.h"
+//#include "GameData.h"
 #include "SpriteType.h"
 
 namespace RB
@@ -36,18 +36,18 @@ namespace RB
 			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT);
 		}
 
-		void UpdateScene(olc::PixelGameEngine* ptrEngine) override
+		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& _gameData) override
 		{
 			GameData gameData;
 			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
 			objTree.UpdateAll(gameData);
 
-			if (input.ESCPressed(ptrEngine))
-			{
-				bQuit = true;
-				std::cout << std::endl;
-				std::cout << "---quit triggered---" << std::endl;
-			}
+			//if (input.ESCPressed(ptrEngine))
+			//{
+			//	bQuit = true;
+			//	std::cout << std::endl;
+			//	std::cout << "---quit triggered---" << std::endl;
+			//}
 		}
 
 		void RenderScene(olc::PixelGameEngine* ptrEngine) override

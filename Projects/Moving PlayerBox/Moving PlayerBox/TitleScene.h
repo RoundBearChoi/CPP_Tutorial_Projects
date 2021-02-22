@@ -24,7 +24,7 @@ namespace RB
 
 		}
 
-		void UpdateScene(olc::PixelGameEngine* ptrEngine) override
+		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& _gameData) override
 		{
 			frameCount++;
 

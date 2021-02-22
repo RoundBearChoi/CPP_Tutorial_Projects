@@ -4,6 +4,8 @@
 #include "SceneController.h"
 #include "GameScene.h"
 #include "TitleScene.h"
+#include "GameData.h"
+#include "Input.h"
 
 namespace RB
 {
@@ -11,6 +13,7 @@ namespace RB
 	{
 	private:
 		SceneController sceneController;
+		Input input;
 		float fTargetFrameTime = 1.0f / 120.0f; // Virtual FPS of 120fps
 		float fAccumulatedTime = 0.0f;
 
@@ -23,6 +26,9 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
+			GameData gameData;
+			gameData.inputXAxis = input.GetHorizontalAxis(this);
+
 			if (!sceneController.QuitGame())
 			{
 				fAccumulatedTime += fElapsedTime;
@@ -31,7 +37,7 @@ namespace RB
 					fAccumulatedTime -= fTargetFrameTime;
 					fElapsedTime = fTargetFrameTime;
 
-					sceneController.UpdateCurrentScene(this, fElapsedTime);
+					sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
 					sceneController.RenderCurrentScene(this, fElapsedTime);
 					return true;
 				}

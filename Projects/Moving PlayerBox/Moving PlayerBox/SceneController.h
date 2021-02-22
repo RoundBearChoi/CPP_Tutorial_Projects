@@ -34,9 +34,9 @@ namespace RB
 			}
 		}
 
-		void UpdateCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
+		void UpdateCurrentScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData, float deltaTime)
 		{
-			currentScene->UpdateScene(ptrEngine);
+			currentScene->UpdateScene(ptrEngine, gameData);
 
 			int nextScene = currentScene->GetNextScene();
 
