@@ -36,7 +36,7 @@ namespace RB
 
 		void UpdateCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
 		{
-			currentScene->UpdateScene(ptrEngine, deltaTime);
+			currentScene->UpdateScene(ptrEngine);
 
 			int nextScene = currentScene->GetNextScene();
 
@@ -47,6 +47,11 @@ namespace RB
 					CreateScene<GameScene>();
 				}
 			}
+		}
+
+		void RenderCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
+		{
+			currentScene->RenderScene(ptrEngine);
 		}
 
 		bool QuitGame()

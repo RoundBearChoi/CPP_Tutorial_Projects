@@ -36,17 +36,11 @@ namespace RB
 			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT);
 		}
 
-		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
+		void UpdateScene(olc::PixelGameEngine* ptrEngine) override
 		{
 			GameData gameData;
-			gameData.deltaTime = _deltaTime;
 			gameData.inputXAxis = input.GetHorizontalAxis(ptrEngine);
 			objTree.UpdateAll(gameData);
-
-			objTree.GetObjType((int)GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
-			objTree.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
-			objTree.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
-			objTree.GetObjType((int)GameObjType::shitgroup)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
 
 			if (input.ESCPressed(ptrEngine))
 			{
@@ -54,6 +48,15 @@ namespace RB
 				std::cout << std::endl;
 				std::cout << "---quit triggered---" << std::endl;
 			}
+		}
+
+		void RenderScene(olc::PixelGameEngine* ptrEngine) override
+		{
+			objTree.GetObjType((int)GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
+			objTree.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			objTree.GetObjType((int)GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
+			objTree.GetObjType((int)GameObjType::shitgroup)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
+
 		}
 	};
 }

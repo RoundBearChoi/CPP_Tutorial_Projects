@@ -20,7 +20,7 @@ namespace RB
 
 		void UpdateState(olc::vf2d& pos, const GameData& gameData) override
 		{
-			pos.x -= gameData.deltaTime * 200.0f;
+			pos.x -= 5.0f;
 
 			// close to 0
 			if (gameData.inputXAxis > -0.01f && gameData.inputXAxis < 0.01f)

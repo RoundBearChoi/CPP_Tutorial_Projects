@@ -6,7 +6,7 @@ namespace RB
 	class TitleScene : public Scene
 	{
 	private:
-		float fTesting = 0.0f;
+		int frameCount = 0;
 
 	public:
 		TitleScene()
@@ -24,14 +24,19 @@ namespace RB
 
 		}
 
-		void UpdateScene(olc::PixelGameEngine* ptrEngine, float _deltaTime) override
+		void UpdateScene(olc::PixelGameEngine* ptrEngine) override
 		{
-			fTesting += _deltaTime;
+			frameCount++;
 
-			if (fTesting >= 2.0f)
+			if (frameCount >= 1 * 120)
 			{
 				nNextSceneQueue = 2;
 			}
+		}
+
+		void RenderScene(olc::PixelGameEngine* ptrEngine) override
+		{
+
 		}
 	};
 }

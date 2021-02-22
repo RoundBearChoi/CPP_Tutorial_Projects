@@ -11,6 +11,8 @@ namespace RB
 	{
 	private:
 		SceneController sceneController;
+		float fTargetFrameTime = 1.0f / 120.0f; // Virtual FPS of 120fps
+		float fAccumulatedTime = 0.0f;
 
 	public:
 		bool OnUserCreate() override
@@ -23,8 +25,21 @@ namespace RB
 		{
 			if (!sceneController.QuitGame())
 			{
-				sceneController.UpdateCurrentScene(this, fElapsedTime);
-				return true;
+				fAccumulatedTime += fElapsedTime;
+				if (fAccumulatedTime >= fTargetFrameTime)
+				{
+					fAccumulatedTime -= fTargetFrameTime;
+					fElapsedTime = fTargetFrameTime;
+
+					sceneController.UpdateCurrentScene(this, fElapsedTime);
+					sceneController.RenderCurrentScene(this, fElapsedTime);
+					return true;
+				}
+				else
+				{
+					sceneController.RenderCurrentScene(this, fElapsedTime);
+					return true;
+				}
 			}
 			else
 			{
