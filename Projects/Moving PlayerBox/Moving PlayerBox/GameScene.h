@@ -29,8 +29,8 @@ namespace RB
 			objTree.CreateObj((int)GameObjType::background);
 			objTree.CreateObj((int)GameObjType::shitgroup);
 
-			objTree.GetObjType((int)GameObjType::player)->SetController((int)ControllerType::PLAYER);
-			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT_GROUP);
+			objTree.GetObjType((int)GameObjType::player)->SetController((int)ControllerType::PLAYER_CONTROLLER);
+			objTree.GetObjType((int)GameObjType::shitgroup)->SetController((int)ControllerType::SHIT_GENERATOR_CONTROLLER);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData) override

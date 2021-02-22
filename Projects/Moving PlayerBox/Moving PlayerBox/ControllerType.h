@@ -4,7 +4,8 @@ namespace RB
 {
 	enum class ControllerType
 	{
-		PLAYER,
-		SHIT_GROUP,
+		PLAYER_CONTROLLER,
+		SHIT_GENERATOR_CONTROLLER,
+		FALLING_SHIT_CONTROLLER,
 	};
 }
