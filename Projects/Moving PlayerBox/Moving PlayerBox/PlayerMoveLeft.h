@@ -30,6 +30,8 @@ namespace RB
 			{
 				nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
 			}
+
+			std::cout << "player pos: " << pos.x << ", " << pos.y << std::endl;
 		}
 	};
 }
