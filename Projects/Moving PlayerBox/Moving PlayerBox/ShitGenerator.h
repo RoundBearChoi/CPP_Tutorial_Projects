@@ -27,7 +27,7 @@ namespace RB
 		{
 			if (testing)
 			{
-				objData.QueueChild((int)GameObjType::individual_shit, (int)ControllerType::FALLING_SHIT_CONTROLLER);
+				objData.QueueChild(GameObjType::individual_shit, ControllerType::FALLING_SHIT_CONTROLLER);
 				testing = false;
 			}
 		}

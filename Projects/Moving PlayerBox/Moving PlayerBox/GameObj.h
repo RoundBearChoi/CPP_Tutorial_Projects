@@ -10,22 +10,22 @@ namespace RB
 	class GameObj
 	{
 	private:
-		int typeIndex = 0;
+		GameObjType objType = GameObjType::NONE;
 		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
 
 	public:
 		ObjData data;
 
-		GameObj(int _typeIndex)
+		GameObj(GameObjType _objType)
 		{
-			std::cout << "construcing GameObj - typeID: " << _typeIndex << std::endl;
-			typeIndex = _typeIndex;
+			std::cout << "construcing GameObj - typeID: " << (int)_objType << std::endl;
+			objType = _objType;
 		}
 
 		~GameObj()
 		{
-			std::cout << "destructing GameObj - typeID: " << typeIndex << std::endl;
+			std::cout << "destructing GameObj - typeID: " << (int)objType << std::endl;
 
 			delete ptrController;
 
@@ -35,13 +35,13 @@ namespace RB
 			}
 		}
 
-		void SetController(int _index)
+		void SetController(ControllerType _controllerType)
 		{
-			if (_index == (int)ControllerType::PLAYER_CONTROLLER)
+			if (_controllerType == ControllerType::PLAYER_CONTROLLER)
 			{
 				ptrController = new PlayerController();
 			}
-			else if (_index == (int)ControllerType::SHIT_GENERATOR_CONTROLLER)
+			else if (_controllerType == ControllerType::SHIT_GENERATOR_CONTROLLER)
 			{
 				ptrController = new ShitController(true);
 			}
@@ -52,9 +52,16 @@ namespace RB
 			return ptrController;
 		}
 
-		int GetTypeID()
+		bool IsObjType(GameObjType _objType)
 		{
-			return typeIndex;
+			if (objType == _objType)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)
@@ -81,13 +88,13 @@ namespace RB
 			engine->DrawDecal(data.position + offset, decal);
 		}
 
-		void AddChild(int _typeIndex, int _controllerIndex)
+		void AddChild(GameObjType _objType, ControllerType _controllerType)
 		{
-			GameObj* child = new GameObj(_typeIndex);
+			GameObj* child = new GameObj(_objType);
 
-			if (_controllerIndex != 0)
+			if (_controllerType != ControllerType::NONE)
 			{
-				child->SetController(_controllerIndex);
+				child->SetController(_controllerType);
 			}
 			
 			vecChildrenPtr.push_back(child);

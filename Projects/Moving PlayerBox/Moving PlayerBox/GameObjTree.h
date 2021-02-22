@@ -56,29 +56,29 @@ namespace RB
 			}
 		}
 
-		void CreateObj(int _typeIndex, int _controllerTypeIndex = 0, GameObj* parent = nullptr)
+		void CreateObj(GameObjType _objType, ControllerType _controllerType = ControllerType::NONE, GameObj* parent = nullptr)
 		{
 			if (parent == nullptr)
 			{
-				vecObjPtr.push_back(new GameObj(_typeIndex));
+				vecObjPtr.push_back(new GameObj(_objType));
 
-				if (_controllerTypeIndex != 0)
+				if (_controllerType != ControllerType::NONE)
 				{
-					vecObjPtr[vecObjPtr.size() - 1]->SetController(_controllerTypeIndex);
+					vecObjPtr[vecObjPtr.size() - 1]->SetController(_controllerType);
 				}
 			}
 			else
 			{
 				//temp
-				parent->AddChild(_typeIndex, _controllerTypeIndex);
+				parent->AddChild(_objType, _controllerType);
 			}
 		}
 
-		GameObj* GetObjType(int _typeIndex)
+		GameObj* GetObjType(GameObjType _objType)
 		{
 			for (int i = 0; i < vecObjPtr.size(); i++)
 			{
-				if (vecObjPtr[i]->GetTypeID() == _typeIndex)
+				if (vecObjPtr[i]->IsObjType(_objType))
 				{
 					return vecObjPtr[i];
 				}

@@ -4,6 +4,7 @@ namespace RB
 {
 	enum class GameObjType
 	{
+		NONE,
 		player,
 		background,
 		shitgroup,

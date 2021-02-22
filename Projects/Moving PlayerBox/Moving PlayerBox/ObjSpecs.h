@@ -1,17 +1,19 @@
 #pragma once
+#include "GameObjType.h"
+#include "ControllerType.h"
 
 namespace RB
 {
 	class ObjSpecs
 	{
 	public:
-		int nObjType = 0;
-		int nControllerType = 0;
+		GameObjType objType = GameObjType::NONE;
+		ControllerType controllerType = ControllerType::NONE;
 
-		ObjSpecs(int _objTypeIndex, int _controllerIndex)
+		ObjSpecs(GameObjType _objType, ControllerType _controllerType)
 		{
-			nObjType = _objTypeIndex;
-			nControllerType = _controllerIndex;
+			objType = _objType;
+			controllerType = _controllerType;
 		}
 	};
 }
