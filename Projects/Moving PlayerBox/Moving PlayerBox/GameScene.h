@@ -2,14 +2,14 @@
 #include "Scene.h"
 #include "GameDecalLoader.h"
 #include "GameObjTree.h"
-#include "SpriteType.h"
+#include "SpritePath.h"
 
 namespace RB
 {
 	class GameScene : public Scene
 	{
 	private:
-		GameDecalLoader gameDecalLoader;
+		GameDecalLoader decalLoader;
 		GameObjTree objTree;
 
 	public:
@@ -37,10 +37,10 @@ namespace RB
 
 		void RenderScene(olc::PixelGameEngine* ptrEngine) override
 		{
-			objTree.GetObjType(GameObjType::background)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
-			objTree.GetObjType(GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
-			objTree.GetObjType(GameObjType::player)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
-			objTree.GetObjType(GameObjType::shitgroup)->Render(ptrEngine, gameDecalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
+			objTree.GetObjType(GameObjType::background)->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::background), RenderOffsetType::NONE);
+			objTree.GetObjType(GameObjType::player)->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			objTree.GetObjType(GameObjType::player)->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
+			objTree.GetObjType(GameObjType::shitgroup)->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
 		}
 	};
 }

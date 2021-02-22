@@ -49,7 +49,7 @@
     <ClInclude Include="ShitFall.h" />
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitStateType.h" />
-    <ClInclude Include="SpriteType.h" />
+    <ClInclude Include="SpritePath.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="TitleScene.h" />
   </ItemGroup>

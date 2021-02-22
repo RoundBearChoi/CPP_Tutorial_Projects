@@ -1,7 +1,7 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "DecalLoader.h"
-#include "SpriteType.h"
+#include "SpritePath.h"
 
 namespace RB
 {
@@ -35,9 +35,9 @@ namespace RB
 
 		void LoadSprites()
 		{
-			for (int i = 0; i < (int)GameSpriteType::COUNT; i++)
+			for (int i = 0; i < (int)SpriteType::COUNT; i++)
 			{
-				std::string path = SpriteType::GetStringPath((GameSpriteType)i);
+				std::string path = SpritePath::GetPath((SpriteType)i);
 				vecSpritePtr.push_back(new olc::Sprite(path));
 				std::cout << "constructing Sprite: " << path << std::endl;
 			}

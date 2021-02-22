@@ -103,9 +103,6 @@
     <ClInclude Include="DecalLoader.h">
       <Filter>Source Files\DecalLoader\Base</Filter>
     </ClInclude>
-    <ClInclude Include="SpriteType.h">
-      <Filter>Source Files\DecalLoader\Base</Filter>
-    </ClInclude>
     <ClInclude Include="ControllerType.h">
       <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
@@ -144,6 +141,9 @@
     </ClInclude>
     <ClInclude Include="ObjSpecs.h">
       <Filter>Source Files\GameObj\Info</Filter>
+    </ClInclude>
+    <ClInclude Include="SpritePath.h">
+      <Filter>Source Files\DecalLoader\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
