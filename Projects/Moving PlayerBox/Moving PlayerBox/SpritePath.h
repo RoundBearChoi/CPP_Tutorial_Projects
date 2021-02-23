@@ -25,6 +25,18 @@ namespace RB
 			{
 				return "PNG files/redbox_10x10.png";
 			}
+			else if (spriteType == GameSpriteType::shit_box32x32)
+			{
+				return "PNG files/shit_box32x32.png";
+			}
+			else if (spriteType == GameSpriteType::shit_box60x60)
+			{
+				return "PNG files/shit_box60x60.png";
+			}
+			else if (spriteType == GameSpriteType::shit_box100x100)
+			{
+				return "PNG files/shit_box100x100.png";
+			}
 
 			return "none";
 		}
