@@ -9,9 +9,15 @@ namespace RB
 	{
 	private:
 		std::vector<ObjSpecs> vecChildQueues;
+		int creationID = 0;
 
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
+
+		~ObjData()
+		{
+			std::cout << "destructing ObjData - CreationID: " << creationID << std::endl;
+		}
 		
 		void QueueChildCreation(GameObjType _objType, ControllerType _controllerType)
 		{
@@ -32,6 +38,12 @@ namespace RB
 		void ClearChildQueues()
 		{
 			vecChildQueues.clear();
+		}
+
+		void SetCreationID(int _id)
+		{
+			std::cout << "setting ObjData CreationID: " << _id << std::endl;
+			creationID = _id;
 		}
 	};
 }

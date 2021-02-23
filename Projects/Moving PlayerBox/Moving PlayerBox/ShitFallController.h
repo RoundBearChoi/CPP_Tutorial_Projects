@@ -15,7 +15,7 @@ namespace RB
 		{
 			std::cout << "constructing ShitFallController" << std::endl;
 
-			MakeTransition((int)ShitStateType::FALL);
+			MakeTransition((int)ShitStateType::POSITION);
 		}
 
 		~ShitFallController() override

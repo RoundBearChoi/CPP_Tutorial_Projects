@@ -65,8 +65,9 @@ namespace RB
 					child->SetController(specs.controllerType);
 				}
 
-				vecAllObjs.push_back(child);
 				obj->AddToHierarchy(child);
+				vecAllObjs.push_back(child);
+				SetID(child);
 			}
 
 			obj->data.ClearChildQueues();
@@ -74,12 +75,15 @@ namespace RB
 
 		void CreateObj(ObjSpecs specs)
 		{
-			vecAllObjs.push_back(new GameObj(specs));
+			GameObj* newObj = new GameObj(specs);
+			vecAllObjs.push_back(newObj);
 
 			if (specs.controllerType != ControllerType::NONE)
 			{
 				vecAllObjs[vecAllObjs.size() - 1]->SetController(specs.controllerType);
 			}
+
+			SetID(newObj);
 		}
 
 		GameObj* GetObjType(GameObjType _objType)
@@ -93,6 +97,11 @@ namespace RB
 			}
 			
 			return nullptr;
+		}
+
+		void SetID(GameObj* obj)
+		{
+			obj->data.SetCreationID(vecAllObjs.size() - 1);
 		}
 	};
 }

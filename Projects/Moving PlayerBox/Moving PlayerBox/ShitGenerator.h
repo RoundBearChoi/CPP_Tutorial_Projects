@@ -9,6 +9,7 @@ namespace RB
 	{
 	private:
 		bool testing = true;
+		bool testing2 = true;
 
 	public:
 		ShitGenerator()
@@ -29,6 +30,12 @@ namespace RB
 			{
 				objData.QueueChildCreation(GameObjType::individual_shit, ControllerType::SHIT_CONTROLLER_FALL);
 				testing = false;
+			}
+
+			if (testing2)
+			{
+				objData.QueueChildCreation(GameObjType::individual_shit, ControllerType::SHIT_CONTROLLER_FALL);
+				testing2 = false;
 			}
 		}
 	};
