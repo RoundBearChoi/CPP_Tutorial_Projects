@@ -5,6 +5,8 @@ namespace RB
 {
 	class ShitFall : public State
 	{
+	private:
+		float speed = 1.0f;
 	public:
 		ShitFall()
 		{
@@ -19,7 +21,11 @@ namespace RB
 
 		void UpdateState(ObjData& objData, const GameData& gameData)
 		{
-
+			if (objData.position.y < 700.0f + 16.0f)
+			{
+				speed = speed * 1.0122f;
+				objData.position.y += speed;
+			}
 		}
 	};
 }

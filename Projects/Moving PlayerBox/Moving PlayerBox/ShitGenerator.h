@@ -8,7 +8,9 @@ namespace RB
 	class ShitGenerator : public State
 	{
 	private:
-		int frameCount = 0;
+		int creationCounter = 0;
+		int creationTiming = 120;
+		int difficultyCounter = 0;
 
 	public:
 		ShitGenerator()
@@ -25,14 +27,25 @@ namespace RB
 
 		void UpdateState(ObjData& objData, const GameData& gameData)
 		{
-			frameCount++;
+			creationCounter++;
+			difficultyCounter++;
 
 			objData.position = { 0.0f, 350.0f };
 
-			if (frameCount >= 120)
+			if (creationCounter >= creationTiming)
 			{
 				objData.QueueChildCreation(GameObjType::individual_shit, ControllerType::SHIT_CONTROLLER_FALL);
-				frameCount = 0;
+				creationCounter = 0;
+			}
+
+			if (difficultyCounter >= 25)
+			{
+				if (creationTiming >= 15)
+				{
+					creationTiming--;
+				}
+				
+				difficultyCounter = 0;
 			}
 		}
 	};

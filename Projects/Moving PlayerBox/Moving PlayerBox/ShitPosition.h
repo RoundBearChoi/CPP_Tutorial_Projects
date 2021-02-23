@@ -18,7 +18,7 @@ namespace RB
 			std::cout << "constructing State: ShitPosition" << std::endl;
 
 			int x = randomInteger.GetInteger(0, 600);
-			randomStart = { (float)x, 0.0f };
+			randomStart = { (float)x, -16.0f };
 		}
 
 		~ShitPosition()
@@ -30,6 +30,8 @@ namespace RB
 		void UpdateState(ObjData& objData, const GameData& gameData)
 		{
 			objData.position = randomStart;
+
+			nextStateIndex = (int)ShitStateType::FALL;
 		}
 	};
 }
