@@ -6,5 +6,6 @@ namespace RB
 	{
 	public:
 		int inputXAxis = 0;
+		bool startGame = false;
 	};
 }

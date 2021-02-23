@@ -37,7 +37,7 @@ namespace RB
 
 			frameCount++;
 
-			if (frameCount >= 2 * 120)
+			if (gameData.startGame)
 			{
 				nNextSceneQueue = 2; //gamescene index is 2
 			}
@@ -49,7 +49,7 @@ namespace RB
 			GameObj* title = objTree.GetObjType(GameObjType::title);
 
 			background->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::background), RenderOffsetType::NONE);
-			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180), RenderOffsetType::NONE);
+			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180), RenderOffsetType::CENTER_CENTER);
 		}
 	};
 }

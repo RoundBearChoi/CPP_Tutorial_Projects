@@ -56,9 +56,12 @@
     <ClInclude Include="ShitStateType.h" />
     <ClInclude Include="SpritePath.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="TitleController.h" />
     <ClInclude Include="TitleDecalLoader.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="TitleSpriteType.h" />
+    <ClInclude Include="TitleIdle.h" />
+    <ClInclude Include="TitleStateType.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

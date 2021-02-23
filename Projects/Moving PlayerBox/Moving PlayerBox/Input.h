@@ -16,6 +16,9 @@ namespace RB
 		bool A_Queued = false;
 		bool D_Queued = false;
 
+		bool bStartGame = false;
+		bool bQuitGame = false;
+
 	public:
 		void UpdateInput(olc::PixelGameEngine* ptrEngine)
 		{
@@ -47,6 +50,18 @@ namespace RB
 				{
 					buffer_D.erase(buffer_D.begin());
 				}
+			}
+
+			//start
+			if (ptrEngine->GetKey(olc::Key::ENTER).bHeld)
+			{
+				bStartGame = true;
+			}
+
+			//quit
+			if (ptrEngine->GetKey(olc::Key::ESCAPE).bHeld)
+			{
+				bQuitGame = true;
 			}
 		}
 
@@ -103,16 +118,23 @@ namespace RB
 			Pressed_D = false;
 		}
 
-		bool ESCPressed(olc::PixelGameEngine* ptrEngine)
+		bool ESCPressed()
 		{
-			if (ptrEngine->GetKey(olc::Key::ESCAPE).bHeld)
+			if (bQuitGame)
 			{
 				std::cout << std::endl;
 				std::cout << "---quitting---" << std::endl;
 				return true;
 			}
+			else
+			{
+				return false;
+			}
+		}
 
-			return false;
+		bool StartGame()
+		{
+			return bStartGame;
 		}
 	};
 }

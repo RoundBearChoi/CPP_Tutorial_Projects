@@ -30,36 +30,35 @@ namespace RB
 			//test
 			input.UpdateInput(this);
 			
-			if (!input.ESCPressed(this))
-			{
-				fAccumulatedTime += fElapsedTime;
-
-				if (fAccumulatedTime >= fTargetFrameTime)
-				{
-					GameData gameData;
-					gameData.inputXAxis = input.GetHorizontalAxis();
-					
-					fAccumulatedTime -= fTargetFrameTime;
-					fElapsedTime = fTargetFrameTime;
-
-					sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
-					sceneController.RenderCurrentScene(this, fElapsedTime);
-
-					//only clear after update
-					input.Clear();
-				}
-				else
-				{
-					sceneController.RenderCurrentScene(this, fElapsedTime);
-				}
-
-				input.Queue();
-				return true;
-			}
-			else
+			if (input.ESCPressed())
 			{
 				return false;
 			}
+
+			fAccumulatedTime += fElapsedTime;
+
+			if (fAccumulatedTime >= fTargetFrameTime)
+			{
+				GameData gameData;
+				gameData.inputXAxis = input.GetHorizontalAxis();
+				gameData.startGame = input.StartGame();
+
+				fAccumulatedTime -= fTargetFrameTime;
+				fElapsedTime = fTargetFrameTime;
+
+				sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
+				sceneController.RenderCurrentScene(this, fElapsedTime);
+
+				//only clear after update
+				input.Clear();
+			}
+			else
+			{
+				sceneController.RenderCurrentScene(this, fElapsedTime);
+			}
+
+			input.Queue();
+			return true;
 		}
 
 		void Run()

@@ -110,7 +110,7 @@ namespace RB
 
 			if (specs.controllerType != ControllerType::NONE)
 			{
-				vecAllObjs[vecAllObjs.size() - 1]->SetController(specs.controllerType);
+				newObj->SetController(specs.controllerType);
 			}
 
 			SetID(newObj);
