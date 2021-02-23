@@ -46,10 +46,10 @@ namespace RB
 			GameObj* playerPoint = objTree.GetObjType(GameObjType::player);
 			GameObj* shitgroup = objTree.GetObjType(GameObjType::shitgroup);
 
-			background->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::background), RenderOffsetType::NONE);
-			playerBox->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
-			playerPoint->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
-			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)SpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
+			background->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
+			playerBox->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			playerPoint->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
+			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
 		}
 	};
 }

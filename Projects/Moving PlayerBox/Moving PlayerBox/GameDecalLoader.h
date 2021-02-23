@@ -35,9 +35,9 @@ namespace RB
 
 		void LoadSprites()
 		{
-			for (int i = 0; i < (int)SpriteType::COUNT; i++)
+			for (int i = 0; i < (int)GameSpriteType::COUNT; i++)
 			{
-				std::string path = SpritePath::GetPath((SpriteType)i);
+				std::string path = SpritePath::GetPath((GameSpriteType)i);
 				vecSpritePtr.push_back(new olc::Sprite(path));
 				std::cout << "constructing Sprite: " << path << std::endl;
 			}

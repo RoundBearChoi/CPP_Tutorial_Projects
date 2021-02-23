@@ -50,6 +50,9 @@
     <Filter Include="Source Files\States\Base">
       <UniqueIdentifier>{6c7b2d80-3a5d-4648-967e-704549274d72}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\DecalLoader\enums">
+      <UniqueIdentifier>{9de2ba9c-7b15-4ab1-8662-48eaffb7d63d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -152,6 +155,9 @@
     </ClInclude>
     <ClInclude Include="ShitFallController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSpriteType.h">
+      <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -28,6 +28,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="GameObjType.h" />
+    <ClInclude Include="GameSpriteType.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="ObjController.h" />
     <ClInclude Include="ObjData.h" />
