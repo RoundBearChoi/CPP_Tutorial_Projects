@@ -21,10 +21,15 @@ namespace RB
 
 		void UpdateState(ObjData& objData, const GameData& gameData)
 		{
-			if (objData.position.y < 700.0f + 16.0f)
+			if (objData.position.y <= 650.0f)
 			{
 				speed = speed * 1.0122f;
 				objData.position.y += speed;
+			}
+			else
+			{
+				objData.position.y = 650.0f;
+				nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
 			}
 		}
 	};

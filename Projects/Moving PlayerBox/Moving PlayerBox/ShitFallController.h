@@ -5,6 +5,7 @@
 #include "ShitGenerator.h"
 #include "ShitPosition.h"
 #include "ShitFall.h"
+#include "ShitSplash.h"
 
 namespace RB
 {
@@ -33,6 +34,10 @@ namespace RB
 			else if (index == (int)ShitStateType::FALL)
 			{
 				CreateState<ShitFall>();
+			}
+			else if (index == (int)ShitStateType::SHIT_SPLASH)
+			{
+				CreateState<ShitSplash>();
 			}
 		}
 	};

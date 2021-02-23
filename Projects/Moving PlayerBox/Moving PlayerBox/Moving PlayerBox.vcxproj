@@ -52,6 +52,7 @@
     <ClInclude Include="ShitFall.h" />
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitPosition.h" />
+    <ClInclude Include="ShitSplash.h" />
     <ClInclude Include="ShitStateType.h" />
     <ClInclude Include="SpritePath.h" />
     <ClInclude Include="State.h" />

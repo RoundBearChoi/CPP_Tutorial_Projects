@@ -8,5 +8,6 @@ namespace RB
 		GENERATOR,
 		POSITION,
 		FALL,
+		SHIT_SPLASH,
 	};
 }

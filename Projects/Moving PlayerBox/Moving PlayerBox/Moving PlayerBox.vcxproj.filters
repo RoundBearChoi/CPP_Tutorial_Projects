@@ -165,5 +165,8 @@
     <ClInclude Include="RandomInteger.h">
       <Filter>Source Files\Random</Filter>
     </ClInclude>
+    <ClInclude Include="ShitSplash.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
