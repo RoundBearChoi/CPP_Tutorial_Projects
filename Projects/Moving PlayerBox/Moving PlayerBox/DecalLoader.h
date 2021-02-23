@@ -11,13 +11,33 @@ namespace RB
 		std::vector<olc::Decal*> vecDecalPtr;
 
 	public:
-		virtual ~DecalLoader()
+		~DecalLoader()
 		{
+			std::cout << "destructing DecalLoader" << std::endl;
 
+			for (int i = 0; i < vecSpritePtr.size(); i++)
+			{
+				std::cout << "destructing Sprite: " << i << std::endl;
+				delete vecSpritePtr[i];
+			}
+
+			for (int i = 0; i < vecDecalPtr.size(); i++)
+			{
+				std::cout << "destructing Decal: " << i << std::endl;
+				delete vecDecalPtr[i];
+			}
 		}
 
 		virtual void LoadSprites() = 0;
-		virtual void LoadDecals() = 0;
+		
+		void LoadDecals()
+		{
+			for (int i = 0; i < vecSpritePtr.size(); i++)
+			{
+				std::cout << "constructing Decal: " << i << std::endl;
+				vecDecalPtr.push_back(new olc::Decal(vecSpritePtr[i]));
+			}
+		}
 
 		olc::Decal* GetDecal(int _index)
 		{

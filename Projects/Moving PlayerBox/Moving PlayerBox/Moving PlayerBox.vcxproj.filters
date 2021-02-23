@@ -108,9 +108,6 @@
     <ClInclude Include="GameDecalLoader.h">
       <Filter>Source Files\DecalLoader\Concrete Loaders</Filter>
     </ClInclude>
-    <ClInclude Include="DecalLoader.h">
-      <Filter>Source Files\DecalLoader\Base</Filter>
-    </ClInclude>
     <ClInclude Include="ControllerType.h">
       <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
@@ -167,6 +164,15 @@
     </ClInclude>
     <ClInclude Include="ShitSplash.h">
       <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="DecalLoader.h">
+      <Filter>Source Files\DecalLoader\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleDecalLoader.h">
+      <Filter>Source Files\DecalLoader\Concrete Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSpriteType.h">
+      <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
