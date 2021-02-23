@@ -15,18 +15,15 @@ namespace RB
 		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
 
-		void AddChild(int specIndex);
-
 	public:
 		ObjData data;
 
 		GameObj(ObjSpecs specs);
 		~GameObj();
 
-		void UpdateChildren();
 		bool IsObjType(GameObjType _objType);
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset);
-
+		void AddToHierarchy(GameObj* child);
 		void SetController(ControllerType _controllerType);
 		ObjController* GetController();
 	};

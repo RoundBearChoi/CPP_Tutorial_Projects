@@ -12,35 +12,10 @@ namespace RB
 	{
 		std::cout << "destructing GameObj - typeIndex: " << (int)objType << std::endl;
 
-		delete ptrController;
-
-		for (int i = 0; i < vecChildrenPtr.size(); i++)
+		if (ptrController != nullptr)
 		{
-			delete vecChildrenPtr[i];
+			delete ptrController;
 		}
-	}
-
-	void GameObj::AddChild(int specIndex)
-	{
-		ObjSpecs specs = data.GetChildCreationSpecs(specIndex);
-		GameObj* child = new GameObj(specs);
-
-		if (specs.controllerType != ControllerType::NONE)
-		{
-			child->SetController(specs.controllerType);
-		}
-
-		vecChildrenPtr.push_back(child);
-	}
-
-	void GameObj::UpdateChildren()
-	{
-		for (int i = 0; i < data.GetChildQueueCount(); i++)
-		{
-			AddChild(i);
-		}
-
-		data.ClearChildQueue();
 	}
 
 	bool GameObj::IsObjType(GameObjType _objType)
@@ -77,6 +52,11 @@ namespace RB
 		}
 
 		engine->DrawDecal(data.position + offset, decal);
+	}
+
+	void GameObj::AddToHierarchy(GameObj* child)
+	{
+		vecChildrenPtr.push_back(child);
 	}
 
 	void GameObj::SetController(ControllerType _controllerType)

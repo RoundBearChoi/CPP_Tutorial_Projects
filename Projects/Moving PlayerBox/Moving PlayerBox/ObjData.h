@@ -29,7 +29,7 @@ namespace RB
 			return vecChildQueues[_index];
 		}
 
-		void ClearChildQueue()
+		void ClearChildQueues()
 		{
 			vecChildQueues.clear();
 		}

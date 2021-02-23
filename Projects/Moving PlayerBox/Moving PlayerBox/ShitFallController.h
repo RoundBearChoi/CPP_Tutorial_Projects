@@ -20,7 +20,7 @@ namespace RB
 
 		~ShitFallController() override
 		{
-			std::cout << "destructing ShitController" << std::endl;
+			std::cout << "destructing ShitFallController" << std::endl;
 			delete currentState;
 		}
 

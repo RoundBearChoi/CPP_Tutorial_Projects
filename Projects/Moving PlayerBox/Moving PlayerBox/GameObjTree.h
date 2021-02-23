@@ -9,7 +9,7 @@ namespace RB
 	class GameObjTree
 	{
 	private:
-		std::vector<GameObj*> vecObjRootsPtr;
+		std::vector<GameObj*> vecAllObjs;
 
 	public:
 		GameObjTree()
@@ -21,29 +21,30 @@ namespace RB
 		{
 			std::cout << "destructing GameObjTree" << std::endl;
 
-			for (int i = 0; i < vecObjRootsPtr.size(); i++)
+			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				delete vecObjRootsPtr[i];
+				delete vecAllObjs[i];
 			}
 		}
 
 		void UpdateAll(const GameData& gameData)
 		{
-			for (int i = 0; i < vecObjRootsPtr.size(); i++)
+			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				ObjController* controller = vecObjRootsPtr[i]->GetController();
+				GameObj* obj = vecAllObjs[i];
+				ObjController* controller = vecAllObjs[i]->GetController();
 
 				if (controller != nullptr)
 				{
-					//update obj
-					controller->UpdateObj(vecObjRootsPtr[i]->data, gameData);
+					//update every obj
+					controller->UpdateObj(obj->data, gameData);
 					
-					int nextState = vecObjRootsPtr[i]->GetController()->NextStateIndex();
-
-					//update every child obj
-					vecObjRootsPtr[i]->UpdateChildren();
+					//check child creation
+					CreateChildren(obj);
 
 					//check transition
+					int nextState = obj->GetController()->NextStateIndex();
+
 					if (nextState != 0)
 					{
 						controller->MakeTransition(nextState);
@@ -52,23 +53,42 @@ namespace RB
 			}
 		}
 
+		void CreateChildren(GameObj* obj)
+		{
+			for (int i = 0; i < obj->data.GetChildQueueCount(); i++)
+			{
+				ObjSpecs specs = obj->data.GetChildCreationSpecs(i);
+				GameObj* child = new GameObj(specs);
+
+				if (specs.controllerType != ControllerType::NONE)
+				{
+					child->SetController(specs.controllerType);
+				}
+
+				vecAllObjs.push_back(child);
+				obj->AddToHierarchy(child);
+			}
+
+			obj->data.ClearChildQueues();
+		}
+
 		void CreateObj(ObjSpecs specs)
 		{
-			vecObjRootsPtr.push_back(new GameObj(specs));
+			vecAllObjs.push_back(new GameObj(specs));
 
 			if (specs.controllerType != ControllerType::NONE)
 			{
-				vecObjRootsPtr[vecObjRootsPtr.size() - 1]->SetController(specs.controllerType);
+				vecAllObjs[vecAllObjs.size() - 1]->SetController(specs.controllerType);
 			}
 		}
 
 		GameObj* GetObjType(GameObjType _objType)
 		{
-			for (int i = 0; i < vecObjRootsPtr.size(); i++)
+			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				if (vecObjRootsPtr[i]->IsObjType(_objType))
+				if (vecAllObjs[i]->IsObjType(_objType))
 				{
-					return vecObjRootsPtr[i];
+					return vecAllObjs[i];
 				}
 			}
 			
