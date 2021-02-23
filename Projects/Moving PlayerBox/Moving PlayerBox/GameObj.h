@@ -79,7 +79,20 @@ namespace RB
 
 		void SetController(ControllerType _controllerType)
 		{
-			if (_controllerType == ControllerType::PLAYER_CONTROLLER)
+			if (_controllerType == ControllerType::TITLE_CONTROLLER)
+			{
+
+			}
+			else if (_controllerType == ControllerType::TITLE_PRESSENTER_CONTROLLER)
+			{
+
+			}
+			else if (_controllerType == ControllerType::DUMMY_PLAYER_CONTROLLER)
+			{
+
+			}
+
+			else if (_controllerType == ControllerType::PLAYER_CONTROLLER)
 			{
 				ptrController = new PlayerController();
 			}

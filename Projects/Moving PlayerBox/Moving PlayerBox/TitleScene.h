@@ -25,7 +25,7 @@ namespace RB
 		void InitScene() override
 		{
 			ObjSpecs background(GameObjType::background, ControllerType::NONE);
-			ObjSpecs title(GameObjType::title, ControllerType::NONE);
+			ObjSpecs title(GameObjType::title, ControllerType::TITLE_CONTROLLER);
 
 			objTree.CreateObj(background);
 			objTree.CreateObj(title);
