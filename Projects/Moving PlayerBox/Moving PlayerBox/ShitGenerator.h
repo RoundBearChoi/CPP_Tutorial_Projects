@@ -26,6 +26,8 @@ namespace RB
 
 		void UpdateState(ObjData& objData, const GameData& gameData)
 		{
+			objData.position = { 0.0f, 350.0f };
+
 			if (testing)
 			{
 				objData.QueueChildCreation(GameObjType::individual_shit, ControllerType::SHIT_CONTROLLER_FALL);
