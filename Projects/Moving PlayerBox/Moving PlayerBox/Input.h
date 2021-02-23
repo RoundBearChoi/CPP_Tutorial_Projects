@@ -96,7 +96,7 @@ namespace RB
 			return 0;
 		}
 
-		void Clear()
+		void ClearQueue()
 		{
 			A_Queued = false;
 			D_Queued = false;

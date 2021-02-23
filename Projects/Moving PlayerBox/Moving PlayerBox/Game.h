@@ -50,7 +50,7 @@ namespace RB
 				sceneController.RenderCurrentScene(this, fElapsedTime);
 
 				//only clear after update
-				input.Clear();
+				input.ClearQueue();
 			}
 			else
 			{
