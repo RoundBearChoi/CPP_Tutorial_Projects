@@ -13,7 +13,7 @@ namespace RB
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
 		
-		void QueueChild(GameObjType _objType, ControllerType _controllerType)
+		void QueueChildCreation(GameObjType _objType, ControllerType _controllerType)
 		{
 			ObjSpecs specs{ _objType, _controllerType };
 			vecChildQueues.push_back(specs);
