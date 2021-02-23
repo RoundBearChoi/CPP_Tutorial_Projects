@@ -9,7 +9,7 @@ namespace RB
 	class GameObjTree
 	{
 	private:
-		std::vector<GameObj*> vecObjPtr;
+		std::vector<GameObj*> vecObjRootsPtr;
 
 	public:
 		GameObjTree()
@@ -21,23 +21,23 @@ namespace RB
 		{
 			std::cout << "destructing GameObjTree" << std::endl;
 
-			for (int i = 0; i < vecObjPtr.size(); i++)
+			for (int i = 0; i < vecObjRootsPtr.size(); i++)
 			{
-				delete vecObjPtr[i];
+				delete vecObjRootsPtr[i];
 			}
 		}
 
 		void UpdateAll(const GameData& gameData)
 		{
-			for (int i = 0; i < vecObjPtr.size(); i++)
+			for (int i = 0; i < vecObjRootsPtr.size(); i++)
 			{
-				ObjController* controller = vecObjPtr[i]->GetController();
+				ObjController* controller = vecObjRootsPtr[i]->GetController();
 
 				if (controller != nullptr)
 				{
-					controller->UpdateObj(vecObjPtr[i]->data, gameData);
+					controller->UpdateObj(vecObjRootsPtr[i]->data, gameData);
 					
-					int nextState = vecObjPtr[i]->GetController()->NextStateIndex();
+					int nextState = vecObjRootsPtr[i]->GetController()->NextStateIndex();
 
 					if (nextState != 0)
 					{
@@ -45,11 +45,11 @@ namespace RB
 					}
 					
 					//add child from info
-					int Queues = vecObjPtr[i]->data.GetChildQueues();
+					int Queues = vecObjRootsPtr[i]->data.GetChildQueues();
 
 					for (int child = 0; child < Queues; child++)
 					{
-						vecObjPtr[i]->data.RemoveQueue();
+						vecObjRootsPtr[i]->data.RemoveQueue();
 					}
 				}
 			}
@@ -59,11 +59,11 @@ namespace RB
 		{
 			if (parent == nullptr)
 			{
-				vecObjPtr.push_back(new GameObj(_objType));
+				vecObjRootsPtr.push_back(new GameObj(_objType));
 
 				if (_controllerType != ControllerType::NONE)
 				{
-					vecObjPtr[vecObjPtr.size() - 1]->SetController(_controllerType);
+					vecObjRootsPtr[vecObjRootsPtr.size() - 1]->SetController(_controllerType);
 				}
 			}
 			else
@@ -75,11 +75,11 @@ namespace RB
 
 		GameObj* GetObjType(GameObjType _objType)
 		{
-			for (int i = 0; i < vecObjPtr.size(); i++)
+			for (int i = 0; i < vecObjRootsPtr.size(); i++)
 			{
-				if (vecObjPtr[i]->IsObjType(_objType))
+				if (vecObjRootsPtr[i]->IsObjType(_objType))
 				{
-					return vecObjPtr[i];
+					return vecObjRootsPtr[i];
 				}
 			}
 			
