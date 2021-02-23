@@ -30,6 +30,11 @@ namespace RB
 				nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
 			}
 
+			if (objData.position.x < 0.0f + 25.0f)
+			{
+				objData.position.x = 0.0f + 25.0f;
+			}
+
 			std::cout << "player pos: " << objData.position.x << ", " << objData.position.y << std::endl;
 		}
 	};
