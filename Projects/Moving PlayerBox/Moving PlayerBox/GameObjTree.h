@@ -10,6 +10,7 @@ namespace RB
 	{
 	private:
 		std::vector<GameObj*> vecAllObjs;
+		size_t objsCreated = 0;
 
 	public:
 		GameObjTree()
@@ -101,7 +102,8 @@ namespace RB
 
 		void SetID(GameObj* obj)
 		{
-			obj->data.SetCreationID(vecAllObjs.size() - 1);
+			obj->data.SetCreationID(objsCreated);
+			objsCreated++;
 		}
 	};
 }
