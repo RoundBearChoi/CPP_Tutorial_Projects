@@ -1,7 +1,7 @@
 #pragma once
-#include "ControllerType.h"
-#include "PlayerController.h"
+#include "ObjSpecs.h"
 #include "ShitController.h"
+#include "PlayerController.h"
 #include "RenderOffsetType.h"
 #include "ObjData.h"
 
@@ -17,15 +17,15 @@ namespace RB
 	public:
 		ObjData data;
 
-		GameObj(GameObjType _objType)
+		GameObj(ObjSpecs specs)
 		{
-			std::cout << "construcing GameObj - typeID: " << (int)_objType << std::endl;
-			objType = _objType;
+			std::cout << "construcing GameObj - typeIndex: " << (int)specs.objType << std::endl;
+			objType = specs.objType;
 		}
 
 		~GameObj()
 		{
-			std::cout << "destructing GameObj - typeID: " << (int)objType << std::endl;
+			std::cout << "destructing GameObj - typeIndex: " << (int)objType << std::endl;
 
 			delete ptrController;
 
@@ -88,13 +88,13 @@ namespace RB
 			engine->DrawDecal(data.position + offset, decal);
 		}
 
-		void AddChild(GameObjType _objType, ControllerType _controllerType)
+		void AddChild(ObjSpecs specs)
 		{
-			GameObj* child = new GameObj(_objType);
+			GameObj* child = new GameObj(specs);
 
-			if (_controllerType != ControllerType::NONE)
+			if (specs.controllerType != ControllerType::NONE)
 			{
-				child->SetController(_controllerType);
+				child->SetController(specs.controllerType);
 			}
 			
 			vecChildrenPtr.push_back(child);

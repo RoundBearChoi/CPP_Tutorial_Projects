@@ -2,7 +2,7 @@
 #include <vector>
 #include <iostream>
 #include "GameObj.h"
-#include "GameObjType.h"
+#include "ObjSpecs.h"
 
 namespace RB
 {
@@ -55,21 +55,21 @@ namespace RB
 			}
 		}
 
-		void CreateObj(GameObjType _objType, ControllerType _controllerType = ControllerType::NONE, GameObj* parent = nullptr)
+		void CreateObj(ObjSpecs specs, GameObj* parent = nullptr)
 		{
 			if (parent == nullptr)
 			{
-				vecObjRootsPtr.push_back(new GameObj(_objType));
+				vecObjRootsPtr.push_back(new GameObj(specs));
 
-				if (_controllerType != ControllerType::NONE)
+				if (specs.controllerType != ControllerType::NONE)
 				{
-					vecObjRootsPtr[vecObjRootsPtr.size() - 1]->SetController(_controllerType);
+					vecObjRootsPtr[vecObjRootsPtr.size() - 1]->SetController(specs.controllerType);
 				}
 			}
 			else
 			{
 				//temp
-				parent->AddChild(_objType, _controllerType);
+				parent->AddChild(specs);
 			}
 		}
 
