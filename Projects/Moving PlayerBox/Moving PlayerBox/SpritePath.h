@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "TitleSpriteType.h"
 #include "GameSpriteType.h"
 
 namespace RB
@@ -7,6 +8,20 @@ namespace RB
 	class SpritePath
 	{
 	public:
+
+		static std::string GetPath(TitleSpriteType spriteType)
+		{
+			if (spriteType == TitleSpriteType::background)
+			{
+				return "PNG files/background.png";
+			}
+			else if (spriteType == TitleSpriteType::title_line500x180)
+			{
+				return "PNG files/title_line500x180.png";
+			}
+			return "none";
+		}
+
 		static std::string GetPath(GameSpriteType spriteType)
 		{
 			if (spriteType == GameSpriteType::diamond_red)

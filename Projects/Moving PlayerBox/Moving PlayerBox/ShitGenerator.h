@@ -9,7 +9,7 @@ namespace RB
 	{
 	private:
 		int creationCounter = 0;
-		int creationTiming = 120;
+		int creationTiming = 50;
 		int difficultyCounter = 0;
 
 	public:
@@ -38,7 +38,7 @@ namespace RB
 				creationCounter = 0;
 			}
 
-			if (difficultyCounter >= 25)
+			if (difficultyCounter >= 35)
 			{
 				if (creationTiming >= 15)
 				{
