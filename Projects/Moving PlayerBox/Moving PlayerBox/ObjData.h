@@ -19,17 +19,19 @@ namespace RB
 			vecChildQueues.push_back(specs);
 		}
 
-		void RemoveQueue()
-		{
-			if (vecChildQueues.size() > 0)
-			{
-				vecChildQueues.erase(vecChildQueues.begin());
-			}
-		}
-
-		int GetChildQueues()
+		int GetChildQueueCount()
 		{
 			return vecChildQueues.size();
+		}
+
+		ObjSpecs GetChildCreationSpecs(int _index)
+		{
+			return vecChildQueues[_index];
+		}
+
+		void ClearChildQueue()
+		{
+			vecChildQueues.clear();
 		}
 	};
 }

@@ -35,41 +35,30 @@ namespace RB
 
 				if (controller != nullptr)
 				{
+					//update obj
 					controller->UpdateObj(vecObjRootsPtr[i]->data, gameData);
 					
 					int nextState = vecObjRootsPtr[i]->GetController()->NextStateIndex();
 
+					//update every child obj
+					vecObjRootsPtr[i]->UpdateChildren();
+
+					//check transition
 					if (nextState != 0)
 					{
 						controller->MakeTransition(nextState);
-					}
-					
-					//add child from info
-					int Queues = vecObjRootsPtr[i]->data.GetChildQueues();
-
-					for (int child = 0; child < Queues; child++)
-					{
-						vecObjRootsPtr[i]->data.RemoveQueue();
 					}
 				}
 			}
 		}
 
-		void CreateObj(ObjSpecs specs, GameObj* parent = nullptr)
+		void CreateObj(ObjSpecs specs)
 		{
-			if (parent == nullptr)
-			{
-				vecObjRootsPtr.push_back(new GameObj(specs));
+			vecObjRootsPtr.push_back(new GameObj(specs));
 
-				if (specs.controllerType != ControllerType::NONE)
-				{
-					vecObjRootsPtr[vecObjRootsPtr.size() - 1]->SetController(specs.controllerType);
-				}
-			}
-			else
+			if (specs.controllerType != ControllerType::NONE)
 			{
-				//temp
-				parent->AddChild(specs);
+				vecObjRootsPtr[vecObjRootsPtr.size() - 1]->SetController(specs.controllerType);
 			}
 		}
 

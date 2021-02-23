@@ -15,6 +15,19 @@ namespace RB
 		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
 
+		void AddChild(int specIndex)
+		{
+			ObjSpecs specs = data.GetChildCreationSpecs(specIndex);
+			GameObj* child = new GameObj(specs);
+
+			if (specs.controllerType != ControllerType::NONE)
+			{
+				child->SetController(specs.controllerType);
+			}
+
+			vecChildrenPtr.push_back(child);
+		}
+
 	public:
 		ObjData data;
 
@@ -34,6 +47,16 @@ namespace RB
 			{
 				delete vecChildrenPtr[i];
 			}
+		}
+
+		void UpdateChildren()
+		{
+			for (int i = 0; i < data.GetChildQueueCount(); i++)
+			{
+				AddChild(i);
+			}
+
+			data.ClearChildQueue();
 		}
 
 		void SetController(ControllerType _controllerType)
@@ -91,18 +114,6 @@ namespace RB
 			}
 
 			engine->DrawDecal(data.position + offset, decal);
-		}
-
-		void AddChild(ObjSpecs specs)
-		{
-			GameObj* child = new GameObj(specs);
-
-			if (specs.controllerType != ControllerType::NONE)
-			{
-				child->SetController(specs.controllerType);
-			}
-			
-			vecChildrenPtr.push_back(child);
 		}
 	};
 }
