@@ -8,8 +8,7 @@ namespace RB
 	class ShitGenerator : public State
 	{
 	private:
-		bool testing = true;
-		bool testing2 = true;
+		int frameCount = 0;
 
 	public:
 		ShitGenerator()
@@ -26,18 +25,14 @@ namespace RB
 
 		void UpdateState(ObjData& objData, const GameData& gameData)
 		{
+			frameCount++;
+
 			objData.position = { 0.0f, 350.0f };
 
-			if (testing)
+			if (frameCount >= 120)
 			{
 				objData.QueueChildCreation(GameObjType::individual_shit, ControllerType::SHIT_CONTROLLER_FALL);
-				testing = false;
-			}
-
-			if (testing2)
-			{
-				objData.QueueChildCreation(GameObjType::individual_shit, ControllerType::SHIT_CONTROLLER_FALL);
-				testing2 = false;
+				frameCount = 0;
 			}
 		}
 	};
