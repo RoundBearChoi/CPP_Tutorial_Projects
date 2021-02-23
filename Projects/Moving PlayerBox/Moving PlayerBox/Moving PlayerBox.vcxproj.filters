@@ -53,6 +53,9 @@
     <Filter Include="Source Files\DecalLoader\enums">
       <UniqueIdentifier>{9de2ba9c-7b15-4ab1-8662-48eaffb7d63d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Random">
+      <UniqueIdentifier>{95b8caf3-d27f-4a99-b48f-2d39e3107fb0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -158,6 +161,9 @@
     </ClInclude>
     <ClInclude Include="GameSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomInteger.h">
+      <Filter>Source Files\Random</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -51,10 +51,12 @@ namespace RB
 			playerPoint->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::diamond_red), RenderOffsetType::CENTER_CENTER);
 			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
 
-			//temp
-			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box32x32), RenderOffsetType::CENTER_CENTER);
-			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box60x60), RenderOffsetType::CENTER_CENTER);
-			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box100x100), RenderOffsetType::CENTER_CENTER);
+			std::vector<GameObj*>& shits = shitgroup->GetChildren();
+
+			for (int i = 0; i < shits.size(); i++)
+			{
+				shits[i]->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box32x32), RenderOffsetType::CENTER_CENTER);
+			}
 		}
 	};
 }

@@ -95,5 +95,10 @@ namespace RB
 		{
 			return ptrController;
 		}
+
+		std::vector<GameObj*>& GetChildren()
+		{
+			return vecChildrenPtr;
+		}
 	};
 }
