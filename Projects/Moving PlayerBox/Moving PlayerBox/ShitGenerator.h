@@ -25,7 +25,7 @@ namespace RB
 			std::cout << "destructing State: ShitGenerator" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData)
+		void UpdateState(ObjData& objData, const GameData& gameData) override
 		{
 			creationCounter++;
 			difficultyCounter++;

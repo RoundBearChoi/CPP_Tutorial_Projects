@@ -6,5 +6,7 @@ namespace RB
 	{
 		NONE,
 		START,
+		MOVE_DOWN,
+		MOVE_UP,
 	};
 }

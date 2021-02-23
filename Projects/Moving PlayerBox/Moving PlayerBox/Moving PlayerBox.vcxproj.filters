@@ -183,5 +183,11 @@
     <ClInclude Include="TitleIdle.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
+    <ClInclude Include="TitleMoveDown.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleMoveUp.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

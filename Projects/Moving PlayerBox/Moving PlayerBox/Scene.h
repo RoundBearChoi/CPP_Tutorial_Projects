@@ -7,7 +7,7 @@ namespace RB
 	class Scene
 	{
 	protected:
-		int nNextSceneQueue = 0;
+		int nextSceneIndex = 0;
 
 	public:
 		virtual void InitScene() = 0;
@@ -27,12 +27,12 @@ namespace RB
 
 		int GetNextScene()
 		{
-			return nNextSceneQueue;
+			return nextSceneIndex;
 		}
 
 		void ClearQueue()
 		{
-			nNextSceneQueue = 0;
+			nextSceneIndex = 0;
 		}
 	};
 }

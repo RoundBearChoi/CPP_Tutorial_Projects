@@ -27,7 +27,7 @@ namespace RB
 			std::cout << "destructing State: ShitPosition" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData)
+		void UpdateState(ObjData& objData, const GameData& gameData) override
 		{
 			objData.position = randomStart;
 

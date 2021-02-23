@@ -12,6 +12,7 @@ namespace RB
 		std::vector<GameObj*> vecAllObjs;
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
+		int nextSceneQueue = 0;
 
 	public:
 		GameObjTree()
@@ -65,6 +66,9 @@ namespace RB
 							{
 								controller->MakeTransition(nextState);
 							}
+
+							//get next scene
+							nextSceneQueue = obj->GetController()->NextSceneIndex();
 						}
 					}
 				}
@@ -138,6 +142,11 @@ namespace RB
 
 			obj->data.SetCreationID(objsCreated);
 			objsCreated++;
+		}
+
+		int GetNextSceneQueue()
+		{
+			return nextSceneQueue;
 		}
 	};
 }

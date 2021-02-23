@@ -16,9 +16,14 @@ namespace RB
 			std::cout << "destructing State: TitleIdle" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData)
+		void UpdateState(ObjData& objData, const GameData& gameData) override
 		{
 			objData.position = { 300.0f, 160.0f };
+
+			if (gameData.startGame)
+			{
+				nextStateIndex = (int)TitleStateType::MOVE_DOWN;
+			}
 		}
 	};
 }

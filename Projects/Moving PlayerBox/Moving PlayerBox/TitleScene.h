@@ -37,10 +37,11 @@ namespace RB
 
 			frameCount++;
 
-			if (gameData.startGame)
-			{
-				nNextSceneQueue = 2; //gamescene index is 2
-			}
+			nextSceneIndex = objTree.GetNextSceneQueue();
+			//if (gameData.startGame)
+			//{
+			//	nNextSceneQueue = 2;
+			//}
 		}
 
 		void RenderScene(olc::PixelGameEngine* ptrEngine) override

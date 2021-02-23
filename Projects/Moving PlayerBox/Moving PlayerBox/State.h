@@ -9,6 +9,7 @@ namespace RB
 	{
 	protected:
 		int nextStateIndex = 0;
+		int changeSceneIndex = 0;
 		bool deleteObj = false;
 
 	public:
@@ -22,6 +23,11 @@ namespace RB
 		int GetNextStateIndex()
 		{
 			return nextStateIndex;
+		}
+
+		int GetNextSceneIndex()
+		{
+			return changeSceneIndex;
 		}
 
 		bool DeleteObj()
