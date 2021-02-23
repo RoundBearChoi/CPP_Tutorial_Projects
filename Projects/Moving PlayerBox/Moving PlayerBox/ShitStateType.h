@@ -6,6 +6,7 @@ namespace RB
 	{
 		NONE,
 		GENERATOR,
+		POSITION,
 		FALL,
 	};
 }

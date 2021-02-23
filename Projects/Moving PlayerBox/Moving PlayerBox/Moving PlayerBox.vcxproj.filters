@@ -151,5 +151,8 @@
     <ClInclude Include="PlayerStateType.h">
       <Filter>Source Files\States\Base</Filter>
     </ClInclude>
+    <ClInclude Include="ShitPosition.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
