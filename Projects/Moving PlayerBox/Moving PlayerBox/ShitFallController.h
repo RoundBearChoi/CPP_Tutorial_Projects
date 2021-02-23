@@ -8,24 +8,17 @@
 
 namespace RB
 {
-	class ShitController : public ObjController
+	class ShitFallController : public ObjController
 	{
 	public:
-		ShitController(bool isGenerator = false)
+		ShitFallController()
 		{
-			std::cout << "constructing ShitController" << std::endl;
+			std::cout << "constructing ShitFallController" << std::endl;
 
-			if (isGenerator)
-			{
-				MakeTransition((int)ShitStateType::GENERATOR);
-			}
-			else
-			{
-				MakeTransition((int)ShitStateType::POSITION);
-			}
+			MakeTransition((int)ShitStateType::FALL);
 		}
 
-		~ShitController() override
+		~ShitFallController() override
 		{
 			std::cout << "destructing ShitController" << std::endl;
 			delete currentState;
@@ -33,11 +26,7 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)ShitStateType::GENERATOR)
-			{
-				CreateState<ShitGenerator>();
-			}
-			else if (index == (int)ShitStateType::POSITION)
+			if (index == (int)ShitStateType::POSITION)
 			{
 				CreateState<ShitPosition>();
 			}

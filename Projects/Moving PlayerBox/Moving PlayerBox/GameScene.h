@@ -27,7 +27,7 @@ namespace RB
 		{
 			ObjSpecs background(GameObjType::background, ControllerType::NONE);
 			ObjSpecs player(GameObjType::player, ControllerType::PLAYER_CONTROLLER);
-			ObjSpecs shitgroup(GameObjType::shitgroup, ControllerType::SHIT_GENERATOR_CONTROLLER);
+			ObjSpecs shitgroup(GameObjType::shitgroup, ControllerType::SHIT_CONTROLLER_GENERATOR);
 
 			objTree.CreateObj(background);
 			objTree.CreateObj(player);

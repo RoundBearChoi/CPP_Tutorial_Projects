@@ -1,7 +1,8 @@
 #pragma once
 #include "ObjSpecs.h"
-#include "ShitController.h"
 #include "PlayerController.h"
+#include "ShitGeneratorController.h"
+#include "ShitFallController.h"
 #include "RenderOffsetType.h"
 #include "ObjData.h"
 
@@ -41,9 +42,13 @@ namespace RB
 			{
 				ptrController = new PlayerController();
 			}
-			else if (_controllerType == ControllerType::SHIT_GENERATOR_CONTROLLER)
+			else if (_controllerType == ControllerType::SHIT_CONTROLLER_GENERATOR)
 			{
-				ptrController = new ShitController(true);
+				ptrController = new ShitGeneratorController();
+			}
+			else if (_controllerType == ControllerType::SHIT_CONTROLLER_FALL)
+			{
+				ptrController = new ShitFallController();
 			}
 		}
 
