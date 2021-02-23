@@ -38,5 +38,10 @@ namespace RB
 		{
 			return currentState->GetNextStateIndex();
 		}
+
+		bool DestructIsQueued()
+		{
+			return currentState->DeleteObj();
+		}
 	};
 }

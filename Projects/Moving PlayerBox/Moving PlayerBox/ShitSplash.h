@@ -19,7 +19,7 @@ namespace RB
 
 		void UpdateState(ObjData& objData, const GameData& gameData)
 		{
-
+			deleteObj = true;
 		}
 	};
 }

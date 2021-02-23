@@ -14,6 +14,7 @@ namespace RB
 		GameObjType objType = GameObjType::NONE;
 		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
+		GameObj* parent = nullptr;
 
 	public:
 		ObjData data;
@@ -72,6 +73,7 @@ namespace RB
 
 		void AddToHierarchy(GameObj* child)
 		{
+			child->parent = this;
 			vecChildrenPtr.push_back(child);
 		}
 
@@ -99,6 +101,29 @@ namespace RB
 		std::vector<GameObj*>& GetChildren()
 		{
 			return vecChildrenPtr;
+		}
+
+		void ClearDestructableChildren()
+		{
+			std::vector<int> removables;
+
+			for (int i = 0; i < vecChildrenPtr.size(); i++)
+			{
+				if (vecChildrenPtr[i]->GetController()->DestructIsQueued())
+				{
+					removables.push_back(i);
+				}
+			}
+
+			for (int i = 0; i < removables.size(); i++)
+			{
+				vecChildrenPtr.erase(vecChildrenPtr.begin() + removables[i]);
+			}
+		}
+
+		GameObj* GetParent()
+		{
+			return parent;
 		}
 	};
 }

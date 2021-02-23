@@ -9,6 +9,7 @@ namespace RB
 	{
 	protected:
 		int nextStateIndex = 0;
+		bool deleteObj = false;
 
 	public:
 		virtual void UpdateState(ObjData& objData, const GameData& gameData) = 0;
@@ -21,6 +22,11 @@ namespace RB
 		int GetNextStateIndex()
 		{
 			return nextStateIndex;
+		}
+
+		bool DeleteObj()
+		{
+			return deleteObj;
 		}
 	};
 }

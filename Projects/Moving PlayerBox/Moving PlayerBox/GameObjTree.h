@@ -10,6 +10,7 @@ namespace RB
 	{
 	private:
 		std::vector<GameObj*> vecAllObjs;
+		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
 
 	public:
@@ -33,25 +34,53 @@ namespace RB
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
 				GameObj* obj = vecAllObjs[i];
-				ObjController* controller = vecAllObjs[i]->GetController();
 
-				if (controller != nullptr)
+				if (obj != nullptr)
 				{
-					//update every obj
-					controller->UpdateObj(obj->data, gameData);
-					
-					//check child creation
-					CreateChildren(obj);
+					ObjController* controller = vecAllObjs[i]->GetController();
 
-					//check transition
-					int nextState = obj->GetController()->NextStateIndex();
-
-					if (nextState != 0)
+					if (controller != nullptr)
 					{
-						controller->MakeTransition(nextState);
+						//update every obj
+						controller->UpdateObj(obj->data, gameData);
+
+						//check child creation
+						CreateChildren(obj);
+
+						//delete obj
+						if (controller->DestructIsQueued())
+						{
+							//remove pointer from vec
+							obj->GetParent()->ClearDestructableChildren();
+
+							delete vecAllObjs[i];
+							vecAllObjs[i] = nullptr;
+						}
+						else
+						{
+							//check transition
+							int nextState = obj->GetController()->NextStateIndex();
+
+							if (nextState != 0)
+							{
+								controller->MakeTransition(nextState);
+							}
+						}
 					}
 				}
+				else
+				{
+					destructedObjIndex.push_back(i);
+				}
 			}
+
+			//remove deleted obj pointers
+			for (int i = 0; i < destructedObjIndex.size(); i++)
+			{
+				vecAllObjs.erase(vecAllObjs.begin() + destructedObjIndex[i]);
+			}
+
+			destructedObjIndex.clear();
 		}
 
 		void CreateChildren(GameObj* obj)
@@ -102,6 +131,11 @@ namespace RB
 
 		void SetID(GameObj* obj)
 		{
+			if (objsCreated == (size_t) -1)
+			{
+				objsCreated = 0;
+			}
+
 			obj->data.SetCreationID(objsCreated);
 			objsCreated++;
 		}
