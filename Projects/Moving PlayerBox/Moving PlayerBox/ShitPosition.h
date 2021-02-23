@@ -5,6 +5,7 @@ namespace RB
 {
 	class ShitPosition : public State
 	{
+	public:
 		ShitPosition()
 		{
 			std::cout << std::endl;

@@ -3,6 +3,7 @@
 #include "State.h"
 #include "ShitStateType.h"
 #include "ShitGenerator.h"
+#include "ShitPosition.h"
 #include "ShitFall.h"
 
 namespace RB
@@ -20,7 +21,7 @@ namespace RB
 			}
 			else
 			{
-				MakeTransition((int)ShitStateType::FALL);
+				MakeTransition((int)ShitStateType::POSITION);
 			}
 		}
 
@@ -35,6 +36,10 @@ namespace RB
 			if (index == (int)ShitStateType::GENERATOR)
 			{
 				CreateState<ShitGenerator>();
+			}
+			else if (index == (int)ShitStateType::POSITION)
+			{
+				CreateState<ShitPosition>();
 			}
 			else if (index == (int)ShitStateType::FALL)
 			{
