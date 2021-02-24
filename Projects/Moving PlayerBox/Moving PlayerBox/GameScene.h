@@ -24,9 +24,24 @@ namespace RB
 
 		void InitScene() override
 		{
-			ObjSpecs background(GameObjType::background, ControllerType::NONE);
-			ObjSpecs player(GameObjType::player, ControllerType::PLAYER_CONTROLLER);
-			ObjSpecs shitgroup(GameObjType::shitgroup, ControllerType::SHIT_CONTROLLER_GENERATOR);
+			ObjSpecs background;
+			ObjSpecs player;
+			ObjSpecs shitgroup;
+
+			background.width = 0.0f;
+			background.height = 0.0f;
+			background.objType = GameObjType::background;
+			background.controllerType = ControllerType::NONE;
+
+			player.width = 0.0f;
+			player.height = 0.0f;
+			player.objType = GameObjType::player;
+			player.controllerType = ControllerType::PLAYER_CONTROLLER;
+
+			shitgroup.width = 0.0f;
+			shitgroup.height = 0.0f;
+			shitgroup.objType = GameObjType::shitgroup;
+			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER_GENERATOR;
 
 			objTree.CreateObj(background);
 			objTree.CreateObj(player);

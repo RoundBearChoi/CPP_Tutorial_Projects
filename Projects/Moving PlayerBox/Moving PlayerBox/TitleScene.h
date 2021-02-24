@@ -23,9 +23,24 @@ namespace RB
 
 		void InitScene() override
 		{
-			ObjSpecs background(GameObjType::background, ControllerType::NONE);
-			ObjSpecs title(GameObjType::title, ControllerType::TITLE_CONTROLLER);
-			ObjSpecs dummy(GameObjType::dummy, ControllerType::DUMMY_PLAYER_CONTROLLER);
+			ObjSpecs background;
+			ObjSpecs title;
+			ObjSpecs dummy;
+
+			background.width = 0.0f;
+			background.height = 0.0f;
+			background.objType = GameObjType::background;
+			background.controllerType = ControllerType::NONE;
+
+			title.width = 0.0f;
+			title.height = 0.0f;
+			title.objType = GameObjType::title;
+			title.controllerType = ControllerType::TITLE_CONTROLLER;
+
+			dummy.width = 0.0f;
+			dummy.height = 0.0f;
+			dummy.objType = GameObjType::dummy;
+			dummy.controllerType = ControllerType::DUMMY_PLAYER_CONTROLLER;
 
 			objTree.CreateObj(background);
 			objTree.CreateObj(title);

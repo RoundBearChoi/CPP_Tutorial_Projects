@@ -34,7 +34,12 @@ namespace RB
 
 			if (creationCounter >= creationTiming)
 			{
-				objData.QueueChildCreation(GameObjType::individual_shit, ControllerType::SHIT_CONTROLLER_FALL);
+				ObjSpecs specs;
+				specs.width = 0.0f;
+				specs.height = 0.0;
+				specs.objType = GameObjType::individual_shit;
+				specs.controllerType = ControllerType::SHIT_CONTROLLER_FALL;
+				objData.QueueChildCreation(specs);
 				creationCounter = 0;
 			}
 

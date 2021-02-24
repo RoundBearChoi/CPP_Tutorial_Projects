@@ -10,6 +10,8 @@ namespace RB
 	private:
 		std::vector<ObjSpecs> vecChildQueues;
 		int creationID = 0;
+		float width = 0.0f;
+		float height = 0.0f;
 
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
@@ -20,10 +22,9 @@ namespace RB
 			std::cout << "destructing ObjData - CreationID: " << creationID << std::endl;
 		}
 		
-		void QueueChildCreation(GameObjType _objType, ControllerType _controllerType)
+		void QueueChildCreation(ObjSpecs _specs)
 		{
-			ObjSpecs specs{ _objType, _controllerType };
-			vecChildQueues.push_back(specs);
+			vecChildQueues.push_back(_specs);
 		}
 
 		int GetChildQueueCount()
