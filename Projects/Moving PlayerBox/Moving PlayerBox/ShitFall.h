@@ -39,7 +39,7 @@ namespace RB
 			if (bColliding)
 			{
 				//only apply top collision
-				if (frameCount == 175)
+				if (frameCount == 172)
 				{
 					gameData.startSlowMo = true;
 				}

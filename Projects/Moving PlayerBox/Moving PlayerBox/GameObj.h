@@ -2,7 +2,6 @@
 #include "ObjSpecs.h"
 #include "RenderOffsetType.h"
 #include "ObjData.h"
-#include "Rect.h"
 
 #include "TitleController.h"
 #include "DummyPlayerController.h"
@@ -159,22 +158,18 @@ namespace RB
 				return false;
 			}
 
-			Rect rect1; //player (pivot is offset)
-			rect1.x = _target->data.position.x;
-			rect1.y = _target->data.position.y - _target->data.objHeight / 2.0f;
-			rect1.width = _target->data.objWidth;
-			rect1.height = _target->data.objHeight;
+			olc::vf2d p1; //player top left position)
+			p1.x = _target->data.position.x - (_target->data.objWidth / 2.0f);
+			p1.y = _target->data.position.y - (_target->data.objHeight);
 
-			Rect rect2; //shit
-			rect2.x = data.position.x;
-			rect2.y = data.position.y;
-			rect2.width = data.objWidth;
-			rect2.height = data.objHeight;
+			olc::vf2d p2; //shit top left position
+			p2.x = data.position.x - (data.objWidth / 2.0f);
+			p2.y = data.position.y - (data.objHeight / 2.0f);
 
-			//axis-aligned bounding box
-			if(rect1.x < rect2.x + rect2.width && rect1.x + rect1.width > rect2.x)
+			//axis-aligned bounding box check
+			if(p1.x < p2.x + data.objWidth && p1.x + data.objWidth > p2.x)
 			{
-				if (rect1.y < rect2.y + rect2.height && rect1.y + rect1.height > rect2.y)
+				if (p1.y < p2.y + data.objHeight && p1.y + data.objHeight > p2.y)
 				{
 					return true;
 				}
