@@ -192,5 +192,11 @@
     <ClInclude Include="PlayerDeath.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
+    <ClInclude Include="AnimationData.h">
+      <Filter>Source Files\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="StateAnimation.h">
+      <Filter>Source Files\States\Base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

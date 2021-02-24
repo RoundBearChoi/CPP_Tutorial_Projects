@@ -22,6 +22,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimationData.h" />
     <ClInclude Include="ControllerType.h" />
     <ClInclude Include="DecalLoader.h" />
     <ClInclude Include="DummyPlayerController.h" />
@@ -57,6 +58,7 @@
     <ClInclude Include="ShitSplash.h" />
     <ClInclude Include="SpritePath.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateAnimation.h" />
     <ClInclude Include="StateType.h" />
     <ClInclude Include="TitleController.h" />
     <ClInclude Include="TitleDecalLoader.h" />
