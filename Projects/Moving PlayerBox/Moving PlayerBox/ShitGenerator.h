@@ -45,7 +45,7 @@ namespace RB
 
 			if (difficultyCounter >= 35)
 			{
-				if (creationTiming >= 15)
+				if (creationTiming >= 10)
 				{
 					creationTiming--;
 				}
