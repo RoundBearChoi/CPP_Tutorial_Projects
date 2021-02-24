@@ -57,6 +57,7 @@ namespace RB
 					//check collision against player
 					if (obj->data.objType == GameObjType::individual_shit)
 					{
+						//only check on possible top collision
 						if (obj->GetStateFrameCount() == 171 && !gameData.startSlowMo)
 						{
 							GameObj* player = GetObjType(GameObjType::player);
