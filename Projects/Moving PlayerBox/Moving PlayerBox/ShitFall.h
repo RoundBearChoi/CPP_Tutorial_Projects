@@ -6,7 +6,6 @@ namespace RB
 	class ShitFall : public State
 	{
 	private:
-		int frameCount = 0;
 		float speed = 1.0f;
 
 	public:
@@ -25,14 +24,13 @@ namespace RB
 		{
 			frameCount++;
 
-			if (objData.position.y < 650.0f)
+			if (objData.position.y < 630.0f)
 			{
 				speed = speed * 1.0122f;
 				objData.position.y += speed;
 			}
 			else
 			{
-				objData.position.y = 650.0f;
 				nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
 			}
 

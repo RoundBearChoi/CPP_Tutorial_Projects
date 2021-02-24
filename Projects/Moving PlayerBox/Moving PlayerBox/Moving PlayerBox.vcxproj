@@ -35,6 +35,7 @@
     <ClInclude Include="ObjData.h" />
     <ClInclude Include="ObjSpecs.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
+    <ClInclude Include="PlayerDeath.h" />
     <ClInclude Include="PlayerDummy.h" />
     <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerMoveRight.h" />

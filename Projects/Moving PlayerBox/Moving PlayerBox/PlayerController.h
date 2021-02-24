@@ -2,10 +2,12 @@
 #include "ObjController.h"
 #include "State.h"
 #include "StateType.h"
+
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
 #include "PlayerMoveLeft.h"
 #include "PlayerMoveRight.h"
+#include "PlayerDeath.h"
 
 namespace RB
 {
@@ -45,7 +47,7 @@ namespace RB
 			}
 			else if (index == (int)PlayerStateType::DEAD)
 			{
-
+				CreateState<PlayerDeath>();
 			}
 		}
 	};

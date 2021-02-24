@@ -6,7 +6,6 @@ namespace RB
 	class TitleMoveDown : public State
 	{
 	private:
-		int frameCount = 0;
 		float speed = 3.0f;
 
 	public:

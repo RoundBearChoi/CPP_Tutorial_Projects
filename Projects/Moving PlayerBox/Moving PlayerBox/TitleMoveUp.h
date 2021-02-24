@@ -5,9 +5,6 @@ namespace RB
 {
 	class TitleMoveUp : public State
 	{
-	private:
-		int frameCount = 0;
-
 	public:
 		TitleMoveUp()
 		{
