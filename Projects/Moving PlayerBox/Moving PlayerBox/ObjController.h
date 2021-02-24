@@ -34,14 +34,14 @@ namespace RB
 			}
 		}
 
-		int NextStateIndex()
+		int GetNextStateIndex()
 		{
 			return currentState->GetNextStateIndex();
 		}
 
-		int NextSceneIndex()
+		int GetNextScene()
 		{
-			return currentState->GetNextSceneIndex();
+			return currentState->GetNextScene();
 		}
 
 		bool DestructIsQueued()

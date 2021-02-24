@@ -12,7 +12,6 @@ namespace RB
 		std::vector<GameObj*> vecAllObjs;
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
-		int nextSceneQueue = 0;
 
 	public:
 		GameObjTree()
@@ -73,7 +72,7 @@ namespace RB
 						else
 						{
 							//check transition
-							int nextState = obj->GetController()->NextStateIndex();
+							int nextState = obj->GetController()->GetNextStateIndex();
 
 							if (nextState != 0)
 							{
@@ -160,7 +159,7 @@ namespace RB
 			objsCreated++;
 		}
 
-		int GetNextSceneQueue()
+		int GetNextScene()
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
@@ -170,11 +169,11 @@ namespace RB
 
 					if (controller != nullptr)
 					{
-						nextSceneQueue = vecAllObjs[i]->GetController()->NextSceneIndex();
+						int nextScene = vecAllObjs[i]->GetController()->GetNextScene();
 
-						if (nextSceneQueue != 0)
+						if (nextScene != 0)
 						{
-							return nextSceneQueue;
+							return nextScene;
 						}
 					}
 				}

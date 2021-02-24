@@ -27,7 +27,7 @@ namespace RB
 			return nextStateIndex;
 		}
 
-		int GetNextSceneIndex()
+		int GetNextScene()
 		{
 			return changeSceneIndex;
 		}
@@ -45,6 +45,11 @@ namespace RB
 		void ClearCollisionFlag()
 		{
 			bColliding = false;
+		}
+
+		int GetFrameCount()
+		{
+			return frameCount;
 		}
 	};
 }

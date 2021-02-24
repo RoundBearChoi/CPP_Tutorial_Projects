@@ -28,7 +28,7 @@ namespace RB
 
 		int GetNextScene()
 		{
-			return objTree.GetNextSceneQueue();
+			return objTree.GetNextScene();
 		}
 	};
 }
