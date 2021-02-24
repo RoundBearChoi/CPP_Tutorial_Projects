@@ -13,9 +13,6 @@ namespace RB
 		bool Pressed_A = false;
 		bool Pressed_D = false;
 
-		bool A_Queued = false;
-		bool D_Queued = false;
-
 		bool bStartGame = false;
 		bool bQuitGame = false;
 
@@ -72,12 +69,12 @@ namespace RB
 			bool left = false;
 			bool right = false;
 
-			if (buffer_A.size() > 0 || A_Queued)
+			if (buffer_A.size() > 0 || Pressed_A)
 			{
 				left = true;
 			}
 
-			if (buffer_D.size() > 0 || D_Queued)
+			if (buffer_D.size() > 0 || Pressed_D)
 			{
 				right = true;
 			}
@@ -98,24 +95,8 @@ namespace RB
 			return 0;
 		}
 
-		void ClearQueue()
+		void ClearKeyPress()
 		{
-			A_Queued = false;
-			D_Queued = false;
-		}
-
-		void Queue()
-		{
-			if (Pressed_A)
-			{
-				A_Queued = true;
-			}
-
-			if (Pressed_D)
-			{
-				D_Queued = true;
-			}
-
 			Pressed_A = false;
 			Pressed_D = false;
 		}

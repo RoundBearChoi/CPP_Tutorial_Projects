@@ -55,7 +55,7 @@ namespace RB
 				sceneController.RenderCurrentScene(this, fElapsedTime);
 
 				//only clear after update
-				input.ClearQueue();
+				input.ClearKeyPress();
 
 				if (gameData.startSlowMo)
 				{
@@ -67,7 +67,6 @@ namespace RB
 				sceneController.RenderCurrentScene(this, fElapsedTime);
 			}
 
-			input.Queue();
 			return true;
 		}
 
