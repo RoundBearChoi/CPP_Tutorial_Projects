@@ -121,7 +121,7 @@ namespace RB
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				if (vecAllObjs[i]->IsObjType(_objType))
+				if (vecAllObjs[i]->data.objType == _objType)
 				{
 					return vecAllObjs[i];
 				}

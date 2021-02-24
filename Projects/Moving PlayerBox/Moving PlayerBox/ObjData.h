@@ -13,6 +13,7 @@ namespace RB
 
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
+		GameObjType objType = GameObjType::NONE;
 
 		~ObjData()
 		{

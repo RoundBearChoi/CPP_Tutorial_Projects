@@ -13,7 +13,6 @@ namespace RB
 	class GameObj
 	{
 	private:
-		GameObjType objType = GameObjType::NONE;
 		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
 		GameObj* parent = nullptr;
@@ -24,7 +23,7 @@ namespace RB
 		GameObj(ObjSpecs specs)
 		{
 			std::cout << "construcing GameObj" << std::endl;
-			objType = specs.objType;
+			data.objType = specs.objType;
 		}
 
 		~GameObj()
@@ -34,18 +33,6 @@ namespace RB
 			if (ptrController != nullptr)
 			{
 				delete ptrController;
-			}
-		}
-
-		bool IsObjType(GameObjType _objType)
-		{
-			if (objType == _objType)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
 			}
 		}
 
