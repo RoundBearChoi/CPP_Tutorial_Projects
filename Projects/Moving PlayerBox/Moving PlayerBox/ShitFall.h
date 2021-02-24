@@ -24,22 +24,20 @@ namespace RB
 		{
 			frameCount++;
 
-			if (objData.position.y < 630.0f)
+			if (objData.collided)
 			{
-				speed = speed * 1.0122f;
-				objData.position.y += speed;
+				//switch to a downward splash
 			}
 			else
 			{
-				nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
-			}
-
-			if (bColliding)
-			{
-				//only apply top collision
-				if (frameCount == 172)
+				if (objData.position.y < 630.0f)
 				{
-					gameData.startSlowMo = true;
+					speed = speed * 1.0122f;
+					objData.position.y += speed;
+				}
+				else
+				{
+					nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
 				}
 			}
 		}

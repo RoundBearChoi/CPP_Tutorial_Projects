@@ -49,14 +49,9 @@ namespace RB
 			return currentState->DeleteObj();
 		}
 
-		void SetCollisionFlag()
+		int GetStateFrameCount()
 		{
-			currentState->SetCollisionFlag();
-		}
-
-		void ClearCollisionFlag()
-		{
-			currentState->ClearCollisionFlag();
+			return currentState->GetFrameCount();
 		}
 	};
 }

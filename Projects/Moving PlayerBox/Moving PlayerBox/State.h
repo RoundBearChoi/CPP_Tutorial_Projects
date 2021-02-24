@@ -12,7 +12,6 @@ namespace RB
 		int changeSceneIndex = 0;
 		int frameCount = 0;
 		bool deleteObj = false;
-		bool bColliding = false;
 
 	public:
 		virtual void UpdateState(ObjData& objData, GameData& gameData) = 0;
@@ -35,16 +34,6 @@ namespace RB
 		bool DeleteObj()
 		{
 			return deleteObj;
-		}
-
-		void SetCollisionFlag()
-		{
-			bColliding = true;
-		}
-
-		void ClearCollisionFlag()
-		{
-			bColliding = false;
 		}
 
 		int GetFrameCount()

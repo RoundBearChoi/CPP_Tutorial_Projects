@@ -177,5 +177,17 @@ namespace RB
 
 			return false;
 		}
+
+		int GetStateFrameCount()
+		{
+			if (ptrController != nullptr)
+			{
+				return ptrController->GetStateFrameCount();
+			}
+			else
+			{
+				return 0;
+			}
+		}
 	};
 }

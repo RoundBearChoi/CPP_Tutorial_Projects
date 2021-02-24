@@ -40,13 +40,13 @@ namespace RB
 					//check collision against player
 					if (obj->data.objType == GameObjType::individual_shit)
 					{
-						if (obj->IsCollidingAgainst(GetObjType(GameObjType::player)))
+						if (obj->GetStateFrameCount() == 171 && !gameData.startSlowMo)
 						{
-							obj->GetController()->SetCollisionFlag();
-						}
-						else
-						{
-							obj->GetController()->ClearCollisionFlag();
+							if (obj->IsCollidingAgainst(GetObjType(GameObjType::player)))
+							{
+								gameData.startSlowMo = true;
+								obj->data.collided = true;
+							}
 						}
 					}
 
