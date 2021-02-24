@@ -40,26 +40,38 @@ namespace RB
 
 		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)
 		{
-			olc::vf2d offset(0.0f, 0.0f);
-			float decalWidth = (float)(decal->sprite->width);
-			float decalHeight = (float)(decal->sprite->height);
+			std::array<olc::vf2d, 4> points;
 
 			if (renderOffset == RenderOffsetType::NONE)
 			{
-				// do nothing
+				points[0] = { data.position.x, data.position.y };
+				points[1] = { data.position.x, data.position.y + data.objHeight };
+				points[2] = { data.position.x + data.objWidth, data.position.y + data.objHeight };
+				points[3] = { data.position.x + data.objWidth, data.position.y };
 			}
 			else if (renderOffset == RenderOffsetType::CENTER_CENTER)
 			{
-				offset.x = -(decalWidth / 2.0f);
-				offset.y = -(decalHeight / 2.0f);
+				olc::vf2d offset(0.0f, 0.0f);
+				offset.x = -(data.objWidth / 2.0f);
+				offset.y = -(data.objHeight / 2.0f);
+
+				points[0] = { data.position.x - offset.x, data.position.y - offset.y };
+				points[1] = { data.position.x - offset.x, data.position.y + offset.y };
+				points[2] = { data.position.x + offset.x, data.position.y + offset.y };
+				points[3] = { data.position.x + offset.x, data.position.y - offset.y };
 			}
 			else if (renderOffset == RenderOffsetType::BOTTOM_CENTER)
 			{
-				offset.x = -(decalWidth / 2.0f);
-				offset.y = -(decalHeight);
+				olc::vf2d offset(0.0f, 0.0f);
+				offset.x = -(data.objWidth / 2.0f);
+
+				points[0] = { data.position.x - offset.x, data.position.y - data.objHeight };
+				points[1] = { data.position.x - offset.x, data.position.y };
+				points[2] = { data.position.x + offset.x, data.position.y };
+				points[3] = { data.position.x + offset.x, data.position.y - data.objHeight };
 			}
 
-			engine->DrawDecal(data.position + offset, decal);
+			engine->DrawWarpedDecal(decal, points);
 		}
 
 		void AddToHierarchy(GameObj* child)
