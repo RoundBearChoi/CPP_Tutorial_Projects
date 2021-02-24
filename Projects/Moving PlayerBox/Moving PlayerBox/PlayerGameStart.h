@@ -20,8 +20,13 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
+			frameCount++;
 			objData.position = { 300.0f, 650.0f };
-			nextStateIndex = (int)PlayerStateType::IDLE;
+
+			if (frameCount >= 20)
+			{
+				nextStateIndex = (int)PlayerStateType::IDLE;
+			}
 		}
 	};
 }

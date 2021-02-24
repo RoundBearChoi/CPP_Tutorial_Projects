@@ -7,7 +7,6 @@ namespace RB
 	class TitleScene : public Scene
 	{
 	private:
-		int frameCount = 0;
 		TitleDecalLoader decalLoader;
 
 	public:
@@ -50,8 +49,6 @@ namespace RB
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override
 		{
 			objTree.UpdateAll(gameData);
-
-			frameCount++;
 		}
 
 		void RenderScene(olc::PixelGameEngine* ptrEngine) override
