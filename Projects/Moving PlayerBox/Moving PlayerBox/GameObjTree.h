@@ -13,6 +13,23 @@ namespace RB
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
 
+		GameObj* ProcNewObj(ObjSpecs specs)
+		{
+			GameObj* newObj = new GameObj(specs);
+			newObj->data.objWidth = specs.width;
+			newObj->data.objHeight = specs.height;
+
+			if (specs.controllerType != ControllerType::NONE)
+			{
+				newObj->SetController(specs.controllerType);
+			}
+
+			vecAllObjs.push_back(newObj);
+			SetID(newObj);
+
+			return newObj;
+		}
+
 	public:
 		GameObjTree()
 		{
@@ -101,19 +118,10 @@ namespace RB
 			for (int i = 0; i < obj->data.GetChildQueueCount(); i++)
 			{
 				ObjSpecs specs = obj->data.GetChildCreationSpecs(i);
-				GameObj* child = new GameObj(specs);
-				child->data.objWidth = specs.width;
-				child->data.objHeight = specs.height;
 
-				if (specs.controllerType != ControllerType::NONE)
-				{
-					child->SetController(specs.controllerType);
-				}
+				GameObj* child = ProcNewObj(specs);
 
 				obj->AddToHierarchy(child);
-				vecAllObjs.push_back(child);
-
-				SetID(child);
 			}
 
 			obj->data.ClearChildQueues();
@@ -121,18 +129,7 @@ namespace RB
 
 		void CreateObj(ObjSpecs specs)
 		{
-			GameObj* newObj = new GameObj(specs);
-			newObj->data.objWidth = specs.width;
-			newObj->data.objHeight = specs.height;
-
-			if (specs.controllerType != ControllerType::NONE)
-			{
-				newObj->SetController(specs.controllerType);
-			}
-
-			vecAllObjs.push_back(newObj);
-
-			SetID(newObj);
+			ProcNewObj(specs);
 		}
 
 		GameObj* GetObjType(GameObjType _objType)
