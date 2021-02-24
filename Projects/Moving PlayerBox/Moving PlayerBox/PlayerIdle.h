@@ -17,7 +17,7 @@ namespace RB
 			std::cout << "destructing State: PlayerIdle" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData) override
+		void UpdateState(ObjData& objData, GameObjTree* tree, const GameData& gameData) override
 		{
 			if (gameData.inputXAxis < 0)
 			{
