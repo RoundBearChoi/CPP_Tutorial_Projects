@@ -35,13 +35,14 @@ namespace RB
 
 			input.UpdateInput(this);
 
-			fAccumulatedTime += fElapsedTime;
-
 			if (bStartSlowMo)
 			{
 				fTargetFrameTime = 1.0f / 5.0f;
 			}
 
+			fAccumulatedTime += fElapsedTime;
+
+			//fixed timestep
 			if (fAccumulatedTime >= fTargetFrameTime)
 			{
 				GameData gameData;
