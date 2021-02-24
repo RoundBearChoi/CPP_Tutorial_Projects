@@ -189,5 +189,8 @@
     <ClInclude Include="PlayerDummy.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
+    <ClInclude Include="RenderPair.h">
+      <Filter>Source Files\GameObj\Info</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

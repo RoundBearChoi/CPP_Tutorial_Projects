@@ -13,5 +13,6 @@ namespace RB
 		shit_box100x100,
 
 		COUNT,
+		NONE,
 	};
 }
