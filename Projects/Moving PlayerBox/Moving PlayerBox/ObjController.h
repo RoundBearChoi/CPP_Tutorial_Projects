@@ -18,9 +18,9 @@ namespace RB
 			std::cout << "destructing ObjController (virtual)" << std::endl;
 		}
 
-		void UpdateObj(ObjData& objData, GameObjTree* tree, const GameData& gameData)
+		void UpdateObj(ObjData& objData, const GameData& gameData)
 		{
-			currentState->UpdateState(objData, tree, gameData);
+			currentState->UpdateState(objData, gameData);
 		}
 
 		template<class T>

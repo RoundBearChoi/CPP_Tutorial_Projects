@@ -16,7 +16,7 @@ namespace RB
 			std::cout << "destructing State: PlayerDummy" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, GameObjTree* tree, const GameData& gameData) override
+		void UpdateState(ObjData& objData, const GameData& gameData) override
 		{
 			objData.position = { 300.0f, 650.0f };
 		}

@@ -43,7 +43,7 @@ namespace RB
 					if (controller != nullptr)
 					{
 						//update every obj
-						controller->UpdateObj(obj->data, this, gameData);
+						controller->UpdateObj(obj->data, gameData);
 
 						//check child creation
 						CreateChildren(obj);
