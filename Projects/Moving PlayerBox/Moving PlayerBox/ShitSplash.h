@@ -17,7 +17,7 @@ namespace RB
 			std::cout << "destructing State: ShitSplash" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData) override
+		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
 			deleteObj = true;
 		}

@@ -6,8 +6,8 @@ namespace RB
 	class ShitFall : public State
 	{
 	private:
+		int frameCount = 0;
 		float speed = 1.0f;
-		bool collisionChecked = false;
 
 	public:
 		ShitFall()
@@ -21,8 +21,10 @@ namespace RB
 			std::cout << "destructing State: ShitFall" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData) override
+		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
+			frameCount++;
+
 			if (objData.position.y < 650.0f)
 			{
 				speed = speed * 1.0122f;
@@ -34,12 +36,13 @@ namespace RB
 				nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
 			}
 
-			float collisionHeight = 650.0f - 80.0f - 16.5f; // player bottom y - player height - half shit height
-
-			//only need to check collision once
-			if (objData.position.y > collisionHeight)
+			if (bColliding)
 			{
-				collisionChecked = true;
+				//only apply top collision
+				if (frameCount == 169)
+				{
+					gameData.startSlowMo = true;
+				}
 			}
 		}
 	};

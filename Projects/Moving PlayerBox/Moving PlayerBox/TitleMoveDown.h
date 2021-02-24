@@ -20,7 +20,7 @@ namespace RB
 			std::cout << "destructing State: TitleMoveDown" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData) override
+		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
 			frameCount++;
 			objData.position.y += speed;

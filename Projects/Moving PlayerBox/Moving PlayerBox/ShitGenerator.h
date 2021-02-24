@@ -25,7 +25,7 @@ namespace RB
 			std::cout << "destructing State: ShitGenerator" << std::endl;
 		}
 
-		void UpdateState(ObjData& objData, const GameData& gameData) override
+		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
 			creationCounter++;
 			difficultyCounter++;
@@ -36,7 +36,7 @@ namespace RB
 			{
 				ObjSpecs specs;
 				specs.width = 32.0f;
-				specs.height = 32.0;
+				specs.height = 32.0f;
 				specs.objType = GameObjType::individual_shit;
 				specs.controllerType = ControllerType::SHIT_CONTROLLER_FALL;
 				objData.QueueChildCreation(specs);

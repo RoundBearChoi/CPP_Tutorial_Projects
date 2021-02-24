@@ -30,10 +30,8 @@ namespace RB
 			}
 		}
 
-		void UpdateAll(const GameData& gameData)
+		void UpdateAll(GameData& gameData)
 		{
-			GameObj* ptrPlayer = GetObjType(GameObjType::player);
-
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
 				GameObj* obj = vecAllObjs[i];
@@ -43,9 +41,13 @@ namespace RB
 					//check collision against player
 					if (obj->data.objType == GameObjType::individual_shit)
 					{
-						if (obj->IsCollidingAgainst(ptrPlayer))
+						if (obj->IsCollidingAgainst(GetObjType(GameObjType::player)))
 						{
-							int n = 0;
+							obj->GetController()->SetCollisionFlag();
+						}
+						else
+						{
+							obj->GetController()->ClearCollisionFlag();
 						}
 					}
 

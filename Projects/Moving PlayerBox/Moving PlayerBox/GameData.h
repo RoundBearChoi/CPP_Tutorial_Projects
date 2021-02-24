@@ -7,5 +7,6 @@ namespace RB
 	public:
 		int inputXAxis = 0;
 		bool startGame = false;
+		bool startSlowMo = false;
 	};
 }

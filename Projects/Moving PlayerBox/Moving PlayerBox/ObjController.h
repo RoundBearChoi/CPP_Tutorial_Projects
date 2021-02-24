@@ -18,7 +18,7 @@ namespace RB
 			std::cout << "destructing ObjController (virtual)" << std::endl;
 		}
 
-		void UpdateObj(ObjData& objData, const GameData& gameData)
+		void UpdateObj(ObjData& objData, GameData& gameData)
 		{
 			currentState->UpdateState(objData, gameData);
 		}
@@ -47,6 +47,16 @@ namespace RB
 		bool DestructIsQueued()
 		{
 			return currentState->DeleteObj();
+		}
+
+		void SetCollisionFlag()
+		{
+			currentState->SetCollisionFlag();
+		}
+
+		void ClearCollisionFlag()
+		{
+			currentState->ClearCollisionFlag();
 		}
 	};
 }

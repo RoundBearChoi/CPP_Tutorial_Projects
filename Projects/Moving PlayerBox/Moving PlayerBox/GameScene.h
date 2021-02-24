@@ -48,7 +48,7 @@ namespace RB
 			objTree.CreateObj(shitgroup);
 		}
 
-		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData) override
+		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override
 		{
 			objTree.UpdateAll(gameData);
 		}
