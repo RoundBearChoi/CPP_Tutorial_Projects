@@ -25,10 +25,5 @@ namespace RB
 		{
 			std::cout << "destructing Scene (virtual)" << std::endl;
 		}
-
-		int GetNextScene()
-		{
-			return objTree.GetNextScene();
-		}
 	};
 }

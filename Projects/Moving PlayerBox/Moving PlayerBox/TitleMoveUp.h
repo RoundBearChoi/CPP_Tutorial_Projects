@@ -23,7 +23,7 @@ namespace RB
 
 			if (frameCount >= 31)
 			{
-				changeSceneIndex = 2; // game scene index is 2
+				gameData.nextSceneIndex = 2;
 			}
 		}
 	};

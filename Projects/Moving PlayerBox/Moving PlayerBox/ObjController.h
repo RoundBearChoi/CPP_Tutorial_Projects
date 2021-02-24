@@ -34,11 +34,6 @@ namespace RB
 			}
 		}
 
-		int GetNextScene()
-		{
-			return currentState->GetNextScene();
-		}
-
 		bool DestructIsQueued()
 		{
 			return currentState->DeleteObj();

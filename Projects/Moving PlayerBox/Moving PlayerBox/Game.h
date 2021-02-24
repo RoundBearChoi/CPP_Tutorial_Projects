@@ -54,6 +54,15 @@ namespace RB
 				sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
 				sceneController.RenderCurrentScene(this, fElapsedTime);
 
+				//scene transition
+				if (gameData.nextSceneIndex != 0)
+				{
+					if (gameData.nextSceneIndex == 2)
+					{
+						sceneController.CreateScene<GameScene>();
+					}
+				}
+
 				//only clear after update
 				input.ClearKeyPress();
 

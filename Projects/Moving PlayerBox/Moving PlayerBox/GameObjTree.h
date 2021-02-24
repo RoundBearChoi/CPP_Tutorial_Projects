@@ -156,28 +156,5 @@ namespace RB
 			obj->data.SetCreationID(objsCreated);
 			objsCreated++;
 		}
-
-		int GetNextScene()
-		{
-			for (int i = 0; i < vecAllObjs.size(); i++)
-			{
-				if (vecAllObjs[i] != nullptr)
-				{
-					ObjController* controller = vecAllObjs[i]->GetController();
-
-					if (controller != nullptr)
-					{
-						int nextScene = vecAllObjs[i]->GetController()->GetNextScene();
-
-						if (nextScene != 0)
-						{
-							return nextScene;
-						}
-					}
-				}
-			}
-
-			return 0;
-		}
 	};
 }

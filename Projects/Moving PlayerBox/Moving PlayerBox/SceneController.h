@@ -37,16 +37,6 @@ namespace RB
 		void UpdateCurrentScene(olc::PixelGameEngine* ptrEngine, GameData& gameData, float deltaTime)
 		{
 			currentScene->UpdateScene(ptrEngine, gameData);
-
-			int nextScene = currentScene->GetNextScene();
-
-			if (nextScene != 0)
-			{
-				if (nextScene == 2)
-				{
-					CreateScene<GameScene>();
-				}
-			}
 		}
 
 		void RenderCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
