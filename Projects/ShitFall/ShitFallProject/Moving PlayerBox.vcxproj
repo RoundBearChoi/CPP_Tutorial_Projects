@@ -74,6 +74,7 @@
     <ProjectGuid>{4ec6059d-a768-4c6f-bf34-d6d59209f725}</ProjectGuid>
     <RootNamespace>MovingPlayerBox</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ShitFall</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
