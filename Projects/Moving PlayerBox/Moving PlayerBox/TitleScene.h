@@ -27,18 +27,18 @@ namespace RB
 			ObjSpecs title;
 			ObjSpecs dummy;
 
-			background.width = 0.0f;
-			background.height = 0.0f;
+			background.width = 600.0f;
+			background.height = 700.0f;
 			background.objType = GameObjType::background;
 			background.controllerType = ControllerType::NONE;
 
-			title.width = 0.0f;
-			title.height = 0.0f;
+			title.width = 500.0f;
+			title.height = 180.0f;
 			title.objType = GameObjType::title;
 			title.controllerType = ControllerType::TITLE_CONTROLLER;
 
-			dummy.width = 0.0f;
-			dummy.height = 0.0f;
+			dummy.width = 50.0f;
+			dummy.height = 80.0f;
 			dummy.objType = GameObjType::dummy;
 			dummy.controllerType = ControllerType::DUMMY_PLAYER_CONTROLLER;
 

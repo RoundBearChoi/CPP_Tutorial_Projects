@@ -28,13 +28,13 @@ namespace RB
 			ObjSpecs player;
 			ObjSpecs shitgroup;
 
-			background.width = 0.0f;
-			background.height = 0.0f;
+			background.width = 600.0f;
+			background.height = 700.0f;
 			background.objType = GameObjType::background;
 			background.controllerType = ControllerType::NONE;
 
-			player.width = 0.0f;
-			player.height = 0.0f;
+			player.width = 50.0f;
+			player.height = 80.0f;
 			player.objType = GameObjType::player;
 			player.controllerType = ControllerType::PLAYER_CONTROLLER;
 
