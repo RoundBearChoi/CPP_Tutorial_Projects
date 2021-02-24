@@ -38,11 +38,13 @@ namespace RB
 
 			if (bColliding)
 			{
+				gameData.startSlowMo = true;
+
 				//only apply top collision
-				if (frameCount == 169)
-				{
-					gameData.startSlowMo = true;
-				}
+				//if (frameCount == 169)
+				//{
+				//	gameData.startSlowMo = true;
+				//}
 			}
 		}
 	};
