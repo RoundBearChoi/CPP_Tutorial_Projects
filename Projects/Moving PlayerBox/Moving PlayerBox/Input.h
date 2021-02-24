@@ -23,7 +23,6 @@ namespace RB
 			if (ptrEngine->GetKey(olc::Key::A).bPressed)
 			{
 				buffer_A.push_back(1);
-				std::cout << "a pressed" << std::endl;
 				Pressed_A = true;
 			}
 			
@@ -31,7 +30,6 @@ namespace RB
 			{
 				if (buffer_A.size() > 0)
 				{
-					std::cout << "a released" << std::endl;
 					buffer_A.erase(buffer_A.begin());
 				}
 			}
