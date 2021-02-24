@@ -1,13 +1,14 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "GameData.h"
+#include "GameObjTree.h"
 
 namespace RB
 {
 	class Scene
 	{
 	protected:
-		int nextSceneIndex = 0;
+		GameObjTree objTree;
 
 	public:
 		virtual void InitScene() = 0;
@@ -27,12 +28,7 @@ namespace RB
 
 		int GetNextScene()
 		{
-			return nextSceneIndex;
-		}
-
-		void ClearQueue()
-		{
-			nextSceneIndex = 0;
+			return objTree.GetNextSceneQueue();
 		}
 	};
 }

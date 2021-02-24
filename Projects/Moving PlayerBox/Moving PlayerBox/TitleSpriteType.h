@@ -6,6 +6,7 @@ namespace RB
 	{
 		background,
 		title_line500x180,
+		playerbox_green,
 
 		COUNT,
 	};

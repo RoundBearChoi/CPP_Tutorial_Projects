@@ -19,6 +19,10 @@ namespace RB
 			{
 				return "PNG files/title_line500x180.png";
 			}
+			else if (spriteType == TitleSpriteType::playerbox_green)
+			{
+				return "PNG files/playerbox_green.png";
+			}
 			return "none";
 		}
 

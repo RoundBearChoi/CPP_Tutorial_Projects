@@ -141,12 +141,6 @@
     <ClInclude Include="State.h">
       <Filter>Source Files\States\Base</Filter>
     </ClInclude>
-    <ClInclude Include="ShitStateType.h">
-      <Filter>Source Files\States\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerStateType.h">
-      <Filter>Source Files\States\Base</Filter>
-    </ClInclude>
     <ClInclude Include="ShitPosition.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
@@ -174,9 +168,6 @@
     <ClInclude Include="TitleSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
-    <ClInclude Include="TitleStateType.h">
-      <Filter>Source Files\States\Base</Filter>
-    </ClInclude>
     <ClInclude Include="TitleController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
@@ -187,6 +178,15 @@
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="TitleMoveUp.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="DummyPlayerController.h">
+      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="StateType.h">
+      <Filter>Source Files\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDummy.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
   </ItemGroup>

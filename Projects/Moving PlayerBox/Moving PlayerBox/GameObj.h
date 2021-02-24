@@ -1,6 +1,7 @@
 #pragma once
 #include "ObjSpecs.h"
 #include "TitleController.h"
+#include "DummyPlayerController.h"
 #include "PlayerController.h"
 #include "ShitGeneratorController.h"
 #include "ShitFallController.h"
@@ -90,7 +91,7 @@ namespace RB
 			}
 			else if (_controllerType == ControllerType::DUMMY_PLAYER_CONTROLLER)
 			{
-
+				ptrController = new DummyPlayerController();
 			}
 
 			else if (_controllerType == ControllerType::PLAYER_CONTROLLER)

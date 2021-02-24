@@ -9,7 +9,6 @@ namespace RB
 	private:
 		int frameCount = 0;
 		TitleDecalLoader decalLoader;
-		GameObjTree objTree;
 
 	public:
 		TitleScene()
@@ -26,9 +25,11 @@ namespace RB
 		{
 			ObjSpecs background(GameObjType::background, ControllerType::NONE);
 			ObjSpecs title(GameObjType::title, ControllerType::TITLE_CONTROLLER);
+			ObjSpecs dummy(GameObjType::dummy, ControllerType::DUMMY_PLAYER_CONTROLLER);
 
 			objTree.CreateObj(background);
 			objTree.CreateObj(title);
+			objTree.CreateObj(dummy);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, const GameData& gameData) override
@@ -36,17 +37,17 @@ namespace RB
 			objTree.UpdateAll(gameData);
 
 			frameCount++;
-
-			nextSceneIndex = objTree.GetNextSceneQueue();
 		}
 
 		void RenderScene(olc::PixelGameEngine* ptrEngine) override
 		{
 			GameObj* background = objTree.GetObjType(GameObjType::background);
 			GameObj* title = objTree.GetObjType(GameObjType::title);
+			GameObj* dummy = objTree.GetObjType(GameObjType::dummy);
 
 			background->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::background), RenderOffsetType::NONE);
 			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180), RenderOffsetType::CENTER_CENTER);
+			dummy->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
 		}
 	};
 }

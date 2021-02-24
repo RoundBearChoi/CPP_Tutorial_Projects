@@ -7,7 +7,7 @@ namespace RB
 		NONE,
 
 		title,
-
+		dummy,
 		player,
 		background,
 		shitgroup,

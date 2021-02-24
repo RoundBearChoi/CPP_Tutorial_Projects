@@ -66,9 +66,6 @@ namespace RB
 							{
 								controller->MakeTransition(nextState);
 							}
-
-							//get next scene
-							nextSceneQueue = obj->GetController()->NextSceneIndex();
 						}
 					}
 				}
@@ -146,7 +143,25 @@ namespace RB
 
 		int GetNextSceneQueue()
 		{
-			return nextSceneQueue;
+			for (int i = 0; i < vecAllObjs.size(); i++)
+			{
+				if (vecAllObjs[i] != nullptr)
+				{
+					ObjController* controller = vecAllObjs[i]->GetController();
+
+					if (controller != nullptr)
+					{
+						nextSceneQueue = vecAllObjs[i]->GetController()->NextSceneIndex();
+
+						if (nextSceneQueue != 0)
+						{
+							return nextSceneQueue;
+						}
+					}
+				}
+			}
+
+			return 0;
 		}
 	};
 }

@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include "ObjController.h"
-#include "TitleStateType.h"
 #include "TitleIdle.h"
 #include "TitleMoveDown.h"
 #include "TitleMoveUp.h"

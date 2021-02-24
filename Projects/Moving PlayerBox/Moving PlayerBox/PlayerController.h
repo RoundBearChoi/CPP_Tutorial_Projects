@@ -1,7 +1,7 @@
 #pragma once
 #include "ObjController.h"
 #include "State.h"
-#include "PlayerStateType.h"
+#include "StateType.h"
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
 #include "PlayerMoveLeft.h"

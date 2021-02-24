@@ -1,6 +1,6 @@
 #pragma once
 #include "State.h"
-#include "PlayerStateType.h"
+#include "StateType.h"
 
 namespace RB
 {

@@ -10,8 +10,7 @@ namespace RB
 	{
 	private:
 		GameDecalLoader decalLoader;
-		GameObjTree objTree;
-
+		
 	public:
 		GameScene()
 		{

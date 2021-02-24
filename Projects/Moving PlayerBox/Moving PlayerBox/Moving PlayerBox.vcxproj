@@ -24,6 +24,7 @@
   <ItemGroup>
     <ClInclude Include="ControllerType.h" />
     <ClInclude Include="DecalLoader.h" />
+    <ClInclude Include="DummyPlayerController.h" />
     <ClInclude Include="GameDecalLoader.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameData.h" />
@@ -34,9 +35,9 @@
     <ClInclude Include="ObjData.h" />
     <ClInclude Include="ObjSpecs.h" />
     <ClInclude Include="olcPixelGameEngine.h" />
+    <ClInclude Include="PlayerDummy.h" />
     <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerMoveRight.h" />
-    <ClInclude Include="PlayerStateType.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="RandomInteger.h" />
     <ClInclude Include="RenderOffsetType.h" />
@@ -53,9 +54,9 @@
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitPosition.h" />
     <ClInclude Include="ShitSplash.h" />
-    <ClInclude Include="ShitStateType.h" />
     <ClInclude Include="SpritePath.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateType.h" />
     <ClInclude Include="TitleController.h" />
     <ClInclude Include="TitleDecalLoader.h" />
     <ClInclude Include="TitleMoveDown.h" />
@@ -63,7 +64,6 @@
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="TitleSpriteType.h" />
     <ClInclude Include="TitleIdle.h" />
-    <ClInclude Include="TitleStateType.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

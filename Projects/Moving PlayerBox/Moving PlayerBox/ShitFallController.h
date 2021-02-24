@@ -1,7 +1,6 @@
 #pragma once
 #include "ObjController.h"
 #include "State.h"
-#include "ShitStateType.h"
 #include "ShitGenerator.h"
 #include "ShitPosition.h"
 #include "ShitFall.h"
