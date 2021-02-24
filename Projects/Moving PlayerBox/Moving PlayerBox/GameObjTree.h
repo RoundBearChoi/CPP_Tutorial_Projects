@@ -32,12 +32,23 @@ namespace RB
 
 		void UpdateAll(const GameData& gameData)
 		{
+			GameObj* ptrPlayer = GetObjType(GameObjType::player);
+
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
 				GameObj* obj = vecAllObjs[i];
 
 				if (obj != nullptr)
 				{
+					//check collision against player
+					if (obj->data.objType == GameObjType::individual_shit)
+					{
+						if (obj->IsCollidingAgainst(ptrPlayer))
+						{
+							int n = 0;
+						}
+					}
+
 					ObjController* controller = vecAllObjs[i]->GetController();
 
 					if (controller != nullptr)
@@ -90,6 +101,8 @@ namespace RB
 			{
 				ObjSpecs specs = obj->data.GetChildCreationSpecs(i);
 				GameObj* child = new GameObj(specs);
+				child->data.objWidth = specs.width;
+				child->data.objHeight = specs.height;
 
 				if (specs.controllerType != ControllerType::NONE)
 				{
@@ -98,6 +111,7 @@ namespace RB
 
 				obj->AddToHierarchy(child);
 				vecAllObjs.push_back(child);
+
 				SetID(child);
 			}
 
@@ -107,12 +121,15 @@ namespace RB
 		void CreateObj(ObjSpecs specs)
 		{
 			GameObj* newObj = new GameObj(specs);
-			vecAllObjs.push_back(newObj);
+			newObj->data.objWidth = specs.width;
+			newObj->data.objHeight = specs.height;
 
 			if (specs.controllerType != ControllerType::NONE)
 			{
 				newObj->SetController(specs.controllerType);
 			}
+
+			vecAllObjs.push_back(newObj);
 
 			SetID(newObj);
 		}

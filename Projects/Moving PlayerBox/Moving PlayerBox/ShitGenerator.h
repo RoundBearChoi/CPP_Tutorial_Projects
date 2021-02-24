@@ -35,8 +35,8 @@ namespace RB
 			if (creationCounter >= creationTiming)
 			{
 				ObjSpecs specs;
-				specs.width = 0.0f;
-				specs.height = 0.0;
+				specs.width = 32.0f;
+				specs.height = 32.0;
 				specs.objType = GameObjType::individual_shit;
 				specs.controllerType = ControllerType::SHIT_CONTROLLER_FALL;
 				objData.QueueChildCreation(specs);

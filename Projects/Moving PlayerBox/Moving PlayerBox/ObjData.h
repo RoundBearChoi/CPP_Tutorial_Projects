@@ -10,12 +10,12 @@ namespace RB
 	private:
 		std::vector<ObjSpecs> vecChildQueues;
 		int creationID = 0;
-		float width = 0.0f;
-		float height = 0.0f;
 
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
 		GameObjType objType = GameObjType::NONE;
+		float objWidth = 0.0f;
+		float objHeight = 0.0f;
 
 		~ObjData()
 		{

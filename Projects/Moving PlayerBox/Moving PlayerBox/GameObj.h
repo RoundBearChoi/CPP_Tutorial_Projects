@@ -1,12 +1,14 @@
 #pragma once
 #include "ObjSpecs.h"
+#include "RenderOffsetType.h"
+#include "ObjData.h"
+#include "Rect.h"
+
 #include "TitleController.h"
 #include "DummyPlayerController.h"
 #include "PlayerController.h"
 #include "ShitGeneratorController.h"
 #include "ShitFallController.h"
-#include "RenderOffsetType.h"
-#include "ObjData.h"
 
 namespace RB
 {
@@ -126,6 +128,53 @@ namespace RB
 		GameObj* GetParent()
 		{
 			return parent;
+		}
+
+		bool IsCollidingAgainst(GameObj* _target)
+		{
+			if (_target == nullptr)
+			{
+				return false;
+			}
+
+			if (_target->data.objWidth <= 0.0f || _target->data.objHeight <= 0.0f)
+			{
+				return false;
+			}
+
+			if (data.objWidth <= 0.0f || data.objHeight <= 0.0f)
+			{
+				return false;
+			}
+
+			Rect rect1; //player (pivot is offset)
+			rect1.x = _target->data.position.x;
+			rect1.y = _target->data.position.y - _target->data.objHeight / 2.0f;
+			rect1.width = _target->data.objWidth;
+			rect1.height = _target->data.objHeight;
+
+			Rect rect2; //shit
+			rect2.x = data.position.x;
+			rect2.y = data.position.y;
+			rect2.width = data.objWidth;
+			rect2.height = data.objHeight;
+
+			//axis-aligned bounding box
+			if(rect1.x < rect2.x + rect2.width)
+			{
+				if (rect1.x + rect1.width > rect2.x)
+				{
+					if (rect1.y > rect2.y - rect2.height)
+					{
+						if (rect1.y - rect1.height < rect2.y)
+						{
+							return true;
+						}
+					}
+				}
+			}
+
+			return false;
 		}
 	};
 }
