@@ -32,7 +32,7 @@ namespace RB
 		{
 			objData.position = randomStart;
 
-			nextStateIndex = (int)ShitStateType::FALL;
+			objData.nextStateIndex = (int)ShitStateType::FALL;
 		}
 	};
 }

@@ -23,7 +23,7 @@ namespace RB
 
 			if (gameData.startGame)
 			{
-				nextStateIndex = (int)TitleStateType::MOVE_DOWN;
+				objData.nextStateIndex = (int)TitleStateType::MOVE_DOWN;
 			}
 		}
 	};

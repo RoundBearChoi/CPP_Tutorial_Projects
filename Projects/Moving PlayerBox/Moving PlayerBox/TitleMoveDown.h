@@ -28,7 +28,7 @@ namespace RB
 
 			if (frameCount >= 30)
 			{
-				nextStateIndex = (int)TitleStateType::MOVE_UP;
+				objData.nextStateIndex = (int)TitleStateType::MOVE_UP;
 			}
 		}
 	};

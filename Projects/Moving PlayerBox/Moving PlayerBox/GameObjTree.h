@@ -46,7 +46,7 @@ namespace RB
 			}
 		}
 
-		void UpdateAll(GameData& gameData)
+		void UpdateObjs(GameData& gameData)
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
@@ -59,10 +59,14 @@ namespace RB
 					{
 						if (obj->GetStateFrameCount() == 171 && !gameData.startSlowMo)
 						{
-							if (obj->IsCollidingAgainst(GetObjType(GameObjType::player)))
+							GameObj* player = GetObjType(GameObjType::player);
+
+							if (obj->IsCollidingAgainst(player))
 							{
 								gameData.startSlowMo = true;
 								obj->data.collided = true;
+
+								player->GetController()->MakeTransition((int)PlayerStateType::DEAD);
 							}
 						}
 					}
@@ -77,6 +81,13 @@ namespace RB
 						//check child creation
 						CreateChildren(obj);
 
+						//check transition
+						if (obj->data.nextStateIndex != 0)
+						{
+							controller->MakeTransition(obj->data.nextStateIndex);
+							obj->data.nextStateIndex = 0;
+						}
+
 						//delete obj
 						if (controller->DestructIsQueued())
 						{
@@ -85,16 +96,6 @@ namespace RB
 
 							delete vecAllObjs[i];
 							vecAllObjs[i] = nullptr;
-						}
-						else
-						{
-							//check transition
-							int nextState = obj->GetController()->GetNextStateIndex();
-
-							if (nextState != 0)
-							{
-								controller->MakeTransition(nextState);
-							}
 						}
 					}
 				}

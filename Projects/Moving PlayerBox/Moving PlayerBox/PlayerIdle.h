@@ -21,12 +21,12 @@ namespace RB
 		{
 			if (gameData.inputXAxis < 0)
 			{
-				nextStateIndex = (int)PlayerStateType::MOVE_LEFT;
+				objData.nextStateIndex = (int)PlayerStateType::MOVE_LEFT;
 			}
 
 			if (gameData.inputXAxis > 0)
 			{
-				nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
+				objData.nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
 			}
 		}
 	};

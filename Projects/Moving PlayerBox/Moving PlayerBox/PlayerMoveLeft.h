@@ -23,11 +23,11 @@ namespace RB
 
 			if (gameData.inputXAxis == 0)
 			{
-				nextStateIndex = (int)PlayerStateType::IDLE;
+				objData.nextStateIndex = (int)PlayerStateType::IDLE;
 			}
 			else if (gameData.inputXAxis > 0)
 			{
-				nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
+				objData.nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
 			}
 
 			if (objData.position.x < 0.0f + 25.0f)

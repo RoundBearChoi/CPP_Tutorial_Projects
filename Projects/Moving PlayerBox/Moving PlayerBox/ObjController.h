@@ -34,11 +34,6 @@ namespace RB
 			}
 		}
 
-		int GetNextStateIndex()
-		{
-			return currentState->GetNextStateIndex();
-		}
-
 		int GetNextScene()
 		{
 			return currentState->GetNextScene();

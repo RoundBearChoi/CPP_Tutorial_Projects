@@ -25,7 +25,7 @@ namespace RB
 
 			if (frameCount >= 20)
 			{
-				nextStateIndex = (int)PlayerStateType::IDLE;
+				objData.nextStateIndex = (int)PlayerStateType::IDLE;
 			}
 		}
 	};

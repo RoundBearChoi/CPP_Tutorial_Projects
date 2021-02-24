@@ -48,7 +48,7 @@ namespace RB
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override
 		{
-			objTree.UpdateAll(gameData);
+			objTree.UpdateObjs(gameData);
 		}
 
 		void RenderScene(olc::PixelGameEngine* ptrEngine) override

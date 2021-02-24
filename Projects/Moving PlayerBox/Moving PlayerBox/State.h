@@ -8,7 +8,6 @@ namespace RB
 	class State
 	{
 	protected:
-		int nextStateIndex = 0;
 		int changeSceneIndex = 0;
 		int frameCount = 0;
 		bool deleteObj = false;
@@ -19,11 +18,6 @@ namespace RB
 		virtual ~State()
 		{
 
-		}
-
-		int GetNextStateIndex()
-		{
-			return nextStateIndex;
 		}
 
 		int GetNextScene()

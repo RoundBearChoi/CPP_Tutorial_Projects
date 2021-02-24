@@ -17,6 +17,7 @@ namespace RB
 		float objWidth = 0.0f;
 		float objHeight = 0.0f;
 		bool collided = false;
+		int nextStateIndex = 0;
 
 		~ObjData()
 		{
