@@ -27,13 +27,12 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			//test
-			input.UpdateInput(this);
-			
 			if (input.ESCPressed())
 			{
 				return false;
 			}
+
+			input.UpdateInput(this);
 
 			fAccumulatedTime += fElapsedTime;
 
