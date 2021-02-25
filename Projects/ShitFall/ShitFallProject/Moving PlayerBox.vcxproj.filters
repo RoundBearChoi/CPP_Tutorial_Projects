@@ -29,9 +29,6 @@
     <Filter Include="Source Files\DecalLoader\Base">
       <UniqueIdentifier>{76fe0e98-f104-4caa-acd4-9d7b6d196392}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DecalLoader\Concrete Loaders">
-      <UniqueIdentifier>{3cfb5554-6874-4b27-9d4a-acd3cd8ef9ad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Renderer">
       <UniqueIdentifier>{a8b0b612-7706-407e-a8a1-abb908f7cd49}</UniqueIdentifier>
     </Filter>
@@ -55,6 +52,9 @@
     </Filter>
     <Filter Include="Source Files\Random">
       <UniqueIdentifier>{95b8caf3-d27f-4a99-b48f-2d39e3107fb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DecalLoader\Concrete Paths">
+      <UniqueIdentifier>{3cfb5554-6874-4b27-9d4a-acd3cd8ef9ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,9 +105,6 @@
     <ClInclude Include="TitleScene.h">
       <Filter>Source Files\Scene\Concrete Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="GameDecalLoader.h">
-      <Filter>Source Files\DecalLoader\Concrete Loaders</Filter>
-    </ClInclude>
     <ClInclude Include="ControllerType.h">
       <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
@@ -135,9 +132,6 @@
     <ClInclude Include="ObjSpecs.h">
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
-    <ClInclude Include="SpritePath.h">
-      <Filter>Source Files\DecalLoader\Base</Filter>
-    </ClInclude>
     <ClInclude Include="State.h">
       <Filter>Source Files\States\Base</Filter>
     </ClInclude>
@@ -161,9 +155,6 @@
     </ClInclude>
     <ClInclude Include="DecalLoader.h">
       <Filter>Source Files\DecalLoader\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleDecalLoader.h">
-      <Filter>Source Files\DecalLoader\Concrete Loaders</Filter>
     </ClInclude>
     <ClInclude Include="TitleSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
@@ -197,6 +188,15 @@
     </ClInclude>
     <ClInclude Include="StateAnimation.h">
       <Filter>Source Files\States\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GameDecalPath.h">
+      <Filter>Source Files\DecalLoader\Concrete Paths</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleDecalPath.h">
+      <Filter>Source Files\DecalLoader\Concrete Paths</Filter>
+    </ClInclude>
+    <ClInclude Include="DecalPath.h">
+      <Filter>Source Files\DecalLoader\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

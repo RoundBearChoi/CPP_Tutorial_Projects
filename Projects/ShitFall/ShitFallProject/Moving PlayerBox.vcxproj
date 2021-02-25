@@ -25,10 +25,11 @@
     <ClInclude Include="AnimationData.h" />
     <ClInclude Include="ControllerType.h" />
     <ClInclude Include="DecalLoader.h" />
+    <ClInclude Include="DecalPath.h" />
     <ClInclude Include="DummyPlayerController.h" />
-    <ClInclude Include="GameDecalLoader.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameData.h" />
+    <ClInclude Include="GameDecalPath.h" />
     <ClInclude Include="GameObjType.h" />
     <ClInclude Include="GameSpriteType.h" />
     <ClInclude Include="Input.h" />
@@ -56,12 +57,11 @@
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitPosition.h" />
     <ClInclude Include="ShitSplash.h" />
-    <ClInclude Include="SpritePath.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateAnimation.h" />
     <ClInclude Include="StateType.h" />
     <ClInclude Include="TitleController.h" />
-    <ClInclude Include="TitleDecalLoader.h" />
+    <ClInclude Include="TitleDecalPath.h" />
     <ClInclude Include="TitleMoveDown.h" />
     <ClInclude Include="TitleMoveUp.h" />
     <ClInclude Include="TitleScene.h" />

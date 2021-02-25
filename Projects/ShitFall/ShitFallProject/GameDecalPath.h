@@ -1,33 +1,21 @@
 #pragma once
-#include <iostream>
-#include "TitleSpriteType.h"
 #include "GameSpriteType.h"
+#include "DecalPath.h"
 
 namespace RB
 {
-	class SpritePath
+	class GameDecalPath : public DecalPath
 	{
 	public:
-
-		static std::string GetPath(TitleSpriteType spriteType)
+		int GetCount() override
 		{
-			if (spriteType == TitleSpriteType::background)
-			{
-				return "PNG files/background.png";
-			}
-			else if (spriteType == TitleSpriteType::title_line500x180)
-			{
-				return "PNG files/title_line500x180.png";
-			}
-			else if (spriteType == TitleSpriteType::playerbox_green)
-			{
-				return "PNG files/playerbox_green.png";
-			}
-			return "none";
+			return (int)GameSpriteType::COUNT;
 		}
 
-		static std::string GetPath(GameSpriteType spriteType)
+		std::string GetPath(int _index) override
 		{
+			GameSpriteType spriteType = (GameSpriteType)_index;
+
 			if (spriteType == GameSpriteType::playerbox_green)
 			{
 				return "PNG files/playerbox_green.png";

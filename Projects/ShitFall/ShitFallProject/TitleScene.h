@@ -1,18 +1,24 @@
 #pragma once
 #include "Scene.h"
-#include "TitleDecalLoader.h"
+#include "GameObjTree.h"
+#include "DecalLoader.h"
+#include "TitleDecalPath.h"
 
 namespace RB
 {
 	class TitleScene : public Scene
 	{
 	private:
-		TitleDecalLoader decalLoader;
+		DecalLoader decalLoader;
+		
 
 	public:
 		TitleScene()
 		{
 			std::cout << "constructing TitleScene" << std::endl;
+
+			decalLoader.LoadSprites<TitleDecalPath>();
+			decalLoader.LoadDecals();
 		}
 
 		~TitleScene()
