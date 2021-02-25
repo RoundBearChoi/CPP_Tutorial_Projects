@@ -14,12 +14,12 @@ namespace RB
 	class GameObj
 	{
 	private:
-		ObjController* ptrController = nullptr;
 		std::vector<GameObj*> vecChildrenPtr;
 		GameObj* parent = nullptr;
 
 	public:
 		ObjData data;
+		ObjController* ptrController = nullptr;
 
 		GameObj(ObjSpecs specs)
 		{
@@ -108,11 +108,6 @@ namespace RB
 			}
 		}
 
-		ObjController* GetController()
-		{
-			return ptrController;
-		}
-
 		std::vector<GameObj*>& GetChildren()
 		{
 			return vecChildrenPtr;
@@ -124,7 +119,7 @@ namespace RB
 
 			for (int i = 0; i < vecChildrenPtr.size(); i++)
 			{
-				if (vecChildrenPtr[i]->GetController()->DestructIsQueued())
+				if (vecChildrenPtr[i]->ptrController->DestructIsQueued())
 				{
 					removables.push_back(i);
 				}

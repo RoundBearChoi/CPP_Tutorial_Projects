@@ -12,19 +12,17 @@ namespace RB
 		int totalHeight = 0;
 		int tileCountX = 0;
 		int tileCountY = 0;
-		int totalTileCount = 0;
 
 		int currentTile = 0;
 
 	public:
-		void SetParams(int _decalIndex, int _totalWith, int _totalHeight, int _tileCountX, int _tileCountY, int _totalTiles)
+		void SetParams(int _decalIndex, int _totalWith, int _totalHeight, int _tileCountX, int _tileCountY)
 		{
 			decalIndex = _decalIndex;
 			totalWidth = _totalWith;
 			totalHeight = _totalHeight;
 			tileCountX = _tileCountX;
 			tileCountY = _tileCountY;
-			totalTileCount = _totalTiles;
 		}
 
 		AnimationData GetRenderData()

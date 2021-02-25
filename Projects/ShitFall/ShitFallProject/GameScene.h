@@ -70,5 +70,10 @@ namespace RB
 				shits[i]->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box32x32), RenderOffsetType::CENTER_CENTER);
 			}
 		}
+
+		void RenderStates(olc::PixelGameEngine* ptrEngine) override
+		{
+			objTree.RenderStates(ptrEngine);
+		}
 	};
 }

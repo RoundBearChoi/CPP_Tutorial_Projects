@@ -67,17 +67,17 @@ namespace RB
 								gameData.startSlowMo = true;
 								obj->data.collided = true;
 
-								player->GetController()->MakeTransition((int)PlayerStateType::DEAD);
+								player->ptrController->MakeTransition((int)PlayerStateType::DEAD);
 							}
 						}
 					}
 
-					ObjController* controller = vecAllObjs[i]->GetController();
+					ObjController* con = vecAllObjs[i]->ptrController;
 
-					if (controller != nullptr)
+					if (con != nullptr)
 					{
 						//update every obj
-						controller->UpdateObj(obj->data, gameData);
+						con->UpdateObj(obj->data, gameData);
 
 						//check child creation
 						CreateChildren(obj);
@@ -85,12 +85,12 @@ namespace RB
 						//check transition
 						if (obj->data.nextStateIndex != 0)
 						{
-							controller->MakeTransition(obj->data.nextStateIndex);
+							con->MakeTransition(obj->data.nextStateIndex);
 							obj->data.nextStateIndex = 0;
 						}
 
 						//delete obj
-						if (controller->DestructIsQueued())
+						if (con->DestructIsQueued())
 						{
 							//remove pointer from vec
 							obj->GetParent()->ClearDestructableChildren();
@@ -156,6 +156,14 @@ namespace RB
 
 			obj->data.SetCreationID(objsCreated);
 			objsCreated++;
+		}
+
+		void RenderStates(olc::PixelGameEngine* ptrEngine)
+		{
+			for (int i = 0; i < vecAllObjs.size(); i++)
+			{
+				//vecAllObjs[i]->GetController()
+			}
 		}
 	};
 }

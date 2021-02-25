@@ -61,5 +61,10 @@ namespace RB
 			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180), RenderOffsetType::CENTER_CENTER);
 			dummy->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
 		}
+
+		void RenderStates(olc::PixelGameEngine* ptrEngine) override
+		{
+
+		}
 	};
 }
