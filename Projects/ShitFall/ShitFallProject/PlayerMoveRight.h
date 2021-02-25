@@ -10,7 +10,7 @@ namespace RB
 		PlayerMoveRight()
 		{
 			std::cout << "constructing State: PlayerMoveRight" << std::endl;
-			stateAnimation.SetParams(0, 350, 80, 7, 1);
+			stateAnimation.SetParams(0, 350, 80, 7, 1, 7);
 		}
 
 		~PlayerMoveRight()

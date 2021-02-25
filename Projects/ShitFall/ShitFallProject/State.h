@@ -31,5 +31,10 @@ namespace RB
 		{
 			return frameCount;
 		}
+
+		AnimationData* GetRenderData()
+		{
+			return stateAnimation.GetRenderData();
+		}
 	};
 }

@@ -43,5 +43,14 @@ namespace RB
 		{
 			return currentState->GetFrameCount();
 		}
+
+		AnimationData* GetStateRenderData()
+		{
+			if (currentState != nullptr)
+			{
+				return currentState->GetRenderData();
+			}
+			
+		}
 	};
 }

@@ -162,7 +162,18 @@ namespace RB
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				//vecAllObjs[i]->GetController()
+				if (vecAllObjs[i] != nullptr)
+				{
+					if (vecAllObjs[i]->ptrController != nullptr)
+					{
+						AnimationData* data = vecAllObjs[i]->ptrController->GetStateRenderData();
+
+						if (data->sourceSize.x > 0.0f && data->sourceSize.y > 0.0f)
+						{
+							int n = 0;
+						}
+					}
+				}
 			}
 		}
 	};
