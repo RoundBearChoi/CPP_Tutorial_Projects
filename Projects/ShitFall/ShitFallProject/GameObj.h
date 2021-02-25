@@ -161,13 +161,9 @@ namespace RB
 			p2.x = data.position.x - (data.objWidth / 2.0f);
 			p2.y = data.position.y - (data.objHeight / 2.0f);
 
-			//axis-aligned bounding box check
-			if(p1.x < p2.x + data.objWidth && p1.x + data.objWidth > p2.x)
+			if(p1.x < p2.x + data.objWidth && p1.x + _target->data.objWidth > p2.x)
 			{
-				if (p1.y < p2.y + data.objHeight && p1.y + data.objHeight > p2.y)
-				{
-					return true;
-				}
+				return true;
 			}
 
 			return false;
