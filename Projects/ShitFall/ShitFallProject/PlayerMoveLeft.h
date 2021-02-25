@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "StateType.h"
+#include "GameSpriteType.h"
 
 namespace RB
 {
@@ -10,6 +11,7 @@ namespace RB
 		PlayerMoveLeft()
 		{
 			std::cout << "constructing State: PlayerMoveLeft" << std::endl;
+			stateAnimation.SetParams((int)GameSpriteType::playerwalk_dummysheet, 350, 80, 7, 1, 7, true);
 		}
 
 		~PlayerMoveLeft()

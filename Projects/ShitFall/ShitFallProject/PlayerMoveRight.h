@@ -11,7 +11,7 @@ namespace RB
 		PlayerMoveRight()
 		{
 			std::cout << "constructing State: PlayerMoveRight" << std::endl;
-			stateAnimation.SetParams((int)GameSpriteType::playerwalk_dummysheet , 350, 80, 7, 1, 7);
+			stateAnimation.SetParams((int)GameSpriteType::playerwalk_dummysheet , 350, 80, 7, 1, 7, false);
 		}
 
 		~PlayerMoveRight()

@@ -192,10 +192,20 @@ namespace RB
 
 			if (obj->data.objType == GameObjType::player)
 			{
-				points[0] = { x - width / 2.0f, y - height };
-				points[1] = { x - width / 2.0f, y };
-				points[2] = { x + width / 2.0f, y };
-				points[3] = { x + width / 2.0f, y - height };
+				if (!aniData->reverseDecal)
+				{
+					points[0] = { x - width / 2.0f, y - height };
+					points[1] = { x - width / 2.0f, y };
+					points[2] = { x + width / 2.0f, y };
+					points[3] = { x + width / 2.0f, y - height };
+				}
+				else
+				{
+					points[0] = { x + width / 2.0f, y - height };
+					points[1] = { x + width / 2.0f, y };
+					points[2] = { x - width / 2.0f, y };
+					points[3] = { x - width / 2.0f, y - height };
+				}
 
 				olc::Decal* d = decalLoader->GetDecal(aniData->decalIndex);
 
