@@ -28,6 +28,10 @@ namespace RB
 			{
 				return "PNG files/playerbox_green.png";
 			}
+			else if (spriteType == TitleSpriteType::press_enter300x90)
+			{
+				return "PNG files/press_enter300x90.png";
+			}
 			return "none";
 		}
 	};

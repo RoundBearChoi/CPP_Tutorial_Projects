@@ -4,6 +4,7 @@
 #include "ObjData.h"
 
 #include "TitleController.h"
+#include "PressEnterController.h"
 #include "DummyPlayerController.h"
 #include "PlayerController.h"
 #include "ShitGeneratorController.h"
@@ -85,9 +86,9 @@ namespace RB
 			{
 				ptrController = new TitleController();
 			}
-			else if (_controllerType == ControllerType::TITLE_PRESSENTER_CONTROLLER)
+			else if (_controllerType == ControllerType::PRESS_ENTER_CONTROLLER)
 			{
-
+				ptrController = new PressEnterController();
 			}
 			else if (_controllerType == ControllerType::DUMMY_PLAYER_CONTROLLER)
 			{

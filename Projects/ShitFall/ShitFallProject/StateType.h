@@ -5,14 +5,18 @@ namespace RB
 	enum class TitleStateType
 	{
 		NONE,
+
 		START,
 		MOVE_DOWN,
 		MOVE_UP,
+
+		FLICKER,
 	};
 
 	enum class PlayerStateType
 	{
 		NONE,
+
 		DUMMY,
 		GAME_START,
 		IDLE,
@@ -24,6 +28,7 @@ namespace RB
 	enum class ShitStateType
 	{
 		NONE,
+
 		GENERATOR,
 		POSITION,
 		FALL,

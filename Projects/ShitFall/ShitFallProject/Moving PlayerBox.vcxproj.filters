@@ -198,5 +198,11 @@
     <ClInclude Include="DecalPath.h">
       <Filter>Source Files\DecalLoader\Base</Filter>
     </ClInclude>
+    <ClInclude Include="PressEnterController.h">
+      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleFlicker.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

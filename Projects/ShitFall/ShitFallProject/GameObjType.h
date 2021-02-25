@@ -7,6 +7,7 @@ namespace RB
 		NONE,
 
 		title,
+		press_enter,
 		dummy,
 		player,
 		background,

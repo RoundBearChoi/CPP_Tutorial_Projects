@@ -30,8 +30,9 @@ namespace RB
 		{
 			ObjSpecs background;
 			ObjSpecs title;
+			ObjSpecs pressEnter;
 			ObjSpecs dummy;
-
+			
 			background.width = 600.0f;
 			background.height = 700.0f;
 			background.objType = GameObjType::background;
@@ -42,6 +43,11 @@ namespace RB
 			title.objType = GameObjType::title;
 			title.controllerType = ControllerType::TITLE_CONTROLLER;
 
+			pressEnter.width = 300.0f;
+			pressEnter.height = 90.0f;
+			pressEnter.objType = GameObjType::press_enter;
+			pressEnter.controllerType = ControllerType::PRESS_ENTER_CONTROLLER;
+
 			dummy.width = 50.0f;
 			dummy.height = 80.0f;
 			dummy.objType = GameObjType::dummy;
@@ -49,6 +55,7 @@ namespace RB
 
 			objTree.CreateObj(background);
 			objTree.CreateObj(title);
+			objTree.CreateObj(pressEnter);
 			objTree.CreateObj(dummy);
 		}
 
@@ -61,10 +68,12 @@ namespace RB
 		{
 			GameObj* background = objTree.GetObjType(GameObjType::background);
 			GameObj* title = objTree.GetObjType(GameObjType::title);
+			GameObj* pressEnter = objTree.GetObjType(GameObjType::press_enter);
 			GameObj* dummy = objTree.GetObjType(GameObjType::dummy);
 
 			background->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::background), RenderOffsetType::NONE);
 			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180), RenderOffsetType::CENTER_CENTER);
+			pressEnter->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::press_enter300x90), RenderOffsetType::CENTER_CENTER);
 			dummy->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
 		}
 

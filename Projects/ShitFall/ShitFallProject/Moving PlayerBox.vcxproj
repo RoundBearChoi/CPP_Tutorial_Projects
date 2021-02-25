@@ -42,6 +42,7 @@
     <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerMoveRight.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="PressEnterController.h" />
     <ClInclude Include="RandomInteger.h" />
     <ClInclude Include="RenderOffsetType.h" />
     <ClInclude Include="Scene.h" />
@@ -62,6 +63,7 @@
     <ClInclude Include="StateType.h" />
     <ClInclude Include="TitleController.h" />
     <ClInclude Include="TitleDecalPath.h" />
+    <ClInclude Include="TitleFlicker.h" />
     <ClInclude Include="TitleMoveDown.h" />
     <ClInclude Include="TitleMoveUp.h" />
     <ClInclude Include="TitleScene.h" />
