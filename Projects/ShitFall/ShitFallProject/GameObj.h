@@ -27,6 +27,7 @@ namespace RB
 			std::cout << "construcing GameObj" << std::endl;
 			data.objType = specs.objType;
 			data.offsetType = specs.offsetType;
+			data.debugDecalIndex = specs.debugDecalIndex;
 		}
 
 		~GameObj()

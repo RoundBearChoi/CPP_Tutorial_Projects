@@ -159,6 +159,20 @@ namespace RB
 			objsCreated++;
 		}
 
+		void RenderObjs(olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader)
+		{
+			for (int i = 0; i < vecAllObjs.size(); i++)
+			{
+				if (vecAllObjs[i] != nullptr)
+				{
+					if (vecAllObjs[i]->data.debugDecalIndex != -1)
+					{
+						vecAllObjs[i]->Render(ptrEngine, decalLoader->GetDecal(vecAllObjs[i]->data.debugDecalIndex));
+					}
+				}
+			}
+		}
+
 		void RenderStates(olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader)
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)

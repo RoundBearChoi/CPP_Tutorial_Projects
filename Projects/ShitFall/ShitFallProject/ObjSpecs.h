@@ -10,8 +10,11 @@ namespace RB
 	public:
 		float width = 0.0f;
 		float height = 0.0f;
+
 		GameObjType objType = GameObjType::NONE;
-		ControllerType controllerType = ControllerType::NONE;
 		OffsetType offsetType = OffsetType::NONE;
+		int debugDecalIndex = -1;
+
+		ControllerType controllerType = ControllerType::NONE;
 	};
 }

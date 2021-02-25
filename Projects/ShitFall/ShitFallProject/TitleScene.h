@@ -11,7 +11,6 @@ namespace RB
 	private:
 		DecalLoader decalLoader;
 		
-
 	public:
 		TitleScene()
 		{
@@ -37,24 +36,28 @@ namespace RB
 			background.height = 700.0f;
 			background.objType = GameObjType::background;
 			background.offsetType = OffsetType::NONE;
+			background.debugDecalIndex = (int)TitleSpriteType::background;
 			background.controllerType = ControllerType::NONE;
 			
 			title.width = 500.0f;
 			title.height = 180.0f;
 			title.objType = GameObjType::title;
 			title.offsetType = OffsetType::CENTER_CENTER;
+			title.debugDecalIndex = (int)TitleSpriteType::title_line500x180;
 			title.controllerType = ControllerType::TITLE_CONTROLLER;
 			
 			pressEnter.width = 300.0f;
 			pressEnter.height = 90.0f;
 			pressEnter.objType = GameObjType::press_enter;
 			pressEnter.offsetType = OffsetType::CENTER_CENTER;
+			pressEnter.debugDecalIndex = (int)TitleSpriteType::press_enter300x90;
 			pressEnter.controllerType = ControllerType::PRESS_ENTER_CONTROLLER;
 			
 			dummy.width = 50.0f;
 			dummy.height = 80.0f;
 			dummy.objType = GameObjType::dummy;
 			dummy.offsetType = OffsetType::BOTTOM_CENTER;
+			dummy.debugDecalIndex = (int)TitleSpriteType::playerbox_green;
 			dummy.controllerType = ControllerType::DUMMY_PLAYER_CONTROLLER;
 			
 			objTree.CreateObj(background);
@@ -70,15 +73,7 @@ namespace RB
 
 		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
-			GameObj* background = objTree.GetObjType(GameObjType::background);
-			GameObj* title = objTree.GetObjType(GameObjType::title);
-			GameObj* pressEnter = objTree.GetObjType(GameObjType::press_enter);
-			GameObj* dummy = objTree.GetObjType(GameObjType::dummy);
-
-			background->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::background));
-			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180));
-			pressEnter->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::press_enter300x90));
-			dummy->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::playerbox_green));
+			objTree.RenderObjs(ptrEngine, &decalLoader);
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override
