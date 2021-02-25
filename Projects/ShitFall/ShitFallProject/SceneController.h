@@ -41,7 +41,7 @@ namespace RB
 
 		void RenderCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
 		{
-			currentScene->RenderScene(ptrEngine);
+			currentScene->RenderObjs(ptrEngine);
 		}
 	};
 }

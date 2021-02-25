@@ -53,7 +53,7 @@ namespace RB
 			objTree.UpdateObjs(gameData);
 		}
 
-		void RenderScene(olc::PixelGameEngine* ptrEngine) override
+		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
 			GameObj* background = objTree.GetObjType(GameObjType::background);
 			GameObj* playerBox = objTree.GetObjType(GameObjType::player);

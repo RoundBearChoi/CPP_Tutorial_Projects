@@ -13,7 +13,7 @@ namespace RB
 	public:
 		virtual void InitScene() = 0;
 		virtual void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) = 0;
-		virtual void RenderScene(olc::PixelGameEngine* ptrEngine) = 0;
+		virtual void RenderObjs(olc::PixelGameEngine* ptrEngine) = 0;
 
 		Scene()
 		{
