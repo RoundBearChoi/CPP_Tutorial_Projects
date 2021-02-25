@@ -63,15 +63,15 @@ namespace RB
 			GameObj* playerBox = objTree.GetObjType(GameObjType::player);
 			GameObj* shitgroup = objTree.GetObjType(GameObjType::shitgroup);
 
-			background->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::background), RenderOffsetType::NONE);
-			playerBox->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
-			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::redbox_10x10), RenderOffsetType::CENTER_CENTER);
+			background->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::background), OffsetType::NONE);
+			playerBox->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::playerbox_green), OffsetType::BOTTOM_CENTER);
+			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::redbox_10x10), OffsetType::CENTER_CENTER);
 
 			std::vector<GameObj*>& shits = shitgroup->GetChildren();
 
 			for (int i = 0; i < shits.size(); i++)
 			{
-				shits[i]->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box32x32), RenderOffsetType::CENTER_CENTER);
+				shits[i]->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box32x32), OffsetType::CENTER_CENTER);
 			}
 		}
 

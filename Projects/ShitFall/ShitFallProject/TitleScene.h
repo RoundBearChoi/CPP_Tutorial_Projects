@@ -71,10 +71,10 @@ namespace RB
 			GameObj* pressEnter = objTree.GetObjType(GameObjType::press_enter);
 			GameObj* dummy = objTree.GetObjType(GameObjType::dummy);
 
-			background->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::background), RenderOffsetType::NONE);
-			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180), RenderOffsetType::CENTER_CENTER);
-			pressEnter->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::press_enter300x90), RenderOffsetType::CENTER_CENTER);
-			dummy->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::playerbox_green), RenderOffsetType::BOTTOM_CENTER);
+			background->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::background), OffsetType::NONE);
+			title->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::title_line500x180), OffsetType::CENTER_CENTER);
+			pressEnter->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::press_enter300x90), OffsetType::CENTER_CENTER);
+			dummy->Render(ptrEngine, decalLoader.GetDecal((int)TitleSpriteType::playerbox_green), OffsetType::BOTTOM_CENTER);
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override

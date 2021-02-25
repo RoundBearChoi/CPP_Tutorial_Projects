@@ -1,6 +1,6 @@
 #pragma once
 #include "ObjSpecs.h"
-#include "RenderOffsetType.h"
+#include "OffsetType.h"
 #include "ObjData.h"
 
 #include "TitleController.h"
@@ -38,18 +38,18 @@ namespace RB
 			}
 		}
 
-		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, RenderOffsetType renderOffset)
+		void Render(olc::PixelGameEngine* engine, olc::Decal* decal, OffsetType renderOffset)
 		{
 			std::array<olc::vf2d, 4> points;
 
-			if (renderOffset == RenderOffsetType::NONE)
+			if (renderOffset == OffsetType::NONE)
 			{
 				points[0] = { data.position.x, data.position.y };
 				points[1] = { data.position.x, data.position.y + data.objHeight };
 				points[2] = { data.position.x + data.objWidth, data.position.y + data.objHeight };
 				points[3] = { data.position.x + data.objWidth, data.position.y };
 			}
-			else if (renderOffset == RenderOffsetType::CENTER_CENTER)
+			else if (renderOffset == OffsetType::CENTER_CENTER)
 			{
 				olc::vf2d offset(0.0f, 0.0f);
 				offset.x = -(data.objWidth / 2.0f);
@@ -60,7 +60,7 @@ namespace RB
 				points[2] = { data.position.x + offset.x, data.position.y + offset.y };
 				points[3] = { data.position.x + offset.x, data.position.y - offset.y };
 			}
-			else if (renderOffset == RenderOffsetType::BOTTOM_CENTER)
+			else if (renderOffset == OffsetType::BOTTOM_CENTER)
 			{
 				olc::vf2d offset(0.0f, 0.0f);
 				offset.x = -(data.objWidth / 2.0f);

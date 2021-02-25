@@ -2,7 +2,7 @@
 
 namespace RB
 {
-	enum class RenderOffsetType
+	enum class OffsetType
 	{
 		NONE,
 

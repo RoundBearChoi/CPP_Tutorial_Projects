@@ -44,7 +44,7 @@
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="PressEnterController.h" />
     <ClInclude Include="RandomInteger.h" />
-    <ClInclude Include="RenderOffsetType.h" />
+    <ClInclude Include="OffsetType.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneController.h" />
     <ClInclude Include="GameObj.h" />
