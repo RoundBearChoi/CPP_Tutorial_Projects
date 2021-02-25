@@ -29,9 +29,6 @@
     <Filter Include="Source Files\DecalLoader\Base">
       <UniqueIdentifier>{76fe0e98-f104-4caa-acd4-9d7b6d196392}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Renderer">
-      <UniqueIdentifier>{a8b0b612-7706-407e-a8a1-abb908f7cd49}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ObjControllers\ConcreteControllers">
       <UniqueIdentifier>{e75bbac3-9872-4c8a-979f-968efed4cccf}</UniqueIdentifier>
     </Filter>
@@ -55,6 +52,9 @@
     </Filter>
     <Filter Include="Source Files\DecalLoader\Concrete Paths">
       <UniqueIdentifier>{3cfb5554-6874-4b27-9d4a-acd3cd8ef9ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{a8b0b612-7706-407e-a8a1-abb908f7cd49}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +109,7 @@
       <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
     <ClInclude Include="RenderOffsetType.h">
-      <Filter>Source Files\Renderer</Filter>
+      <Filter>Source Files\Render</Filter>
     </ClInclude>
     <ClInclude Include="GameObjTree.h">
       <Filter>Source Files\GameObj</Filter>

@@ -77,7 +77,7 @@ namespace RB
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override
 		{
-			objTree.RenderStates(ptrEngine);
+			objTree.RenderStates(ptrEngine, &decalLoader);
 		}
 	};
 }

@@ -3,6 +3,7 @@
 #include <iostream>
 #include "GameObj.h"
 #include "ObjSpecs.h"
+#include "DecalLoader.h"
 
 namespace RB
 {
@@ -158,7 +159,7 @@ namespace RB
 			objsCreated++;
 		}
 
-		void RenderStates(olc::PixelGameEngine* ptrEngine)
+		void RenderStates(olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader)
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
@@ -172,7 +173,7 @@ namespace RB
 						{
 							if (data->sourceSize.x > 0.0f && data->sourceSize.y > 0.0f)
 							{
-								RenderObjState(ptrEngine, vecAllObjs[i], data);
+								RenderObjState(ptrEngine, decalLoader, vecAllObjs[i], data);
 							}
 						}
 					}
@@ -180,7 +181,7 @@ namespace RB
 			}
 		}
 
-		void RenderObjState(olc::PixelGameEngine* ptrEngine, GameObj* obj, AnimationData* aniData)
+		void RenderObjState(olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader, GameObj* obj, AnimationData* aniData)
 		{
 			float x = obj->data.position.x;
 			float y = obj->data.position.y;
@@ -191,12 +192,14 @@ namespace RB
 
 			if (obj->data.objType == GameObjType::player)
 			{
-				points[0] = { x - width / 2.0f, y + height };
+				points[0] = { x - width / 2.0f, y - height };
 				points[1] = { x - width / 2.0f, y };
 				points[2] = { x + width / 2.0f, y };
-				points[3] = { x + width / 2.0f, y + height };
+				points[3] = { x + width / 2.0f, y - height };
 
-				//ptrEngine->DrawPartialWarpedDecal(nullptr, points, aniData->sourcePos, aniData->sourceSize);
+				olc::Decal* d = decalLoader->GetDecal(aniData->decalIndex);
+
+				ptrEngine->DrawPartialWarpedDecal(d, points, aniData->sourcePos, aniData->sourceSize);
 			}
 		}
 	};

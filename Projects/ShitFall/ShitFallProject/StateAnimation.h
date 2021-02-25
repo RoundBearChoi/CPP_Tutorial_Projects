@@ -30,7 +30,7 @@ namespace RB
 			totalTiles = _totalTileCount;
 		}
 
-		AnimationData* GetRenderData()
+		AnimationData* GetRenderData(int _decalIndex)
 		{
 			if (currentTile >= totalTiles)
 			{
@@ -48,7 +48,14 @@ namespace RB
 
 			currentTile++;
 
+			data.decalIndex = _decalIndex;
+
 			return &data;
+		}
+
+		int GetDecalIndex()
+		{
+			return decalIndex;
 		}
 	};
 }

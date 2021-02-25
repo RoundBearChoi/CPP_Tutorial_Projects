@@ -2,6 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "GameData.h"
 #include "GameObjTree.h"
+#include "DecalLoader.h"
 
 namespace RB
 {
