@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObjType.h"
 #include "ControllerType.h"
+#include "OffsetType.h"
 
 namespace RB
 {
@@ -11,5 +12,6 @@ namespace RB
 		float height = 0.0f;
 		GameObjType objType = GameObjType::NONE;
 		ControllerType controllerType = ControllerType::NONE;
+		OffsetType offsetType = OffsetType::NONE;
 	};
 }

@@ -35,18 +35,21 @@ namespace RB
 			background.width = 600.0f;
 			background.height = 700.0f;
 			background.objType = GameObjType::background;
+			background.offsetType = OffsetType::NONE;
 			background.controllerType = ControllerType::NONE;
-
+			
 			player.width = 50.0f;
 			player.height = 80.0f;
 			player.objType = GameObjType::player;
+			player.offsetType = OffsetType::BOTTOM_CENTER;
 			player.controllerType = ControllerType::PLAYER_CONTROLLER;
-
+			
 			shitgroup.width = 0.0f;
 			shitgroup.height = 0.0f;
 			shitgroup.objType = GameObjType::shitgroup;
+			shitgroup.offsetType = OffsetType::CENTER_CENTER;
 			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER_GENERATOR;
-
+			
 			objTree.CreateObj(background);
 			objTree.CreateObj(player);
 			objTree.CreateObj(shitgroup);
@@ -63,15 +66,15 @@ namespace RB
 			GameObj* playerBox = objTree.GetObjType(GameObjType::player);
 			GameObj* shitgroup = objTree.GetObjType(GameObjType::shitgroup);
 
-			background->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::background), OffsetType::NONE);
-			playerBox->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::playerbox_green), OffsetType::BOTTOM_CENTER);
-			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::redbox_10x10), OffsetType::CENTER_CENTER);
+			background->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::background));
+			playerBox->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::playerbox_green));
+			shitgroup->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::redbox_10x10));
 
 			std::vector<GameObj*>& shits = shitgroup->GetChildren();
 
 			for (int i = 0; i < shits.size(); i++)
 			{
-				shits[i]->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box32x32), OffsetType::CENTER_CENTER);
+				shits[i]->Render(ptrEngine, decalLoader.GetDecal((int)GameSpriteType::shit_box32x32));
 			}
 		}
 

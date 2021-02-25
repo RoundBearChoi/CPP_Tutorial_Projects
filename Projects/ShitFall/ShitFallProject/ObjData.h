@@ -1,7 +1,7 @@
 #pragma once
+#include <vector>
 #include "olcPixelGameEngine.h"
 #include "ObjSpecs.h"
-#include <vector>
 
 namespace RB
 {
@@ -14,6 +14,7 @@ namespace RB
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
 		GameObjType objType = GameObjType::NONE;
+		OffsetType offsetType = OffsetType::NONE;
 		float objWidth = 0.0f;
 		float objHeight = 0.0f;
 		bool collided = false;
