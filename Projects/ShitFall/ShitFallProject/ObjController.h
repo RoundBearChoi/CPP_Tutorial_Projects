@@ -50,7 +50,10 @@ namespace RB
 			{
 				return currentState->GetRenderData();
 			}
-			
+			else
+			{
+				return nullptr;
+			}
 		}
 	};
 }

@@ -168,9 +168,12 @@ namespace RB
 					{
 						AnimationData* data = vecAllObjs[i]->ptrController->GetStateRenderData();
 
-						if (data->sourceSize.x > 0.0f && data->sourceSize.y > 0.0f)
+						if (data != nullptr)
 						{
-							int n = 0;
+							if (data->sourceSize.x > 0.0f && data->sourceSize.y > 0.0f)
+							{
+								int n = 0;
+							}
 						}
 					}
 				}
