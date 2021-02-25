@@ -172,11 +172,31 @@ namespace RB
 						{
 							if (data->sourceSize.x > 0.0f && data->sourceSize.y > 0.0f)
 							{
-								int n = 0;
+								RenderObjState(ptrEngine, vecAllObjs[i], data);
 							}
 						}
 					}
 				}
+			}
+		}
+
+		void RenderObjState(olc::PixelGameEngine* ptrEngine, GameObj* obj, AnimationData* aniData)
+		{
+			float x = obj->data.position.x;
+			float y = obj->data.position.y;
+			float width = obj->data.objWidth;
+			float height = obj->data.objHeight;
+			
+			std::array<olc::vf2d, 4> points;
+
+			if (obj->data.objType == GameObjType::player)
+			{
+				points[0] = { x - width / 2.0f, y + height };
+				points[1] = { x - width / 2.0f, y };
+				points[2] = { x + width / 2.0f, y };
+				points[3] = { x + width / 2.0f, y + height };
+
+				//ptrEngine->DrawPartialWarpedDecal(nullptr, points, aniData->sourcePos, aniData->sourceSize);
 			}
 		}
 	};
