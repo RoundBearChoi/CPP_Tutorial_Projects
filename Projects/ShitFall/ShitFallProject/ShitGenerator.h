@@ -32,23 +32,14 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
+			objData.position = { 0.0f, 350.0f };
+
 			frameCount++;
 			difficultyCounter++;
 
-			objData.position = { 0.0f, 350.0f };
-
 			if (frameCount >= creationTiming)
 			{
-				ObjSpecs specs;
-				specs.width = 32.0f;
-				specs.height = 32.0f;
-				specs.objType = GameObjType::individual_shit;
-				specs.offsetType = OffsetType::CENTER_CENTER;
-				specs.debugDecalIndex = (int)GameSpriteType::shit_box32x32;
-				specs.controllerType = ControllerType::SHIT_CONTROLLER;
-				specs.initialStateIndex = (int)ShitStateType::RANDOM_POSITION;
-
-				objData.QueueChildCreation(specs);
+				QueueGenerate(objData);
 				frameCount = 0;
 			}
 
@@ -61,6 +52,20 @@ namespace RB
 				
 				difficultyCounter = 0;
 			}
+		}
+
+		void QueueGenerate(ObjData& objData)
+		{
+			ObjSpecs specs;
+			specs.width = 32.0f;
+			specs.height = 32.0f;
+			specs.objType = GameObjType::individual_shit;
+			specs.offsetType = OffsetType::CENTER_CENTER;
+			specs.debugDecalIndex = (int)GameSpriteType::shit_box32x32;
+			specs.controllerType = ControllerType::SHIT_CONTROLLER;
+			specs.initialStateIndex = (int)ShitStateType::RANDOM_POSITION;
+
+			objData.QueueChildCreation(specs);
 		}
 	};
 }
