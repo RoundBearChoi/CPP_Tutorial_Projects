@@ -4,7 +4,7 @@
 #include "ObjData.h"
 #include "DevSettings.h"
 
-#include "TitleUIController.h"
+#include "UIElementController.h"
 #include "PlayerController.h"
 #include "ShitController.h"
 
@@ -85,7 +85,7 @@ namespace RB
 		{
 			if (_controllerType == ControllerType::TITLE_UI_CONTROLLER)
 			{
-				ptrController = new TitleUIController(_initialStateIndex);
+				ptrController = new UIElementController(_initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::PLAYER_CONTROLLER)
 			{

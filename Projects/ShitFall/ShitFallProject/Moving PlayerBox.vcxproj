@@ -69,7 +69,7 @@
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="TitleSpriteType.h" />
     <ClInclude Include="TitleIdle.h" />
-    <ClInclude Include="TitleUIController.h" />
+    <ClInclude Include="UIElementController.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

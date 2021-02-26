@@ -195,14 +195,14 @@
     <ClInclude Include="PlayerWhiteScreen.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
-    <ClInclude Include="TitleUIController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
-    </ClInclude>
     <ClInclude Include="ShitController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
     <ClInclude Include="BackgroundIdle.h">
       <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="UIElementController.h">
+      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

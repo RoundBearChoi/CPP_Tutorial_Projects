@@ -11,17 +11,17 @@
 
 namespace RB
 {
-	class TitleUIController : public ObjController
+	class UIElementController : public ObjController
 	{
 	public:
-		TitleUIController(int _initialStateIndex)
+		UIElementController(int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing TitleUIController" << std::endl; }
 
 			MakeTransition(_initialStateIndex);
 		}
 
-		~TitleUIController() override
+		~UIElementController() override
 		{
 			IF_COUT{ std::cout << "destructing TitleUIController" << std::endl; }
 
