@@ -4,6 +4,7 @@
 #include "StateType.h"
 #include "DevSettings.h"
 
+#include "PlayerDummy.h"
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
 #include "PlayerMoveLeft.h"
@@ -31,7 +32,11 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)PlayerStateType::GAME_START)
+			if (index == (int)PlayerStateType::DUMMY)
+			{
+				CreateState<PlayerDummy>();
+			}
+			else if (index == (int)PlayerStateType::GAME_START)
 			{
 				CreateState<PlayerGameStart>();
 			}

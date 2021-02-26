@@ -165,9 +165,6 @@
     <ClInclude Include="TitleMoveUp.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
-    <ClInclude Include="DummyPlayerController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
-    </ClInclude>
     <ClInclude Include="StateType.h">
       <Filter>Source Files\States\Base</Filter>
     </ClInclude>

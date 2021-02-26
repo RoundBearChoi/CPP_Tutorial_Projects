@@ -61,7 +61,7 @@ namespace RB
 			dummy.objType = GameObjType::dummy;
 			dummy.offsetType = OffsetType::BOTTOM_CENTER;
 			dummy.debugDecalIndex = (int)TitleSpriteType::playerbox_green;
-			dummy.controllerType = ControllerType::DUMMY_PLAYER_CONTROLLER;
+			dummy.controllerType = ControllerType::PLAYER_CONTROLLER;
 			dummy.initialStateIndex = (int)PlayerStateType::DUMMY;
 			
 			objTree.CreateObj(background);
