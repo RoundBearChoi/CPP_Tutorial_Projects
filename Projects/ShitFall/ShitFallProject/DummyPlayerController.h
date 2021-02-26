@@ -2,6 +2,7 @@
 #include "ObjController.h"
 #include "StateType.h"
 #include "PlayerDummy.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -10,14 +11,15 @@ namespace RB
 	public:
 		DummyPlayerController()
 		{
-			std::cout << "constructing DummyPlayerController" << std::endl;
-
+			IF_COUT{ std::cout << "constructing DummyPlayerController" << std::endl; }
+			
 			MakeTransition((int)PlayerStateType::DUMMY);
 		}
 
 		~DummyPlayerController() override
 		{
-			std::cout << "destructing DummyPlayerController" << std::endl;
+			IF_COUT{ std::cout << "destructing DummyPlayerController" << std::endl; }
+
 			delete currentState;
 		}
 

@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include "GameData.h"
 #include "State.h"
 
@@ -15,7 +14,7 @@ namespace RB
 
 		virtual ~ObjController()
 		{
-			std::cout << "destructing ObjController (virtual)" << std::endl;
+
 		}
 
 		void UpdateObj(ObjData& objData, GameData& gameData)

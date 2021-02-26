@@ -12,14 +12,15 @@ namespace RB
 	public:
 		TitleController()
 		{
-			std::cout << "constructing TitleController" << std::endl;
-
+			IF_COUT{ std::cout << "constructing TitleController" << std::endl; }
+			
 			MakeTransition((int)TitleStateType::START);
 		}
 
 		~TitleController() override
 		{
-			std::cout << "destructing TitleController" << std::endl;
+			IF_COUT{ std::cout << "destructing TitleController" << std::endl; }
+
 			delete currentState;
 		}
 

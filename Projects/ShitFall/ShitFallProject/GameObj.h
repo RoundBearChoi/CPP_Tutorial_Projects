@@ -2,6 +2,7 @@
 #include "ObjSpecs.h"
 #include "OffsetType.h"
 #include "ObjData.h"
+#include "DevSettings.h"
 
 #include "TitleController.h"
 #include "PressEnterController.h"
@@ -24,7 +25,8 @@ namespace RB
 
 		GameObj(ObjSpecs specs)
 		{
-			std::cout << "construcing GameObj" << std::endl;
+			IF_COUT{ std::cout << "construcing GameObj" << std::endl; }
+			
 			data.objType = specs.objType;
 			data.offsetType = specs.offsetType;
 			data.debugDecalIndex = specs.debugDecalIndex;
@@ -32,7 +34,7 @@ namespace RB
 
 		~GameObj()
 		{
-			std::cout << "destructing GameObj" << std::endl;
+			IF_COUT{ std::cout << "destructing GameObj" << std::endl; }
 
 			if (ptrController != nullptr)
 			{

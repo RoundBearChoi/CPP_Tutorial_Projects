@@ -8,12 +8,12 @@ namespace RB
 	public:
 		TitleFlicker()
 		{
-			std::cout << "constructing State: TitleFlicker" << std::endl;
+			IF_COUT{ std::cout << "constructing State: TitleFlicker" << std::endl; }
 		}
 
 		~TitleFlicker()
 		{
-			std::cout << "destructing State: TitleFlicker" << std::endl;
+			IF_COUT{ std::cout << "destructing State: TitleFlicker" << std::endl; }
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

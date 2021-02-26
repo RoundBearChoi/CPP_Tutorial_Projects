@@ -1,5 +1,6 @@
 #pragma once
 #include "State.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -8,12 +9,12 @@ namespace RB
 	public:
 		PlayerDummy()
 		{
-			std::cout << "constructing State: PlayerDummy" << std::endl;
+			IF_COUT{ std::cout << "constructing State: PlayerDummy" << std::endl; }
 		}
 
 		~PlayerDummy()
 		{
-			std::cout << "destructing State: PlayerDummy" << std::endl;
+			IF_COUT{ std::cout << "destructing State: PlayerDummy" << std::endl; }
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

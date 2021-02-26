@@ -12,14 +12,15 @@ namespace RB
 	public:
 		ShitGeneratorController()
 		{
-			std::cout << "constructing ShitGeneratorController" << std::endl;
-
+			IF_COUT{ std::cout << "constructing ShitGeneratorController" << std::endl; }
+			
 			MakeTransition((int)ShitStateType::GENERATOR);
 		}
 
 		~ShitGeneratorController() override
 		{
-			std::cout << "destructing ShitGeneratorController" << std::endl;
+			IF_COUT{ std::cout << "destructing ShitGeneratorController" << std::endl; }
+
 			delete currentState;
 		}
 

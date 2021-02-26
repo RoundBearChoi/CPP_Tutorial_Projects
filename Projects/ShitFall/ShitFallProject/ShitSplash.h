@@ -8,13 +8,17 @@ namespace RB
 	public:
 		ShitSplash()
 		{
-			std::cout << "constructing State: ShitSplash" << std::endl;
+			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
+			
 		}
 
 		~ShitSplash()
 		{
-			std::cout << std::endl;
-			std::cout << "destructing State: ShitSplash" << std::endl;
+			IF_COUT
+			{
+				std::cout << std::endl;
+				std::cout << "destructing State: ShitSplash" << std::endl;
+			}
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

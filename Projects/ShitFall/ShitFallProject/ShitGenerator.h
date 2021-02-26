@@ -15,14 +15,20 @@ namespace RB
 	public:
 		ShitGenerator()
 		{
-			std::cout << std::endl;
-			std::cout << "constructing State: ShitGenerator" << std::endl;
+			IF_COUT
+			{
+				std::cout << std::endl;
+				std::cout << "constructing State: ShitGenerator" << std::endl;
+			}
 		}
 
 		~ShitGenerator()
 		{
-			std::cout << std::endl;
-			std::cout << "destructing State: ShitGenerator" << std::endl;
+			IF_COUT
+			{
+				std::cout << std::endl;
+				std::cout << "destructing State: ShitGenerator" << std::endl;
+			}
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

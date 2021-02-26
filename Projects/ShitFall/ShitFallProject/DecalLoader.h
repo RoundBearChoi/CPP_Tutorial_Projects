@@ -20,7 +20,7 @@ namespace RB
 
 		~DecalLoader()
 		{
-			
+			IF_COUT{ std::cout << "destructing DecalLoader" << std::endl; }
 
 			for (int i = 0; i < vecSpritePtr.size(); i++)
 			{
@@ -35,8 +35,6 @@ namespace RB
 				
 				delete vecDecalPtr[i];
 			}
-
-			IF_COUT{ std::cout << "destructing DecalLoader" << std::endl; }
 		}
 
 		template<class T>

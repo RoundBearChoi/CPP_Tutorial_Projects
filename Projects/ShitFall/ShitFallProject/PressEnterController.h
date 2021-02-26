@@ -2,6 +2,7 @@
 #include "ObjController.h"
 #include "StateType.h"
 #include "TitleFlicker.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -10,14 +11,15 @@ namespace RB
 	public:
 		PressEnterController()
 		{
-			std::cout << "constructing PressEnterController" << std::endl;
-
+			IF_COUT{ std::cout << "constructing PressEnterController" << std::endl; }
+			
 			MakeTransition((int)TitleStateType::FLICKER);
 		}
 
 		~PressEnterController() override
 		{
-			std::cout << "destructing PressEnterController" << std::endl;
+			IF_COUT{ std::cout << "destructing PressEnterController" << std::endl; }
+
 			delete currentState;
 		}
 

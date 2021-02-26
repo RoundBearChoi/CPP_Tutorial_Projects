@@ -1,5 +1,6 @@
 #pragma once
 #include "olcPixelGameEngine.h"
+#include "DevSettings.h"
 #include <vector>
 
 namespace RB
@@ -103,8 +104,12 @@ namespace RB
 		{
 			if (bQuitGame)
 			{
-				std::cout << std::endl;
-				std::cout << "---quitting---" << std::endl;
+				IF_COUT
+				{
+					std::cout << std::endl;
+					std::cout << "---quitting---" << std::endl;
+				}
+
 				return true;
 			}
 			else

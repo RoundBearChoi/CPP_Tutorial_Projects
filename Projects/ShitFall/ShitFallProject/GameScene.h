@@ -3,6 +3,7 @@
 #include "GameObjTree.h"
 #include "DecalLoader.h"
 #include "GameDecalPath.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -15,15 +16,15 @@ namespace RB
 	public:
 		GameScene()
 		{
-			std::cout << "constructing GameScene" << std::endl;
-
+			IF_COUT{ std::cout << "constructing GameScene" << std::endl; }
+			
 			decalLoader.LoadSprites<GameDecalPath>();
 			decalLoader.LoadDecals();
 		}
 
 		~GameScene()
 		{
-			std::cout << "destructing GameScene" << std::endl;
+			IF_COUT{ std::cout << "destructing GameScene" << std::endl; }
 		}
 
 		void InitScene() override

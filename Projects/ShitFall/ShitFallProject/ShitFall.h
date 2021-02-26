@@ -11,13 +11,16 @@ namespace RB
 	public:
 		ShitFall()
 		{
-			std::cout << "constructing State: ShitFall" << std::endl;
+			IF_COUT{ std::cout << "constructing State: ShitFall" << std::endl; }
 		}
 
 		~ShitFall()
 		{
-			std::cout << std::endl;
-			std::cout << "destructing State: ShitFall" << std::endl;
+			IF_COUT
+			{
+				std::cout << std::endl;
+				std::cout << "destructing State: ShitFall" << std::endl;
+			}
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

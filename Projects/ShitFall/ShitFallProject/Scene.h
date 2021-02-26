@@ -3,6 +3,7 @@
 #include "GameData.h"
 #include "GameObjTree.h"
 #include "DecalLoader.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -19,13 +20,16 @@ namespace RB
 
 		Scene()
 		{
-			std::cout << std::endl;
-			std::cout << "constructing Scene (virtual)" << std::endl;
+			IF_COUT
+			{ 
+				std::cout << std::endl;
+				std::cout << "constructing Scene (virtual)" << std::endl;
+			}
 		}
 
 		virtual ~Scene()
 		{
-			std::cout << "destructing Scene (virtual)" << std::endl;
+
 		}
 	};
 }

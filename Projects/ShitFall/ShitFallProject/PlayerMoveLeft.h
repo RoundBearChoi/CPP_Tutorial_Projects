@@ -10,13 +10,14 @@ namespace RB
 	public:
 		PlayerMoveLeft()
 		{
-			std::cout << "constructing State: PlayerMoveLeft" << std::endl;
+			IF_COUT{ std::cout << "constructing State: PlayerMoveLeft" << std::endl; }
+			
 			stateAnimation.SetParams((int)GameSpriteType::playerwalk_dummysheet, 350, 80, 7, 1, 7, true);
 		}
 
 		~PlayerMoveLeft()
 		{
-			std::cout << "destructing State: PlayerMoveLeft" << std::endl;
+			IF_COUT{ std::cout << "destructing State: PlayerMoveLeft" << std::endl; }
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
@@ -37,7 +38,7 @@ namespace RB
 				objData.position.x = 0.0f + 25.0f;
 			}
 
-			std::cout << "player pos: " << objData.position.x << ", " << objData.position.y << std::endl;
+			IF_COUT{ std::cout << "player pos: " << objData.position.x << ", " << objData.position.y << std::endl; }
 		}
 	};
 }

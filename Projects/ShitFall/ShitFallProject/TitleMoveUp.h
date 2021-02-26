@@ -8,12 +8,12 @@ namespace RB
 	public:
 		TitleMoveUp()
 		{
-			std::cout << "constructing State: TitleMoveUp" << std::endl;
+			IF_COUT{ std::cout << "constructing State: TitleMoveUp" << std::endl; }
 		}
 
 		~TitleMoveUp()
 		{
-			std::cout << "destructing State: TitleMoveUp" << std::endl;
+			IF_COUT{ std::cout << "destructing State: TitleMoveUp" << std::endl; }
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

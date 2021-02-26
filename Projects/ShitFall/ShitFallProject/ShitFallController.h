@@ -13,14 +13,15 @@ namespace RB
 	public:
 		ShitFallController()
 		{
-			std::cout << "constructing ShitFallController" << std::endl;
-
+			IF_COUT{ std::cout << "constructing ShitFallController" << std::endl; }
+			
 			MakeTransition((int)ShitStateType::POSITION);
 		}
 
 		~ShitFallController() override
 		{
-			std::cout << "destructing ShitFallController" << std::endl;
+			IF_COUT{ std::cout << "destructing ShitFallController" << std::endl; }
+
 			delete currentState;
 		}
 

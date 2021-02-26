@@ -2,6 +2,7 @@
 #include <vector>
 #include "olcPixelGameEngine.h"
 #include "ObjSpecs.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -23,7 +24,7 @@ namespace RB
 
 		~ObjData()
 		{
-			std::cout << "destructing ObjData - CreationID: " << creationID << std::endl;
+			IF_COUT{ std::cout << "destructing ObjData - CreationID: " << creationID << std::endl; }
 		}
 		
 		void QueueChildCreation(ObjSpecs _specs)
@@ -48,7 +49,8 @@ namespace RB
 
 		void SetCreationID(int _id)
 		{
-			std::cout << "setting ObjData CreationID: " << _id << std::endl;
+			IF_COUT{ std::cout << "setting ObjData CreationID: " << _id << std::endl; }
+			
 			creationID = _id;
 		}
 	};

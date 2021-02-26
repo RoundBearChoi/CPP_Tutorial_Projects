@@ -11,12 +11,12 @@ namespace RB
 	public:
 		TitleMoveDown()
 		{
-			std::cout << "constructing State: TitleMoveDown" << std::endl;
+			IF_COUT{ std::cout << "constructing State: TitleMoveDown" << std::endl; }
 		}
 
 		~TitleMoveDown()
 		{
-			std::cout << "destructing State: TitleMoveDown" << std::endl;
+			IF_COUT{ std::cout << "destructing State: TitleMoveDown" << std::endl; }
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

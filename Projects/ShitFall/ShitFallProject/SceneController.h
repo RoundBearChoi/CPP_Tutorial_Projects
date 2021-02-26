@@ -1,7 +1,7 @@
 #pragma once
 #include "Scene.h"
 #include "GameScene.h"
-#include <iostream>
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -13,12 +13,13 @@ namespace RB
 	public:
 		SceneController()
 		{
-			std::cout << "constructing SceneController" << std::endl;
+			IF_COUT{ std::cout << "constructing SceneController" << std::endl; }
 		}
 
 		~SceneController()
 		{
-			std::cout << "destructing SceneController" << std::endl;
+			IF_COUT{ std::cout << "destructing SceneController" << std::endl; }
+
 			delete currentScene;
 		}
 

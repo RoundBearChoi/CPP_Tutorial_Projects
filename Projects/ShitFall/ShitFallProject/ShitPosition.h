@@ -14,8 +14,11 @@ namespace RB
 	public:
 		ShitPosition()
 		{
-			std::cout << std::endl;
-			std::cout << "constructing State: ShitPosition" << std::endl;
+			IF_COUT
+			{
+				std::cout << std::endl;
+				std::cout << "constructing State: ShitPosition" << std::endl;
+			}
 
 			int x = randomInteger.GetInteger(0, 600);
 			randomStart = { (float)x, -16.0f };
@@ -24,8 +27,11 @@ namespace RB
 
 		~ShitPosition()
 		{
-			std::cout << std::endl;
-			std::cout << "destructing State: ShitPosition" << std::endl;
+			IF_COUT
+			{
+				std::cout << std::endl;
+				std::cout << "destructing State: ShitPosition" << std::endl;
+			}
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

@@ -2,6 +2,7 @@
 #include "ObjController.h"
 #include "State.h"
 #include "StateType.h"
+#include "DevSettings.h"
 
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
@@ -16,14 +17,15 @@ namespace RB
 	public:
 		PlayerController()
 		{
-			std::cout << "constructing PlayerController" << std::endl;
-
+			IF_COUT{ std::cout << "constructing PlayerController" << std::endl; }
+			
 			MakeTransition((int)PlayerStateType::GAME_START);
 		}
 
 		~PlayerController() override
 		{
-			std::cout << "destructing PlayerController" << std::endl;
+			IF_COUT{ std::cout << "destructing PlayerController" << std::endl; }
+
 			delete currentState;
 		}
 

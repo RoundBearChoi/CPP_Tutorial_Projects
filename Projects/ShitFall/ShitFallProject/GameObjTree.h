@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
-#include <iostream>
 #include "GameObj.h"
 #include "ObjSpecs.h"
 #include "DecalLoader.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -34,12 +34,13 @@ namespace RB
 	public:
 		GameObjTree()
 		{
-			std::cout << "constructing GameObjTree" << std::endl;
+			IF_COUT{ std::cout << "constructing GameObjTree" << std::endl; }
+			
 		}
 
 		~GameObjTree()
 		{
-			std::cout << "destructing GameObjTree" << std::endl;
+			IF_COUT{ std::cout << "destructing GameObjTree" << std::endl; }
 
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{

@@ -9,13 +9,16 @@ namespace RB
 	public:
 		PlayerGameStart()
 		{
-			std::cout << std::endl;
-			std::cout << "constructing State: GameStart" << std::endl;
+			IF_COUT
+			{
+				std::cout << std::endl;
+				std::cout << "constructing State: GameStart" << std::endl;
+			}
 		}
 
 		~PlayerGameStart()
 		{
-			std::cout << "destructing State: GameStart" << std::endl;
+			IF_COUT{ std::cout << "destructing State: GameStart" << std::endl; }
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
