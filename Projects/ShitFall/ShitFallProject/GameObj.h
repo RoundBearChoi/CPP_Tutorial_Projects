@@ -4,8 +4,7 @@
 #include "ObjData.h"
 #include "DevSettings.h"
 
-#include "TitleController.h"
-#include "PressEnterController.h"
+#include "TitleUIController.h"
 #include "PlayerController.h"
 #include "ShitGeneratorController.h"
 #include "ShitFallController.h"
@@ -85,13 +84,9 @@ namespace RB
 
 		void SetController(ControllerType _controllerType, int _initialStateIndex)
 		{
-			if (_controllerType == ControllerType::TITLE_CONTROLLER)
+			if (_controllerType == ControllerType::TITLE_UI_CONTROLLER)
 			{
-				ptrController = new TitleController(_initialStateIndex);
-			}
-			else if (_controllerType == ControllerType::PRESS_ENTER_CONTROLLER)
-			{
-				ptrController = new PressEnterController(_initialStateIndex);
+				ptrController = new TitleUIController(_initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::PLAYER_CONTROLLER)
 			{

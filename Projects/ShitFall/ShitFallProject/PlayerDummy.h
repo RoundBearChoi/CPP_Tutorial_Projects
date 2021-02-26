@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "DevSettings.h"
+#include "TitleSpriteType.h"
 
 namespace RB
 {

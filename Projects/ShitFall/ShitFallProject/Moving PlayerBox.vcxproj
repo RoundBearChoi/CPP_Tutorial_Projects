@@ -43,7 +43,6 @@
     <ClInclude Include="PlayerMoveRight.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="PlayerWhiteScreen.h" />
-    <ClInclude Include="PressEnterController.h" />
     <ClInclude Include="RandomInteger.h" />
     <ClInclude Include="OffsetType.h" />
     <ClInclude Include="Scene.h" />
@@ -62,7 +61,6 @@
     <ClInclude Include="State.h" />
     <ClInclude Include="StateAnimation.h" />
     <ClInclude Include="StateType.h" />
-    <ClInclude Include="TitleController.h" />
     <ClInclude Include="TitleDecalPath.h" />
     <ClInclude Include="TitleFlickerOff.h" />
     <ClInclude Include="TitleFlickerOn.h" />
@@ -71,6 +69,7 @@
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="TitleSpriteType.h" />
     <ClInclude Include="TitleIdle.h" />
+    <ClInclude Include="TitleUIController.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

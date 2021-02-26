@@ -45,7 +45,7 @@ namespace RB
 			title.objType = GameObjType::title;
 			title.offsetType = OffsetType::CENTER_CENTER;
 			title.debugDecalIndex = (int)TitleSpriteType::title_line500x180;
-			title.controllerType = ControllerType::TITLE_CONTROLLER;
+			title.controllerType = ControllerType::TITLE_UI_CONTROLLER;
 			title.initialStateIndex = (int)TitleStateType::START;
 
 			pressEnter.width = 300.0f;
@@ -53,7 +53,7 @@ namespace RB
 			pressEnter.objType = GameObjType::press_enter;
 			pressEnter.offsetType = OffsetType::CENTER_CENTER;
 			pressEnter.debugDecalIndex = (int)TitleSpriteType::press_enter300x90;
-			pressEnter.controllerType = ControllerType::PRESS_ENTER_CONTROLLER;
+			pressEnter.controllerType = ControllerType::TITLE_UI_CONTROLLER;
 			pressEnter.initialStateIndex = (int)TitleStateType::FLICKER_ON;
 			
 			dummy.width = 50.0f;

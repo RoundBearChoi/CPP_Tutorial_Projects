@@ -153,9 +153,6 @@
     <ClInclude Include="TitleSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
-    <ClInclude Include="TitleController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
-    </ClInclude>
     <ClInclude Include="TitleIdle.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
@@ -189,9 +186,6 @@
     <ClInclude Include="DecalPath.h">
       <Filter>Source Files\DecalLoader\Base</Filter>
     </ClInclude>
-    <ClInclude Include="PressEnterController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
-    </ClInclude>
     <ClInclude Include="OffsetType.h">
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
@@ -206,6 +200,9 @@
     </ClInclude>
     <ClInclude Include="PlayerWhiteScreen.h">
       <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleUIController.h">
+      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
