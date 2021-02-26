@@ -21,12 +21,15 @@ namespace RB
 		{
 			objData.position = { 300.0f, 350.0f };
 
-			frameCount++;
-
-			if (frameCount >= 55)
+			if (!gameData.startGame)
 			{
-				frameCount = 0;
-				objData.nextStateIndex = (int)UIElementStateType::FLICKER_ON;
+				frameCount++;
+
+				if (frameCount >= 55)
+				{
+					frameCount = 0;
+					objData.nextStateIndex = (int)UIElementStateType::FLICKER_ON;
+				}
 			}
 		}
 	};
