@@ -38,7 +38,8 @@ namespace RB
 			background.objType = GameObjType::background;
 			background.offsetType = OffsetType::NONE;
 			background.debugDecalIndex = (int)GameSpriteType::background;
-			background.controllerType = ControllerType::NONE;
+			background.controllerType = ControllerType::TITLE_UI_CONTROLLER;
+			background.initialStateIndex = (int)TitleStateType::BACKGROUND_IDLE;
 			
 			player.width = 50.0f;
 			player.height = 80.0f;

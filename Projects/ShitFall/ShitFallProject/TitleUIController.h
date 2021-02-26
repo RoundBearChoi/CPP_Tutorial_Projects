@@ -2,6 +2,7 @@
 #include <iostream>
 #include "ObjController.h"
 
+#include "BackgroundIdle.h"
 #include "TitleIdle.h"
 #include "TitleMoveDown.h"
 #include "TitleMoveUp.h"
@@ -29,7 +30,11 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)TitleStateType::IDLE_TEXT)
+			if (index == (int)TitleStateType::BACKGROUND_IDLE)
+			{
+				CreateState<BackgroundIdle>();
+			}
+			else if (index == (int)TitleStateType::TEXT_IDLE)
 			{
 				CreateState<TitleIdle>();
 			}

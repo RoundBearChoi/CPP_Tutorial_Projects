@@ -38,7 +38,8 @@ namespace RB
 			background.objType = GameObjType::background;
 			background.offsetType = OffsetType::NONE;
 			background.debugDecalIndex = (int)TitleSpriteType::background;
-			background.controllerType = ControllerType::NONE;
+			background.controllerType = ControllerType::TITLE_UI_CONTROLLER;
+			background.initialStateIndex = (int)TitleStateType::BACKGROUND_IDLE;
 			
 			title.width = 500.0f;
 			title.height = 180.0f;
@@ -46,7 +47,7 @@ namespace RB
 			title.offsetType = OffsetType::CENTER_CENTER;
 			title.debugDecalIndex = (int)TitleSpriteType::title_line500x180;
 			title.controllerType = ControllerType::TITLE_UI_CONTROLLER;
-			title.initialStateIndex = (int)TitleStateType::IDLE_TEXT;
+			title.initialStateIndex = (int)TitleStateType::TEXT_IDLE;
 
 			pressEnter.width = 300.0f;
 			pressEnter.height = 90.0f;

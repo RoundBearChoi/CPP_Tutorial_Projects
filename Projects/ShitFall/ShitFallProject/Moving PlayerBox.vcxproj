@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimationData.h" />
+    <ClInclude Include="BackgroundIdle.h" />
     <ClInclude Include="ControllerType.h" />
     <ClInclude Include="DecalLoader.h" />
     <ClInclude Include="DecalPath.h" />

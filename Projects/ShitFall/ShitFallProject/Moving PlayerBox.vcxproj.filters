@@ -201,5 +201,8 @@
     <ClInclude Include="ShitController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
+    <ClInclude Include="BackgroundIdle.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
