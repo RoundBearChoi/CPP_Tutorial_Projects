@@ -14,11 +14,9 @@ namespace RB
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
 
-		GameObj* ProcNewObj(ObjSpecs specs)
+		GameObj* ProcNewObj(const ObjSpecs& specs)
 		{
 			GameObj* newObj = new GameObj(specs);
-			newObj->data.objWidth = specs.width;
-			newObj->data.objHeight = specs.height;
 
 			if (specs.controllerType != ControllerType::NONE)
 			{
@@ -122,9 +120,7 @@ namespace RB
 			for (int i = 0; i < obj->data.GetChildQueueCount(); i++)
 			{
 				ObjSpecs specs = obj->data.GetChildCreationSpecs(i);
-
 				GameObj* child = ProcNewObj(specs);
-
 				obj->AddToHierarchy(child);
 			}
 

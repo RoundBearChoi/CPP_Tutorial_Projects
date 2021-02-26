@@ -13,17 +13,19 @@ namespace RB
 	class GameObj
 	{
 	private:
-		std::vector<GameObj*> vecChildrenPtr;
+		std::vector<GameObj*> vecChildren;
 		GameObj* parent = nullptr;
 
 	public:
 		ObjData data;
 		ObjController* ptrController = nullptr;
 
-		GameObj(ObjSpecs specs)
+		GameObj(const ObjSpecs& specs)
 		{
 			IF_COUT{ std::cout << "construcing GameObj" << std::endl; }
 			
+			data.objWidth = specs.width;
+			data.objHeight = specs.height;
 			data.objType = specs.objType;
 			data.offsetType = specs.offsetType;
 			data.debugDecalIndex = specs.debugDecalIndex;
@@ -78,7 +80,7 @@ namespace RB
 		void AddToHierarchy(GameObj* child)
 		{
 			child->parent = this;
-			vecChildrenPtr.push_back(child);
+			vecChildren.push_back(child);
 		}
 
 		void SetController(ControllerType _controllerType, int _initialStateIndex)
@@ -99,16 +101,16 @@ namespace RB
 
 		std::vector<GameObj*>& GetChildren()
 		{
-			return vecChildrenPtr;
+			return vecChildren;
 		}
 
 		void ClearDestructableChildren()
 		{
 			std::vector<int> removables;
 
-			for (int i = 0; i < vecChildrenPtr.size(); i++)
+			for (int i = 0; i < vecChildren.size(); i++)
 			{
-				if (vecChildrenPtr[i]->ptrController->DestructIsQueued())
+				if (vecChildren[i]->ptrController->DestructIsQueued())
 				{
 					removables.push_back(i);
 				}
@@ -116,7 +118,7 @@ namespace RB
 
 			for (int i = 0; i < removables.size(); i++)
 			{
-				vecChildrenPtr.erase(vecChildrenPtr.begin() + removables[i]);
+				vecChildren.erase(vecChildren.begin() + removables[i]);
 			}
 		}
 
