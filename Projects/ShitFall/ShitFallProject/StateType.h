@@ -2,7 +2,7 @@
 
 namespace RB
 {
-	enum class TitleStateType
+	enum class UIElementStateType
 	{
 		NONE,
 

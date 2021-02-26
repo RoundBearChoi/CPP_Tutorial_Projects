@@ -26,7 +26,7 @@ namespace RB
 			if (frameCount >= 55)
 			{
 				frameCount = 0;
-				objData.nextStateIndex = (int)TitleStateType::FLICKER_ON;
+				objData.nextStateIndex = (int)UIElementStateType::FLICKER_ON;
 			}
 		}
 	};

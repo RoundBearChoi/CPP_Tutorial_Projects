@@ -30,27 +30,27 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)TitleStateType::BACKGROUND_IDLE)
+			if (index == (int)UIElementStateType::BACKGROUND_IDLE)
 			{
 				CreateState<BackgroundIdle>();
 			}
-			else if (index == (int)TitleStateType::TEXT_IDLE)
+			else if (index == (int)UIElementStateType::TEXT_IDLE)
 			{
 				CreateState<TitleIdle>();
 			}
-			else if (index == (int)TitleStateType::MOVE_DOWN)
+			else if (index == (int)UIElementStateType::MOVE_DOWN)
 			{
 				CreateState<TitleMoveDown>();
 			}
-			else if (index == (int)TitleStateType::MOVE_UP)
+			else if (index == (int)UIElementStateType::MOVE_UP)
 			{
 				CreateState<TitleMoveUp>();
 			}
-			else if (index == (int)TitleStateType::FLICKER_ON)
+			else if (index == (int)UIElementStateType::FLICKER_ON)
 			{
 				CreateState<TitleFlickerOn>();
 			}
-			else if (index == (int)TitleStateType::FLICKER_OFF)
+			else if (index == (int)UIElementStateType::FLICKER_OFF)
 			{
 				CreateState<TitleFlickerOff>();
 			}

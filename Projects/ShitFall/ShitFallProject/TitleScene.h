@@ -39,7 +39,7 @@ namespace RB
 			background.offsetType = OffsetType::NONE;
 			background.debugDecalIndex = (int)TitleSpriteType::background;
 			background.controllerType = ControllerType::TITLE_UI_CONTROLLER;
-			background.initialStateIndex = (int)TitleStateType::BACKGROUND_IDLE;
+			background.initialStateIndex = (int)UIElementStateType::BACKGROUND_IDLE;
 			
 			title.width = 500.0f;
 			title.height = 180.0f;
@@ -47,7 +47,7 @@ namespace RB
 			title.offsetType = OffsetType::CENTER_CENTER;
 			title.debugDecalIndex = (int)TitleSpriteType::title_line500x180;
 			title.controllerType = ControllerType::TITLE_UI_CONTROLLER;
-			title.initialStateIndex = (int)TitleStateType::TEXT_IDLE;
+			title.initialStateIndex = (int)UIElementStateType::TEXT_IDLE;
 
 			pressEnter.width = 300.0f;
 			pressEnter.height = 90.0f;
@@ -55,7 +55,7 @@ namespace RB
 			pressEnter.offsetType = OffsetType::CENTER_CENTER;
 			pressEnter.debugDecalIndex = (int)TitleSpriteType::press_enter300x90;
 			pressEnter.controllerType = ControllerType::TITLE_UI_CONTROLLER;
-			pressEnter.initialStateIndex = (int)TitleStateType::FLICKER_ON;
+			pressEnter.initialStateIndex = (int)UIElementStateType::FLICKER_ON;
 			
 			dummy.width = 50.0f;
 			dummy.height = 80.0f;

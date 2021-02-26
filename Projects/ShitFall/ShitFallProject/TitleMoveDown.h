@@ -30,7 +30,7 @@ namespace RB
 
 			if (frameCount >= 30)
 			{
-				objData.nextStateIndex = (int)TitleStateType::MOVE_UP;
+				objData.nextStateIndex = (int)UIElementStateType::MOVE_UP;
 			}
 		}
 	};
