@@ -205,7 +205,7 @@ namespace RB
 			
 			std::array<olc::vf2d, 4> points;
 
-			if (obj->data.objType == GameObjType::player)
+			if (obj->data.offsetType == OffsetType::BOTTOM_CENTER)
 			{
 				if (!aniData->reverseDecal)
 				{
@@ -221,11 +221,27 @@ namespace RB
 					points[2] = { x - width / 2.0f, y };
 					points[3] = { x - width / 2.0f, y - height };
 				}
-
-				olc::Decal* d = decalLoader->GetDecal(aniData->decalIndex);
-
-				ptrEngine->DrawPartialWarpedDecal(d, points, aniData->sourcePos, aniData->sourceSize);
 			}
+			else if (obj->data.offsetType == OffsetType::CENTER_CENTER)
+			{
+				if (!aniData->reverseDecal)
+				{
+					points[0] = { x - width / 2.0f, y - height / 2.0f };
+					points[1] = { x - width / 2.0f, y + height / 2.0f };
+					points[2] = { x + width / 2.0f, y + height / 2.0f };
+					points[3] = { x + width / 2.0f, y - height / 2.0f };
+				}
+				else
+				{
+					points[0] = { x + width / 2.0f, y - height / 2.0f };
+					points[1] = { x + width / 2.0f, y + height / 2.0f };
+					points[2] = { x - width / 2.0f, y + height / 2.0f };
+					points[3] = { x - width / 2.0f, y - height / 2.0f };
+				}
+			}
+
+			olc::Decal* d = decalLoader->GetDecal(aniData->decalIndex);
+			ptrEngine->DrawPartialWarpedDecal(d, points, aniData->sourcePos, aniData->sourceSize);
 		}
 	};
 }

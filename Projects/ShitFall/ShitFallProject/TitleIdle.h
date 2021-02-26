@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "StateType.h"
+#include "TitleSpriteType.h"
 
 namespace RB
 {
@@ -10,6 +11,8 @@ namespace RB
 		TitleIdle()
 		{
 			IF_COUT{ std::cout << "constructing State: TitleIdle" << std::endl; }
+
+			stateAnimation.SetParams((int)TitleSpriteType::shitfall_title, 500, 180, 1, 1, 1, false);
 		}
 
 		~TitleIdle()

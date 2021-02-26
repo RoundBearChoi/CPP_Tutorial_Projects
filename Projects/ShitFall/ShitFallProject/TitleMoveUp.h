@@ -9,6 +9,8 @@ namespace RB
 		TitleMoveUp()
 		{
 			IF_COUT{ std::cout << "constructing State: TitleMoveUp" << std::endl; }
+
+			stateAnimation.SetParams((int)TitleSpriteType::shitfall_title, 500, 180, 1, 1, 1, false);
 		}
 
 		~TitleMoveUp()
