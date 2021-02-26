@@ -8,7 +8,6 @@ namespace RB
 	class ShitGenerator : public State
 	{
 	private:
-		int creationCounter = 0;
 		int creationTiming = 50;
 		int difficultyCounter = 0;
 
@@ -33,12 +32,12 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			creationCounter++;
+			frameCount++;
 			difficultyCounter++;
 
 			objData.position = { 0.0f, 350.0f };
 
-			if (creationCounter >= creationTiming)
+			if (frameCount >= creationTiming)
 			{
 				ObjSpecs specs;
 				specs.width = 32.0f;
@@ -48,7 +47,7 @@ namespace RB
 				specs.debugDecalIndex = (int)GameSpriteType::shit_box32x32;
 				specs.controllerType = ControllerType::SHIT_CONTROLLER_FALL;
 				objData.QueueChildCreation(specs);
-				creationCounter = 0;
+				frameCount = 0;
 			}
 
 			if (difficultyCounter >= 35)
