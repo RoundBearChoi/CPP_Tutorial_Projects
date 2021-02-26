@@ -201,5 +201,8 @@
     <ClInclude Include="OffsetType.h">
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
+    <ClInclude Include="DevSettings.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

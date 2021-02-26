@@ -26,6 +26,7 @@
     <ClInclude Include="ControllerType.h" />
     <ClInclude Include="DecalLoader.h" />
     <ClInclude Include="DecalPath.h" />
+    <ClInclude Include="DevSettings.h" />
     <ClInclude Include="DummyPlayerController.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameData.h" />

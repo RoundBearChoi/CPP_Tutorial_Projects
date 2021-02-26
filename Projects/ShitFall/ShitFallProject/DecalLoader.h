@@ -2,6 +2,7 @@
 #include <vector>
 #include "olcPixelGameEngine.h"
 #include "DecalPath.h"
+#include "DevSettings.h"
 
 namespace RB
 {
@@ -14,24 +15,28 @@ namespace RB
 	public:
 		DecalLoader()
 		{
-			std::cout << "constructing DecalLoader" << std::endl;
+			IF_COUT{ std::cout << "constructing DecalLoader" << std::endl; }
 		}
 
 		~DecalLoader()
 		{
-			std::cout << "destructing DecalLoader" << std::endl;
+			
 
 			for (int i = 0; i < vecSpritePtr.size(); i++)
 			{
-				std::cout << "destructing Sprite: " << i << std::endl;
+				IF_COUT{ std::cout << "destructing Sprite: " << i << std::endl; }
+					
 				delete vecSpritePtr[i];
 			}
 
 			for (int i = 0; i < vecDecalPtr.size(); i++)
 			{
-				std::cout << "destructing Decal: " << i << std::endl;
+				IF_COUT{ std::cout << "destructing Decal: " << i << std::endl; }
+				
 				delete vecDecalPtr[i];
 			}
+
+			IF_COUT{ std::cout << "destructing DecalLoader" << std::endl; }
 		}
 
 		template<class T>
@@ -44,8 +49,11 @@ namespace RB
 				for (int i = 0; i < pathGetter.GetCount(); i++)
 				{
 					std::string path = pathGetter.GetPath(i);
+
+					IF_COUT{ std::cout << "constructing Sprite: " << path << std::endl; }
+
 					vecSpritePtr.push_back(new olc::Sprite(path));
-					std::cout << "constructing Sprite: " << path << std::endl;
+					
 				}
 			}
 		}
@@ -54,7 +62,8 @@ namespace RB
 		{
 			for (int i = 0; i < vecSpritePtr.size(); i++)
 			{
-				std::cout << "constructing Decal: " << i << std::endl;
+				IF_COUT{ std::cout << "constructing Decal: " << i << std::endl; }
+				
 				vecDecalPtr.push_back(new olc::Decal(vecSpritePtr[i]));
 			}
 		}
