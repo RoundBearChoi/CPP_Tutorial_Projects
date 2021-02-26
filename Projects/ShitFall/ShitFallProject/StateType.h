@@ -6,7 +6,7 @@ namespace RB
 	{
 		NONE,
 
-		START,
+		IDLE_TEXT,
 		MOVE_DOWN,
 		MOVE_UP,
 

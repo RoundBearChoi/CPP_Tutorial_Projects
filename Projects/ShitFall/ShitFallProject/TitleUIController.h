@@ -29,7 +29,7 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)TitleStateType::START)
+			if (index == (int)TitleStateType::IDLE_TEXT)
 			{
 				CreateState<TitleIdle>();
 			}

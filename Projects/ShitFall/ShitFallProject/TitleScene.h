@@ -46,7 +46,7 @@ namespace RB
 			title.offsetType = OffsetType::CENTER_CENTER;
 			title.debugDecalIndex = (int)TitleSpriteType::title_line500x180;
 			title.controllerType = ControllerType::TITLE_UI_CONTROLLER;
-			title.initialStateIndex = (int)TitleStateType::START;
+			title.initialStateIndex = (int)TitleStateType::IDLE_TEXT;
 
 			pressEnter.width = 300.0f;
 			pressEnter.height = 90.0f;
