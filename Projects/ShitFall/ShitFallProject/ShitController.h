@@ -1,6 +1,8 @@
 #pragma once
 #include "ObjController.h"
 #include "State.h"
+#include "StateType.h"
+
 #include "ShitGenerator.h"
 #include "ShitPosition.h"
 #include "ShitFall.h"
@@ -8,26 +10,30 @@
 
 namespace RB
 {
-	class ShitFallController : public ObjController
+	class ShitController : public ObjController
 	{
 	public:
-		ShitFallController(int _initialStateIndex)
+		ShitController(int _initialStateIndex)
 		{
-			IF_COUT{ std::cout << "constructing ShitFallController" << std::endl; }
-			
+			IF_COUT{ std::cout << "constructing ShitController" << std::endl; }
+
 			MakeTransition(_initialStateIndex);
 		}
 
-		~ShitFallController() override
+		~ShitController() override
 		{
-			IF_COUT{ std::cout << "destructing ShitFallController" << std::endl; }
+			IF_COUT{ std::cout << "destructing ShitController" << std::endl; }
 
 			delete currentState;
 		}
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)ShitStateType::RANDOM_POSITION)
+			if (index == (int)ShitStateType::GENERATOR)
+			{
+				CreateState<ShitGenerator>();
+			}
+			else if (index == (int)ShitStateType::RANDOM_POSITION)
 			{
 				CreateState<ShitPosition>();
 			}

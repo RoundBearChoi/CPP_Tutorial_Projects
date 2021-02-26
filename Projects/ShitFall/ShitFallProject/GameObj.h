@@ -6,8 +6,7 @@
 
 #include "TitleUIController.h"
 #include "PlayerController.h"
-#include "ShitGeneratorController.h"
-#include "ShitFallController.h"
+#include "ShitController.h"
 
 namespace RB
 {
@@ -92,13 +91,9 @@ namespace RB
 			{
 				ptrController = new PlayerController(_initialStateIndex);
 			}
-			else if (_controllerType == ControllerType::SHIT_CONTROLLER_GENERATOR)
+			else if (_controllerType == ControllerType::SHIT_CONTROLLER)
 			{
-				ptrController = new ShitGeneratorController(_initialStateIndex);
-			}
-			else if (_controllerType == ControllerType::SHIT_CONTROLLER_FALL)
-			{
-				ptrController = new ShitFallController(_initialStateIndex);
+				ptrController = new ShitController(_initialStateIndex);
 			}
 		}
 

@@ -53,7 +53,7 @@ namespace RB
 			shitgroup.objType = GameObjType::shitgroup;
 			shitgroup.offsetType = OffsetType::CENTER_CENTER;
 			shitgroup.debugDecalIndex = (int)GameSpriteType::redbox_10x10;
-			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER_GENERATOR;
+			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER;
 			shitgroup.initialStateIndex = (int)ShitStateType::GENERATOR;
 
 			objTree.CreateObj(background);

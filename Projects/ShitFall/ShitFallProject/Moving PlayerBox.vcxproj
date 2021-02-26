@@ -52,8 +52,7 @@
     <ClInclude Include="PlayerGameStart.h" />
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="GameObjTree.h" />
-    <ClInclude Include="ShitFallController.h" />
-    <ClInclude Include="ShitGeneratorController.h" />
+    <ClInclude Include="ShitController.h" />
     <ClInclude Include="ShitFall.h" />
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitPosition.h" />

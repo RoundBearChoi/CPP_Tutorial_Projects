@@ -132,12 +132,6 @@
     <ClInclude Include="ShitPosition.h">
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
-    <ClInclude Include="ShitGeneratorController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="ShitFallController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
-    </ClInclude>
     <ClInclude Include="GameSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
@@ -202,6 +196,9 @@
       <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="TitleUIController.h">
+      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
   </ItemGroup>

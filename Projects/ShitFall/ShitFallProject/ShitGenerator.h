@@ -45,7 +45,7 @@ namespace RB
 				specs.objType = GameObjType::individual_shit;
 				specs.offsetType = OffsetType::CENTER_CENTER;
 				specs.debugDecalIndex = (int)GameSpriteType::shit_box32x32;
-				specs.controllerType = ControllerType::SHIT_CONTROLLER_FALL;
+				specs.controllerType = ControllerType::SHIT_CONTROLLER;
 				specs.initialStateIndex = (int)ShitStateType::RANDOM_POSITION;
 
 				objData.QueueChildCreation(specs);
