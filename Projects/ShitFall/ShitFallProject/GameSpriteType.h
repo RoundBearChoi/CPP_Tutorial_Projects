@@ -8,7 +8,7 @@ namespace RB
 		background,
 		redbox_10x10,
 		shit_box32x32,
-		playerwalk_dummysheet,
+		pixel_run_sheet,
 
 		COUNT,
 	};

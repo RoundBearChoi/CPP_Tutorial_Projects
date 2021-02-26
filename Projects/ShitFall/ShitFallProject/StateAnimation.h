@@ -20,6 +20,10 @@ namespace RB
 		int currentTile = 0;
 		AnimationData data;
 
+		//next frame delay
+		const int transitionDelay = 50;
+		int delayCount = 0;
+
 	public:
 		void SetParams(int _decalIndex, int _totalWith, int _totalHeight, int _tileCountX, int _tileCountY, int _totalTileCount, bool _reverse)
 		{
@@ -34,6 +38,8 @@ namespace RB
 
 		AnimationData* GetRenderData(int _decalIndex)
 		{
+
+
 			if (currentTile >= totalTiles)
 			{
 				currentTile = 0;
@@ -48,7 +54,15 @@ namespace RB
 				data.sourcePos.y = floorf((float)currentTile / (float)tileCountX) * data.sourceSize.y;
 			}
 
-			currentTile++;
+			delayCount++;
+
+			if (delayCount >= transitionDelay)
+			{
+				delayCount = 0;
+				currentTile++;
+			}
+
+			
 
 			data.decalIndex = _decalIndex;
 			data.reverseDecal = reverse;

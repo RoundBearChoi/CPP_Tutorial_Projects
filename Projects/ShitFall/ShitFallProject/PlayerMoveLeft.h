@@ -12,7 +12,7 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerMoveLeft" << std::endl; }
 			
-			stateAnimation.SetParams((int)GameSpriteType::playerwalk_dummysheet, 350, 80, 7, 1, 7, true);
+			stateAnimation.SetParams((int)GameSpriteType::pixel_run_sheet, 300, 80, 6, 1, 6, true);
 		}
 
 		~PlayerMoveLeft()

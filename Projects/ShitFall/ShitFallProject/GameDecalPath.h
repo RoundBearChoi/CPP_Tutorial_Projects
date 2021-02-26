@@ -32,9 +32,9 @@ namespace RB
 			{
 				return "PNG files/shit_box32x32.png";
 			}
-			else if (spriteType == GameSpriteType::playerwalk_dummysheet)
+			else if (spriteType == GameSpriteType::pixel_run_sheet)
 			{
-				return "PNG files/playerwalk_dummysheet.png";
+				return "PNG files/pixel_run_sheet.png";
 			}
 
 			return "none";
