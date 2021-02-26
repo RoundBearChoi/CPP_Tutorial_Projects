@@ -40,6 +40,10 @@ namespace RB
 			{
 				return "PNG files/pressenter.png";
 			}
+			else if (spriteType == TitleSpriteType::idle_sheet)
+			{
+				return "PNG files/idle_sheet.png";
+			}
 			return "none";
 		}
 	};

@@ -36,6 +36,10 @@ namespace RB
 			{
 				return "PNG files/pixel_run_sheet.png";
 			}
+			else if (spriteType == GameSpriteType::idle_sheet)
+			{
+				return "PNG files/idle_sheet.png";
+			}
 
 			return "none";
 		}

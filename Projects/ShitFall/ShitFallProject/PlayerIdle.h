@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "StateType.h"
+#include "GameSpriteType.h"
 
 namespace RB
 {
@@ -10,7 +11,9 @@ namespace RB
 		PlayerIdle()
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerIdle" << std::endl; }
-			
+
+			stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
+			stateAnimation.SetDelayTime(500);
 		}
 
 		~PlayerIdle()

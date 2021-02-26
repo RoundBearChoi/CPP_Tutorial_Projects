@@ -10,6 +10,7 @@ namespace RB
 		press_enter300x90,
 		shitfall_title,
 		pressenter,
+		idle_sheet,
 
 		COUNT,
 	};
