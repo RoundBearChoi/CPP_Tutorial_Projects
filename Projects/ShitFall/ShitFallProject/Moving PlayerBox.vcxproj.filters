@@ -195,14 +195,17 @@
     <ClInclude Include="PressEnterController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
-    <ClInclude Include="TitleFlicker.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
     <ClInclude Include="OffsetType.h">
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
     <ClInclude Include="DevSettings.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleFlickerOn.h">
+      <Filter>Source Files\States\Concrete States</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleFlickerOff.h">
+      <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

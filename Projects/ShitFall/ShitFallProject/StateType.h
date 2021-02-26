@@ -10,7 +10,8 @@ namespace RB
 		MOVE_DOWN,
 		MOVE_UP,
 
-		FLICKER,
+		FLICKER_ON,
+		FLICKER_OFF,
 	};
 
 	enum class PlayerStateType

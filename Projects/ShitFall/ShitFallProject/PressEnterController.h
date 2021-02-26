@@ -1,8 +1,10 @@
 #pragma once
 #include "ObjController.h"
 #include "StateType.h"
-#include "TitleFlicker.h"
 #include "DevSettings.h"
+
+#include "TitleFlickerOn.h"
+#include "TitleFlickerOff.h"
 
 namespace RB
 {
@@ -13,7 +15,7 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing PressEnterController" << std::endl; }
 			
-			MakeTransition((int)TitleStateType::FLICKER);
+			MakeTransition((int)TitleStateType::FLICKER_ON);
 		}
 
 		~PressEnterController() override
@@ -25,9 +27,13 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)TitleStateType::FLICKER)
+			if (index == (int)TitleStateType::FLICKER_ON)
 			{
-				CreateState<TitleFlicker>();
+				CreateState<TitleFlickerOn>();
+			}
+			else if (index == (int)TitleStateType::FLICKER_OFF)
+			{
+				CreateState<TitleFlickerOff>();
 			}
 		}
 	};
