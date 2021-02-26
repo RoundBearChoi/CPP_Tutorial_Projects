@@ -9,6 +9,7 @@ namespace RB
 		playerbox_green,
 		press_enter300x90,
 		shitfall_title,
+		pressenter,
 
 		COUNT,
 	};

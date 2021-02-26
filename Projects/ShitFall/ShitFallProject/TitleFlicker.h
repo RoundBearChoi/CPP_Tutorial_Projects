@@ -9,6 +9,8 @@ namespace RB
 		TitleFlicker()
 		{
 			IF_COUT{ std::cout << "constructing State: TitleFlicker" << std::endl; }
+
+			stateAnimation.SetParams((int)TitleSpriteType::pressenter, 300, 90, 1, 1, 1, false);
 		}
 
 		~TitleFlicker()

@@ -36,6 +36,10 @@ namespace RB
 			{
 				return "PNG files/shitfall_title.png";
 			}
+			else if (spriteType == TitleSpriteType::pressenter)
+			{
+				return "PNG files/pressenter.png";
+			}
 			return "none";
 		}
 	};
