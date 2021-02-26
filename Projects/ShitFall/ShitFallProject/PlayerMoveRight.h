@@ -13,6 +13,7 @@ namespace RB
 			IF_COUT{ std::cout << "constructing State: PlayerMoveRight" << std::endl; }
 			
 			stateAnimation.SetParams((int)GameSpriteType::pixel_run_sheet, 300, 80, 6, 1, 6, false);
+			stateAnimation.SetDelayTime(55);
 		}
 
 		~PlayerMoveRight()

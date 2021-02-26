@@ -21,7 +21,7 @@ namespace RB
 		AnimationData data;
 
 		//next frame delay
-		const int transitionDelay = 50;
+		int transitionDelay = 0;
 		int delayCount = 0;
 
 	public:
@@ -73,6 +73,11 @@ namespace RB
 		int GetDecalIndex()
 		{
 			return decalIndex;
+		}
+
+		void SetDelayTime(int _delayTime)
+		{
+			transitionDelay = _delayTime;
 		}
 	};
 }
