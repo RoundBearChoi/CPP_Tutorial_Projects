@@ -53,6 +53,15 @@
     <Filter Include="Source Files\DecalLoader\Concrete Paths">
       <UniqueIdentifier>{3cfb5554-6874-4b27-9d4a-acd3cd8ef9ad}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\States\Concrete States\UIElements">
+      <UniqueIdentifier>{5bd6e923-234e-4bf9-b461-01da9e9f6f88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Concrete States\Player">
+      <UniqueIdentifier>{6cef940d-eb15-4d1d-984f-821b892d5d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\States\Concrete States\Shit">
+      <UniqueIdentifier>{64103534-9f4d-4669-8732-95c9431af579}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -68,18 +77,6 @@
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerGameStart.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerIdle.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMoveLeft.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerMoveRight.h">
-      <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="SceneController.h">
       <Filter>Source Files\Scene\Base</Filter>
@@ -114,12 +111,6 @@
     <ClInclude Include="PlayerController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
-    <ClInclude Include="ShitFall.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="ShitGenerator.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
     <ClInclude Include="ObjData.h">
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
@@ -129,17 +120,11 @@
     <ClInclude Include="State.h">
       <Filter>Source Files\States\Base</Filter>
     </ClInclude>
-    <ClInclude Include="ShitPosition.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
     <ClInclude Include="GameSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
     <ClInclude Include="RandomInteger.h">
       <Filter>Source Files\Random</Filter>
-    </ClInclude>
-    <ClInclude Include="ShitSplash.h">
-      <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="DecalLoader.h">
       <Filter>Source Files\DecalLoader\Base</Filter>
@@ -147,23 +132,8 @@
     <ClInclude Include="TitleSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
-    <ClInclude Include="TitleIdle.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleMoveDown.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleMoveUp.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
     <ClInclude Include="StateType.h">
       <Filter>Source Files\States\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerDummy.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerDeath.h">
-      <Filter>Source Files\States\Concrete States</Filter>
     </ClInclude>
     <ClInclude Include="AnimationData.h">
       <Filter>Source Files\States\Base</Filter>
@@ -186,23 +156,62 @@
     <ClInclude Include="DevSettings.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="TitleFlickerOn.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleFlickerOff.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerWhiteScreen.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
     <ClInclude Include="ShitController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
     </ClInclude>
-    <ClInclude Include="BackgroundIdle.h">
-      <Filter>Source Files\States\Concrete States</Filter>
-    </ClInclude>
     <ClInclude Include="UIElementController.h">
       <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="BackgroundIdle.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDummy.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleFlickerOff.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleFlickerOn.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleIdle.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleMoveDown.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleMoveUp.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDeath.h">
+      <Filter>Source Files\States\Concrete States\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGameStart.h">
+      <Filter>Source Files\States\Concrete States\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerIdle.h">
+      <Filter>Source Files\States\Concrete States\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMoveLeft.h">
+      <Filter>Source Files\States\Concrete States\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMoveRight.h">
+      <Filter>Source Files\States\Concrete States\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerWhiteScreen.h">
+      <Filter>Source Files\States\Concrete States\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitFall.h">
+      <Filter>Source Files\States\Concrete States\Shit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitGenerator.h">
+      <Filter>Source Files\States\Concrete States\Shit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitPosition.h">
+      <Filter>Source Files\States\Concrete States\Shit</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitSplash.h">
+      <Filter>Source Files\States\Concrete States\Shit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
