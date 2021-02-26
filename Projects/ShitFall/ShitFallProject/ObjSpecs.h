@@ -16,5 +16,6 @@ namespace RB
 		int debugDecalIndex = -1;
 
 		ControllerType controllerType = ControllerType::NONE;
+		int initialStateIndex = 0;
 	};
 }

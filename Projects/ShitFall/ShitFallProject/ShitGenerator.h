@@ -46,6 +46,8 @@ namespace RB
 				specs.offsetType = OffsetType::CENTER_CENTER;
 				specs.debugDecalIndex = (int)GameSpriteType::shit_box32x32;
 				specs.controllerType = ControllerType::SHIT_CONTROLLER_FALL;
+				specs.initialStateIndex = (int)ShitStateType::RANDOM_POSITION;
+
 				objData.QueueChildCreation(specs);
 				frameCount = 0;
 			}

@@ -22,7 +22,7 @@ namespace RB
 
 			if (specs.controllerType != ControllerType::NONE)
 			{
-				newObj->SetController(specs.controllerType);
+				newObj->SetController(specs.controllerType, specs.initialStateIndex);
 			}
 
 			vecAllObjs.push_back(newObj);

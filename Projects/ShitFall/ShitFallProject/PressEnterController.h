@@ -11,11 +11,11 @@ namespace RB
 	class PressEnterController : public ObjController
 	{
 	public:
-		PressEnterController()
+		PressEnterController(int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing PressEnterController" << std::endl; }
 			
-			MakeTransition((int)TitleStateType::FLICKER_ON);
+			MakeTransition(_initialStateIndex);
 		}
 
 		~PressEnterController() override

@@ -31,7 +31,7 @@ namespace RB
 		NONE,
 
 		GENERATOR,
-		POSITION,
+		RANDOM_POSITION,
 		FALL,
 		SHIT_SPLASH,
 	};

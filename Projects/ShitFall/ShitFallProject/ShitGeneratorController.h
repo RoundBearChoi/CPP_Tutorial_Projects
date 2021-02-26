@@ -10,11 +10,11 @@ namespace RB
 	class ShitGeneratorController : public ObjController
 	{
 	public:
-		ShitGeneratorController()
+		ShitGeneratorController(int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing ShitGeneratorController" << std::endl; }
 			
-			MakeTransition((int)ShitStateType::GENERATOR);
+			MakeTransition(_initialStateIndex);
 		}
 
 		~ShitGeneratorController() override

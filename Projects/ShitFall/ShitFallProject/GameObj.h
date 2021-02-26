@@ -84,32 +84,31 @@ namespace RB
 			vecChildrenPtr.push_back(child);
 		}
 
-		void SetController(ControllerType _controllerType)
+		void SetController(ControllerType _controllerType, int _initialStateIndex)
 		{
 			if (_controllerType == ControllerType::TITLE_CONTROLLER)
 			{
-				ptrController = new TitleController();
+				ptrController = new TitleController(_initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::PRESS_ENTER_CONTROLLER)
 			{
-				ptrController = new PressEnterController();
+				ptrController = new PressEnterController(_initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::DUMMY_PLAYER_CONTROLLER)
 			{
-				ptrController = new DummyPlayerController();
+				ptrController = new DummyPlayerController(_initialStateIndex);
 			}
-
 			else if (_controllerType == ControllerType::PLAYER_CONTROLLER)
 			{
-				ptrController = new PlayerController();
+				ptrController = new PlayerController(_initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::SHIT_CONTROLLER_GENERATOR)
 			{
-				ptrController = new ShitGeneratorController();
+				ptrController = new ShitGeneratorController(_initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::SHIT_CONTROLLER_FALL)
 			{
-				ptrController = new ShitFallController();
+				ptrController = new ShitFallController(_initialStateIndex);
 			}
 		}
 

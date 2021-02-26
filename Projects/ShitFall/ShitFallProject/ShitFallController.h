@@ -11,11 +11,11 @@ namespace RB
 	class ShitFallController : public ObjController
 	{
 	public:
-		ShitFallController()
+		ShitFallController(int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing ShitFallController" << std::endl; }
 			
-			MakeTransition((int)ShitStateType::POSITION);
+			MakeTransition(_initialStateIndex);
 		}
 
 		~ShitFallController() override
@@ -27,7 +27,7 @@ namespace RB
 
 		void MakeTransition(int index) override
 		{
-			if (index == (int)ShitStateType::POSITION)
+			if (index == (int)ShitStateType::RANDOM_POSITION)
 			{
 				CreateState<ShitPosition>();
 			}

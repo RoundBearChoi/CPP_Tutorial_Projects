@@ -10,11 +10,11 @@ namespace RB
 	class TitleController : public ObjController
 	{
 	public:
-		TitleController()
+		TitleController(int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing TitleController" << std::endl; }
 			
-			MakeTransition((int)TitleStateType::START);
+			MakeTransition(_initialStateIndex);
 		}
 
 		~TitleController() override

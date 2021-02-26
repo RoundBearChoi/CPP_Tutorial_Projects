@@ -15,11 +15,11 @@ namespace RB
 	class PlayerController : public ObjController
 	{
 	public:
-		PlayerController()
+		PlayerController(int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing PlayerController" << std::endl; }
 			
-			MakeTransition((int)PlayerStateType::GAME_START);
+			MakeTransition(_initialStateIndex);
 		}
 
 		~PlayerController() override

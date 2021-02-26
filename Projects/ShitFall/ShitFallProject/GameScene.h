@@ -46,14 +46,16 @@ namespace RB
 			player.offsetType = OffsetType::BOTTOM_CENTER;
 			player.debugDecalIndex = (int)GameSpriteType::playerbox_green;
 			player.controllerType = ControllerType::PLAYER_CONTROLLER;
-			
+			player.initialStateIndex = (int)PlayerStateType::GAME_START;
+
 			shitgroup.width = 0.0f;
 			shitgroup.height = 0.0f;
 			shitgroup.objType = GameObjType::shitgroup;
 			shitgroup.offsetType = OffsetType::CENTER_CENTER;
 			shitgroup.debugDecalIndex = (int)GameSpriteType::redbox_10x10;
 			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER_GENERATOR;
-			
+			shitgroup.initialStateIndex = (int)ShitStateType::GENERATOR;
+
 			objTree.CreateObj(background);
 			objTree.CreateObj(player);
 			objTree.CreateObj(shitgroup);

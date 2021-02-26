@@ -9,11 +9,11 @@ namespace RB
 	class DummyPlayerController : public ObjController
 	{
 	public:
-		DummyPlayerController()
+		DummyPlayerController(int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing DummyPlayerController" << std::endl; }
 			
-			MakeTransition((int)PlayerStateType::DUMMY);
+			MakeTransition(_initialStateIndex);
 		}
 
 		~DummyPlayerController() override
