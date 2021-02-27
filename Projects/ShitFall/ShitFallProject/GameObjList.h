@@ -7,7 +7,7 @@
 
 namespace RB
 {
-	class GameObjTree
+	class GameObjList
 	{
 	private:
 		std::vector<GameObj*> vecAllObjs;
@@ -15,13 +15,13 @@ namespace RB
 		size_t objsCreated = 0;
 
 	public:
-		GameObjTree()
+		GameObjList()
 		{
 			IF_COUT{ std::cout << "constructing GameObjTree" << std::endl; }
 			
 		}
 
-		~GameObjTree()
+		~GameObjList()
 		{
 			IF_COUT{ std::cout << "destructing GameObjTree" << std::endl; }
 

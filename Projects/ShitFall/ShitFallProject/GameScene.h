@@ -1,6 +1,5 @@
 #pragma once
 #include "Scene.h"
-#include "GameObjTree.h"
 #include "DecalLoader.h"
 #include "GameDecalPath.h"
 #include "DevSettings.h"
@@ -11,7 +10,6 @@ namespace RB
 	{
 	private:
 		DecalLoader decalLoader;
-		
 		
 	public:
 		GameScene()
@@ -57,24 +55,24 @@ namespace RB
 			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER;
 			shitgroup.initialStateIndex = (int)ShitStateType::GENERATOR;
 
-			objTree.CreateObj(background);
-			objTree.CreateObj(player);
-			objTree.CreateObj(shitgroup);
+			objList.CreateObj(background);
+			objList.CreateObj(player);
+			objList.CreateObj(shitgroup);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override
 		{
-			objTree.UpdateObjs(gameData);
+			objList.UpdateObjs(gameData);
 		}
 
 		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
-			objTree.RenderObjs(ptrEngine, &decalLoader);
+			objList.RenderObjs(ptrEngine, &decalLoader);
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override
 		{
-			objTree.RenderStates(ptrEngine, &decalLoader);
+			objList.RenderStates(ptrEngine, &decalLoader);
 		}
 	};
 }

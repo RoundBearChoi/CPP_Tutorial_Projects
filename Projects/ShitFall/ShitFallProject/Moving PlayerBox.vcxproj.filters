@@ -102,9 +102,6 @@
     <ClInclude Include="ControllerType.h">
       <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjTree.h">
-      <Filter>Source Files\GameObj</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjType.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
@@ -212,6 +209,9 @@
     </ClInclude>
     <ClInclude Include="ShitSplash.h">
       <Filter>Source Files\States\Concrete States\Shit</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjList.h">
+      <Filter>Source Files\GameObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

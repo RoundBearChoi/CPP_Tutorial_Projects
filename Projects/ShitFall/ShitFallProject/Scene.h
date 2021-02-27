@@ -1,7 +1,7 @@
 #pragma once
 #include "olcPixelGameEngine.h"
 #include "GameData.h"
-#include "GameObjTree.h"
+#include "GameObjList.h"
 #include "DecalLoader.h"
 #include "DevSettings.h"
 
@@ -10,7 +10,7 @@ namespace RB
 	class Scene
 	{
 	protected:
-		GameObjTree objTree;
+		GameObjList objList;
 
 	public:
 		virtual void InitScene() = 0;

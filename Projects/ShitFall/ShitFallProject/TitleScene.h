@@ -1,6 +1,5 @@
 #pragma once
 #include "Scene.h"
-#include "GameObjTree.h"
 #include "DecalLoader.h"
 #include "TitleDecalPath.h"
 #include "DevSettings.h"
@@ -65,25 +64,25 @@ namespace RB
 			dummy.controllerType = ControllerType::PLAYER_CONTROLLER;
 			dummy.initialStateIndex = (int)PlayerStateType::DUMMY;
 			
-			objTree.CreateObj(background);
-			objTree.CreateObj(title);
-			objTree.CreateObj(pressEnter);
-			objTree.CreateObj(dummy);
+			objList.CreateObj(background);
+			objList.CreateObj(title);
+			objList.CreateObj(pressEnter);
+			objList.CreateObj(dummy);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override
 		{
-			objTree.UpdateObjs(gameData);
+			objList.UpdateObjs(gameData);
 		}
 
 		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
-			objTree.RenderObjs(ptrEngine, &decalLoader);
+			objList.RenderObjs(ptrEngine, &decalLoader);
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override
 		{
-			objTree.RenderStates(ptrEngine, &decalLoader);
+			objList.RenderStates(ptrEngine, &decalLoader);
 		}
 	};
 }
