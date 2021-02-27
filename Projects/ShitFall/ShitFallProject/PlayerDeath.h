@@ -8,6 +8,7 @@ namespace RB
 	{
 	private:
 		bool startedSlowDown = false;
+		int slowDownTimer = 0;
 
 	public:
 		PlayerDeath()
@@ -28,15 +29,47 @@ namespace RB
 				startedSlowDown = true;
 
 				SlowUpdateMessage shit;
-				shit.targetFrameDelay = 50;
+				shit.targetFrameDelay = 30;
 				shit.targetType = GameObjType::individual_shit;
 
 				SlowUpdateMessage gen;
-				gen.targetFrameDelay = 50;
+				gen.targetFrameDelay = 30;
 				gen.targetType = GameObjType::shitgroup;
+
+				SlowUpdateMessage player;
+				player.targetFrameDelay = 30;
+				player.targetType = GameObjType::player;
 
 				objData.AddSlowMoMessage(shit);
 				objData.AddSlowMoMessage(gen);
+				objData.AddSlowMoMessage(player);
+			}
+			else
+			{
+				if (slowDownTimer == 10)
+				{
+					SlowUpdateMessage shit;
+					shit.targetFrameDelay = 0;
+					shit.targetType = GameObjType::individual_shit;
+				
+					SlowUpdateMessage gen;
+					gen.targetFrameDelay = 0;
+					gen.targetType = GameObjType::shitgroup;
+
+					SlowUpdateMessage player;
+					player.targetFrameDelay = 0;
+					player.targetType = GameObjType::player;
+				
+					objData.AddSlowMoMessage(shit);
+					objData.AddSlowMoMessage(gen);
+					objData.AddSlowMoMessage(player);
+
+					slowDownTimer = 11;
+				}
+				else if (slowDownTimer < 10)
+				{
+					slowDownTimer++;
+				}
 			}
 		}
 	};

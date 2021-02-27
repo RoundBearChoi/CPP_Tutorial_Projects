@@ -167,19 +167,19 @@ namespace RB
 		{
 			if (obj != nullptr)
 			{
-				for (int i = 0; i < obj->data.GetSlowMoMessageCount(); i++)
+				for (int messageIndex = 0; messageIndex < obj->data.GetSlowMoMessageCount(); messageIndex++)
 				{
-					SlowUpdateMessage message = obj->data.GetSlowMoMessage(i);
+					SlowUpdateMessage message = obj->data.GetSlowMoMessage(messageIndex);
 
 					if (vecSlowUpdates.size() > 0)
 					{
 						bool sameTargetFound = false;
 
-						for (int k = 0; i < vecSlowUpdates.size(); k++)
+						for (int sIndex = 0; sIndex < vecSlowUpdates.size(); sIndex++)
 						{
-							if (vecSlowUpdates[k].GetTargetType() == message.targetType)
+							if (vecSlowUpdates[sIndex].GetTargetType() == message.targetType)
 							{
-								vecSlowUpdates[k].SetDelayTime(message.targetFrameDelay);
+								vecSlowUpdates[sIndex].SetDelayTime(message.targetFrameDelay);
 								sameTargetFound = true;
 							}
 						}
