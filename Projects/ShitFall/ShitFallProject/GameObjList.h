@@ -183,9 +183,9 @@ namespace RB
 			{
 				if (vecAllObjs[i] != nullptr)
 				{
-					if (vecAllObjs[i]->data.debugDecalIndex != -1)
+					if (vecAllObjs[i]->data.decalIndex != -1)
 					{
-						vecAllObjs[i]->Render(ptrEngine, decalLoader->GetDecal(vecAllObjs[i]->data.debugDecalIndex));
+						vecAllObjs[i]->Render(ptrEngine, decalLoader->GetDecal(vecAllObjs[i]->data.decalIndex));
 					}
 				}
 			}

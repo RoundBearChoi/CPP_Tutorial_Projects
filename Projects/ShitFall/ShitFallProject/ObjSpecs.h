@@ -13,7 +13,7 @@ namespace RB
 
 		GameObjType objType = GameObjType::NONE;
 		OffsetType offsetType = OffsetType::NONE;
-		int debugDecalIndex = -1;
+		int decalIndex = -1;
 
 		ControllerType controllerType = ControllerType::NONE;
 		int initialStateIndex = 0;

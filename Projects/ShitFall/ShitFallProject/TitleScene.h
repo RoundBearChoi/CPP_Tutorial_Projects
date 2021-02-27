@@ -36,7 +36,7 @@ namespace RB
 			background.height = 700.0f;
 			background.objType = GameObjType::background;
 			background.offsetType = OffsetType::NONE;
-			background.debugDecalIndex = (int)TitleSpriteType::background;
+			background.decalIndex = (int)TitleSpriteType::background;
 			background.controllerType = ControllerType::TITLE_UI_CONTROLLER;
 			background.initialStateIndex = (int)UIElementStateType::BACKGROUND_IDLE;
 			
@@ -44,7 +44,7 @@ namespace RB
 			title.height = 180.0f;
 			title.objType = GameObjType::title;
 			title.offsetType = OffsetType::CENTER_CENTER;
-			title.debugDecalIndex = (int)TitleSpriteType::title_line500x180;
+			title.decalIndex = (int)TitleSpriteType::title_line500x180;
 			title.controllerType = ControllerType::TITLE_UI_CONTROLLER;
 			title.initialStateIndex = (int)UIElementStateType::TEXT_IDLE;
 
@@ -52,7 +52,7 @@ namespace RB
 			pressEnter.height = 90.0f;
 			pressEnter.objType = GameObjType::press_enter;
 			pressEnter.offsetType = OffsetType::CENTER_CENTER;
-			pressEnter.debugDecalIndex = (int)TitleSpriteType::press_enter300x90;
+			pressEnter.decalIndex = (int)TitleSpriteType::press_enter300x90;
 			pressEnter.controllerType = ControllerType::TITLE_UI_CONTROLLER;
 			pressEnter.initialStateIndex = (int)UIElementStateType::FLICKER_ON;
 			
@@ -60,7 +60,7 @@ namespace RB
 			dummy.height = 80.0f;
 			dummy.objType = GameObjType::dummy;
 			dummy.offsetType = OffsetType::BOTTOM_CENTER;
-			dummy.debugDecalIndex = (int)TitleSpriteType::playerbox_green;
+			dummy.decalIndex = (int)TitleSpriteType::playerbox_green;
 			dummy.controllerType = ControllerType::PLAYER_CONTROLLER;
 			dummy.initialStateIndex = (int)PlayerStateType::DUMMY;
 			
@@ -77,10 +77,10 @@ namespace RB
 
 		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
-			//objList.RenderObjs(ptrEngine, &decalLoader);
+			objList.RenderObjs(ptrEngine, &decalLoader);
 
-			GameObj* background = objList.GetObj(0);
-			background->Render(ptrEngine, decalLoader.GetDecal(background->data.debugDecalIndex));
+			//GameObj* background = objList.GetObj(0);
+			//background->Render(ptrEngine, decalLoader.GetDecal(background->data.debugDecalIndex));
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override

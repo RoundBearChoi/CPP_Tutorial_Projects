@@ -35,7 +35,7 @@ namespace RB
 			background.height = 700.0f;
 			background.objType = GameObjType::background;
 			background.offsetType = OffsetType::NONE;
-			background.debugDecalIndex = (int)GameSpriteType::background;
+			background.decalIndex = (int)GameSpriteType::background;
 			background.controllerType = ControllerType::TITLE_UI_CONTROLLER;
 			background.initialStateIndex = (int)UIElementStateType::BACKGROUND_IDLE;
 			
@@ -43,7 +43,7 @@ namespace RB
 			player.height = 80.0f;
 			player.objType = GameObjType::player;
 			player.offsetType = OffsetType::BOTTOM_CENTER;
-			player.debugDecalIndex = (int)GameSpriteType::playerbox_green;
+			player.decalIndex = (int)GameSpriteType::playerbox_green;
 			player.controllerType = ControllerType::PLAYER_CONTROLLER;
 			player.initialStateIndex = (int)PlayerStateType::GAME_START;
 
@@ -51,7 +51,7 @@ namespace RB
 			shitgroup.height = 0.0f;
 			shitgroup.objType = GameObjType::shitgroup;
 			shitgroup.offsetType = OffsetType::CENTER_CENTER;
-			shitgroup.debugDecalIndex = (int)GameSpriteType::redbox_10x10;
+			shitgroup.decalIndex = (int)GameSpriteType::redbox_10x10;
 			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER;
 			shitgroup.initialStateIndex = (int)ShitStateType::GENERATOR;
 
@@ -67,10 +67,10 @@ namespace RB
 
 		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
-			//objList.RenderObjs(ptrEngine, &decalLoader);
+			objList.RenderObjs(ptrEngine, &decalLoader);
 
-			GameObj* background = objList.GetObj(0);
-			background->Render(ptrEngine, decalLoader.GetDecal(background->data.debugDecalIndex));
+			// GameObj* background = objList.GetObj(0);
+			// background->Render(ptrEngine, decalLoader.GetDecal(background->data.debugDecalIndex));
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override

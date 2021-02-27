@@ -28,7 +28,7 @@ namespace RB
 			data.objHeight = specs.height;
 			data.objType = specs.objType;
 			data.offsetType = specs.offsetType;
-			data.debugDecalIndex = specs.debugDecalIndex;
+			data.decalIndex = specs.decalIndex;
 		}
 
 		~GameObj()

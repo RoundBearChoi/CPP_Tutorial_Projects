@@ -16,15 +16,15 @@ namespace RB
 
 			//start slowmo
 			SlowUpdateMessage shit;
-			shit.targetFrameDelay = 80;
+			shit.targetFrameDelay = 100;
 			shit.targetType = GameObjType::individual_shit;
 
 			SlowUpdateMessage gen;
-			gen.targetFrameDelay = 80;
+			gen.targetFrameDelay = 100;
 			gen.targetType = GameObjType::shitgroup;
 
 			SlowUpdateMessage player;
-			player.targetFrameDelay = 80;
+			player.targetFrameDelay = 100;
 			player.targetType = GameObjType::player;
 
 			objData.AddSlowMoMessage(shit);
@@ -37,7 +37,7 @@ namespace RB
 			specs.height = 330.0f;
 			specs.objType = GameObjType::y_or_n;
 			specs.offsetType = OffsetType::CENTER_CENTER;
-			specs.debugDecalIndex = (int)GameSpriteType::y_or_n460x330;
+			specs.decalIndex = (int)GameSpriteType::y_or_n460x330;
 			specs.controllerType = ControllerType::TITLE_UI_CONTROLLER;
 			specs.initialStateIndex = (int)UIElementStateType::Y_OR_N;
 
@@ -54,15 +54,15 @@ namespace RB
 			if (slowDownTimer == 0)
 			{
 				SlowUpdateMessage shit;
-				shit.targetFrameDelay = 30;
+				shit.targetFrameDelay = 50;
 				shit.targetType = GameObjType::individual_shit;
 
 				SlowUpdateMessage gen;
-				gen.targetFrameDelay = 30;
+				gen.targetFrameDelay = 50;
 				gen.targetType = GameObjType::shitgroup;
 
 				SlowUpdateMessage player;
-				player.targetFrameDelay = 30;
+				player.targetFrameDelay = 50;
 				player.targetType = GameObjType::player;
 
 				objData.AddSlowMoMessage(shit);
