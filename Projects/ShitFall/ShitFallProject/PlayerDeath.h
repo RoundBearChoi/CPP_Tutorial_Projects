@@ -68,6 +68,8 @@ namespace RB
 				objData.AddSlowMoMessage(shit);
 				objData.AddSlowMoMessage(gen);
 				objData.AddSlowMoMessage(player);
+
+				slowDownTimer = 1;
 			}
 			else if (slowDownTimer < 0)
 			{

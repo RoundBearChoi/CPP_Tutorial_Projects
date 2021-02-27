@@ -4,7 +4,7 @@
 #include "ObjSpecs.h"
 #include "DecalLoader.h"
 #include "DevSettings.h"
-#include "SlowUpdate.h"
+#include "SlowMotion.h"
 
 namespace RB
 {
@@ -12,9 +12,9 @@ namespace RB
 	{
 	private:
 		std::vector<GameObj*> vecAllObjs;
-		std::vector<SlowUpdate> vecSlowUpdates;
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
+		SlowMotion slowMotion;
 
 	public:
 		GameObjList()
@@ -48,22 +48,19 @@ namespace RB
 
 		void UpdateObjs(GameData& gameData)
 		{
-			for (int i = 0; i < vecSlowUpdates.size(); i++)
-			{
-				vecSlowUpdates[i].UpdateSlowMoCounter();
-			}
+			slowMotion.UpdateSlowMoCounter();
 
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				if (!SkipUpdate(vecAllObjs[i]->data.objType))
+				if (!slowMotion.SkipUpdate(vecAllObjs[i]->data.objType))
 				{
 					GameObj* obj = vecAllObjs[i];
 
 					if (obj != nullptr)
 					{
 						UpdateOnPlayerCollision(obj);
-
 						UpdateController(obj, i, gameData);
+						slowMotion.AddSlowMo(obj);
 
 						if (DeleteObj(obj))
 						{
@@ -71,8 +68,6 @@ namespace RB
 							vecAllObjs[i] = nullptr;
 							destructedObjIndex.push_back(i);
 						}
-
-						ProcSlowMo(vecAllObjs[i]);
 					}
 				}
 			}
@@ -139,65 +134,6 @@ namespace RB
 						}
 					}
 				}
-			}
-		}
-
-		bool SkipUpdate(GameObjType _targetType)
-		{
-			if (vecSlowUpdates.size() == 0)
-			{
-				return false;
-			}
-			
-			for (int i = 0; i < vecSlowUpdates.size(); i++)
-			{
-				if (!vecSlowUpdates[i].CanUpdate())
-				{
-					if (_targetType == vecSlowUpdates[i].GetTargetType())
-					{
-						return true;
-					}
-				}
-			}
-
-			return false;
-		}
-
-		void ProcSlowMo(GameObj* obj)
-		{
-			if (obj != nullptr)
-			{
-				for (int messageIndex = 0; messageIndex < obj->data.GetSlowMoMessageCount(); messageIndex++)
-				{
-					SlowUpdateMessage message = obj->data.GetSlowMoMessage(messageIndex);
-
-					if (vecSlowUpdates.size() > 0)
-					{
-						bool sameTargetFound = false;
-
-						for (int sIndex = 0; sIndex < vecSlowUpdates.size(); sIndex++)
-						{
-							if (vecSlowUpdates[sIndex].GetTargetType() == message.targetType)
-							{
-								vecSlowUpdates[sIndex].SetDelayTime(message.targetFrameDelay);
-								sameTargetFound = true;
-							}
-						}
-
-						if (!sameTargetFound)
-						{
-							SlowUpdate slowUpdate(message.targetType, message.targetFrameDelay);
-							vecSlowUpdates.push_back(slowUpdate);
-						}
-					}
-					else
-					{
-						SlowUpdate slowUpdate(message.targetType, message.targetFrameDelay);
-						vecSlowUpdates.push_back(slowUpdate);
-					}
-				}
-
-				obj->data.ClearSlowMoMessages();
 			}
 		}
 

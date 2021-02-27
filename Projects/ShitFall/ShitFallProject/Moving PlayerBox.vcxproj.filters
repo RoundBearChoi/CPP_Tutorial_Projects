@@ -62,6 +62,9 @@
     <Filter Include="Source Files\States\Concrete States\Shit">
       <UniqueIdentifier>{64103534-9f4d-4669-8732-95c9431af579}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SlowMotion">
+      <UniqueIdentifier>{2d671088-933e-4be8-9988-c7ee3fc1cb1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -213,14 +216,17 @@
     <ClInclude Include="GameObjList.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
-    <ClInclude Include="SlowUpdate.h">
-      <Filter>Source Files\GameObj</Filter>
-    </ClInclude>
-    <ClInclude Include="SlowUpdateMessage.h">
-      <Filter>Source Files\GameObj\Info</Filter>
-    </ClInclude>
     <ClInclude Include="YesOrNo.h">
       <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SlowUpdateMessage.h">
+      <Filter>Source Files\SlowMotion</Filter>
+    </ClInclude>
+    <ClInclude Include="SlowUpdate.h">
+      <Filter>Source Files\SlowMotion</Filter>
+    </ClInclude>
+    <ClInclude Include="SlowMotion.h">
+      <Filter>Source Files\SlowMotion</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
