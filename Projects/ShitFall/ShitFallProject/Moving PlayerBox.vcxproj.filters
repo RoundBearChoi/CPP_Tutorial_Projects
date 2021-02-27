@@ -65,6 +65,9 @@
     <Filter Include="Source Files\SlowMotion">
       <UniqueIdentifier>{2d671088-933e-4be8-9988-c7ee3fc1cb1d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{2c771001-1e22-419e-82a8-8f47a89b7f82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -227,6 +230,9 @@
     </ClInclude>
     <ClInclude Include="SlowMotion.h">
       <Filter>Source Files\SlowMotion</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Source Files\Renderer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

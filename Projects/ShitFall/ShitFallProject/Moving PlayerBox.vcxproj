@@ -46,6 +46,7 @@
     <ClInclude Include="PlayerWhiteScreen.h" />
     <ClInclude Include="RandomInteger.h" />
     <ClInclude Include="OffsetType.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneController.h" />
     <ClInclude Include="GameObj.h" />
