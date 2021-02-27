@@ -12,10 +12,6 @@ namespace RB
 {
 	class GameObj
 	{
-	private:
-		std::vector<GameObj*> vecChildren;
-		GameObj* parent = nullptr;
-
 	public:
 		ObjData data;
 		ObjController* ptrController = nullptr;
@@ -77,12 +73,6 @@ namespace RB
 			engine->DrawWarpedDecal(decal, points);
 		}
 
-		void AddToHierarchy(GameObj* child)
-		{
-			child->parent = this;
-			vecChildren.push_back(child);
-		}
-
 		void SetController(ControllerType _controllerType, int _initialStateIndex)
 		{
 			if (_controllerType == ControllerType::TITLE_UI_CONTROLLER)
@@ -97,34 +87,6 @@ namespace RB
 			{
 				ptrController = new ShitController(_initialStateIndex);
 			}
-		}
-
-		std::vector<GameObj*>& GetChildren()
-		{
-			return vecChildren;
-		}
-
-		void ClearDestructableChildren()
-		{
-			std::vector<int> removables;
-
-			for (int i = 0; i < vecChildren.size(); i++)
-			{
-				if (vecChildren[i]->ptrController->DestructIsQueued())
-				{
-					removables.push_back(i);
-				}
-			}
-
-			for (int i = 0; i < removables.size(); i++)
-			{
-				vecChildren.erase(vecChildren.begin() + removables[i]);
-			}
-		}
-
-		GameObj* GetParent()
-		{
-			return parent;
 		}
 
 		bool IsCollidingAgainst(GameObj* _target)

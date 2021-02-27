@@ -14,21 +14,6 @@ namespace RB
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
 
-		GameObj* ProcNewObj(const ObjSpecs& specs)
-		{
-			GameObj* newObj = new GameObj(specs);
-
-			if (specs.controllerType != ControllerType::NONE)
-			{
-				newObj->SetController(specs.controllerType, specs.initialStateIndex);
-			}
-
-			vecAllObjs.push_back(newObj);
-			SetID(newObj);
-
-			return newObj;
-		}
-
 	public:
 		GameObjTree()
 		{
@@ -44,6 +29,21 @@ namespace RB
 			{
 				delete vecAllObjs[i];
 			}
+		}
+
+		GameObj* ProcNewObj(const ObjSpecs& specs)
+		{
+			GameObj* newObj = new GameObj(specs);
+
+			if (specs.controllerType != ControllerType::NONE)
+			{
+				newObj->SetController(specs.controllerType, specs.initialStateIndex);
+			}
+
+			vecAllObjs.push_back(newObj);
+			SetID(newObj);
+
+			return newObj;
 		}
 
 		void UpdateObjs(GameData& gameData)
@@ -80,7 +80,7 @@ namespace RB
 						con->UpdateObj(obj->data, gameData);
 
 						//check child creation
-						CreateChildren(obj);
+						CreateObjFromQueue(obj);
 
 						//check transition
 						if (obj->data.nextStateIndex != 0)
@@ -92,9 +92,6 @@ namespace RB
 						//delete obj
 						if (con->DestructIsQueued())
 						{
-							//remove pointer from vec
-							obj->GetParent()->ClearDestructableChildren();
-
 							delete vecAllObjs[i];
 							vecAllObjs[i] = nullptr;
 						}
@@ -115,21 +112,15 @@ namespace RB
 			destructedObjIndex.clear();
 		}
 
-		void CreateChildren(GameObj* obj)
+		void CreateObjFromQueue(GameObj* obj)
 		{
-			for (int i = 0; i < obj->data.GetChildQueueCount(); i++)
+			for (int i = 0; i < obj->data.GetCreationQueueCount(); i++)
 			{
-				ObjSpecs specs = obj->data.GetChildCreationSpecs(i);
-				GameObj* child = ProcNewObj(specs);
-				obj->AddToHierarchy(child);
+				ObjSpecs specs = obj->data.GetCreationSpecs(i);
+				ProcNewObj(specs);
 			}
 
 			obj->data.ClearChildQueues();
-		}
-
-		void CreateObj(ObjSpecs specs)
-		{
-			ProcNewObj(specs);
 		}
 
 		GameObj* GetObjType(GameObjType _objType)

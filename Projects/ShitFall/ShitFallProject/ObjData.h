@@ -32,12 +32,12 @@ namespace RB
 			vecChildQueues.push_back(_specs);
 		}
 
-		int GetChildQueueCount()
+		int GetCreationQueueCount()
 		{
 			return vecChildQueues.size();
 		}
 
-		ObjSpecs GetChildCreationSpecs(int _index)
+		ObjSpecs GetCreationSpecs(int _index)
 		{
 			return vecChildQueues[_index];
 		}
