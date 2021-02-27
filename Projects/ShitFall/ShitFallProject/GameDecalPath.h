@@ -44,9 +44,13 @@ namespace RB
 			{
 				return "PNG files/y_or_n460x330.png";
 			}
-			else if (spriteType == GameSpriteType::shitrestart)
+			else if (spriteType == GameSpriteType::shit_restart)
 			{
 				return "PNG files/shitrestart.png";
+			}
+			else if (spriteType == GameSpriteType::shit)
+			{
+				return "PNG files/shit.png";
 			}
 
 			return "none";
