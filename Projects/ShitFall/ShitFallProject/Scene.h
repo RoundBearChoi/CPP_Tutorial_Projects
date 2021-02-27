@@ -11,6 +11,7 @@ namespace RB
 	{
 	protected:
 		GameObjList objList;
+		DecalLoader* decalLoader;
 
 	public:
 		virtual void InitScene() = 0;

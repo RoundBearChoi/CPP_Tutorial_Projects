@@ -8,16 +8,12 @@ namespace RB
 {
 	class TitleScene : public Scene
 	{
-	private:
-		DecalLoader decalLoader;
-		
 	public:
-		TitleScene()
+		TitleScene(DecalLoader* _decalLoader)
 		{
 			IF_COUT{ std::cout << "constructing TitleScene" << std::endl; }
 
-			decalLoader.LoadSprites<TitleDecalPath>();
-			decalLoader.LoadDecals();
+			decalLoader = _decalLoader;
 		}
 
 		~TitleScene()
@@ -77,15 +73,15 @@ namespace RB
 
 		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
-			//objList.RenderObjs(ptrEngine, &decalLoader);
+			objList.RenderObjs(ptrEngine, decalLoader);
 
-			GameObj* background = objList.GetObj(0);
-			background->Render(ptrEngine, decalLoader.GetDecal(background->data.decalIndex));
+			//GameObj* background = objList.GetObj(0);
+			//background->Render(ptrEngine, decalLoader->GetDecal(background->data.decalIndex));
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override
 		{
-			objList.RenderStates(ptrEngine, &decalLoader);
+			objList.RenderStates(ptrEngine, decalLoader);
 		}
 	};
 }

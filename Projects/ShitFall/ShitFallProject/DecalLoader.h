@@ -11,16 +11,19 @@ namespace RB
 	private:
 		std::vector<olc::Sprite*> vecSpritePtr;
 		std::vector<olc::Decal*> vecDecalPtr;
+		SceneType sceneType = SceneType::NONE;
 
 	public:
-		DecalLoader()
+		DecalLoader(SceneType _sceneType)
 		{
-			IF_COUT{ std::cout << "constructing DecalLoader" << std::endl; }
+			IF_COUT{ std::cout << "constructing DecalLoader:" << (int)_sceneType << std::endl; }
+
+			sceneType = _sceneType;
 		}
 
 		~DecalLoader()
 		{
-			IF_COUT{ std::cout << "destructing DecalLoader" << std::endl; }
+			IF_COUT{ std::cout << "destructing DecalLoader: " << (int)sceneType << std::endl; }
 
 			for (int i = 0; i < vecSpritePtr.size(); i++)
 			{
@@ -40,6 +43,8 @@ namespace RB
 		template<class T>
 		void LoadSprites()
 		{
+			IF_COUT{ std::cout << std::endl; }
+
 			if (std::is_base_of<DecalPath, T>::value)
 			{
 				T pathGetter;

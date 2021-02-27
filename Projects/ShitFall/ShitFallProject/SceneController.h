@@ -13,8 +13,8 @@ namespace RB
 	{
 	private:
 		Scene* currentScene = nullptr;
-		DecalLoader titleSceneDecalLoader;
-		DecalLoader gameSceneDecalLoader;
+		DecalLoader titleSceneDecalLoader{ SceneType::TITLE_SCENE };
+		DecalLoader gameSceneDecalLoader{ SceneType::GAME_SCENE };
 
 	public:
 		SceneController()
@@ -35,11 +35,23 @@ namespace RB
 
 			if (_sceneType == SceneType::TITLE_SCENE)
 			{
-				currentScene = new TitleScene();
+				if (titleSceneDecalLoader.GetSpriteCount() == 0)
+				{
+					titleSceneDecalLoader.LoadSprites<TitleDecalPath>();
+					titleSceneDecalLoader.LoadDecals();
+				}
+
+				currentScene = new TitleScene(&titleSceneDecalLoader);
 			}
 			else if (_sceneType == SceneType::GAME_SCENE)
 			{
-				currentScene = new GameScene();
+				if (gameSceneDecalLoader.GetSpriteCount() == 0)
+				{
+					gameSceneDecalLoader.LoadSprites<GameDecalPath>();
+					gameSceneDecalLoader.LoadDecals();
+				}
+
+				currentScene = new GameScene(&gameSceneDecalLoader);
 			}
 
 			currentScene->InitScene();
