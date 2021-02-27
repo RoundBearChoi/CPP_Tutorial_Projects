@@ -16,7 +16,6 @@ namespace RB
 		Input input;
 		float fTargetFrameTime = 1.0f / 120.0f; // target fixed timestep
 		float fAccumulatedTime = 0.0f;
-		bool bStartSlowMo = false;
 
 	public:
 		bool OnUserCreate() override
@@ -34,11 +33,6 @@ namespace RB
 			}
 
 			input.UpdateInput(this);
-
-			if (bStartSlowMo)
-			{
-				fTargetFrameTime = 1.0f / 5.0f;
-			}
 
 			fAccumulatedTime += fElapsedTime;
 
@@ -66,11 +60,6 @@ namespace RB
 
 				//only clear after update
 				input.ClearKeyPress();
-
-				if (gameData.startSlowMo)
-				{
-					bStartSlowMo = true;
-				}
 			}
 			else
 			{

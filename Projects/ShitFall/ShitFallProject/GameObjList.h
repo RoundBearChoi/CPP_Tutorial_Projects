@@ -56,13 +56,12 @@ namespace RB
 					if (obj->data.objType == GameObjType::individual_shit)
 					{
 						//only check on possible top collision
-						if (obj->GetStateFrameCount() == 171 && !gameData.startSlowMo)
+						if (obj->GetStateFrameCount() == 171)
 						{
 							GameObj* player = GetObjType(GameObjType::player);
 
 							if (obj->IsCollidingAgainst(player))
 							{
-								gameData.startSlowMo = true;
 								obj->data.collided = true;
 
 								player->ptrController->MakeTransition((int)PlayerStateType::DEAD);

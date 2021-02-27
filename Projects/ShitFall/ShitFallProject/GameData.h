@@ -8,6 +8,5 @@ namespace RB
 		int inputXAxis = 0;
 		int nextSceneIndex = 0;
 		bool startGame = false;
-		bool startSlowMo = false;
 	};
 }
