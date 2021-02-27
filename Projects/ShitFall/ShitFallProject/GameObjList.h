@@ -2,9 +2,8 @@
 #include <vector>
 #include "GameObj.h"
 #include "ObjSpecs.h"
-#include "DecalLoader.h"
-#include "DevSettings.h"
 #include "SlowMotion.h"
+#include "SheetRenderer.h"
 
 namespace RB
 {
@@ -15,6 +14,7 @@ namespace RB
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
 		SlowMotion slowMotion;
+		SheetRenderer sheetRenderer;
 
 	public:
 		GameObjList()
@@ -197,68 +197,9 @@ namespace RB
 			{
 				if (vecAllObjs[i] != nullptr)
 				{
-					if (vecAllObjs[i]->ptrController != nullptr)
-					{
-						AnimationData* data = vecAllObjs[i]->ptrController->GetStateRenderData();
-
-						if (data != nullptr)
-						{
-							if (data->sourceSize.x > 0.0f && data->sourceSize.y > 0.0f)
-							{
-								RenderObjState(ptrEngine, decalLoader, vecAllObjs[i], data);
-							}
-						}
-					}
+					sheetRenderer.Render(ptrEngine, decalLoader, vecAllObjs[i]);
 				}
 			}
-		}
-
-		void RenderObjState(olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader, GameObj* obj, AnimationData* aniData)
-		{
-			float x = obj->data.position.x;
-			float y = obj->data.position.y;
-			float width = obj->data.objWidth;
-			float height = obj->data.objHeight;
-			
-			std::array<olc::vf2d, 4> points;
-
-			if (obj->data.offsetType == OffsetType::BOTTOM_CENTER)
-			{
-				if (!aniData->reverseDecal)
-				{
-					points[0] = { x - width / 2.0f, y - height };
-					points[1] = { x - width / 2.0f, y };
-					points[2] = { x + width / 2.0f, y };
-					points[3] = { x + width / 2.0f, y - height };
-				}
-				else
-				{
-					points[0] = { x + width / 2.0f, y - height };
-					points[1] = { x + width / 2.0f, y };
-					points[2] = { x - width / 2.0f, y };
-					points[3] = { x - width / 2.0f, y - height };
-				}
-			}
-			else if (obj->data.offsetType == OffsetType::CENTER_CENTER)
-			{
-				if (!aniData->reverseDecal)
-				{
-					points[0] = { x - width / 2.0f, y - height / 2.0f };
-					points[1] = { x - width / 2.0f, y + height / 2.0f };
-					points[2] = { x + width / 2.0f, y + height / 2.0f };
-					points[3] = { x + width / 2.0f, y - height / 2.0f };
-				}
-				else
-				{
-					points[0] = { x + width / 2.0f, y - height / 2.0f };
-					points[1] = { x + width / 2.0f, y + height / 2.0f };
-					points[2] = { x - width / 2.0f, y + height / 2.0f };
-					points[3] = { x - width / 2.0f, y - height / 2.0f };
-				}
-			}
-
-			olc::Decal* d = decalLoader->GetDecal(aniData->decalIndex);
-			ptrEngine->DrawPartialWarpedDecal(d, points, aniData->sourcePos, aniData->sourceSize);
 		}
 	};
 }
