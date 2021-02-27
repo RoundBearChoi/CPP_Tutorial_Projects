@@ -212,6 +212,11 @@ namespace RB
 			obj->data.ClearChildQueues();
 		}
 
+		GameObj* GetObj(int _index)
+		{
+			return vecAllObjs[_index];
+		}
+
 		GameObj* GetObjType(GameObjType _objType)
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)

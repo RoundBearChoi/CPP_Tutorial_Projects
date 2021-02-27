@@ -15,6 +15,9 @@ namespace RB
 				std::cout << "constructing State: GameStart" << std::endl;
 			}
 
+			stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
+			stateAnimation.SetDelayTime(500);
+
 			objData.position = { 300.0f, 650.0f };
 		}
 
@@ -27,7 +30,7 @@ namespace RB
 		{
 			frameCount++;
 			
-			if (frameCount >= 20)
+			if (frameCount >= 50)
 			{
 				objData.nextStateIndex = (int)PlayerStateType::IDLE;
 			}

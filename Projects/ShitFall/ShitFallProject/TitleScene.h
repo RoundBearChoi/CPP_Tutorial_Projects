@@ -77,7 +77,10 @@ namespace RB
 
 		void RenderObjs(olc::PixelGameEngine* ptrEngine) override
 		{
-			objList.RenderObjs(ptrEngine, &decalLoader);
+			//objList.RenderObjs(ptrEngine, &decalLoader);
+
+			GameObj* background = objList.GetObj(0);
+			background->Render(ptrEngine, decalLoader.GetDecal(background->data.debugDecalIndex));
 		}
 
 		void RenderStates(olc::PixelGameEngine* ptrEngine) override
