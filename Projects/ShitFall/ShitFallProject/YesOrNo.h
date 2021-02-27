@@ -31,6 +31,17 @@ namespace RB
 			if (frameCount > 23)
 			{
 				speed -= 0.865f;
+
+				if (gameData.yPressed)
+				{
+					gameData.quitGame = false;
+					gameData.startGame = false;
+					gameData.nextSceneIndex = 2;
+				}
+				else if (gameData.nPressed)
+				{
+					gameData.quitGame = true;
+				}
 			}
 
 			if (frameCount < 55)

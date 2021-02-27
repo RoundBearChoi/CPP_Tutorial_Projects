@@ -56,11 +56,6 @@ namespace RB
 				bStartGame = true;
 			}
 
-			//quit
-			if (ptrEngine->GetKey(olc::Key::ESCAPE).bHeld)
-			{
-				bQuitGame = true;
-			}
 		}
 
 		int GetHorizontalAxis()
@@ -100,9 +95,15 @@ namespace RB
 			Pressed_D = false;
 		}
 
-		bool ESCPressed()
+		bool StartGame()
 		{
-			if (bQuitGame)
+			return bStartGame;
+		}
+
+		bool GetESCPress(olc::PixelGameEngine* ptrEngine)
+		{
+			//quit
+			if (ptrEngine->GetKey(olc::Key::ESCAPE).bHeld)
 			{
 				IF_COUT
 				{
@@ -118,9 +119,28 @@ namespace RB
 			}
 		}
 
-		bool StartGame()
+		bool GetYPress(olc::PixelGameEngine* ptrEngine)
 		{
-			return bStartGame;
+			if (ptrEngine->GetKey(olc::Key::Y).bHeld)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		bool GetNPress(olc::PixelGameEngine* ptrEngine)
+		{
+			if (ptrEngine->GetKey(olc::Key::N).bHeld)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
 	};
 }

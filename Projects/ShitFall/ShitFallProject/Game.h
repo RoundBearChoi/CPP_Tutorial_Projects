@@ -27,7 +27,7 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			if (input.ESCPressed())
+			if (input.GetESCPress(this))
 			{
 				return false;
 			}
@@ -42,6 +42,8 @@ namespace RB
 				GameData gameData;
 				gameData.inputXAxis = input.GetHorizontalAxis();
 				gameData.startGame = input.StartGame();
+				gameData.yPressed = input.GetYPress(this);
+				gameData.nPressed = input.GetNPress(this);
 
 				fAccumulatedTime -= fTargetFrameTime;
 				fElapsedTime = fTargetFrameTime;
@@ -60,6 +62,11 @@ namespace RB
 
 				//only clear after update
 				input.ClearKeyPress();
+
+				if (gameData.quitGame)
+				{
+					return false;
+				}
 			}
 			else
 			{
