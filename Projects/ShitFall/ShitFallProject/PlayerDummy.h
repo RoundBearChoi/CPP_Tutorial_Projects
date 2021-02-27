@@ -14,6 +14,8 @@ namespace RB
 
 			stateAnimation.SetParams((int)TitleSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
 			stateAnimation.SetDelayTime(500);
+
+			objData.position = { 300.0f, 650.0f };
 		}
 
 		~PlayerDummy()
@@ -23,7 +25,7 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			objData.position = { 300.0f, 650.0f };
+			
 		}
 	};
 }

@@ -19,6 +19,8 @@ namespace RB
 				std::cout << std::endl;
 				std::cout << "constructing State: ShitGenerator" << std::endl;
 			}
+
+			objData.position = { 0.0f, 350.0f };
 		}
 
 		~ShitGenerator()
@@ -32,8 +34,6 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			objData.position = { 0.0f, 350.0f };
-
 			frameCount++;
 			difficultyCounter++;
 

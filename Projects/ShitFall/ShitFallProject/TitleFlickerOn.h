@@ -12,6 +12,8 @@ namespace RB
 			IF_COUT{ std::cout << "constructing State: TitleFlickerOn" << std::endl; }
 
 			stateAnimation.SetParams((int)TitleSpriteType::pressenter, 300, 90, 1, 1, 1, false);
+
+			objData.position = { 300.0f, 350.0f };
 		}
 
 		~TitleFlickerOn()
@@ -21,8 +23,6 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			objData.position = { 300.0f, 350.0f };
-
 			if (gameData.startGame)
 			{
 				objData.nextStateIndex = (int)UIElementStateType::FLICKER_OFF;

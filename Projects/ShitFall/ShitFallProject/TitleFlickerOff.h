@@ -10,6 +10,8 @@ namespace RB
 		TitleFlickerOff(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: TitleFlickerOff" << std::endl; }
+
+			objData.position = { 300.0f, 350.0f };
 		}
 
 		~TitleFlickerOff()
@@ -19,8 +21,6 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			objData.position = { 300.0f, 350.0f };
-
 			if (!gameData.startGame)
 			{
 				frameCount++;
