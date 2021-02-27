@@ -16,15 +16,15 @@ namespace RB
 
 			//start slowmo
 			SlowUpdateMessage shit;
-			shit.targetFrameDelay = 70;
+			shit.targetFrameDelay = 80;
 			shit.targetType = GameObjType::individual_shit;
 
 			SlowUpdateMessage gen;
-			gen.targetFrameDelay = 70;
+			gen.targetFrameDelay = 80;
 			gen.targetType = GameObjType::shitgroup;
 
 			SlowUpdateMessage player;
-			player.targetFrameDelay = 70;
+			player.targetFrameDelay = 80;
 			player.targetType = GameObjType::player;
 
 			objData.AddSlowMoMessage(shit);

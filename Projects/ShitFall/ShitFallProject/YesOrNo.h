@@ -7,7 +7,7 @@ namespace RB
 	class YesOrNo : public State
 	{
 	private:
-		float speed = 16.0f;
+		float speed = 16.5f;
 
 	public:
 		YesOrNo(ObjData& objData)
@@ -29,10 +29,10 @@ namespace RB
 			//start slowing down
 			if (frameCount > 23)
 			{
-				speed -= 0.9f;
+				speed -= 0.865f;
 			}
 
-			if (frameCount < 52)
+			if (frameCount < 55)
 			{
 				frameCount++;
 				objData.position.y += speed;
