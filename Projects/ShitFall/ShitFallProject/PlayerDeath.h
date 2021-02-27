@@ -16,15 +16,15 @@ namespace RB
 
 			//start slowmo
 			SlowUpdateMessage shit;
-			shit.targetFrameDelay = 50;
+			shit.targetFrameDelay = 70;
 			shit.targetType = GameObjType::individual_shit;
 
 			SlowUpdateMessage gen;
-			gen.targetFrameDelay = 50;
+			gen.targetFrameDelay = 70;
 			gen.targetType = GameObjType::shitgroup;
 
 			SlowUpdateMessage player;
-			player.targetFrameDelay = 50;
+			player.targetFrameDelay = 70;
 			player.targetType = GameObjType::player;
 
 			objData.AddSlowMoMessage(shit);
@@ -51,7 +51,7 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			if (slowDownTimer == 2)
+			if (slowDownTimer == 0)
 			{
 				SlowUpdateMessage shit;
 				shit.targetFrameDelay = 0;
@@ -68,10 +68,8 @@ namespace RB
 				objData.AddSlowMoMessage(shit);
 				objData.AddSlowMoMessage(gen);
 				objData.AddSlowMoMessage(player);
-
-				//slowDownTimer = 11;
 			}
-			else if (slowDownTimer < 2)
+			else if (slowDownTimer < 0)
 			{
 				slowDownTimer++;
 			}
