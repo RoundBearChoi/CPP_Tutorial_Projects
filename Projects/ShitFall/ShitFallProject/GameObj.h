@@ -78,15 +78,15 @@ namespace RB
 		{
 			if (_controllerType == ControllerType::TITLE_UI_CONTROLLER)
 			{
-				ptrController = new UIElementController(_initialStateIndex, data);
+				ptrController = new UIElementController(data, _initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::PLAYER_CONTROLLER)
 			{
-				ptrController = new PlayerController(_initialStateIndex, data);
+				ptrController = new PlayerController(data, _initialStateIndex);
 			}
 			else if (_controllerType == ControllerType::SHIT_CONTROLLER)
 			{
-				ptrController = new ShitController(_initialStateIndex, data);
+				ptrController = new ShitController(data, _initialStateIndex);
 			}
 		}
 

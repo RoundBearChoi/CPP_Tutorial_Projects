@@ -16,11 +16,11 @@ namespace RB
 	class PlayerController : public ObjController
 	{
 	public:
-		PlayerController(int _initialStateIndex, ObjData& objData)
+		PlayerController(ObjData& objData, int _initialStateIndex)
 		{
 			IF_COUT{ std::cout << "constructing PlayerController" << std::endl; }
 			
-			MakeTransition(_initialStateIndex, objData);
+			MakeTransition(objData, _initialStateIndex);
 		}
 
 		~PlayerController() override
@@ -30,31 +30,31 @@ namespace RB
 			delete currentState;
 		}
 
-		void MakeTransition(int index, ObjData& objData) override
+		void MakeTransition(ObjData& objData, int index) override
 		{
 			if (index == (int)PlayerStateType::DUMMY)
 			{
-				CreateState<PlayerDummy>(index, objData);
+				CreateState<PlayerDummy>(objData, index);
 			}
 			else if (index == (int)PlayerStateType::GAME_START)
 			{
-				CreateState<PlayerGameStart>(index, objData);
+				CreateState<PlayerGameStart>(objData, index);
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				CreateState<PlayerIdle>(index, objData);
+				CreateState<PlayerIdle>(objData, index);
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
-				CreateState<PlayerMoveLeft>(index, objData);
+				CreateState<PlayerMoveLeft>(objData, index);
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{
-				CreateState<PlayerMoveRight>(index, objData);
+				CreateState<PlayerMoveRight>(objData, index);
 			}
 			else if (index == (int)PlayerStateType::DEAD)
 			{
-				CreateState<PlayerDeath>(index, objData);
+				CreateState<PlayerDeath>(objData, index);
 			}
 		}
 	};

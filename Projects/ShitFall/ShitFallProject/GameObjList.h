@@ -99,7 +99,7 @@ namespace RB
 				//check transition
 				if (obj->data.nextStateIndex != 0)
 				{
-					con->MakeTransition(obj->data.nextStateIndex, obj->data);
+					con->MakeTransition(obj->data, obj->data.nextStateIndex);
 					obj->data.nextStateIndex = 0;
 				}
 			}
@@ -135,7 +135,7 @@ namespace RB
 
 						if (player->ptrController->GetCurrentStateIndex() != (int)PlayerStateType::DEAD)
 						{
-							player->ptrController->MakeTransition((int)PlayerStateType::DEAD, obj->data);
+							player->ptrController->MakeTransition(obj->data, (int)PlayerStateType::DEAD);
 						}
 					}
 				}

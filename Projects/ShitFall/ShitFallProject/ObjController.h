@@ -11,7 +11,7 @@ namespace RB
 		int currentStateIndex = 0;
 
 	public:
-		virtual void MakeTransition(int index, ObjData& objData) = 0;
+		virtual void MakeTransition(ObjData& objData, int index) = 0;
 
 		virtual ~ObjController()
 		{
@@ -24,7 +24,7 @@ namespace RB
 		}
 
 		template<class T>
-		void CreateState(int _stateIndex, ObjData& objData)
+		void CreateState(ObjData& objData, int _stateIndex)
 		{
 			delete currentState;
 
