@@ -57,8 +57,8 @@ namespace RB
 		void QueueGenerate(ObjData& objData)
 		{
 			ObjSpecs specs;
-			specs.width = 32.0f;
-			specs.height = 32.0f;
+			specs.width = 37.0f;
+			specs.height = 37.0f;
 			specs.objType = GameObjType::individual_shit;
 			specs.offsetType = OffsetType::CENTER_CENTER;
 			specs.debugDecalIndex = (int)GameSpriteType::shit_box32x32;
