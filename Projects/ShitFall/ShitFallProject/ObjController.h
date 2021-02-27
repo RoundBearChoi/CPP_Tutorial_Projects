@@ -8,6 +8,7 @@ namespace RB
 	{
 	protected:
 		State* currentState = nullptr;
+		int currentStateIndex = 0;
 
 	public:
 		virtual void MakeTransition(int index) = 0;
@@ -23,13 +24,14 @@ namespace RB
 		}
 
 		template<class T>
-		void CreateState()
+		void CreateState(int _stateIndex)
 		{
 			delete currentState;
 
 			if (std::is_base_of<State, T>::value)
 			{
 				currentState = new T();
+				currentStateIndex = _stateIndex;
 			}
 		}
 
@@ -53,6 +55,11 @@ namespace RB
 			{
 				return nullptr;
 			}
+		}
+
+		int GetCurrentStateIndex()
+		{
+			return currentStateIndex;
 		}
 	};
 }

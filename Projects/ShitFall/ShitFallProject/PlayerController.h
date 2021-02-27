@@ -34,27 +34,27 @@ namespace RB
 		{
 			if (index == (int)PlayerStateType::DUMMY)
 			{
-				CreateState<PlayerDummy>();
+				CreateState<PlayerDummy>(index);
 			}
 			else if (index == (int)PlayerStateType::GAME_START)
 			{
-				CreateState<PlayerGameStart>();
+				CreateState<PlayerGameStart>(index);
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				CreateState<PlayerIdle>();
+				CreateState<PlayerIdle>(index);
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
-				CreateState<PlayerMoveLeft>();
+				CreateState<PlayerMoveLeft>(index);
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{
-				CreateState<PlayerMoveRight>();
+				CreateState<PlayerMoveRight>(index);
 			}
 			else if (index == (int)PlayerStateType::DEAD)
 			{
-				CreateState<PlayerDeath>();
+				CreateState<PlayerDeath>(index);
 			}
 		}
 	};

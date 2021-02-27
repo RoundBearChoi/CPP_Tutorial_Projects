@@ -58,6 +58,8 @@
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitPosition.h" />
     <ClInclude Include="ShitSplash.h" />
+    <ClInclude Include="SlowUpdate.h" />
+    <ClInclude Include="SlowUpdateMessage.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateAnimation.h" />
     <ClInclude Include="StateType.h" />

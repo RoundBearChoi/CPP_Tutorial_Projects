@@ -32,27 +32,27 @@ namespace RB
 		{
 			if (index == (int)UIElementStateType::BACKGROUND_IDLE)
 			{
-				CreateState<BackgroundIdle>();
+				CreateState<BackgroundIdle>(index);
 			}
 			else if (index == (int)UIElementStateType::TEXT_IDLE)
 			{
-				CreateState<TitleIdle>();
+				CreateState<TitleIdle>(index);
 			}
 			else if (index == (int)UIElementStateType::MOVE_DOWN)
 			{
-				CreateState<TitleMoveDown>();
+				CreateState<TitleMoveDown>(index);
 			}
 			else if (index == (int)UIElementStateType::MOVE_UP)
 			{
-				CreateState<TitleMoveUp>();
+				CreateState<TitleMoveUp>(index);
 			}
 			else if (index == (int)UIElementStateType::FLICKER_ON)
 			{
-				CreateState<TitleFlickerOn>();
+				CreateState<TitleFlickerOn>(index);
 			}
 			else if (index == (int)UIElementStateType::FLICKER_OFF)
 			{
-				CreateState<TitleFlickerOff>();
+				CreateState<TitleFlickerOff>(index);
 			}
 		}
 	};

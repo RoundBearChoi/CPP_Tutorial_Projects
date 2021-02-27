@@ -3,6 +3,7 @@
 #include "olcPixelGameEngine.h"
 #include "ObjSpecs.h"
 #include "DevSettings.h"
+#include "SlowUpdateMessage.h"
 
 namespace RB
 {
@@ -10,6 +11,7 @@ namespace RB
 	{
 	private:
 		std::vector<ObjSpecs> vecChildQueues;
+		std::vector<SlowUpdateMessage> vecSlowUpdateMessages;
 		int creationID = 0;
 
 	public:
@@ -52,6 +54,26 @@ namespace RB
 			IF_COUT{ std::cout << "setting ObjData CreationID: " << _id << std::endl; }
 			
 			creationID = _id;
+		}
+
+		void AddSlowMoMessage(SlowUpdateMessage& _message)
+		{
+			vecSlowUpdateMessages.push_back(_message);
+		}
+
+		int GetSlowMoMessageCount()
+		{
+			return vecSlowUpdateMessages.size();
+		}
+
+		SlowUpdateMessage GetSlowMoMessage(int _index)
+		{
+			return vecSlowUpdateMessages[_index];
+		}
+
+		void ClearSlowMoMessages()
+		{
+			vecSlowUpdateMessages.clear();
 		}
 	};
 }

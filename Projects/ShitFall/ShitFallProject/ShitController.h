@@ -31,19 +31,19 @@ namespace RB
 		{
 			if (index == (int)ShitStateType::GENERATOR)
 			{
-				CreateState<ShitGenerator>();
+				CreateState<ShitGenerator>(index);
 			}
 			else if (index == (int)ShitStateType::RANDOM_POSITION)
 			{
-				CreateState<ShitPosition>();
+				CreateState<ShitPosition>(index);
 			}
 			else if (index == (int)ShitStateType::FALL)
 			{
-				CreateState<ShitFall>();
+				CreateState<ShitFall>(index);
 			}
 			else if (index == (int)ShitStateType::SHIT_SPLASH)
 			{
-				CreateState<ShitSplash>();
+				CreateState<ShitSplash>(index);
 			}
 		}
 	};

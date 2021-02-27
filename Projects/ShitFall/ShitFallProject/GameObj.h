@@ -3,6 +3,7 @@
 #include "OffsetType.h"
 #include "ObjData.h"
 #include "DevSettings.h"
+#include "SlowUpdate.h"
 
 #include "UIElementController.h"
 #include "PlayerController.h"

@@ -9,7 +9,6 @@ namespace RB
 		ShitSplash()
 		{
 			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
-			
 		}
 
 		~ShitSplash()

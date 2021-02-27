@@ -4,6 +4,7 @@
 #include "ObjSpecs.h"
 #include "DecalLoader.h"
 #include "DevSettings.h"
+#include "SlowUpdate.h"
 
 namespace RB
 {
@@ -11,6 +12,7 @@ namespace RB
 	{
 	private:
 		std::vector<GameObj*> vecAllObjs;
+		std::vector<SlowUpdate> vecSlowUpdates;
 		std::vector<int> destructedObjIndex;
 		size_t objsCreated = 0;
 
@@ -46,55 +48,31 @@ namespace RB
 
 		void UpdateObjs(GameData& gameData)
 		{
+			for (int i = 0; i < vecSlowUpdates.size(); i++)
+			{
+				vecSlowUpdates[i].UpdateSlowMoCounter();
+			}
+
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				GameObj* obj = vecAllObjs[i];
-
-				if (obj != nullptr)
+				if (!SkipUpdate(vecAllObjs[i]->data.objType))
 				{
-					//check collision against player
-					if (obj->data.objType == GameObjType::individual_shit)
+					GameObj* obj = vecAllObjs[i];
+
+					if (obj != nullptr)
 					{
-						//only check on possible top collision
-						if (obj->GetStateFrameCount() == 171)
-						{
-							GameObj* player = GetObjType(GameObjType::player);
+						UpdateOnPlayerCollision(obj);
 
-							if (obj->IsCollidingAgainst(player))
-							{
-								obj->data.collided = true;
+						UpdateController(obj, i, gameData);
 
-								player->ptrController->MakeTransition((int)PlayerStateType::DEAD);
-							}
-						}
-					}
-
-					ObjController* con = vecAllObjs[i]->ptrController;
-
-					if (con != nullptr)
-					{
-						//update every obj
-						con->UpdateObj(obj->data, gameData);
-
-						//check child creation
-						CreateObjFromQueue(obj);
-
-						//check transition
-						if (obj->data.nextStateIndex != 0)
-						{
-							con->MakeTransition(obj->data.nextStateIndex);
-							obj->data.nextStateIndex = 0;
-						}
-
-						//delete obj
-						if (con->DeleteObj())
+						if (DeleteObj(obj))
 						{
 							delete vecAllObjs[i];
 							vecAllObjs[i] = nullptr;
-
-							//save index to delete after loop
 							destructedObjIndex.push_back(i);
 						}
+
+						ProcSlowMo(vecAllObjs[i]);
 					}
 				}
 			}
@@ -106,6 +84,121 @@ namespace RB
 			}
 
 			destructedObjIndex.clear();
+		}
+
+		void UpdateController(GameObj* obj, int objIndex, GameData& gameData)
+		{
+			ObjController* con = obj->ptrController;
+
+			if (con != nullptr)
+			{
+				con->UpdateObj(obj->data, gameData);
+
+				CreateObjFromQueue(obj);
+
+				//check transition
+				if (obj->data.nextStateIndex != 0)
+				{
+					con->MakeTransition(obj->data.nextStateIndex);
+					obj->data.nextStateIndex = 0;
+				}
+			}
+		}
+
+		bool DeleteObj(GameObj* obj)
+		{
+			ObjController* con = obj->ptrController;
+
+			if (con != nullptr)
+			{
+				if (con->DeleteObj())
+				{
+					return true;
+				}
+			}
+			
+			return false;
+		}
+
+		void UpdateOnPlayerCollision(GameObj* obj)
+		{
+			if (obj->data.objType == GameObjType::individual_shit)
+			{
+				//only check on possible top collision
+				if (obj->GetStateFrameCount() == 171)
+				{
+					GameObj* player = GetObjType(GameObjType::player);
+
+					if (obj->IsCollidingAgainst(player))
+					{
+						obj->data.collided = true;
+
+						if (player->ptrController->GetCurrentStateIndex() != (int)PlayerStateType::DEAD)
+						{
+							player->ptrController->MakeTransition((int)PlayerStateType::DEAD);
+						}
+					}
+				}
+			}
+		}
+
+		bool SkipUpdate(GameObjType _targetType)
+		{
+			if (vecSlowUpdates.size() == 0)
+			{
+				return false;
+			}
+			
+			for (int i = 0; i < vecSlowUpdates.size(); i++)
+			{
+				if (!vecSlowUpdates[i].CanUpdate())
+				{
+					if (_targetType == vecSlowUpdates[i].GetTargetType())
+					{
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
+		void ProcSlowMo(GameObj* obj)
+		{
+			if (obj != nullptr)
+			{
+				for (int i = 0; i < obj->data.GetSlowMoMessageCount(); i++)
+				{
+					SlowUpdateMessage message = obj->data.GetSlowMoMessage(i);
+
+					if (vecSlowUpdates.size() > 0)
+					{
+						bool sameTargetFound = false;
+
+						for (int k = 0; i < vecSlowUpdates.size(); k++)
+						{
+							if (vecSlowUpdates[k].GetTargetType() == message.targetType)
+							{
+								vecSlowUpdates[k].SetDelayTime(message.targetFrameDelay);
+								sameTargetFound = true;
+							}
+						}
+
+						if (!sameTargetFound)
+						{
+							SlowUpdate slowUpdate(message.targetType, message.targetFrameDelay);
+							vecSlowUpdates.push_back(slowUpdate);
+						}
+					}
+					else
+					{
+						SlowUpdate slowUpdate(message.targetType, message.targetFrameDelay);
+						vecSlowUpdates.push_back(slowUpdate);
+					}
+				}
+
+				obj->data.ClearSlowMoMessages();
+			}
 		}
 
 		void CreateObjFromQueue(GameObj* obj)

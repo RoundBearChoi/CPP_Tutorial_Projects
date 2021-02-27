@@ -213,5 +213,11 @@
     <ClInclude Include="GameObjList.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
+    <ClInclude Include="SlowUpdate.h">
+      <Filter>Source Files\GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="SlowUpdateMessage.h">
+      <Filter>Source Files\GameObj\Info</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
