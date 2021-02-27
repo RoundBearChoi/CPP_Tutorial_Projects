@@ -9,7 +9,7 @@ namespace RB
 		float speed = 3.0f;
 
 	public:
-		TitleMoveDown()
+		TitleMoveDown(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: TitleMoveDown" << std::endl; }
 

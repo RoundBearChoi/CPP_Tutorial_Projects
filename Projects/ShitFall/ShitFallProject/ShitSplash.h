@@ -6,7 +6,7 @@ namespace RB
 	class ShitSplash : public State
 	{
 	public:
-		ShitSplash()
+		ShitSplash(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
 		}

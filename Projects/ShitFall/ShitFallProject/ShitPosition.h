@@ -12,7 +12,7 @@ namespace RB
 		olc::vf2d randomStart{ 0.0f, 0.0f };
 
 	public:
-		ShitPosition()
+		ShitPosition(ObjData& objData)
 		{
 			IF_COUT
 			{

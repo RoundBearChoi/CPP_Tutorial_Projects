@@ -12,7 +12,7 @@ namespace RB
 		int difficultyCounter = 0;
 
 	public:
-		ShitGenerator()
+		ShitGenerator(ObjData& objData)
 		{
 			IF_COUT
 			{

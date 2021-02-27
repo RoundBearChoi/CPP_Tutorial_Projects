@@ -14,11 +14,11 @@ namespace RB
 	class UIElementController : public ObjController
 	{
 	public:
-		UIElementController(int _initialStateIndex)
+		UIElementController(int _initialStateIndex, ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing TitleUIController" << std::endl; }
 
-			MakeTransition(_initialStateIndex);
+			MakeTransition(_initialStateIndex, objData);
 		}
 
 		~UIElementController() override
@@ -28,31 +28,31 @@ namespace RB
 			delete currentState;
 		}
 
-		void MakeTransition(int index) override
+		void MakeTransition(int index, ObjData& objData) override
 		{
 			if (index == (int)UIElementStateType::BACKGROUND_IDLE)
 			{
-				CreateState<BackgroundIdle>(index);
+				CreateState<BackgroundIdle>(index, objData);
 			}
 			else if (index == (int)UIElementStateType::TEXT_IDLE)
 			{
-				CreateState<TitleIdle>(index);
+				CreateState<TitleIdle>(index, objData);
 			}
 			else if (index == (int)UIElementStateType::MOVE_DOWN)
 			{
-				CreateState<TitleMoveDown>(index);
+				CreateState<TitleMoveDown>(index, objData);
 			}
 			else if (index == (int)UIElementStateType::MOVE_UP)
 			{
-				CreateState<TitleMoveUp>(index);
+				CreateState<TitleMoveUp>(index, objData);
 			}
 			else if (index == (int)UIElementStateType::FLICKER_ON)
 			{
-				CreateState<TitleFlickerOn>(index);
+				CreateState<TitleFlickerOn>(index, objData);
 			}
 			else if (index == (int)UIElementStateType::FLICKER_OFF)
 			{
-				CreateState<TitleFlickerOff>(index);
+				CreateState<TitleFlickerOff>(index, objData);
 			}
 		}
 	};

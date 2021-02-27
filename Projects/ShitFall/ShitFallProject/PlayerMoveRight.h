@@ -8,7 +8,7 @@ namespace RB
 	class PlayerMoveRight : public State
 	{
 	public:
-		PlayerMoveRight()
+		PlayerMoveRight(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerMoveRight" << std::endl; }
 			

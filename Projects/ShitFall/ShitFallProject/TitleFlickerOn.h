@@ -7,7 +7,7 @@ namespace RB
 	class TitleFlickerOn : public State
 	{
 	public:
-		TitleFlickerOn()
+		TitleFlickerOn(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: TitleFlickerOn" << std::endl; }
 

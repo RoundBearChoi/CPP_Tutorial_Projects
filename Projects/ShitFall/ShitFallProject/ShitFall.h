@@ -9,7 +9,7 @@ namespace RB
 		float speed = 1.0f;
 
 	public:
-		ShitFall()
+		ShitFall(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: ShitFall" << std::endl; }
 		}

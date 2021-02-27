@@ -6,7 +6,7 @@ namespace RB
 	class PlayerWhiteScreen : State
 	{
 	public:
-		PlayerWhiteScreen()
+		PlayerWhiteScreen(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerWhiteScreen" << std::endl; }
 

@@ -13,11 +13,11 @@ namespace RB
 	class ShitController : public ObjController
 	{
 	public:
-		ShitController(int _initialStateIndex)
+		ShitController(int _initialStateIndex, ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing ShitController" << std::endl; }
 
-			MakeTransition(_initialStateIndex);
+			MakeTransition(_initialStateIndex, objData);
 		}
 
 		~ShitController() override
@@ -27,23 +27,23 @@ namespace RB
 			delete currentState;
 		}
 
-		void MakeTransition(int index) override
+		void MakeTransition(int index, ObjData& objData) override
 		{
 			if (index == (int)ShitStateType::GENERATOR)
 			{
-				CreateState<ShitGenerator>(index);
+				CreateState<ShitGenerator>(index, objData);
 			}
 			else if (index == (int)ShitStateType::RANDOM_POSITION)
 			{
-				CreateState<ShitPosition>(index);
+				CreateState<ShitPosition>(index, objData);
 			}
 			else if (index == (int)ShitStateType::FALL)
 			{
-				CreateState<ShitFall>(index);
+				CreateState<ShitFall>(index, objData);
 			}
 			else if (index == (int)ShitStateType::SHIT_SPLASH)
 			{
-				CreateState<ShitSplash>(index);
+				CreateState<ShitSplash>(index, objData);
 			}
 		}
 	};

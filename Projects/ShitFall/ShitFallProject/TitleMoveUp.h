@@ -6,7 +6,7 @@ namespace RB
 	class TitleMoveUp : public State
 	{
 	public:
-		TitleMoveUp()
+		TitleMoveUp(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: TitleMoveUp" << std::endl; }
 

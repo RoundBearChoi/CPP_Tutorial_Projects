@@ -8,7 +8,7 @@ namespace RB
 	class BackgroundIdle : public State
 	{
 	public:
-		BackgroundIdle()
+		BackgroundIdle(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: BackgroundIdle" << std::endl; }
 		}

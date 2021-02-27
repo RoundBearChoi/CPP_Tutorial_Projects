@@ -7,7 +7,7 @@ namespace RB
 	class PlayerGameStart : public State
 	{
 	public:
-		PlayerGameStart()
+		PlayerGameStart(ObjData& objData)
 		{
 			IF_COUT
 			{

@@ -8,7 +8,7 @@ namespace RB
 	class TitleIdle : public State
 	{
 	public:
-		TitleIdle()
+		TitleIdle(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: TitleIdle" << std::endl; }
 

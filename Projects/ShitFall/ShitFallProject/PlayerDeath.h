@@ -11,10 +11,9 @@ namespace RB
 		int slowDownTimer = 0;
 
 	public:
-		PlayerDeath()
+		PlayerDeath(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerDeath" << std::endl; }
-			
 		}
 
 		~PlayerDeath()

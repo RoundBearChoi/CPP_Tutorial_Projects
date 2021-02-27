@@ -8,7 +8,7 @@ namespace RB
 	class PlayerIdle : public State
 	{
 	public:
-		PlayerIdle()
+		PlayerIdle(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerIdle" << std::endl; }
 

@@ -8,7 +8,7 @@ namespace RB
 	class PlayerDummy : public State
 	{
 	public:
-		PlayerDummy()
+		PlayerDummy(ObjData& objData)
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerDummy" << std::endl; }
 
