@@ -16,15 +16,15 @@ namespace RB
 
 			//start slowmo
 			SlowUpdateMessage shit;
-			shit.targetFrameDelay = 100;
+			shit.targetFrameDelay = 50;
 			shit.targetType = GameObjType::individual_shit;
 
 			SlowUpdateMessage gen;
-			gen.targetFrameDelay = 100;
+			gen.targetFrameDelay = 50;
 			gen.targetType = GameObjType::shitgroup;
 
 			SlowUpdateMessage player;
-			player.targetFrameDelay = 100;
+			player.targetFrameDelay = 50;
 			player.targetType = GameObjType::player;
 
 			objData.AddSlowMoMessage(shit);
@@ -54,21 +54,21 @@ namespace RB
 			if (slowDownTimer == 0)
 			{
 				SlowUpdateMessage shit;
-				shit.targetFrameDelay = 50;
+				shit.targetFrameDelay = 130;
 				shit.targetType = GameObjType::individual_shit;
-
+			
 				SlowUpdateMessage gen;
-				gen.targetFrameDelay = 50;
+				gen.targetFrameDelay = 130;
 				gen.targetType = GameObjType::shitgroup;
-
+			
 				SlowUpdateMessage player;
-				player.targetFrameDelay = 50;
+				player.targetFrameDelay = 130;
 				player.targetType = GameObjType::player;
-
+			
 				objData.AddSlowMoMessage(shit);
 				objData.AddSlowMoMessage(gen);
 				objData.AddSlowMoMessage(player);
-
+			
 				slowDownTimer = 1;
 			}
 			else if (slowDownTimer < 0)
