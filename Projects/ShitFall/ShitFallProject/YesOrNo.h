@@ -1,6 +1,7 @@
 #pragma once
 #include "State.h"
 #include "DevSettings.h"
+#include "GameSpriteType.h"
 
 namespace RB
 {
@@ -14,6 +15,8 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: YesOrNo" << std::endl; }
 
+			stateAnimation.SetParams((int)GameSpriteType::shitrestart, 460, 330, 1, 1, 1, false);
+
 			objData.position = { 300.0f, -165.0f };
 		}
 
@@ -24,8 +27,6 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			
-
 			//start slowing down
 			if (frameCount > 23)
 			{
