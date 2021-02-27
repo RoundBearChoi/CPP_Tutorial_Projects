@@ -33,7 +33,7 @@ namespace RB
 			}
 		}
 
-		bool DestructIsQueued()
+		bool DeleteObj()
 		{
 			return currentState->DeleteObj();
 		}

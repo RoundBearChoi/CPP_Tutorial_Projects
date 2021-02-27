@@ -31,7 +31,7 @@ namespace RB
 			}
 		}
 
-		GameObj* ProcNewObj(const ObjSpecs& specs)
+		void CreateObj(const ObjSpecs& specs)
 		{
 			GameObj* newObj = new GameObj(specs);
 
@@ -42,8 +42,6 @@ namespace RB
 
 			vecAllObjs.push_back(newObj);
 			SetID(newObj);
-
-			return newObj;
 		}
 
 		void UpdateObjs(GameData& gameData)
@@ -90,16 +88,15 @@ namespace RB
 						}
 
 						//delete obj
-						if (con->DestructIsQueued())
+						if (con->DeleteObj())
 						{
 							delete vecAllObjs[i];
 							vecAllObjs[i] = nullptr;
+
+							//save index to delete after loop
+							destructedObjIndex.push_back(i);
 						}
 					}
-				}
-				else
-				{
-					destructedObjIndex.push_back(i);
 				}
 			}
 
@@ -117,7 +114,7 @@ namespace RB
 			for (int i = 0; i < obj->data.GetCreationQueueCount(); i++)
 			{
 				ObjSpecs specs = obj->data.GetCreationSpecs(i);
-				ProcNewObj(specs);
+				CreateObj(specs);
 			}
 
 			obj->data.ClearChildQueues();

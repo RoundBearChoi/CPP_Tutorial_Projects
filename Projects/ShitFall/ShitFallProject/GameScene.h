@@ -57,9 +57,9 @@ namespace RB
 			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER;
 			shitgroup.initialStateIndex = (int)ShitStateType::GENERATOR;
 
-			objTree.ProcNewObj(background);
-			objTree.ProcNewObj(player);
-			objTree.ProcNewObj(shitgroup);
+			objTree.CreateObj(background);
+			objTree.CreateObj(player);
+			objTree.CreateObj(shitgroup);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override

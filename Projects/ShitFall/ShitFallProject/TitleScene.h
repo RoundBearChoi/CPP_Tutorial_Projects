@@ -65,10 +65,10 @@ namespace RB
 			dummy.controllerType = ControllerType::PLAYER_CONTROLLER;
 			dummy.initialStateIndex = (int)PlayerStateType::DUMMY;
 			
-			objTree.ProcNewObj(background);
-			objTree.ProcNewObj(title);
-			objTree.ProcNewObj(pressEnter);
-			objTree.ProcNewObj(dummy);
+			objTree.CreateObj(background);
+			objTree.CreateObj(title);
+			objTree.CreateObj(pressEnter);
+			objTree.CreateObj(dummy);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override
