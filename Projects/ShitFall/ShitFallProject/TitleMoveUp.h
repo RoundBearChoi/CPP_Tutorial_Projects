@@ -25,7 +25,7 @@ namespace RB
 
 			if (frameCount >= 31)
 			{
-				gameData.nextSceneIndex = 2;
+				gameData.nextSceneType = SceneType::GAME_SCENE;
 			}
 		}
 	};

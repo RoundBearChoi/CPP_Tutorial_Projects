@@ -1,4 +1,5 @@
 #pragma once
+#include "SceneType.h"
 
 namespace RB
 {
@@ -6,7 +7,7 @@ namespace RB
 	{
 	public:
 		int inputXAxis = 0;
-		int nextSceneIndex = 0;
+		SceneType nextSceneType = SceneType::NONE;
 		bool startGame = false;
 		bool quitGame = false;
 		bool yPressed = false;

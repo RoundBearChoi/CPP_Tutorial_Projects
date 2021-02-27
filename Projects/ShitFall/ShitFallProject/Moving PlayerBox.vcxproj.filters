@@ -237,5 +237,8 @@
     <ClInclude Include="SheetRenderer.h">
       <Filter>Source Files\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="SceneType.h">
+      <Filter>Source Files\Scene\Base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

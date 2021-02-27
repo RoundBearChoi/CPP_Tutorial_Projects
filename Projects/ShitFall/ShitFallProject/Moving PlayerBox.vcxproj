@@ -54,6 +54,7 @@
     <ClInclude Include="PlayerGameStart.h" />
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="GameObjList.h" />
+    <ClInclude Include="SceneType.h" />
     <ClInclude Include="SheetRenderer.h" />
     <ClInclude Include="ShitController.h" />
     <ClInclude Include="ShitFall.h" />

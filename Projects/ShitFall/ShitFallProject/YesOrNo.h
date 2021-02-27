@@ -36,7 +36,7 @@ namespace RB
 				{
 					gameData.quitGame = false;
 					gameData.startGame = false;
-					gameData.nextSceneIndex = 2;
+					gameData.nextSceneType = SceneType::GAME_SCENE;
 				}
 				else if (gameData.nPressed)
 				{

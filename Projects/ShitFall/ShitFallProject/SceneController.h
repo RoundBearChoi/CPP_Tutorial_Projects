@@ -2,6 +2,10 @@
 #include "Scene.h"
 #include "GameScene.h"
 #include "DevSettings.h"
+#include "SceneType.h"
+
+#include "TitleScene.h"
+#include "GameScene.h"
 
 namespace RB
 {
@@ -9,6 +13,8 @@ namespace RB
 	{
 	private:
 		Scene* currentScene = nullptr;
+		DecalLoader titleSceneDecalLoader;
+		DecalLoader gameSceneDecalLoader;
 
 	public:
 		SceneController()
@@ -23,16 +29,20 @@ namespace RB
 			delete currentScene;
 		}
 
-		template<class T>
-		void CreateScene()
+		void CreateScene(SceneType _sceneType)
 		{
 			delete currentScene;
 
-			if (std::is_base_of<Scene, T>::value)
+			if (_sceneType == SceneType::TITLE_SCENE)
 			{
-				currentScene = new T();
-				currentScene->InitScene();
+				currentScene = new TitleScene();
 			}
+			else if (_sceneType == SceneType::GAME_SCENE)
+			{
+				currentScene = new GameScene();
+			}
+
+			currentScene->InitScene();
 		}
 
 		void UpdateCurrentScene(olc::PixelGameEngine* ptrEngine, GameData& gameData, float deltaTime)

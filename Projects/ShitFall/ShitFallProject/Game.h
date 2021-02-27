@@ -2,8 +2,7 @@
 #define OLC_PGE_APPLICATION 0
 #include "olcPixelGameEngine.h"
 #include "SceneController.h"
-#include "GameScene.h"
-#include "TitleScene.h"
+#include "SceneType.h"
 #include "GameData.h"
 #include "Input.h"
 
@@ -21,7 +20,7 @@ namespace RB
 		bool OnUserCreate() override
 		{
 			sAppName = "ShitFall";
-			sceneController.CreateScene<TitleScene>();
+			sceneController.CreateScene(SceneType::TITLE_SCENE);
 			return true;
 		}
 
@@ -52,12 +51,9 @@ namespace RB
 				sceneController.RenderCurrentScene(this, fElapsedTime);
 
 				//scene transition
-				if (gameData.nextSceneIndex != 0)
+				if (gameData.nextSceneType != SceneType::NONE)
 				{
-					if (gameData.nextSceneIndex == 2)
-					{
-						sceneController.CreateScene<GameScene>();
-					}
+					sceneController.CreateScene(gameData.nextSceneType);
 				}
 
 				//only clear after update

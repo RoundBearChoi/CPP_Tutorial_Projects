@@ -51,7 +51,6 @@ namespace RB
 					IF_COUT{ std::cout << "constructing Sprite: " << path << std::endl; }
 
 					vecSpritePtr.push_back(new olc::Sprite(path));
-					
 				}
 			}
 		}
@@ -69,6 +68,11 @@ namespace RB
 		olc::Decal* GetDecal(int _index)
 		{
 			return vecDecalPtr[_index];
+		}
+
+		int GetSpriteCount()
+		{
+			return vecSpritePtr.size();
 		}
 	};
 }
