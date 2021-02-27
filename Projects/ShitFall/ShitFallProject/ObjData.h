@@ -29,7 +29,7 @@ namespace RB
 			IF_COUT{ std::cout << "destructing ObjData - CreationID: " << creationID << std::endl; }
 		}
 		
-		void QueueChildCreation(ObjSpecs _specs)
+		void AddToCreationQueue(ObjSpecs _specs)
 		{
 			vecChildQueues.push_back(_specs);
 		}

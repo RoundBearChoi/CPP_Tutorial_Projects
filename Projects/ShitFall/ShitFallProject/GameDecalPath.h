@@ -40,6 +40,10 @@ namespace RB
 			{
 				return "PNG files/idle_sheet.png";
 			}
+			else if (spriteType == GameSpriteType::y_or_n460x330)
+			{
+				return "PNG files/y_or_n460x330.png";
+			}
 
 			return "none";
 		}

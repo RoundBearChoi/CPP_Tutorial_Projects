@@ -219,5 +219,8 @@
     <ClInclude Include="SlowUpdateMessage.h">
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
+    <ClInclude Include="YesOrNo.h">
+      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

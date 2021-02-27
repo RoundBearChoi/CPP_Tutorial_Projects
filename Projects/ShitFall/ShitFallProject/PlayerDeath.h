@@ -14,6 +14,7 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerDeath" << std::endl; }
 
+			//start slowmo
 			SlowUpdateMessage shit;
 			shit.targetFrameDelay = 30;
 			shit.targetType = GameObjType::individual_shit;
@@ -29,6 +30,18 @@ namespace RB
 			objData.AddSlowMoMessage(shit);
 			objData.AddSlowMoMessage(gen);
 			objData.AddSlowMoMessage(player);
+
+			//show y or n
+			ObjSpecs specs;
+			specs.width = 460.0f;
+			specs.height = 330.0f;
+			specs.objType = GameObjType::y_or_n;
+			specs.offsetType = OffsetType::CENTER_CENTER;
+			specs.debugDecalIndex = (int)GameSpriteType::y_or_n460x330;
+			specs.controllerType = ControllerType::TITLE_UI_CONTROLLER;
+			specs.initialStateIndex = (int)UIElementStateType::Y_OR_N;
+
+			objData.AddToCreationQueue(specs);
 		}
 
 		~PlayerDeath()

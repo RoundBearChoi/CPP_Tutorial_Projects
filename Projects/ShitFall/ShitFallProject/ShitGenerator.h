@@ -65,7 +65,7 @@ namespace RB
 			specs.controllerType = ControllerType::SHIT_CONTROLLER;
 			specs.initialStateIndex = (int)ShitStateType::RANDOM_POSITION;
 
-			objData.QueueChildCreation(specs);
+			objData.AddToCreationQueue(specs);
 		}
 	};
 }

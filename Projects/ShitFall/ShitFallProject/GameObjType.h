@@ -6,11 +6,13 @@ namespace RB
 	{
 		NONE,
 
+		background,
 		title,
 		press_enter,
+		y_or_n,
 		dummy,
+
 		player,
-		background,
 		shitgroup,
 		individual_shit,
 	};

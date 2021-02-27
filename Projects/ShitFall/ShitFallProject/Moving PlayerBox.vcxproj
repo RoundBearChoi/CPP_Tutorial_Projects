@@ -72,6 +72,7 @@
     <ClInclude Include="TitleSpriteType.h" />
     <ClInclude Include="TitleIdle.h" />
     <ClInclude Include="UIElementController.h" />
+    <ClInclude Include="YesOrNo.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

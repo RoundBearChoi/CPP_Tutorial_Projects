@@ -14,6 +14,8 @@ namespace RB
 
 		FLICKER_ON,
 		FLICKER_OFF,
+
+		Y_OR_N,
 	};
 
 	enum class PlayerStateType

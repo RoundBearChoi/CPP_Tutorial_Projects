@@ -10,6 +10,7 @@ namespace RB
 		shit_box32x32,
 		pixel_run_sheet,
 		idle_sheet,
+		y_or_n460x330,
 
 		COUNT,
 	};

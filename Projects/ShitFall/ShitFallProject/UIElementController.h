@@ -8,6 +8,7 @@
 #include "TitleMoveUp.h"
 #include "TitleFlickerOn.h"
 #include "TitleFlickerOff.h"
+#include "YesOrNo.h"
 
 namespace RB
 {
@@ -53,6 +54,10 @@ namespace RB
 			else if (index == (int)UIElementStateType::FLICKER_OFF)
 			{
 				CreateState<TitleFlickerOff>(objData, index);
+			}
+			else if (index == (int)UIElementStateType::Y_OR_N)
+			{
+				CreateState<YesOrNo>(objData, index);
 			}
 		}
 	};
