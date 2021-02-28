@@ -99,7 +99,8 @@ namespace RB
 		template <class T>
 		bool CurrentStateIs()
 		{
-			if (typeid(T).name() == typeid(*currentState).name())
+			//if (typeid(T).name() == typeid(*currentState).name())
+			if (typeid(T) == typeid(*currentState))
 			{
 				return true;
 			}
