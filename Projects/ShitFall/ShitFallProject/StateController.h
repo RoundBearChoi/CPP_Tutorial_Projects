@@ -1,7 +1,6 @@
 #pragma once
 #include "GameData.h"
 #include "State.h"
-#include "StateCreator.h"
 
 namespace RB
 {
@@ -9,8 +8,6 @@ namespace RB
 	{
 	private:
 		State* currentState = nullptr;
-		StateCreator stateCreator;
-		//int currentStateIndex = 0;
 
 	public:
 		StateController()
@@ -28,7 +25,7 @@ namespace RB
 		template<class T>
 		void CreateState(ObjData& objData)
 		{
-			State* newState = stateCreator.CreateState<T>(objData);
+			State* newState = State::CreateState<T>(objData);
 
 			if (newState != nullptr)
 			{

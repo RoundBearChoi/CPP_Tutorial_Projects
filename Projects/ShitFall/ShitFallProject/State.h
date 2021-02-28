@@ -22,6 +22,19 @@ namespace RB
 
 		}
 
+		template<class T>
+		static State* CreateState(ObjData& objData)
+		{
+			if (std::is_base_of<State, T>::value)
+			{
+				return new T(objData);
+			}
+			else
+			{
+				return nullptr;
+			}
+		}
+
 		bool DeleteObj()
 		{
 			return deleteObj;

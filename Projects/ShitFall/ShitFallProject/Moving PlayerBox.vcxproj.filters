@@ -219,9 +219,6 @@
     <ClInclude Include="SceneType.h">
       <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
-    <ClInclude Include="StateCreator.h">
-      <Filter>Source Files\StateController</Filter>
-    </ClInclude>
     <ClInclude Include="StateController.h">
       <Filter>Source Files\StateController</Filter>
     </ClInclude>
