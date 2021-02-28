@@ -5,6 +5,8 @@
 
 namespace RB
 {
+	class ShitMoveDown;
+
 	class ShitPosition : public State
 	{
 	private:
@@ -41,7 +43,7 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			//objData.nextStateIndex = (int)ShitStateType::FALL;
+			nextState = State::CreateState<ShitMoveDown>(); //objData.nextStateIndex = (int)ShitStateType::FALL;
 		}
 	};
 }

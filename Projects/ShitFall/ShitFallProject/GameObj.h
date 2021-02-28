@@ -43,27 +43,6 @@ namespace RB
 			renderer.Render(engine, decal, data);
 		}
 
-		//template<class InitialState>
-		//void SetController(int _initialStateIndex)
-		//{
-		//	ptrController = new StateController();
-		//
-		//	ptrController->MakeTransition<InitialState>(data, _initialStateIndex);
-		//
-		//	//if (_controllerType == ControllerType::TITLE_UI_CONTROLLER)
-		//	//{
-		//	//	ptrController = new UIElementController(data, _initialStateIndex);
-		//	//}
-		//	//else if (_controllerType == ControllerType::PLAYER_CONTROLLER)
-		//	//{
-		//	//	ptrController = new PlayerController(data, _initialStateIndex);
-		//	//}
-		//	//else if (_controllerType == ControllerType::SHIT_CONTROLLER)
-		//	//{
-		//	//	ptrController = new ShitController(data, _initialStateIndex);
-		//	//}
-		//}
-
 		bool IsCollidingAgainst(GameObj* _target)
 		{
 			if (_target == nullptr)

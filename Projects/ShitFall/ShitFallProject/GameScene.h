@@ -12,6 +12,7 @@
 #include "ShitGenerator.h"
 #include "ShitPosition.h"
 #include "ShitMoveDown.h"
+#include "ShitSplash.h"
 
 namespace RB
 {

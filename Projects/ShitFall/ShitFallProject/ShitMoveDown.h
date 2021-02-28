@@ -3,6 +3,8 @@
 
 namespace RB
 {
+	class ShitSplash;
+
 	class ShitMoveDown : public State
 	{
 	private:
@@ -47,7 +49,7 @@ namespace RB
 				}
 				else
 				{
-					//objData.nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
+					nextState = State::CreateState<ShitSplash>();//objData.nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
 				}
 			}
 		}
