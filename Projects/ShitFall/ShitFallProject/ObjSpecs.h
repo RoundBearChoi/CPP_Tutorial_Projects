@@ -1,4 +1,5 @@
 #pragma once
+#include <any>
 #include "GameObjType.h"
 #include "OffsetType.h"
 
@@ -13,6 +14,5 @@ namespace RB
 		GameObjType objType = GameObjType::NONE;
 		OffsetType offsetType = OffsetType::NONE;
 		int decalIndex = -1;
-		//int initialStateIndex = 0;
 	};
 }

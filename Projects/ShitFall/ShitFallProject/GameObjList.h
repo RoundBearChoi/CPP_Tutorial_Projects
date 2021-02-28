@@ -41,8 +41,16 @@ namespace RB
 
 			//every obj has a state controller
 			newObj->ptrStateController = new StateController();
-			newObj->ptrStateController->CreateState<InitialState>();
-			
+
+			//if (specs.newState == nullptr)
+			{
+				newObj->ptrStateController->CreateState<InitialState>();
+			}
+			//else
+			//{
+			//	newObj->ptrStateController->SetCurrentState(specs.newState);
+			//}
+						
 			vecAllObjs.push_back(newObj);
 			SetID(newObj);
 		}
@@ -90,7 +98,7 @@ namespace RB
 			{
 				con->UpdateObj(obj->data, gameData);
 
-				//CreateObjFromQueue(obj);
+				CreateObjFromQueue(obj);
 
 				//check transition
 				con->MakeStateTransition();
@@ -140,16 +148,17 @@ namespace RB
 			}
 		}
 
-		//void CreateObjFromQueue(GameObj* obj)
-		//{
-		//	for (int i = 0; i < obj->data.GetCreationQueueCount(); i++)
-		//	{
-		//		ObjSpecs specs = obj->data.GetCreationSpecs(i);
-		//		CreateObj(specs);
-		//	}
-		//
-		//	obj->data.ClearChildQueues();
-		//}
+		void CreateObjFromQueue(GameObj* obj)
+		{
+			std::vector<State*>& vecQueues = obj->ptrStateController->GetCreationQueues();
+
+			for (int i = 0; i < vecQueues.size(); i++)
+			{
+				int n = 0;
+			}
+
+			vecQueues.clear();
+		}
 
 		GameObj* GetObj(int _index)
 		{

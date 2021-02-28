@@ -15,6 +15,7 @@ namespace RB
 	public:
 		StateAnimation stateAnimation;
 		State* nextState = nullptr;
+		std::vector<State*> vecCreateObjs;
 
 		virtual void OnEnter(ObjData& objData, GameData& gameData) = 0;
 		virtual void UpdateState(ObjData& objData, GameData& gameData) = 0;

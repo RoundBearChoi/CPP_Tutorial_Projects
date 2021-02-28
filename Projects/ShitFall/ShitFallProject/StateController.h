@@ -35,6 +35,11 @@ namespace RB
 			}
 		}
 
+		void SetCurrentState(State* state)
+		{
+			currentState = state;
+		}
+
 		void UpdateObj(ObjData& objData, GameData& gameData)
 		{
 			if (prevState == nullptr || prevState != currentState)
@@ -79,6 +84,11 @@ namespace RB
 				currentState = nextState;
 				currentState->nextState = nullptr;
 			}
+		}
+
+		std::vector<State*>& GetCreationQueues()
+		{
+			return currentState->vecCreateObjs;
 		}
 	};
 }

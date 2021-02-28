@@ -4,6 +4,8 @@
 
 namespace RB
 {
+	class ShitFall;
+
 	class ShitGenerator : public State
 	{
 	private:
@@ -32,6 +34,9 @@ namespace RB
 		void OnEnter(ObjData& objData, GameData& gameData) override
 		{
 			objData.position = { 0.0f, 350.0f };
+
+			State* newState = State::CreateState<ShitFall>();
+			vecCreateObjs.push_back(newState);
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
