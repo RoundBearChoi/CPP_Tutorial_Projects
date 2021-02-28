@@ -4,7 +4,7 @@
 
 namespace RB
 {
-	class ShitMoveDown;
+	class ShitPosition;
 
 	class ShitGenerator : public State
 	{
@@ -35,7 +35,7 @@ namespace RB
 		{
 			objData.position = { 0.0f, 350.0f };
 
-			State* newState = State::CreateState<ShitMoveDown>();
+			State* newState = State::CreateState<ShitPosition>();
 			vecCreateObjs.push_back(newState);
 		}
 
