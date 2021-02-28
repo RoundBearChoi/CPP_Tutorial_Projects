@@ -63,11 +63,6 @@ namespace RB
 			}
 		}
 
-		State* GetNextState()
-		{
-			return currentState->nextState;
-		}
-
 		void MakeStateTransition()
 		{
 			State* nextState = currentState->nextState;
