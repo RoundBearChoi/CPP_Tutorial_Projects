@@ -30,7 +30,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameData.h" />
     <ClInclude Include="GameDecalPath.h" />
-    <ClInclude Include="GameObjType.h" />
+    <ClInclude Include="ObjTag.h" />
     <ClInclude Include="GameSpriteType.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="StateController.h" />

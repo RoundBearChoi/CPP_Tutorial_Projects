@@ -83,7 +83,7 @@ namespace RB
 
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				if (!slowMotion.SkipUpdate(vecAllObjs[i]->data.objType))
+				if (!slowMotion.SkipUpdate(vecAllObjs[i]->data.objTag))
 				{
 					GameObj* obj = vecAllObjs[i];
 
@@ -143,12 +143,12 @@ namespace RB
 
 		void UpdateOnPlayerCollision(GameObj* obj)
 		{
-			if (obj->data.objType == GameObjType::individual_shit)
+			if (obj->data.objTag == ObjTag::SHIT)
 			{
 				//only check on possible top collision
 				if (obj->GetStateFrameCount() == 171)
 				{
-					GameObj* player = GetObjType(GameObjType::player);
+					GameObj* player = GetObj(ObjTag::PLAYER);
 
 					if (obj->IsCollidingAgainst(player))
 					{
@@ -168,11 +168,11 @@ namespace RB
 			return vecAllObjs[_index];
 		}
 
-		GameObj* GetObjType(GameObjType _objType)
+		GameObj* GetObj(ObjTag _tag)
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
-				if (vecAllObjs[i]->data.objType == _objType)
+				if (vecAllObjs[i]->data.objTag == _tag)
 				{
 					return vecAllObjs[i];
 				}

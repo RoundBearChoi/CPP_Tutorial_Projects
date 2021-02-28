@@ -27,15 +27,15 @@ namespace RB
 			//start slowmo
 			SlowUpdateMessage shit;
 			shit.targetFrameDelay = 50;
-			shit.targetType = GameObjType::individual_shit;
+			shit.targetType = ObjTag::SHIT;
 			
 			SlowUpdateMessage gen;
 			gen.targetFrameDelay = 50;
-			gen.targetType = GameObjType::shitgroup;
+			gen.targetType = ObjTag::SHIT_GENERATOR;
 			
 			SlowUpdateMessage player;
 			player.targetFrameDelay = 50;
-			player.targetType = GameObjType::player;
+			player.targetType = ObjTag::PLAYER;
 			
 			objData.AddSlowMoMessage(shit);
 			objData.AddSlowMoMessage(gen);
@@ -45,7 +45,7 @@ namespace RB
 			ObjSpecs specs;
 			specs.width = 460.0f;
 			specs.height = 330.0f;
-			specs.objType = GameObjType::y_or_n;
+			specs.objTag = ObjTag::UI_ELEMENT;
 			specs.offsetType = OffsetType::CENTER_CENTER;
 			specs.decalIndex = (int)GameSpriteType::y_or_n460x330;
 
@@ -58,15 +58,15 @@ namespace RB
 			{
 				SlowUpdateMessage shit;
 				shit.targetFrameDelay = 130;
-				shit.targetType = GameObjType::individual_shit;
+				shit.targetType = ObjTag::SHIT;
 			
 				SlowUpdateMessage gen;
 				gen.targetFrameDelay = 130;
-				gen.targetType = GameObjType::shitgroup;
+				gen.targetType = ObjTag::SHIT_GENERATOR;
 			
 				SlowUpdateMessage player;
 				player.targetFrameDelay = 130;
-				player.targetType = GameObjType::player;
+				player.targetType = ObjTag::PLAYER;
 			
 				objData.AddSlowMoMessage(shit);
 				objData.AddSlowMoMessage(gen);

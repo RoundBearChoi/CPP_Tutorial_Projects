@@ -1,6 +1,6 @@
 #pragma once
 #include <any>
-#include "GameObjType.h"
+#include "ObjTag.h"
 #include "OffsetType.h"
 
 namespace RB
@@ -11,7 +11,7 @@ namespace RB
 		float width = 0.0f;
 		float height = 0.0f;
 
-		GameObjType objType = GameObjType::NONE;
+		ObjTag objTag = ObjTag::NONE;
 		OffsetType offsetType = OffsetType::NONE;
 		int decalIndex = -1;
 	};

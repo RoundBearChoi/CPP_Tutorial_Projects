@@ -23,7 +23,7 @@ namespace RB
 			
 			data.objWidth = specs.width;
 			data.objHeight = specs.height;
-			data.objType = specs.objType;
+			data.objTag = specs.objTag;
 			data.offsetType = specs.offsetType;
 			data.decalIndex = specs.decalIndex;
 		}

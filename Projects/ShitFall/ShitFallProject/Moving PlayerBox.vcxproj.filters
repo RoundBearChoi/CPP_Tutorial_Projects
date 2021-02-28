@@ -96,9 +96,6 @@
     <ClInclude Include="TitleScene.h">
       <Filter>Source Files\Scene\Concrete Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjType.h">
-      <Filter>Source Files\GameObj</Filter>
-    </ClInclude>
     <ClInclude Include="ObjData.h">
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
@@ -218,6 +215,9 @@
     </ClInclude>
     <ClInclude Include="ShitMoveDown.h">
       <Filter>Source Files\State\Concrete States\Shit</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjTag.h">
+      <Filter>Source Files\GameObj</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

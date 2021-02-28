@@ -17,7 +17,7 @@ namespace RB
 			}
 		}
 
-		bool SkipUpdate(GameObjType _targetType)
+		bool SkipUpdate(ObjTag _targetType)
 		{
 			if (vecSlowUpdates.size() == 0)
 			{

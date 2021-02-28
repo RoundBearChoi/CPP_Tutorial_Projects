@@ -1,12 +1,12 @@
 #pragma once
-#include "GameObjType.h"
+#include "ObjTag.h"
 
 namespace RB
 {
 	class SlowUpdateMessage
 	{
 	public:
-		GameObjType targetType = GameObjType::NONE;
+		ObjTag targetType = ObjTag::NONE;
 		int targetFrameDelay = 0;
 	};
 }

@@ -1,5 +1,5 @@
 #pragma once
-#include "GameObjType.h"
+#include "ObjTag.h"
 
 namespace RB
 {
@@ -9,12 +9,12 @@ namespace RB
 		int counter = 0;
 		bool canUpdate = false;
 		int delayTime = 0;
-		GameObjType targetObjType = GameObjType::NONE;
+		ObjTag targetTag = ObjTag::NONE;
 
 	public:
-		SlowUpdate(GameObjType _targetType, int _targetDelay)
+		SlowUpdate(ObjTag _tag, int _targetDelay)
 		{
-			targetObjType = _targetType;
+			targetTag = _tag;
 			delayTime = _targetDelay;
 		}
 
@@ -43,14 +43,14 @@ namespace RB
 			delayTime = _delayFrames;
 		}
 
-		void SetTargetType(GameObjType _targetType)
+		void SetTargetType(ObjTag _targetTag)
 		{
-			targetObjType = _targetType;
+			targetTag = _targetTag;
 		}
 
-		GameObjType GetTargetType()
+		ObjTag GetTargetType()
 		{
-			return targetObjType;
+			return targetTag;
 		}
 	};
 }

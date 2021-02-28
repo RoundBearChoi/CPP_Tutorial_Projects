@@ -40,19 +40,19 @@ namespace RB
 
 			background.width = 600.0f;
 			background.height = 700.0f;
-			background.objType = GameObjType::background;
+			background.objTag = ObjTag::NONE;
 			background.offsetType = OffsetType::NONE;
 			background.decalIndex = (int)GameSpriteType::background;
 			
 			player.width = 50.0f;
 			player.height = 80.0f;
-			player.objType = GameObjType::player;
+			player.objTag = ObjTag::PLAYER;
 			player.offsetType = OffsetType::BOTTOM_CENTER;
 			player.decalIndex = (int)GameSpriteType::playerbox_green;
 
 			shitgroup.width = 0.0f;
 			shitgroup.height = 0.0f;
-			shitgroup.objType = GameObjType::shitgroup;
+			shitgroup.objTag = ObjTag::SHIT_GENERATOR;
 			shitgroup.offsetType = OffsetType::CENTER_CENTER;
 			shitgroup.decalIndex = (int)GameSpriteType::redbox_10x10;
 

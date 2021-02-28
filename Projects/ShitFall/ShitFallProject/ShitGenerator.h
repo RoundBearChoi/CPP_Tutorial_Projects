@@ -1,6 +1,6 @@
 #pragma once
 #include "State.h"
-#include "GameObjType.h"
+#include "ObjTag.h"
 
 namespace RB
 {
@@ -34,17 +34,6 @@ namespace RB
 		void OnEnter(ObjData& objData, GameData& gameData) override
 		{
 			objData.position = { 0.0f, 350.0f };
-
-			//State* newState = State::CreateState<ShitPosition>();
-			//vecCreateObjs.push_back(newState);
-			//
-			//ObjSpecs specs;
-			//specs.width = 37.0f;
-			//specs.height = 37.0f;
-			//specs.objType = GameObjType::individual_shit;
-			//specs.offsetType = OffsetType::CENTER_CENTER;
-			//specs.decalIndex = (int)GameSpriteType::shit_box32x32;
-			//vecCreationSpecs.push_back(specs);
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
@@ -77,7 +66,7 @@ namespace RB
 			ObjSpecs specs;
 			specs.width = 37.0f;
 			specs.height = 37.0f;
-			specs.objType = GameObjType::individual_shit;
+			specs.objTag = ObjTag::SHIT;
 			specs.offsetType = OffsetType::CENTER_CENTER;
 			specs.decalIndex = (int)GameSpriteType::shit_box32x32;
 			vecCreationSpecs.push_back(specs);
