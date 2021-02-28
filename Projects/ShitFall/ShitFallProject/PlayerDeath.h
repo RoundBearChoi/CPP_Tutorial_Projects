@@ -60,15 +60,15 @@ namespace RB
 			if (slowDownTimer == 0)
 			{
 				SlowUpdateMessage shit;
-				shit.targetFrameDelay = 130;
+				shit.targetFrameDelay = 80;
 				shit.targetType = ObjTag::SHIT;
 			
 				SlowUpdateMessage gen;
-				gen.targetFrameDelay = 130;
+				gen.targetFrameDelay = 80;
 				gen.targetType = ObjTag::SHIT_GENERATOR;
 			
 				SlowUpdateMessage player;
-				player.targetFrameDelay = 130;
+				player.targetFrameDelay = 80;
 				player.targetType = ObjTag::PLAYER;
 			
 				objData.AddSlowMoMessage(shit);

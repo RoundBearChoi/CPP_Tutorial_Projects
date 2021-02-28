@@ -89,8 +89,10 @@ namespace RB
 
 					if (obj != nullptr)
 					{
-						UpdateState(obj, i, gameData);
 						UpdateOnPlayerCollision(obj);
+
+						UpdateState(obj, i, gameData);
+						
 						slowMotion.AddSlowMo(obj);
 
 						if (DeleteObj(obj))
@@ -146,7 +148,7 @@ namespace RB
 			if (obj->data.objTag == ObjTag::SHIT)
 			{
 				//only check on possible top collision
-				if (obj->GetStateFrameCount() == 171)
+				if (obj->GetStateFrameCount() == 170)
 				{
 					GameObj* player = GetObj(ObjTag::PLAYER);
 
