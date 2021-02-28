@@ -42,7 +42,7 @@ namespace RB
 				}
 				else
 				{
-					objData.nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
+					//objData.nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
 				}
 			}
 		}

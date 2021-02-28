@@ -30,8 +30,6 @@ namespace RB
 			if (newState != nullptr)
 			{
 				delete currentState;
-				//currentStateIndex = index;
-
 				currentState = newState;
 			}
 		}

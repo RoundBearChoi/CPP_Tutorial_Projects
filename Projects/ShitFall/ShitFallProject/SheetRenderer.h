@@ -11,9 +11,9 @@ namespace RB
 	public:
 		void Render(olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader, GameObj* obj)
 		{
-			if (obj->ptrController != nullptr)
+			if (obj->ptrStateController != nullptr)
 			{
-				AnimationData* data = obj->ptrController->GetStateRenderData();
+				AnimationData* data = obj->ptrStateController->GetStateRenderData();
 
 				if (data != nullptr)
 				{

@@ -10,6 +10,7 @@
 #include "PlayerMoveLeft.h"
 #include "PlayerMoveRight.h"
 #include "ShitGenerator.h"
+#include "ShitFall.h"
 
 namespace RB
 {

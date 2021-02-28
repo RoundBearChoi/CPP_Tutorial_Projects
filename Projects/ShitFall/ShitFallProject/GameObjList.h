@@ -40,8 +40,8 @@ namespace RB
 			GameObj* newObj = new GameObj(specs);
 
 			//every obj has a state controller
-			newObj->ptrController = new StateController();
-			newObj->ptrController->CreateState<InitialState>(newObj->data);
+			newObj->ptrStateController = new StateController();
+			newObj->ptrStateController->CreateState<InitialState>(newObj->data);
 
 			vecAllObjs.push_back(newObj);
 			SetID(newObj);
@@ -84,7 +84,7 @@ namespace RB
 
 		void UpdateState(GameObj* obj, int objIndex, GameData& gameData)
 		{
-			StateController* con = obj->ptrController;
+			StateController* con = obj->ptrStateController;
 
 			if (con != nullptr)
 			{
@@ -105,7 +105,7 @@ namespace RB
 
 		bool DeleteObj(GameObj* obj)
 		{
-			StateController* con = obj->ptrController;
+			StateController* con = obj->ptrStateController;
 
 			if (con != nullptr)
 			{

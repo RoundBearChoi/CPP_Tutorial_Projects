@@ -56,6 +56,7 @@ namespace RB
 		void QueueGenerate(ObjData& objData)
 		{
 			ObjSpecs specs;
+
 			specs.width = 37.0f;
 			specs.height = 37.0f;
 			specs.objType = GameObjType::individual_shit;

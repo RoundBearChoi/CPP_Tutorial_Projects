@@ -15,7 +15,7 @@ namespace RB
 
 	public:
 		ObjData data;
-		StateController* ptrController = nullptr;
+		StateController* ptrStateController = nullptr;
 
 		GameObj(const ObjSpecs& specs)
 		{
@@ -32,9 +32,9 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "destructing GameObj" << std::endl; }
 
-			if (ptrController != nullptr)
+			if (ptrStateController != nullptr)
 			{
-				delete ptrController;
+				delete ptrStateController;
 			}
 		}
 
@@ -99,9 +99,9 @@ namespace RB
 
 		int GetStateFrameCount()
 		{
-			if (ptrController != nullptr)
+			if (ptrStateController != nullptr)
 			{
-				return ptrController->GetStateFrameCount();
+				return ptrStateController->GetStateFrameCount();
 			}
 			else
 			{
