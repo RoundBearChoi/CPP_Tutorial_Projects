@@ -31,33 +31,36 @@ namespace RB
 
 		void MakeTransition(ObjData& objData, int index) override
 		{
+			delete currentState;
+			currentStateIndex = index;
+
 			if (index == (int)UIElementStateType::BACKGROUND_IDLE)
 			{
-				CreateState<BackgroundIdle>(objData, index);
+				currentState = stateCreator.CreateState<BackgroundIdle>(objData);
 			}
 			else if (index == (int)UIElementStateType::TEXT_IDLE)
 			{
-				CreateState<TitleIdle>(objData, index);
+				currentState = stateCreator.CreateState<TitleIdle>(objData);
 			}
 			else if (index == (int)UIElementStateType::MOVE_DOWN)
 			{
-				CreateState<TitleMoveDown>(objData, index);
+				currentState = stateCreator.CreateState<TitleMoveDown>(objData);
 			}
 			else if (index == (int)UIElementStateType::MOVE_UP)
 			{
-				CreateState<TitleMoveUp>(objData, index);
+				currentState = stateCreator.CreateState<TitleMoveUp>(objData);
 			}
 			else if (index == (int)UIElementStateType::FLICKER_ON)
 			{
-				CreateState<TitleFlickerOn>(objData, index);
+				currentState = stateCreator.CreateState<TitleFlickerOn>(objData);
 			}
 			else if (index == (int)UIElementStateType::FLICKER_OFF)
 			{
-				CreateState<TitleFlickerOff>(objData, index);
+				currentState = stateCreator.CreateState<TitleFlickerOff>(objData);
 			}
 			else if (index == (int)UIElementStateType::Y_OR_N)
 			{
-				CreateState<YesOrNo>(objData, index);
+				currentState = stateCreator.CreateState<YesOrNo>(objData);
 			}
 		}
 	};

@@ -240,5 +240,8 @@
     <ClInclude Include="StateController.h">
       <Filter>Source Files\StateController\Base</Filter>
     </ClInclude>
+    <ClInclude Include="StateCreator.h">
+      <Filter>Source Files\StateController\Base</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

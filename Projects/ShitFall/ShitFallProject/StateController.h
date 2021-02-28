@@ -1,6 +1,7 @@
 #pragma once
 #include "GameData.h"
 #include "State.h"
+#include "StateCreator.h"
 
 namespace RB
 {
@@ -9,6 +10,7 @@ namespace RB
 	protected:
 		State* currentState = nullptr;
 		int currentStateIndex = 0;
+		StateCreator stateCreator;
 
 	public:
 		virtual void MakeTransition(ObjData& objData, int index) = 0;
@@ -21,18 +23,6 @@ namespace RB
 		void UpdateObj(ObjData& objData, GameData& gameData)
 		{
 			currentState->UpdateState(objData, gameData);
-		}
-
-		template<class T>
-		void CreateState(ObjData& objData, int _stateIndex)
-		{
-			delete currentState;
-
-			if (std::is_base_of<State, T>::value)
-			{
-				currentState = new T(objData);
-				currentStateIndex = _stateIndex;
-			}
 		}
 
 		bool DeleteObj()

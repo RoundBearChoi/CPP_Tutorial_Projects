@@ -29,21 +29,24 @@ namespace RB
 
 		void MakeTransition(ObjData& objData, int index) override
 		{
+			delete currentState;
+			currentStateIndex = index;
+
 			if (index == (int)ShitStateType::GENERATOR)
 			{
-				CreateState<ShitGenerator>(objData, index);
+				currentState = stateCreator.CreateState<ShitGenerator>(objData);
 			}
 			else if (index == (int)ShitStateType::RANDOM_POSITION)
 			{
-				CreateState<ShitPosition>(objData, index);
+				currentState = stateCreator.CreateState<ShitPosition>(objData);
 			}
 			else if (index == (int)ShitStateType::FALL)
 			{
-				CreateState<ShitFall>(objData, index);
+				currentState = stateCreator.CreateState<ShitFall>(objData);
 			}
 			else if (index == (int)ShitStateType::SHIT_SPLASH)
 			{
-				CreateState<ShitSplash>(objData, index);
+				currentState = stateCreator.CreateState<ShitSplash>(objData);
 			}
 		}
 	};

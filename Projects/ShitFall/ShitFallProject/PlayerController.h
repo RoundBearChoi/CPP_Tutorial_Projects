@@ -32,29 +32,32 @@ namespace RB
 
 		void MakeTransition(ObjData& objData, int index) override
 		{
+			delete currentState;
+			currentStateIndex = index;
+
 			if (index == (int)PlayerStateType::DUMMY)
 			{
-				CreateState<PlayerDummy>(objData, index);
+				currentState = stateCreator.CreateState<PlayerDummy>(objData);
 			}
 			else if (index == (int)PlayerStateType::GAME_START)
 			{
-				CreateState<PlayerGameStart>(objData, index);
+				currentState = stateCreator.CreateState<PlayerGameStart>(objData);
 			}
 			else if (index == (int)PlayerStateType::IDLE)
 			{
-				CreateState<PlayerIdle>(objData, index);
+				currentState = stateCreator.CreateState<PlayerIdle>(objData);
 			}
 			else if (index == (int)PlayerStateType::MOVE_LEFT)
 			{
-				CreateState<PlayerMoveLeft>(objData, index);
+				currentState = stateCreator.CreateState<PlayerMoveLeft>(objData);
 			}
 			else if (index == (int)PlayerStateType::MOVE_RIGHT)
 			{
-				CreateState<PlayerMoveRight>(objData, index);
+				currentState = stateCreator.CreateState<PlayerMoveRight>(objData);
 			}
 			else if (index == (int)PlayerStateType::DEAD)
 			{
-				CreateState<PlayerDeath>(objData, index);
+				currentState = stateCreator.CreateState<PlayerDeath>(objData);
 			}
 		}
 	};
