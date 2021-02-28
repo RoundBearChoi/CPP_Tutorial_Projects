@@ -6,6 +6,8 @@
 
 namespace RB
 {
+	class YesOrNo;
+
 	class PlayerDeath : public State
 	{
 	private:
@@ -42,14 +44,16 @@ namespace RB
 			objData.AddSlowMoMessage(player);
 			
 			//show y or n
+			State* newState = State::CreateState<YesOrNo>();
+			vecCreateObjs.push_back(newState);
+
 			ObjSpecs specs;
 			specs.width = 460.0f;
 			specs.height = 330.0f;
 			specs.objTag = ObjTag::UI_ELEMENT;
 			specs.offsetType = OffsetType::CENTER_CENTER;
 			specs.decalIndex = (int)GameSpriteType::y_or_n460x330;
-
-			//objData.AddToCreationQueue(specs);
+			vecCreationSpecs.push_back(specs);
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

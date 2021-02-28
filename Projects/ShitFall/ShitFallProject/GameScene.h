@@ -14,6 +14,7 @@
 #include "ShitMoveDown.h"
 #include "ShitSplash.h"
 #include "PlayerDeath.h"
+#include "YesOrNo.h"
 
 namespace RB
 {
