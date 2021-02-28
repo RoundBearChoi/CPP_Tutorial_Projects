@@ -180,9 +180,6 @@
     <ClInclude Include="PlayerMoveRight.h">
       <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
-    <ClInclude Include="ShitFall.h">
-      <Filter>Source Files\State\Concrete States\Shit</Filter>
-    </ClInclude>
     <ClInclude Include="ShitGenerator.h">
       <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
@@ -218,6 +215,9 @@
     </ClInclude>
     <ClInclude Include="StateController.h">
       <Filter>Source Files\StateController</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitMoveDown.h">
+      <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

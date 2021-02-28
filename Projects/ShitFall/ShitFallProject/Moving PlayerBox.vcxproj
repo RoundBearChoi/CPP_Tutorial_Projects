@@ -53,7 +53,7 @@
     <ClInclude Include="GameObjList.h" />
     <ClInclude Include="SceneType.h" />
     <ClInclude Include="SheetRenderer.h" />
-    <ClInclude Include="ShitFall.h" />
+    <ClInclude Include="ShitMoveDown.h" />
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitPosition.h" />
     <ClInclude Include="ShitSplash.h" />
