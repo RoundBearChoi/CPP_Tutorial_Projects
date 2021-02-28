@@ -17,20 +17,11 @@
     <Filter Include="Source Files\GameObj">
       <UniqueIdentifier>{9780838e-ea8c-45ff-8f52-c71cada44b7d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ObjControllers">
-      <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ObjControllers\Base">
-      <UniqueIdentifier>{e267ff07-237a-4651-96b4-8a4f1d11ab29}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\DecalLoader">
       <UniqueIdentifier>{dc2ae99d-e6d1-4107-a520-cdf804b2d0e9}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\DecalLoader\Base">
       <UniqueIdentifier>{76fe0e98-f104-4caa-acd4-9d7b6d196392}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\ObjControllers\ConcreteControllers">
-      <UniqueIdentifier>{e75bbac3-9872-4c8a-979f-968efed4cccf}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\GameObj\Info">
       <UniqueIdentifier>{292fb07c-a99d-409c-b1e7-78b3e1e6d7de}</UniqueIdentifier>
@@ -68,6 +59,15 @@
     <Filter Include="Source Files\Renderer">
       <UniqueIdentifier>{2c771001-1e22-419e-82a8-8f47a89b7f82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\StateController">
+      <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StateController\Base">
+      <UniqueIdentifier>{e267ff07-237a-4651-96b4-8a4f1d11ab29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StateController\ConcreteControllers">
+      <UniqueIdentifier>{e75bbac3-9872-4c8a-979f-968efed4cccf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -103,13 +103,13 @@
       <Filter>Source Files\Scene\Concrete Scenes</Filter>
     </ClInclude>
     <ClInclude Include="ControllerType.h">
-      <Filter>Source Files\ObjControllers\Base</Filter>
+      <Filter>Source Files\StateController\Base</Filter>
     </ClInclude>
     <ClInclude Include="GameObjType.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
     <ClInclude Include="PlayerController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+      <Filter>Source Files\StateController\ConcreteControllers</Filter>
     </ClInclude>
     <ClInclude Include="ObjData.h">
       <Filter>Source Files\GameObj\Info</Filter>
@@ -157,10 +157,10 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="ShitController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+      <Filter>Source Files\StateController\ConcreteControllers</Filter>
     </ClInclude>
     <ClInclude Include="UIElementController.h">
-      <Filter>Source Files\ObjControllers\ConcreteControllers</Filter>
+      <Filter>Source Files\StateController\ConcreteControllers</Filter>
     </ClInclude>
     <ClInclude Include="BackgroundIdle.h">
       <Filter>Source Files\States\Concrete States\UIElements</Filter>
@@ -238,7 +238,7 @@
       <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
     <ClInclude Include="StateController.h">
-      <Filter>Source Files\ObjControllers\Base</Filter>
+      <Filter>Source Files\StateController\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
