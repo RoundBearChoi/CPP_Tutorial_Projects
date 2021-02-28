@@ -90,5 +90,10 @@ namespace RB
 		{
 			return currentState->vecCreateObjs;
 		}
+
+		std::vector<ObjSpecs>& GetCreationSpecs()
+		{
+			return currentState->vecCreationSpecs;
+		}
 	};
 }

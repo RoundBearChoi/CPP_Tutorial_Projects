@@ -16,6 +16,23 @@ namespace RB
 		SlowMotion slowMotion;
 		SheetRenderer sheetRenderer;
 
+		void CreateObjFromQueue(GameObj* obj)
+		{
+			std::vector<State*>& vecQueues = obj->ptrStateController->GetCreationQueues();
+			std::vector<ObjSpecs>& vecSpecs = obj->ptrStateController->GetCreationSpecs();
+
+			for (int i = 0; i < vecQueues.size(); i++)
+			{
+				if (vecSpecs.size() > i)
+				{
+					CreateObj(vecSpecs[i], vecQueues[i]);
+				}
+			}
+
+			vecQueues.clear();
+			vecSpecs.clear();
+		}
+
 	public:
 		GameObjList()
 		{
@@ -34,36 +51,28 @@ namespace RB
 		}
 
 		template<class InitialState>
-		void CreateObj(const ObjSpecs& specs, State* existingState = nullptr)
+		void CreateObj(const ObjSpecs& specs)
 		{
 			GameObj* obj = new GameObj(specs);
 
 			//every obj has a state controller
 			obj->ptrStateController = new StateController();
-
-			if (existingState == nullptr)
-			{
-				obj->ptrStateController->CreateState<InitialState>();
-			}
-			else
-			{
-				obj->ptrStateController->SetCurrentState(existingState);
-			}
+			obj->ptrStateController->CreateState<InitialState>();
 						
 			vecAllObjs.push_back(obj);
 			SetID(obj);
 		}
 
-		void CreateObjFromQueue(GameObj* obj)
+		void CreateObj(const ObjSpecs& specs, State* existingState)
 		{
-			std::vector<State*>& vecQueues = obj->ptrStateController->GetCreationQueues();
+			GameObj* obj = new GameObj(specs);
 
-			for (int i = 0; i < vecQueues.size(); i++)
-			{
-				int n = 0;
-			}
+			//every obj has a state controller
+			obj->ptrStateController = new StateController();
+			obj->ptrStateController->SetCurrentState(existingState);
 
-			vecQueues.clear();
+			vecAllObjs.push_back(obj);
+			SetID(obj);
 		}
 
 		void UpdateObjs(GameData& gameData)
