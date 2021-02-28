@@ -8,6 +8,7 @@ namespace RB
 	{
 	private:
 		State* currentState = nullptr;
+		State* prevState = nullptr;
 
 	public:
 		StateController()
@@ -23,9 +24,9 @@ namespace RB
 		}
 
 		template<class T>
-		void CreateState(ObjData& objData)
+		void CreateState()
 		{
-			State* newState = State::CreateState<T>(objData);
+			State* newState = State::CreateState<T>();
 
 			if (newState != nullptr)
 			{
@@ -36,7 +37,14 @@ namespace RB
 
 		void UpdateObj(ObjData& objData, GameData& gameData)
 		{
+			if (prevState == nullptr || prevState != currentState)
+			{
+				currentState->OnEnter(objData, gameData);
+			}
+
 			currentState->UpdateState(objData, gameData);
+
+			prevState = currentState;
 		}
 
 		bool DeleteObj()

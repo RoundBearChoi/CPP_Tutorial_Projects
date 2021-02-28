@@ -42,7 +42,6 @@
     <ClInclude Include="PlayerMoveLeft.h" />
     <ClInclude Include="PlayerMoveRight.h" />
     <ClInclude Include="GameScene.h" />
-    <ClInclude Include="PlayerWhiteScreen.h" />
     <ClInclude Include="RandomInteger.h" />
     <ClInclude Include="OffsetType.h" />
     <ClInclude Include="Renderer.h" />

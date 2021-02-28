@@ -9,7 +9,7 @@ namespace RB
 		float speed = 1.0f;
 
 	public:
-		ShitFall(ObjData& objData)
+		ShitFall()
 		{
 			IF_COUT{ std::cout << "constructing State: ShitFall" << std::endl; }
 
@@ -23,6 +23,11 @@ namespace RB
 				std::cout << std::endl;
 				std::cout << "destructing State: ShitFall" << std::endl;
 			}
+		}
+
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

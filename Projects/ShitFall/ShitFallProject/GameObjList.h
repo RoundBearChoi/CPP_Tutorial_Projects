@@ -41,8 +41,8 @@ namespace RB
 
 			//every obj has a state controller
 			newObj->ptrStateController = new StateController();
-			newObj->ptrStateController->CreateState<InitialState>(newObj->data);
-
+			newObj->ptrStateController->CreateState<InitialState>();
+			
 			vecAllObjs.push_back(newObj);
 			SetID(newObj);
 		}

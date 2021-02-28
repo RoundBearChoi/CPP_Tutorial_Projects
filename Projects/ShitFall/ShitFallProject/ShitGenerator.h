@@ -11,15 +11,13 @@ namespace RB
 		int difficultyCounter = 0;
 
 	public:
-		ShitGenerator(ObjData& objData)
+		ShitGenerator()
 		{
 			IF_COUT
 			{
 				std::cout << std::endl;
 				std::cout << "constructing State: ShitGenerator" << std::endl;
 			}
-
-			objData.position = { 0.0f, 350.0f };
 		}
 
 		~ShitGenerator()
@@ -29,6 +27,11 @@ namespace RB
 				std::cout << std::endl;
 				std::cout << "destructing State: ShitGenerator" << std::endl;
 			}
+		}
+
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+			objData.position = { 0.0f, 350.0f };
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

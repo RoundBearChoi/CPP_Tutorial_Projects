@@ -6,7 +6,7 @@ namespace RB
 	class TitleMoveUp : public State
 	{
 	public:
-		TitleMoveUp(ObjData& objData)
+		TitleMoveUp()
 		{
 			IF_COUT{ std::cout << "constructing State: TitleMoveUp" << std::endl; }
 
@@ -16,6 +16,11 @@ namespace RB
 		~TitleMoveUp()
 		{
 			IF_COUT{ std::cout << "destructing State: TitleMoveUp" << std::endl; }
+		}
+
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

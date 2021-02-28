@@ -6,7 +6,7 @@ namespace RB
 	class ShitSplash : public State
 	{
 	public:
-		ShitSplash(ObjData& objData)
+		ShitSplash()
 		{
 			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
 		}
@@ -18,6 +18,11 @@ namespace RB
 				std::cout << std::endl;
 				std::cout << "destructing State: ShitSplash" << std::endl;
 			}
+		}
+
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

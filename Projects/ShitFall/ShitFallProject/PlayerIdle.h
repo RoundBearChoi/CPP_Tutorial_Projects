@@ -11,7 +11,7 @@ namespace RB
 	class PlayerIdle : public State
 	{
 	public:
-		PlayerIdle(ObjData& objData)
+		PlayerIdle()
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerIdle" << std::endl; }
 
@@ -24,16 +24,21 @@ namespace RB
 			IF_COUT{ std::cout << "destructing State: PlayerIdle" << std::endl; }
 		}
 
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+
+		}
+
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
 			if (gameData.inputXAxis < 0)
 			{
-				nextState = State::CreateState<PlayerMoveLeft>(objData);
+				nextState = State::CreateState<PlayerMoveLeft>();
 			}
 
 			if (gameData.inputXAxis > 0)
 			{
-				nextState = State::CreateState<PlayerMoveRight>(objData);
+				nextState = State::CreateState<PlayerMoveRight>();
 			}
 		}
 	};

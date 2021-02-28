@@ -12,10 +12,18 @@ namespace RB
 		int slowDownTimer = 0;
 
 	public:
-		PlayerDeath(ObjData& objData)
+		PlayerDeath()
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerDeath" << std::endl; }
+		}
 
+		~PlayerDeath()
+		{
+			IF_COUT{ std::cout << "destructing State: PlayerDeath" << std::endl; }
+		}
+
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
 			//start slowmo
 			SlowUpdateMessage shit;
 			shit.targetFrameDelay = 50;
@@ -42,11 +50,6 @@ namespace RB
 			specs.decalIndex = (int)GameSpriteType::y_or_n460x330;
 
 			//objData.AddToCreationQueue(specs);
-		}
-
-		~PlayerDeath()
-		{
-			IF_COUT{ std::cout << "destructing State: PlayerDeath" << std::endl; }
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

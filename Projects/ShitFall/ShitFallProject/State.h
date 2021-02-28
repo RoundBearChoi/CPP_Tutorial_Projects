@@ -16,6 +16,7 @@ namespace RB
 		StateAnimation stateAnimation;
 		State* nextState = nullptr;
 
+		virtual void OnEnter(ObjData& objData, GameData& gameData) = 0;
 		virtual void UpdateState(ObjData& objData, GameData& gameData) = 0;
 
 		virtual ~State()
@@ -24,11 +25,11 @@ namespace RB
 		}
 
 		template<class T>
-		static State* CreateState(ObjData& objData)
+		static State* CreateState()
 		{
 			if (std::is_base_of<State, T>::value)
 			{
-				return new T(objData);
+				return new T();
 			}
 			else
 			{

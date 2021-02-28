@@ -11,18 +11,21 @@ namespace RB
 		float speed = 16.5f;
 
 	public:
-		YesOrNo(ObjData& objData)
+		YesOrNo()
 		{
 			IF_COUT{ std::cout << "constructing State: YesOrNo" << std::endl; }
 
 			stateAnimation.SetParams((int)GameSpriteType::shit_restart, 460, 330, 1, 1, 1, false);
-
-			objData.position = { 300.0f, -165.0f };
 		}
 
 		~YesOrNo()
 		{
 			IF_COUT{ std::cout << "destructing State: YesOrNo" << std::endl; }
+		}
+
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+			objData.position = { 300.0f, -165.0f };
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

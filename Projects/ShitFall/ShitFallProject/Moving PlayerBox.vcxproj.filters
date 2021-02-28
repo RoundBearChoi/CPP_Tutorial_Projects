@@ -180,9 +180,6 @@
     <ClInclude Include="PlayerMoveRight.h">
       <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerWhiteScreen.h">
-      <Filter>Source Files\State\Concrete States\Player</Filter>
-    </ClInclude>
     <ClInclude Include="ShitFall.h">
       <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>

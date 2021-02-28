@@ -11,7 +11,7 @@ namespace RB
 		float speed = 3.0f;
 
 	public:
-		TitleMoveDown(ObjData& objData)
+		TitleMoveDown()
 		{
 			IF_COUT{ std::cout << "constructing State: TitleMoveDown" << std::endl; }
 
@@ -23,6 +23,11 @@ namespace RB
 			IF_COUT{ std::cout << "destructing State: TitleMoveDown" << std::endl; }
 		}
 
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+
+		}
+
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
 			frameCount++;
@@ -32,7 +37,7 @@ namespace RB
 
 			if (frameCount >= 30)
 			{
-				nextState = State::CreateState<TitleMoveUp>(objData);
+				nextState = State::CreateState<TitleMoveUp>();
 			}
 		}
 	};

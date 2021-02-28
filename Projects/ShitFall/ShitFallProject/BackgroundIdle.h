@@ -8,7 +8,7 @@ namespace RB
 	class BackgroundIdle : public State
 	{
 	public:
-		BackgroundIdle(ObjData& objData)
+		BackgroundIdle()
 		{
 			IF_COUT{ std::cout << "constructing State: BackgroundIdle" << std::endl; }
 		}
@@ -16,6 +16,11 @@ namespace RB
 		~BackgroundIdle()
 		{
 			IF_COUT{ std::cout << "destructing State: BackgroundIdle" << std::endl; }
+		}
+
+		void OnEnter(ObjData& objData, GameData& gameData) override
+		{
+
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
