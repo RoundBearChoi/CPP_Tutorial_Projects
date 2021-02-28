@@ -8,7 +8,8 @@
 #include "TitleIdle.h"
 #include "TitleMoveDown.h"
 #include "TitleMoveUp.h"
-#include "TitleFlickerOn.h"
+#include "PressEnterOn.h"
+#include "PressEnterOff.h"
 #include "PlayerDummy.h"
 
 namespace RB
@@ -61,7 +62,7 @@ namespace RB
 			
 			objList.CreateObj<BackgroundIdle>(background);
 			objList.CreateObj<TitleIdle>(title);
-			objList.CreateObj<TitleFlickerOn>(pressEnter);
+			objList.CreateObj<PressEnterOn>(pressEnter);
 			objList.CreateObj<PlayerDummy>(dummy);
 		}
 

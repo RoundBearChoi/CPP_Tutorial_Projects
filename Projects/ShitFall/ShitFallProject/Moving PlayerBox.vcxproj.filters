@@ -144,12 +144,6 @@
     <ClInclude Include="PlayerDummy.h">
       <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
-    <ClInclude Include="TitleFlickerOff.h">
-      <Filter>Source Files\State\Concrete States\UIElements</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleFlickerOn.h">
-      <Filter>Source Files\State\Concrete States\UIElements</Filter>
-    </ClInclude>
     <ClInclude Include="TitleIdle.h">
       <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
@@ -215,6 +209,12 @@
     </ClInclude>
     <ClInclude Include="StateController.h">
       <Filter>Source Files\State\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="PressEnterOn.h">
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="PressEnterOff.h">
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

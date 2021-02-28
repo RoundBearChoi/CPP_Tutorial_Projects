@@ -4,15 +4,17 @@
 
 namespace RB
 {
-	class TitleFlickerOff : public State
+	class PressEnterOn;
+
+	class PressEnterOff : public State
 	{
 	public:
-		TitleFlickerOff()
+		PressEnterOff()
 		{
 			IF_COUT{ std::cout << "constructing State: TitleFlickerOff" << std::endl; }
 		}
 
-		~TitleFlickerOff()
+		~PressEnterOff()
 		{
 			IF_COUT{ std::cout << "destructing State: TitleFlickerOff" << std::endl; }
 		}
@@ -31,7 +33,7 @@ namespace RB
 				if (frameCount >= 55)
 				{
 					frameCount = 0;
-					//objData.nextStateIndex = (int)UIElementStateType::FLICKER_ON;
+					nextState = State::CreateState<PressEnterOn>();
 				}
 			}
 		}

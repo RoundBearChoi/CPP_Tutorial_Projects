@@ -4,17 +4,19 @@
 
 namespace RB
 {
-	class TitleFlickerOn : public State
+	class PressEnterOff;
+
+	class PressEnterOn : public State
 	{
 	public:
-		TitleFlickerOn()
+		PressEnterOn()
 		{
 			IF_COUT{ std::cout << "constructing State: TitleFlickerOn" << std::endl; }
 
 			stateAnimation.SetParams((int)TitleSpriteType::pressenter, 300, 90, 1, 1, 1, false);
 		}
 
-		~TitleFlickerOn()
+		~PressEnterOn()
 		{
 			IF_COUT{ std::cout << "destructing State: TitleFlickerOn" << std::endl; }
 		}
@@ -28,7 +30,7 @@ namespace RB
 		{
 			if (gameData.startGame)
 			{
-				//objData.nextStateIndex = (int)UIElementStateType::FLICKER_OFF;
+				nextState = State::CreateState<PressEnterOff>();
 			}
 			else
 			{
@@ -37,7 +39,7 @@ namespace RB
 				if (frameCount >= 90)
 				{
 					frameCount = 0;
-					//objData.nextStateIndex = (int)UIElementStateType::FLICKER_OFF;
+					nextState = State::CreateState<PressEnterOff>();
 				}
 			}
 		}
