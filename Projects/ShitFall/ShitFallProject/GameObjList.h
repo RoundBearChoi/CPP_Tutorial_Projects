@@ -59,8 +59,8 @@ namespace RB
 
 					if (obj != nullptr)
 					{
-						UpdateOnPlayerCollision(obj);
 						UpdateState(obj, i, gameData);
+						UpdateOnPlayerCollision(obj);
 						slowMotion.AddSlowMo(obj);
 
 						if (DeleteObj(obj))
