@@ -6,6 +6,8 @@
 
 #include "BackgroundIdle.h"
 #include "TitleIdle.h"
+#include "TitleMoveDown.h"
+#include "TitleMoveUp.h"
 #include "TitleFlickerOn.h"
 #include "PlayerDummy.h"
 

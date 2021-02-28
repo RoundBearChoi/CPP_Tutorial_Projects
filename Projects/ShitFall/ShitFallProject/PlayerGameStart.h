@@ -4,6 +4,8 @@
 
 namespace RB
 {
+	class PlayerIdle;
+
 	class PlayerGameStart : public State
 	{
 	public:
@@ -32,7 +34,7 @@ namespace RB
 			
 			if (frameCount >= 50)
 			{
-				//objData.nextStateIndex = (int)PlayerStateType::IDLE;
+				nextState = State::CreateState<PlayerIdle>(objData);
 			}
 		}
 	};

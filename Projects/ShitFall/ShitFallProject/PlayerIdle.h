@@ -5,6 +5,9 @@
 
 namespace RB
 {
+	class PlayerMoveLeft;
+	class PlayerMoveRight;
+
 	class PlayerIdle : public State
 	{
 	public:
@@ -25,12 +28,12 @@ namespace RB
 		{
 			if (gameData.inputXAxis < 0)
 			{
-				objData.nextStateIndex = (int)PlayerStateType::MOVE_LEFT;
+				nextState = State::CreateState<PlayerMoveLeft>(objData);
 			}
 
 			if (gameData.inputXAxis > 0)
 			{
-				objData.nextStateIndex = (int)PlayerStateType::MOVE_RIGHT;
+				nextState = State::CreateState<PlayerMoveRight>(objData);
 			}
 		}
 	};

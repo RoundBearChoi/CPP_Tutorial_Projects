@@ -6,6 +6,9 @@
 
 #include "BackgroundIdle.h"
 #include "PlayerGameStart.h"
+#include "PlayerIdle.h"
+#include "PlayerMoveLeft.h"
+#include "PlayerMoveRight.h"
 #include "ShitGenerator.h"
 
 namespace RB
