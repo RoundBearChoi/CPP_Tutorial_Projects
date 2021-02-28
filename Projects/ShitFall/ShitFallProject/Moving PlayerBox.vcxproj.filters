@@ -117,9 +117,6 @@
     <ClInclude Include="TitleSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
-    <ClInclude Include="StateType.h">
-      <Filter>Source Files\State\Base</Filter>
-    </ClInclude>
     <ClInclude Include="AnimationData.h">
       <Filter>Source Files\State\Base</Filter>
     </ClInclude>

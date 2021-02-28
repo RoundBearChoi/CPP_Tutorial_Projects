@@ -2,7 +2,6 @@
 #include "State.h"
 #include "SlowUpdateMessage.h"
 #include "GameSpriteType.h"
-#include "StateType.h"
 
 namespace RB
 {

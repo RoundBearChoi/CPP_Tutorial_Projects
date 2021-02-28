@@ -38,8 +38,6 @@ namespace RB
 
 		AnimationData* GetRenderData(int _decalIndex)
 		{
-
-
 			if (currentTile >= totalTiles)
 			{
 				currentTile = 0;
@@ -61,8 +59,6 @@ namespace RB
 				delayCount = 0;
 				currentTile++;
 			}
-
-			
 
 			data.decalIndex = _decalIndex;
 			data.reverseDecal = reverse;

@@ -1,6 +1,5 @@
 #pragma once
 #include "State.h"
-#include "StateType.h"
 
 namespace RB
 {

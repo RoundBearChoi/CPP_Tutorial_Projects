@@ -62,7 +62,6 @@
     <ClInclude Include="SlowUpdateMessage.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="StateAnimation.h" />
-    <ClInclude Include="StateType.h" />
     <ClInclude Include="TitleDecalPath.h" />
     <ClInclude Include="TitleFlickerOff.h" />
     <ClInclude Include="TitleFlickerOn.h" />
