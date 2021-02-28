@@ -2,7 +2,6 @@
 #include "Scene.h"
 #include "DecalLoader.h"
 #include "GameDecalPath.h"
-#include "DevSettings.h"
 
 #include "BackgroundIdle.h"
 #include "PlayerGameStart.h"

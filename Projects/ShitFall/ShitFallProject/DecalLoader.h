@@ -2,7 +2,6 @@
 #include <vector>
 #include "olcPixelGameEngine.h"
 #include "DecalPath.h"
-#include "DevSettings.h"
 
 namespace RB
 {

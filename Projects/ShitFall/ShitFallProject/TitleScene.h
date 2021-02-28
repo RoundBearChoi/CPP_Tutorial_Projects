@@ -2,7 +2,6 @@
 #include "Scene.h"
 #include "DecalLoader.h"
 #include "TitleDecalPath.h"
-#include "DevSettings.h"
 
 #include "BackgroundIdle.h"
 #include "TitleIdle.h"
