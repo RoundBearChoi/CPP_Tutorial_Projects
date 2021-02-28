@@ -28,19 +28,19 @@ namespace RB
 			SlowUpdateMessage shit;
 			shit.targetFrameDelay = 50;
 			shit.targetType = GameObjType::individual_shit;
-
+			
 			SlowUpdateMessage gen;
 			gen.targetFrameDelay = 50;
 			gen.targetType = GameObjType::shitgroup;
-
+			
 			SlowUpdateMessage player;
 			player.targetFrameDelay = 50;
 			player.targetType = GameObjType::player;
-
+			
 			objData.AddSlowMoMessage(shit);
 			objData.AddSlowMoMessage(gen);
 			objData.AddSlowMoMessage(player);
-
+			
 			//show y or n
 			ObjSpecs specs;
 			specs.width = 460.0f;

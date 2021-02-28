@@ -13,6 +13,7 @@
 #include "ShitPosition.h"
 #include "ShitMoveDown.h"
 #include "ShitSplash.h"
+#include "PlayerDeath.h"
 
 namespace RB
 {

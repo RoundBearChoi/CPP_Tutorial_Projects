@@ -7,6 +7,8 @@
 
 namespace RB
 {
+	class PlayerDeath;
+
 	class GameObjList
 	{
 	private:
@@ -152,10 +154,10 @@ namespace RB
 					{
 						obj->data.collided = true;
 
-						//if (player->ptrController->GetCurrentStateIndex() != (int)PlayerStateType::DEAD)
-						//{
-						//	player->ptrController->MakeTransition<PlayerDeath>(obj->data, (int)PlayerStateType::DEAD);
-						//}
+						if (!player->ptrStateController->CurrentStateIs<PlayerDeath>())
+						{
+							player->ptrStateController->CreateState<PlayerDeath>();
+						}
 					}
 				}
 			}

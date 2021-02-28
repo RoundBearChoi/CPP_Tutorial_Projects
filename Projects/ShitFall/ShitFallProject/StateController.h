@@ -95,5 +95,18 @@ namespace RB
 		{
 			return currentState->vecCreationSpecs;
 		}
+
+		template <class T>
+		bool CurrentStateIs()
+		{
+			if (typeid(T).name() == typeid(*currentState).name())
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	};
 }
