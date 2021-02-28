@@ -35,24 +35,24 @@ namespace RB
 		}
 
 		template<class InitialState>
-		void CreateObj(const ObjSpecs& specs)
+		void CreateObj(const ObjSpecs& specs, State* existingState = nullptr)
 		{
-			GameObj* newObj = new GameObj(specs);
+			GameObj* obj = new GameObj(specs);
 
 			//every obj has a state controller
-			newObj->ptrStateController = new StateController();
+			obj->ptrStateController = new StateController();
 
-			//if (specs.newState == nullptr)
+			if (existingState == nullptr)
 			{
-				newObj->ptrStateController->CreateState<InitialState>();
+				obj->ptrStateController->CreateState<InitialState>();
 			}
-			//else
-			//{
-			//	newObj->ptrStateController->SetCurrentState(specs.newState);
-			//}
+			else
+			{
+				obj->ptrStateController->SetCurrentState(existingState);
+			}
 						
-			vecAllObjs.push_back(newObj);
-			SetID(newObj);
+			vecAllObjs.push_back(obj);
+			SetID(obj);
 		}
 
 		void UpdateObjs(GameData& gameData)
