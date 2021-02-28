@@ -2,6 +2,7 @@
 #include "State.h"
 #include "StateType.h"
 #include "TitleSpriteType.h"
+#include "TitleMoveDown.h"
 
 namespace RB
 {
@@ -26,6 +27,7 @@ namespace RB
 		{
 			if (gameData.startGame)
 			{
+				nextState = State::CreateState<TitleMoveDown>(objData);
 				//objData.nextStateIndex = (int)UIElementStateType::MOVE_DOWN;
 			}
 		}

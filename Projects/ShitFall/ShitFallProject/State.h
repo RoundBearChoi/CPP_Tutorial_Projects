@@ -14,6 +14,7 @@ namespace RB
 
 	public:
 		StateAnimation stateAnimation;
+		State* nextState = nullptr;
 
 		virtual void UpdateState(ObjData& objData, GameData& gameData) = 0;
 

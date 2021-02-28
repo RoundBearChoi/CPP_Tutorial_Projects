@@ -63,9 +63,21 @@ namespace RB
 			}
 		}
 
-		//int GetCurrentStateIndex()
-		//{
-		//	return currentStateIndex;
-		//}
+		State* GetNextState()
+		{
+			return currentState->nextState;
+		}
+
+		void MakeStateTransition()
+		{
+			State* nextState = currentState->nextState;
+
+			if (nextState != nullptr)
+			{
+				delete currentState;
+				currentState = nextState;
+				currentState->nextState = nullptr;
+			}
+		}
 	};
 }

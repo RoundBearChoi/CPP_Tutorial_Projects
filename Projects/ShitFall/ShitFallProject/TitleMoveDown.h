@@ -1,5 +1,6 @@
 #pragma once
 #include "State.h"
+#include "TitleMoveUp.h"
 
 namespace RB
 {
@@ -30,7 +31,8 @@ namespace RB
 
 			if (frameCount >= 30)
 			{
-				objData.nextStateIndex = (int)UIElementStateType::MOVE_UP;
+				nextState = State::CreateState<TitleMoveUp>(objData);
+				//objData.nextStateIndex = (int)UIElementStateType::MOVE_UP;
 			}
 		}
 	};

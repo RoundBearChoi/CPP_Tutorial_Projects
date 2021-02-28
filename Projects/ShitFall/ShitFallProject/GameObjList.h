@@ -60,7 +60,7 @@ namespace RB
 					if (obj != nullptr)
 					{
 						UpdateOnPlayerCollision(obj);
-						UpdateController(obj, i, gameData);
+						UpdateState(obj, i, gameData);
 						slowMotion.AddSlowMo(obj);
 
 						if (DeleteObj(obj))
@@ -82,7 +82,7 @@ namespace RB
 			destructedObjIndex.clear();
 		}
 
-		void UpdateController(GameObj* obj, int objIndex, GameData& gameData)
+		void UpdateState(GameObj* obj, int objIndex, GameData& gameData)
 		{
 			StateController* con = obj->ptrController;
 
@@ -93,7 +93,9 @@ namespace RB
 				//CreateObjFromQueue(obj);
 
 				//check transition
-				//if (obj->data.nextStateIndex != 0)
+				con->MakeStateTransition();
+
+				//if ( data.nextStateIndex != 0)
 				//{
 				//	con->MakeTransition(obj->data, obj->data.nextStateIndex);
 				//	obj->data.nextStateIndex = 0;
