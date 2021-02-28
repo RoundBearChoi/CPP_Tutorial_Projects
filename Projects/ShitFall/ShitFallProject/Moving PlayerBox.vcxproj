@@ -24,7 +24,6 @@
   <ItemGroup>
     <ClInclude Include="AnimationData.h" />
     <ClInclude Include="BackgroundIdle.h" />
-    <ClInclude Include="ControllerType.h" />
     <ClInclude Include="DecalLoader.h" />
     <ClInclude Include="DecalPath.h" />
     <ClInclude Include="DevSettings.h" />
@@ -50,13 +49,11 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneController.h" />
     <ClInclude Include="GameObj.h" />
-    <ClInclude Include="PlayerController.h" />
     <ClInclude Include="PlayerGameStart.h" />
     <ClInclude Include="PlayerIdle.h" />
     <ClInclude Include="GameObjList.h" />
     <ClInclude Include="SceneType.h" />
     <ClInclude Include="SheetRenderer.h" />
-    <ClInclude Include="ShitController.h" />
     <ClInclude Include="ShitFall.h" />
     <ClInclude Include="ShitGenerator.h" />
     <ClInclude Include="ShitPosition.h" />
@@ -76,7 +73,6 @@
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="TitleSpriteType.h" />
     <ClInclude Include="TitleIdle.h" />
-    <ClInclude Include="UIElementController.h" />
     <ClInclude Include="YesOrNo.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

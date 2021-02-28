@@ -1,7 +1,6 @@
 #pragma once
 #include "State.h"
 #include "GameObjType.h"
-#include "ControllerType.h"
 
 namespace RB
 {
@@ -62,10 +61,8 @@ namespace RB
 			specs.objType = GameObjType::individual_shit;
 			specs.offsetType = OffsetType::CENTER_CENTER;
 			specs.decalIndex = (int)GameSpriteType::shit_box32x32;
-			specs.controllerType = ControllerType::SHIT_CONTROLLER;
-			specs.initialStateIndex = (int)ShitStateType::RANDOM_POSITION;
 
-			objData.AddToCreationQueue(specs);
+			//objData.AddToCreationQueue(specs);
 		}
 	};
 }

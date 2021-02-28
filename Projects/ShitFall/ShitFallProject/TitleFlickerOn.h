@@ -25,7 +25,7 @@ namespace RB
 		{
 			if (gameData.startGame)
 			{
-				objData.nextStateIndex = (int)UIElementStateType::FLICKER_OFF;
+				//objData.nextStateIndex = (int)UIElementStateType::FLICKER_OFF;
 			}
 			else
 			{
@@ -34,7 +34,7 @@ namespace RB
 				if (frameCount >= 90)
 				{
 					frameCount = 0;
-					objData.nextStateIndex = (int)UIElementStateType::FLICKER_OFF;
+					//objData.nextStateIndex = (int)UIElementStateType::FLICKER_OFF;
 				}
 			}
 		}

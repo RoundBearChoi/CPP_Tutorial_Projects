@@ -26,15 +26,6 @@
     <Filter Include="Source Files\GameObj\Info">
       <UniqueIdentifier>{292fb07c-a99d-409c-b1e7-78b3e1e6d7de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\States">
-      <UniqueIdentifier>{5403d326-2db2-4790-a15e-ea538c5a25b9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Concrete States">
-      <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Base">
-      <UniqueIdentifier>{6c7b2d80-3a5d-4648-967e-704549274d72}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\DecalLoader\enums">
       <UniqueIdentifier>{9de2ba9c-7b15-4ab1-8662-48eaffb7d63d}</UniqueIdentifier>
     </Filter>
@@ -43,15 +34,6 @@
     </Filter>
     <Filter Include="Source Files\DecalLoader\Concrete Paths">
       <UniqueIdentifier>{3cfb5554-6874-4b27-9d4a-acd3cd8ef9ad}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Concrete States\UIElements">
-      <UniqueIdentifier>{5bd6e923-234e-4bf9-b461-01da9e9f6f88}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Concrete States\Player">
-      <UniqueIdentifier>{6cef940d-eb15-4d1d-984f-821b892d5d16}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\States\Concrete States\Shit">
-      <UniqueIdentifier>{64103534-9f4d-4669-8732-95c9431af579}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\SlowMotion">
       <UniqueIdentifier>{2d671088-933e-4be8-9988-c7ee3fc1cb1d}</UniqueIdentifier>
@@ -62,11 +44,23 @@
     <Filter Include="Source Files\StateController">
       <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\StateController\Base">
-      <UniqueIdentifier>{e267ff07-237a-4651-96b4-8a4f1d11ab29}</UniqueIdentifier>
+    <Filter Include="Source Files\State">
+      <UniqueIdentifier>{5403d326-2db2-4790-a15e-ea538c5a25b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\StateController\ConcreteControllers">
-      <UniqueIdentifier>{e75bbac3-9872-4c8a-979f-968efed4cccf}</UniqueIdentifier>
+    <Filter Include="Source Files\State\Concrete States">
+      <UniqueIdentifier>{b67493a5-40d2-4d57-bf86-64879fa3e39b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\State\Concrete States\UIElements">
+      <UniqueIdentifier>{5bd6e923-234e-4bf9-b461-01da9e9f6f88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\State\Concrete States\Player">
+      <UniqueIdentifier>{6cef940d-eb15-4d1d-984f-821b892d5d16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\State\Concrete States\Shit">
+      <UniqueIdentifier>{64103534-9f4d-4669-8732-95c9431af579}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\State\Base">
+      <UniqueIdentifier>{6c7b2d80-3a5d-4648-967e-704549274d72}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -102,14 +96,8 @@
     <ClInclude Include="TitleScene.h">
       <Filter>Source Files\Scene\Concrete Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="ControllerType.h">
-      <Filter>Source Files\StateController\Base</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjType.h">
       <Filter>Source Files\GameObj</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerController.h">
-      <Filter>Source Files\StateController\ConcreteControllers</Filter>
     </ClInclude>
     <ClInclude Include="ObjData.h">
       <Filter>Source Files\GameObj\Info</Filter>
@@ -118,7 +106,7 @@
       <Filter>Source Files\GameObj\Info</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>Source Files\States\Base</Filter>
+      <Filter>Source Files\State\Base</Filter>
     </ClInclude>
     <ClInclude Include="GameSpriteType.h">
       <Filter>Source Files\DecalLoader\enums</Filter>
@@ -133,13 +121,13 @@
       <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
     <ClInclude Include="StateType.h">
-      <Filter>Source Files\States\Base</Filter>
+      <Filter>Source Files\State\Base</Filter>
     </ClInclude>
     <ClInclude Include="AnimationData.h">
-      <Filter>Source Files\States\Base</Filter>
+      <Filter>Source Files\State\Base</Filter>
     </ClInclude>
     <ClInclude Include="StateAnimation.h">
-      <Filter>Source Files\States\Base</Filter>
+      <Filter>Source Files\State\Base</Filter>
     </ClInclude>
     <ClInclude Include="GameDecalPath.h">
       <Filter>Source Files\DecalLoader\Concrete Paths</Filter>
@@ -156,68 +144,62 @@
     <ClInclude Include="DevSettings.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="ShitController.h">
-      <Filter>Source Files\StateController\ConcreteControllers</Filter>
-    </ClInclude>
-    <ClInclude Include="UIElementController.h">
-      <Filter>Source Files\StateController\ConcreteControllers</Filter>
-    </ClInclude>
     <ClInclude Include="BackgroundIdle.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="PlayerDummy.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="TitleFlickerOff.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="TitleFlickerOn.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="TitleIdle.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="TitleMoveDown.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="TitleMoveUp.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="PlayerDeath.h">
-      <Filter>Source Files\States\Concrete States\Player</Filter>
+      <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayerGameStart.h">
-      <Filter>Source Files\States\Concrete States\Player</Filter>
+      <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayerIdle.h">
-      <Filter>Source Files\States\Concrete States\Player</Filter>
+      <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveLeft.h">
-      <Filter>Source Files\States\Concrete States\Player</Filter>
+      <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMoveRight.h">
-      <Filter>Source Files\States\Concrete States\Player</Filter>
+      <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayerWhiteScreen.h">
-      <Filter>Source Files\States\Concrete States\Player</Filter>
+      <Filter>Source Files\State\Concrete States\Player</Filter>
     </ClInclude>
     <ClInclude Include="ShitFall.h">
-      <Filter>Source Files\States\Concrete States\Shit</Filter>
+      <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
     <ClInclude Include="ShitGenerator.h">
-      <Filter>Source Files\States\Concrete States\Shit</Filter>
+      <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
     <ClInclude Include="ShitPosition.h">
-      <Filter>Source Files\States\Concrete States\Shit</Filter>
+      <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
     <ClInclude Include="ShitSplash.h">
-      <Filter>Source Files\States\Concrete States\Shit</Filter>
+      <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
     <ClInclude Include="GameObjList.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
     <ClInclude Include="YesOrNo.h">
-      <Filter>Source Files\States\Concrete States\UIElements</Filter>
+      <Filter>Source Files\State\Concrete States\UIElements</Filter>
     </ClInclude>
     <ClInclude Include="SlowUpdateMessage.h">
       <Filter>Source Files\SlowMotion</Filter>
@@ -237,11 +219,11 @@
     <ClInclude Include="SceneType.h">
       <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
-    <ClInclude Include="StateController.h">
-      <Filter>Source Files\StateController\Base</Filter>
-    </ClInclude>
     <ClInclude Include="StateCreator.h">
-      <Filter>Source Files\StateController\Base</Filter>
+      <Filter>Source Files\StateController</Filter>
+    </ClInclude>
+    <ClInclude Include="StateController.h">
+      <Filter>Source Files\StateController</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

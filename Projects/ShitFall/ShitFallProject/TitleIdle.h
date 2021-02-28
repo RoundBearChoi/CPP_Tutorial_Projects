@@ -26,7 +26,7 @@ namespace RB
 		{
 			if (gameData.startGame)
 			{
-				objData.nextStateIndex = (int)UIElementStateType::MOVE_DOWN;
+				//objData.nextStateIndex = (int)UIElementStateType::MOVE_DOWN;
 			}
 		}
 	};

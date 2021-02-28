@@ -10,7 +10,6 @@ namespace RB
 	class ObjData
 	{
 	private:
-		std::vector<ObjSpecs> vecChildQueues;
 		std::vector<SlowUpdateMessage> vecSlowUpdateMessages;
 		int creationID = 0;
 
@@ -22,33 +21,12 @@ namespace RB
 		float objWidth = 0.0f;
 		float objHeight = 0.0f;
 		bool collided = false;
-		int nextStateIndex = 0;
 
 		~ObjData()
 		{
 			IF_COUT{ std::cout << "destructing ObjData - CreationID: " << creationID << std::endl; }
 		}
 		
-		void AddToCreationQueue(ObjSpecs _specs)
-		{
-			vecChildQueues.push_back(_specs);
-		}
-
-		int GetCreationQueueCount()
-		{
-			return vecChildQueues.size();
-		}
-
-		ObjSpecs GetCreationSpecs(int _index)
-		{
-			return vecChildQueues[_index];
-		}
-
-		void ClearChildQueues()
-		{
-			vecChildQueues.clear();
-		}
-
 		void SetCreationID(int _id)
 		{
 			IF_COUT{ std::cout << "setting ObjData CreationID: " << _id << std::endl; }

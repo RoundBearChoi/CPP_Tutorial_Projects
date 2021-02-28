@@ -7,17 +7,36 @@ namespace RB
 {
 	class StateController
 	{
-	protected:
+	private:
 		State* currentState = nullptr;
-		int currentStateIndex = 0;
 		StateCreator stateCreator;
+		//int currentStateIndex = 0;
 
 	public:
-		virtual void MakeTransition(ObjData& objData, int index) = 0;
-
-		virtual ~StateController()
+		StateController()
 		{
+			IF_COUT{ std::cout << "constructing StateController" << std::endl; }
+		}
 
+		~StateController()
+		{
+			IF_COUT{ std::cout << "destructing StateController" << std::endl; }
+
+			delete currentState;
+		}
+
+		template<class T>
+		void CreateState(ObjData& objData)
+		{
+			State* newState = stateCreator.CreateState<T>(objData);
+
+			if (newState != nullptr)
+			{
+				delete currentState;
+				//currentStateIndex = index;
+
+				currentState = newState;
+			}
 		}
 
 		void UpdateObj(ObjData& objData, GameData& gameData)
@@ -47,9 +66,9 @@ namespace RB
 			}
 		}
 
-		int GetCurrentStateIndex()
-		{
-			return currentStateIndex;
-		}
+		//int GetCurrentStateIndex()
+		//{
+		//	return currentStateIndex;
+		//}
 	};
 }

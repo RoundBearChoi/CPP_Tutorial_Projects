@@ -4,6 +4,10 @@
 #include "GameDecalPath.h"
 #include "DevSettings.h"
 
+#include "BackgroundIdle.h"
+#include "PlayerGameStart.h"
+#include "ShitGenerator.h"
+
 namespace RB
 {
 	class GameScene : public Scene
@@ -32,28 +36,22 @@ namespace RB
 			background.objType = GameObjType::background;
 			background.offsetType = OffsetType::NONE;
 			background.decalIndex = (int)GameSpriteType::background;
-			background.controllerType = ControllerType::TITLE_UI_CONTROLLER;
-			background.initialStateIndex = (int)UIElementStateType::BACKGROUND_IDLE;
 			
 			player.width = 50.0f;
 			player.height = 80.0f;
 			player.objType = GameObjType::player;
 			player.offsetType = OffsetType::BOTTOM_CENTER;
 			player.decalIndex = (int)GameSpriteType::playerbox_green;
-			player.controllerType = ControllerType::PLAYER_CONTROLLER;
-			player.initialStateIndex = (int)PlayerStateType::GAME_START;
 
 			shitgroup.width = 0.0f;
 			shitgroup.height = 0.0f;
 			shitgroup.objType = GameObjType::shitgroup;
 			shitgroup.offsetType = OffsetType::CENTER_CENTER;
 			shitgroup.decalIndex = (int)GameSpriteType::redbox_10x10;
-			shitgroup.controllerType = ControllerType::SHIT_CONTROLLER;
-			shitgroup.initialStateIndex = (int)ShitStateType::GENERATOR;
 
-			objList.CreateObj(background);
-			objList.CreateObj(player);
-			objList.CreateObj(shitgroup);
+			objList.CreateObj<BackgroundIdle>(background);
+			objList.CreateObj<PlayerGameStart>(player);
+			objList.CreateObj<ShitGenerator>(shitgroup);
 		}
 
 		void UpdateScene(olc::PixelGameEngine* ptrEngine, GameData& gameData) override

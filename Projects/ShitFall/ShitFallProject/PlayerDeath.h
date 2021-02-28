@@ -1,6 +1,8 @@
 #pragma once
 #include "State.h"
 #include "SlowUpdateMessage.h"
+#include "GameSpriteType.h"
+#include "StateType.h"
 
 namespace RB
 {
@@ -38,10 +40,8 @@ namespace RB
 			specs.objType = GameObjType::y_or_n;
 			specs.offsetType = OffsetType::CENTER_CENTER;
 			specs.decalIndex = (int)GameSpriteType::y_or_n460x330;
-			specs.controllerType = ControllerType::TITLE_UI_CONTROLLER;
-			specs.initialStateIndex = (int)UIElementStateType::Y_OR_N;
 
-			objData.AddToCreationQueue(specs);
+			//objData.AddToCreationQueue(specs);
 		}
 
 		~PlayerDeath()

@@ -10,13 +10,13 @@ namespace RB
 		template<class T>
 		State* CreateState(ObjData& objData)
 		{
-			//delete currentState;
-
 			if (std::is_base_of<State, T>::value)
 			{
 				return new T(objData);
-				//currentState = new T(objData);
-				//currentStateIndex = _stateIndex;
+			}
+			else
+			{
+				return nullptr;
 			}
 		}
 	};

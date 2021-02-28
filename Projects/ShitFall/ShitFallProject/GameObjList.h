@@ -4,6 +4,7 @@
 #include "ObjSpecs.h"
 #include "SlowMotion.h"
 #include "SheetRenderer.h"
+#include "PlayerDeath.h"
 
 namespace RB
 {
@@ -33,14 +34,14 @@ namespace RB
 			}
 		}
 
+		template<class InitialState>
 		void CreateObj(const ObjSpecs& specs)
 		{
 			GameObj* newObj = new GameObj(specs);
 
-			if (specs.controllerType != ControllerType::NONE)
-			{
-				newObj->SetController(specs.controllerType, specs.initialStateIndex);
-			}
+			//every obj has a state controller
+			newObj->ptrController = new StateController();
+			newObj->ptrController->CreateState<InitialState>(newObj->data);
 
 			vecAllObjs.push_back(newObj);
 			SetID(newObj);
@@ -89,14 +90,14 @@ namespace RB
 			{
 				con->UpdateObj(obj->data, gameData);
 
-				CreateObjFromQueue(obj);
+				//CreateObjFromQueue(obj);
 
 				//check transition
-				if (obj->data.nextStateIndex != 0)
-				{
-					con->MakeTransition(obj->data, obj->data.nextStateIndex);
-					obj->data.nextStateIndex = 0;
-				}
+				//if (obj->data.nextStateIndex != 0)
+				//{
+				//	con->MakeTransition(obj->data, obj->data.nextStateIndex);
+				//	obj->data.nextStateIndex = 0;
+				//}
 			}
 		}
 
@@ -128,25 +129,25 @@ namespace RB
 					{
 						obj->data.collided = true;
 
-						if (player->ptrController->GetCurrentStateIndex() != (int)PlayerStateType::DEAD)
-						{
-							player->ptrController->MakeTransition(obj->data, (int)PlayerStateType::DEAD);
-						}
+						//if (player->ptrController->GetCurrentStateIndex() != (int)PlayerStateType::DEAD)
+						//{
+						//	player->ptrController->MakeTransition<PlayerDeath>(obj->data, (int)PlayerStateType::DEAD);
+						//}
 					}
 				}
 			}
 		}
 
-		void CreateObjFromQueue(GameObj* obj)
-		{
-			for (int i = 0; i < obj->data.GetCreationQueueCount(); i++)
-			{
-				ObjSpecs specs = obj->data.GetCreationSpecs(i);
-				CreateObj(specs);
-			}
-
-			obj->data.ClearChildQueues();
-		}
+		//void CreateObjFromQueue(GameObj* obj)
+		//{
+		//	for (int i = 0; i < obj->data.GetCreationQueueCount(); i++)
+		//	{
+		//		ObjSpecs specs = obj->data.GetCreationSpecs(i);
+		//		CreateObj(specs);
+		//	}
+		//
+		//	obj->data.ClearChildQueues();
+		//}
 
 		GameObj* GetObj(int _index)
 		{
