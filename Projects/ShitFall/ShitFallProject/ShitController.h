@@ -1,5 +1,5 @@
 #pragma once
-#include "ObjController.h"
+#include "StateController.h"
 #include "State.h"
 #include "StateType.h"
 
@@ -10,7 +10,7 @@
 
 namespace RB
 {
-	class ShitController : public ObjController
+	class ShitController : public StateController
 	{
 	public:
 		ShitController(ObjData& objData, int _initialStateIndex)

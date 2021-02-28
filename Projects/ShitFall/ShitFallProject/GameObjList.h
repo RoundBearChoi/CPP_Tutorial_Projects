@@ -83,7 +83,7 @@ namespace RB
 
 		void UpdateController(GameObj* obj, int objIndex, GameData& gameData)
 		{
-			ObjController* con = obj->ptrController;
+			StateController* con = obj->ptrController;
 
 			if (con != nullptr)
 			{
@@ -102,7 +102,7 @@ namespace RB
 
 		bool DeleteObj(GameObj* obj)
 		{
-			ObjController* con = obj->ptrController;
+			StateController* con = obj->ptrController;
 
 			if (con != nullptr)
 			{

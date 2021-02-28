@@ -96,9 +96,6 @@
     <ClInclude Include="GameObj.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
-    <ClInclude Include="ObjController.h">
-      <Filter>Source Files\ObjControllers\Base</Filter>
-    </ClInclude>
     <ClInclude Include="GameData.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -239,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="SceneType.h">
       <Filter>Source Files\Scene\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="StateController.h">
+      <Filter>Source Files\ObjControllers\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

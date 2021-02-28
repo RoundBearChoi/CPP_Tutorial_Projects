@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "ObjController.h"
+#include "StateController.h"
 
 #include "BackgroundIdle.h"
 #include "TitleIdle.h"
@@ -12,7 +12,7 @@
 
 namespace RB
 {
-	class UIElementController : public ObjController
+	class UIElementController : public StateController
 	{
 	public:
 		UIElementController(ObjData& objData, int _initialStateIndex)

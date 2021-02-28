@@ -4,7 +4,7 @@
 
 namespace RB
 {
-	class ObjController
+	class StateController
 	{
 	protected:
 		State* currentState = nullptr;
@@ -13,7 +13,7 @@ namespace RB
 	public:
 		virtual void MakeTransition(ObjData& objData, int index) = 0;
 
-		virtual ~ObjController()
+		virtual ~StateController()
 		{
 
 		}

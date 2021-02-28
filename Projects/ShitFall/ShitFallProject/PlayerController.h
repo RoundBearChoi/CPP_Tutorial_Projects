@@ -1,5 +1,5 @@
 #pragma once
-#include "ObjController.h"
+#include "StateController.h"
 #include "State.h"
 #include "StateType.h"
 #include "DevSettings.h"
@@ -13,7 +13,7 @@
 
 namespace RB
 {
-	class PlayerController : public ObjController
+	class PlayerController : public StateController
 	{
 	public:
 		PlayerController(ObjData& objData, int _initialStateIndex)

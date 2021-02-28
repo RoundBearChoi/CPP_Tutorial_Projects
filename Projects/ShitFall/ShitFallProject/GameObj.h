@@ -18,7 +18,7 @@ namespace RB
 
 	public:
 		ObjData data;
-		ObjController* ptrController = nullptr;
+		StateController* ptrController = nullptr;
 
 		GameObj(const ObjSpecs& specs)
 		{
