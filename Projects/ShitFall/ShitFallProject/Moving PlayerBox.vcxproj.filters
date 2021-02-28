@@ -41,9 +41,6 @@
     <Filter Include="Source Files\Renderer">
       <UniqueIdentifier>{2c771001-1e22-419e-82a8-8f47a89b7f82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\StateController">
-      <UniqueIdentifier>{e969f2cd-ac60-4755-bcbe-73cb7c8a8f8b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\State">
       <UniqueIdentifier>{5403d326-2db2-4790-a15e-ea538c5a25b9}</UniqueIdentifier>
     </Filter>
@@ -61,6 +58,9 @@
     </Filter>
     <Filter Include="Source Files\State\Base">
       <UniqueIdentifier>{6c7b2d80-3a5d-4648-967e-704549274d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\State\Controller">
+      <UniqueIdentifier>{f14fd015-7e53-44ca-98f5-2a42d4936b18}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -210,14 +210,14 @@
     <ClInclude Include="SceneType.h">
       <Filter>Source Files\Scene\Base</Filter>
     </ClInclude>
-    <ClInclude Include="StateController.h">
-      <Filter>Source Files\StateController</Filter>
-    </ClInclude>
     <ClInclude Include="ShitMoveDown.h">
       <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
     <ClInclude Include="ObjTag.h">
       <Filter>Source Files\GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="StateController.h">
+      <Filter>Source Files\State\Controller</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
