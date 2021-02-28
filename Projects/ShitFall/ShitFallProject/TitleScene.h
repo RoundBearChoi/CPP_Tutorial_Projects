@@ -3,6 +3,7 @@
 #include "DecalLoader.h"
 #include "TitleDecalPath.h"
 
+//states for title scene
 #include "BackgroundIdle.h"
 #include "TitleIdle.h"
 #include "TitleMoveDown.h"

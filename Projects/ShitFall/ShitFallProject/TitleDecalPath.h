@@ -44,6 +44,7 @@ namespace RB
 			{
 				return "PNG files/idle_sheet.png";
 			}
+
 			return "none";
 		}
 	};

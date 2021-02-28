@@ -3,6 +3,7 @@
 #include "DecalLoader.h"
 #include "GameDecalPath.h"
 
+//states for game scene
 #include "BackgroundIdle.h"
 #include "PlayerGameStart.h"
 #include "PlayerIdle.h"
