@@ -15,11 +15,10 @@ namespace RB
 
 	public:
 		olc::vf2d position = olc::vf2d(0.0f, 0.0f);
+		olc::vf2d size = olc::vf2d(0.0f, 0.0f);
 		ObjTag objTag = ObjTag::NONE;
 		OffsetType offsetType = OffsetType::NONE;
 		int decalIndex = 0;
-		float objWidth = 0.0f;
-		float objHeight = 0.0f;
 		bool collided = false;
 
 		~ObjData()

@@ -14,15 +14,15 @@ namespace RB
 			if (data.offsetType == OffsetType::NONE)
 			{
 				points[0] = { data.position.x, data.position.y };
-				points[1] = { data.position.x, data.position.y + data.objHeight };
-				points[2] = { data.position.x + data.objWidth, data.position.y + data.objHeight };
-				points[3] = { data.position.x + data.objWidth, data.position.y };
+				points[1] = { data.position.x, data.position.y + data.size.y };
+				points[2] = { data.position.x + data.size.x, data.position.y + data.size.y };
+				points[3] = { data.position.x + data.size.x, data.position.y };
 			}
 			else if (data.offsetType == OffsetType::CENTER_CENTER)
 			{
 				olc::vf2d offset(0.0f, 0.0f);
-				offset.x = -(data.objWidth / 2.0f);
-				offset.y = -(data.objHeight / 2.0f);
+				offset.x = -(data.size.x / 2.0f);
+				offset.y = -(data.size.y / 2.0f);
 
 				points[0] = { data.position.x - offset.x, data.position.y - offset.y };
 				points[1] = { data.position.x - offset.x, data.position.y + offset.y };
@@ -32,12 +32,12 @@ namespace RB
 			else if (data.offsetType == OffsetType::BOTTOM_CENTER)
 			{
 				olc::vf2d offset(0.0f, 0.0f);
-				offset.x = -(data.objWidth / 2.0f);
+				offset.x = -(data.size.x / 2.0f);
 
-				points[0] = { data.position.x - offset.x, data.position.y - data.objHeight };
+				points[0] = { data.position.x - offset.x, data.position.y - data.size.y };
 				points[1] = { data.position.x - offset.x, data.position.y };
 				points[2] = { data.position.x + offset.x, data.position.y };
-				points[3] = { data.position.x + offset.x, data.position.y - data.objHeight };
+				points[3] = { data.position.x + offset.x, data.position.y - data.size.y };
 			}
 
 			engine->DrawWarpedDecal(decal, points);

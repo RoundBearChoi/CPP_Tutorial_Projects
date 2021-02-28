@@ -29,8 +29,8 @@ namespace RB
 		{
 			float x = obj->data.position.x;
 			float y = obj->data.position.y;
-			float width = obj->data.objWidth;
-			float height = obj->data.objHeight;
+			float width = obj->data.size.x;
+			float height = obj->data.size.y;
 
 			std::array<olc::vf2d, 4> points;
 
