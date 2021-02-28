@@ -4,7 +4,6 @@
 #include "ObjSpecs.h"
 #include "SlowMotion.h"
 #include "SheetRenderer.h"
-#include "PlayerDeath.h"
 
 namespace RB
 {
@@ -55,6 +54,18 @@ namespace RB
 			SetID(obj);
 		}
 
+		void CreateObjFromQueue(GameObj* obj)
+		{
+			std::vector<State*>& vecQueues = obj->ptrStateController->GetCreationQueues();
+
+			for (int i = 0; i < vecQueues.size(); i++)
+			{
+				int n = 0;
+			}
+
+			vecQueues.clear();
+		}
+
 		void UpdateObjs(GameData& gameData)
 		{
 			slowMotion.UpdateSlowMoCounter();
@@ -100,14 +111,7 @@ namespace RB
 
 				CreateObjFromQueue(obj);
 
-				//check transition
 				con->MakeStateTransition();
-
-				//if ( data.nextStateIndex != 0)
-				//{
-				//	con->MakeTransition(obj->data, obj->data.nextStateIndex);
-				//	obj->data.nextStateIndex = 0;
-				//}
 			}
 		}
 
@@ -146,18 +150,6 @@ namespace RB
 					}
 				}
 			}
-		}
-
-		void CreateObjFromQueue(GameObj* obj)
-		{
-			std::vector<State*>& vecQueues = obj->ptrStateController->GetCreationQueues();
-
-			for (int i = 0; i < vecQueues.size(); i++)
-			{
-				int n = 0;
-			}
-
-			vecQueues.clear();
 		}
 
 		GameObj* GetObj(int _index)
