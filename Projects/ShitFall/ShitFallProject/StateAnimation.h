@@ -88,5 +88,17 @@ namespace RB
 		{
 			playOnce = _once;
 		}
+
+		bool OnLastAnimationFrame()
+		{
+			if (currentTile == totalTiles - 1)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
 	};
 }

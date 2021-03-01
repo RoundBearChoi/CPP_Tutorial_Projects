@@ -83,6 +83,11 @@ namespace RB
 
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
+				if (vecAllObjs[i] == nullptr)
+				{
+					continue;
+				}
+
 				if (!slowMotion.SkipUpdate(vecAllObjs[i]->data.objTag))
 				{
 					GameObj* obj = vecAllObjs[i];
@@ -152,13 +157,12 @@ namespace RB
 				{
 					GameObj* player = GetObj(ObjTag::PLAYER);
 
-					if (obj->IsCollidingAgainst(player))
+					if (!player->ptrStateController->CurrentStateIs<PlayerDeath>())
 					{
-						obj->data.collided = true;
-
-						if (!player->ptrStateController->CurrentStateIs<PlayerDeath>())
+						if (obj->IsCollidingAgainst(player))
 						{
 							player->ptrStateController->CreateState<PlayerDeath>();
+							obj->data.collided = true;
 						}
 					}
 				}

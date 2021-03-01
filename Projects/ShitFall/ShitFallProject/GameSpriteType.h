@@ -10,6 +10,7 @@ namespace RB
 		shit_box32x32,
 		shit_restart,
 		shit,
+		upsplash_sheet,
 
 		idle_sheet,
 		pixel_run_sheet,
