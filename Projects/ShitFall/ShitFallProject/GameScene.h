@@ -13,6 +13,7 @@
 #include "ShitPosition.h"
 #include "ShitMoveDown.h"
 #include "ShitUpSplash.h"
+#include "ShitCenterSplash.h"
 #include "PlayerDeath.h"
 #include "YesOrNo.h"
 

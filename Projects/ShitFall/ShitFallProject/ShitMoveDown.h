@@ -36,21 +36,14 @@ namespace RB
 		{
 			frameCount++;
 
-			if (objData.collided)
+			if (objData.position.y < 630.0f)
 			{
-				//switch to a downward splash
+				speed = speed * 1.0122f;
+				objData.position.y += speed;
 			}
 			else
 			{
-				if (objData.position.y < 630.0f)
-				{
-					speed = speed * 1.0122f;
-					objData.position.y += speed;
-				}
-				else
-				{
-					nextState = State::CreateState<ShitUpSplash>();
-				}
+				nextState = State::CreateState<ShitUpSplash>();
 			}
 		}
 	};

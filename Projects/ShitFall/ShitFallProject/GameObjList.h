@@ -8,6 +8,7 @@
 namespace RB
 {
 	class PlayerDeath;
+	class ShitCenterSplash;
 
 	class GameObjList
 	{
@@ -162,7 +163,7 @@ namespace RB
 						if (obj->IsCollidingAgainst(player))
 						{
 							player->ptrStateController->CreateState<PlayerDeath>();
-							obj->data.collided = true;
+							obj->ptrStateController->CreateState<ShitCenterSplash>();
 						}
 					}
 				}

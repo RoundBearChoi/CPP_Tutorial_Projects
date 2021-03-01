@@ -33,6 +33,7 @@
     <ClInclude Include="ObjTag.h" />
     <ClInclude Include="GameSpriteType.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="ShitCenterSplash.h" />
     <ClInclude Include="StateController.h" />
     <ClInclude Include="ObjData.h" />
     <ClInclude Include="ObjSpecs.h" />

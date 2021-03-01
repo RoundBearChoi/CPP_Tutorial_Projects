@@ -60,6 +60,10 @@ namespace RB
 			{
 				return "PNG files/upsplash_sheet_3.png";
 			}
+			else if (spriteType == GameSpriteType::centersplash_sheet)
+			{
+				return "PNG files/centersplash_sheet.png";
+			}
 
 			return "none";
 		}

@@ -8,7 +8,7 @@ namespace RB
 	public:
 		ShitUpSplash()
 		{
-			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
+			IF_COUT{ std::cout << "constructing State: ShitUpSplash" << std::endl; }
 
 			//same as shitmovedown on first render
 			stateAnimation.SetParams((int)GameSpriteType::shit, 37, 37, 1, 1, 1, false);
@@ -19,7 +19,7 @@ namespace RB
 			IF_COUT
 			{
 				std::cout << std::endl;
-				std::cout << "destructing State: ShitSplash" << std::endl;
+				std::cout << "destructing State: ShitUpSplash" << std::endl;
 			}
 		}
 
@@ -39,10 +39,8 @@ namespace RB
 		{
 			if (stateAnimation.OnLastAnimationFrame())
 			{
-
 				deleteObj = true;
 			}
-			
 		}
 	};
 }

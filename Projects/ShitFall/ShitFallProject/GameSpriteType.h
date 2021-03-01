@@ -11,6 +11,7 @@ namespace RB
 		shit_restart,
 		shit,
 		upsplash_sheet_3,
+		centersplash_sheet,
 
 		idle_sheet,
 		pixel_run_sheet,

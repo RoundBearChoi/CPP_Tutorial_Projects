@@ -19,7 +19,6 @@ namespace RB
 		ObjTag objTag = ObjTag::NONE;
 		OffsetType offsetType = OffsetType::NONE;
 		int decalIndex = 0;
-		bool collided = false;
 
 		~ObjData()
 		{
