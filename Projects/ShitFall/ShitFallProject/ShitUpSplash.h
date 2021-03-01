@@ -10,9 +10,8 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
 
-			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet_2, 720, 120, 6, 1, 6, false);
-			stateAnimation.SetDelayTime(25);
-			stateAnimation.SetPlayOnce(true);
+			//same as shitmovedown on first render
+			stateAnimation.SetParams((int)GameSpriteType::shit, 37, 37, 1, 1, 1, false);
 		}
 
 		~ShitUpSplash()
@@ -29,6 +28,11 @@ namespace RB
 			//change obj size
 			objData.size.x = 110.0f;
 			objData.size.y = 110.0f;
+
+			//set new spritesheet
+			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet_2, 720, 120, 6, 1, 6, false);
+			stateAnimation.SetDelayTime(25);
+			stateAnimation.SetPlayOnce(true);
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

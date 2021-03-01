@@ -218,7 +218,7 @@ namespace RB
 			{
 				if (vecAllObjs[i] != nullptr)
 				{
-					sheetRenderer.Render(ptrEngine, decalLoader, vecAllObjs[i]);
+					sheetRenderer.Render(slowMotion.SkipUpdate(vecAllObjs[i]->data.objTag), ptrEngine, decalLoader, vecAllObjs[i]);
 				}
 			}
 		}

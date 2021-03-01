@@ -37,7 +37,7 @@ namespace RB
 			reverse = _reverse;
 		}
 
-		AnimationData* GetRenderData()
+		AnimationData* GetRenderData(bool skipUpdate)
 		{
 			if (currentTile >= totalTiles)
 			{
@@ -60,12 +60,15 @@ namespace RB
 				data.sourcePos.y = floorf((float)currentTile / (float)tileCountX) * data.sourceSize.y;
 			}
 
-			delayCount++;
-
-			if (delayCount >= transitionDelay)
+			if (!skipUpdate)
 			{
-				delayCount = 0;
-				currentTile++;
+				delayCount++;
+
+				if (delayCount >= transitionDelay)
+				{
+					delayCount = 0;
+					currentTile++;
+				}
 			}
 
 			data.decalIndex = decalIndex;
