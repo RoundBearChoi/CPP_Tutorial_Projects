@@ -16,6 +16,9 @@ namespace RB
 		PlayerDeath()
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerDeath" << std::endl; }
+
+			stateAnimation.SetParams((int)GameSpriteType::ko_sheet, 800, 80, 5, 1, 5, false);
+			stateAnimation.SetDelayTime(1500);
 		}
 
 		~PlayerDeath()
@@ -25,6 +28,10 @@ namespace RB
 
 		void OnEnter(ObjData& objData, GameData& gameData) override
 		{
+			//change objsize
+			objData.size.x = 160.0f;
+			objData.size.y = 80.0f;
+
 			//start slowmo
 			SlowUpdateMessage shit;
 			shit.targetFrameDelay = 50;

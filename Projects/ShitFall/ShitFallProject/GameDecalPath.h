@@ -52,6 +52,10 @@ namespace RB
 			{
 				return "PNG files/shit.png";
 			}
+			else if (spriteType == GameSpriteType::ko_sheet)
+			{
+				return "PNG files/ko_sheet.png";
+			}
 
 			return "none";
 		}
