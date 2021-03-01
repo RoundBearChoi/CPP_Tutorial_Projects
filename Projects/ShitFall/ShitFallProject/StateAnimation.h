@@ -37,7 +37,7 @@ namespace RB
 			reverse = _reverse;
 		}
 
-		AnimationData* GetRenderData(bool skipUpdate)
+		AnimationData* GetRenderData(bool update, bool skipUpdate)
 		{
 			if (currentTile >= totalTiles)
 			{
@@ -60,7 +60,7 @@ namespace RB
 				data.sourcePos.y = floorf((float)currentTile / (float)tileCountX) * data.sourceSize.y;
 			}
 
-			if (!skipUpdate)
+			if (update && !skipUpdate)
 			{
 				delayCount++;
 

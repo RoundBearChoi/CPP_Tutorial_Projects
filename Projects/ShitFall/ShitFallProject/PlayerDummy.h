@@ -13,7 +13,7 @@ namespace RB
 			IF_COUT{ std::cout << "constructing State: PlayerDummy" << std::endl; }
 
 			stateAnimation.SetParams((int)TitleSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
-			stateAnimation.SetDelayTime(500);
+			stateAnimation.SetDelayTime(30);
 		}
 
 		~PlayerDummy()

@@ -62,11 +62,11 @@ namespace RB
 			return currentState->GetFrameCount();
 		}
 
-		AnimationData* GetStateRenderData(bool skipUpdate)
+		AnimationData* GetStateRenderData(bool update, bool skipUpdate)
 		{
 			if (currentState != nullptr)
 			{
-				return currentState->GetRenderData(skipUpdate);
+				return currentState->GetRenderData(update, skipUpdate);
 			}
 			else
 			{

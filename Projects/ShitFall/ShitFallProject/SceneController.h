@@ -62,10 +62,10 @@ namespace RB
 			currentScene->UpdateScene(ptrEngine, gameData);
 		}
 
-		void RenderCurrentScene(olc::PixelGameEngine* ptrEngine, float deltaTime)
+		void RenderCurrentScene(bool update, olc::PixelGameEngine* ptrEngine, float deltaTime)
 		{
 			currentScene->RenderObjs(ptrEngine);
-			currentScene->RenderStates(ptrEngine);
+			currentScene->RenderStates(update, ptrEngine);
 		}
 	};
 }

@@ -212,13 +212,13 @@ namespace RB
 			}
 		}
 
-		void RenderStates(olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader)
+		void RenderStates(bool update, olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader)
 		{
 			for (int i = 0; i < vecAllObjs.size(); i++)
 			{
 				if (vecAllObjs[i] != nullptr)
 				{
-					sheetRenderer.Render(slowMotion.SkipUpdate(vecAllObjs[i]->data.objTag), ptrEngine, decalLoader, vecAllObjs[i]);
+					sheetRenderer.Render(update, slowMotion.SkipUpdate(vecAllObjs[i]->data.objTag), ptrEngine, decalLoader, vecAllObjs[i]);
 				}
 			}
 		}

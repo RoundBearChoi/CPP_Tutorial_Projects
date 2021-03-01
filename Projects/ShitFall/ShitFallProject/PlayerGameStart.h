@@ -14,6 +14,9 @@ namespace RB
 			{
 				std::cout << std::endl;
 				std::cout << "constructing State: GameStart" << std::endl;
+
+				stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
+				stateAnimation.SetDelayTime(30);
 			}
 		}
 
@@ -24,9 +27,6 @@ namespace RB
 
 		void OnEnter(ObjData& objData, GameData& gameData) override
 		{
-			stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
-			stateAnimation.SetDelayTime(200);
-
 			objData.position = { 300.0f, 650.0f };
 		}
 

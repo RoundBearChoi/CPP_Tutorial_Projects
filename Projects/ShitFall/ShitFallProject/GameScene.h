@@ -75,9 +75,9 @@ namespace RB
 			background->Render(ptrEngine, decalLoader->GetDecal(background->data.decalIndex));
 		}
 
-		void RenderStates(olc::PixelGameEngine* ptrEngine) override
+		void RenderStates(bool update, olc::PixelGameEngine* ptrEngine) override
 		{
-			objList.RenderStates(ptrEngine, decalLoader);
+			objList.RenderStates(update, ptrEngine, decalLoader);
 		}
 	};
 }

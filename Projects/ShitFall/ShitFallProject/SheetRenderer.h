@@ -9,11 +9,11 @@ namespace RB
 	class SheetRenderer
 	{
 	public:
-		void Render(bool skipUpdate, olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader, GameObj* obj)
+		void Render(bool update, bool skipUpdate, olc::PixelGameEngine* ptrEngine, DecalLoader* decalLoader, GameObj* obj)
 		{
 			if (obj->ptrStateController != nullptr)
 			{
-				AnimationData* data = obj->ptrStateController->GetStateRenderData(skipUpdate);
+				AnimationData* data = obj->ptrStateController->GetStateRenderData(update, skipUpdate);
 
 				if (data != nullptr)
 				{

@@ -49,9 +49,9 @@ namespace RB
 			return frameCount;
 		}
 
-		AnimationData* GetRenderData(bool skipUpdate)
+		AnimationData* GetRenderData(bool update, bool skipUpdate)
 		{
-			return stateAnimation.GetRenderData(skipUpdate);
+			return stateAnimation.GetRenderData(update, skipUpdate);
 		}
 	};
 }

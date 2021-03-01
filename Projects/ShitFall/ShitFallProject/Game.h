@@ -48,7 +48,7 @@ namespace RB
 				fElapsedTime = fTargetFrameTime;
 
 				sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
-				sceneController.RenderCurrentScene(this, fElapsedTime);
+				sceneController.RenderCurrentScene(true, this, fElapsedTime);
 
 				//scene transition
 				if (gameData.nextSceneType != SceneType::NONE)
@@ -66,7 +66,7 @@ namespace RB
 			}
 			else
 			{
-				sceneController.RenderCurrentScene(this, fElapsedTime);
+				sceneController.RenderCurrentScene(false, this, fElapsedTime);
 			}
 
 			return true;
