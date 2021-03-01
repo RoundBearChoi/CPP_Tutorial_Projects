@@ -30,8 +30,8 @@ namespace RB
 			objData.size.y = 110.0f;
 
 			//set new spritesheet
-			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet_2, 720, 120, 6, 1, 6, false);
-			stateAnimation.SetDelayTime(25);
+			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet_3, 720, 120, 6, 1, 6, false);
+			stateAnimation.SetDelayTime(45);
 			stateAnimation.SetPlayOnce(true);
 		}
 

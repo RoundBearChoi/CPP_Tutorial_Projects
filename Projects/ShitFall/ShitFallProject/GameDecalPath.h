@@ -56,9 +56,9 @@ namespace RB
 			{
 				return "PNG files/ko_sheet_2.png";
 			}
-			else if (spriteType == GameSpriteType::upsplash_sheet_2)
+			else if (spriteType == GameSpriteType::upsplash_sheet_3)
 			{
-				return "PNG files/upsplash_sheet_2.png";
+				return "PNG files/upsplash_sheet_3.png";
 			}
 
 			return "none";
