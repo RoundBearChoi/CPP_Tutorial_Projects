@@ -66,7 +66,7 @@ namespace RB
 		{
 			if (currentState != nullptr)
 			{
-				return currentState->GetRenderData(update, skipUpdate);
+				return currentState->stateAnimation.GetRenderData(update, skipUpdate);
 			}
 			else
 			{
