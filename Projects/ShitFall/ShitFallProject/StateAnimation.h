@@ -18,6 +18,7 @@ namespace RB
 
 		//status
 		int currentTile = 0;
+		bool playOnce = false;
 		AnimationData data;
 
 		//next frame delay
@@ -40,7 +41,14 @@ namespace RB
 		{
 			if (currentTile >= totalTiles)
 			{
-				currentTile = 0;
+				if (playOnce)
+				{
+					currentTile = totalTiles - 1;
+				}
+				else
+				{
+					currentTile = 0;
+				}
 			}
 
 			data.sourceSize.x = (float)totalWidth / (float)tileCountX;
@@ -74,6 +82,11 @@ namespace RB
 		void SetDelayTime(int _delayTime)
 		{
 			transitionDelay = _delayTime;
+		}
+
+		void SetPlayOnce(bool _once)
+		{
+			playOnce = _once;
 		}
 	};
 }

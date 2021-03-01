@@ -19,6 +19,7 @@ namespace RB
 
 			stateAnimation.SetParams((int)GameSpriteType::ko_sheet, 800, 80, 5, 1, 5, false);
 			stateAnimation.SetDelayTime(1500);
+			stateAnimation.SetPlayOnce(true);
 		}
 
 		~PlayerDeath()
