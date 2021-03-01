@@ -3,10 +3,10 @@
 
 namespace RB
 {
-	class ShitSplash : public State
+	class ShitUpSplash : public State
 	{
 	public:
-		ShitSplash()
+		ShitUpSplash()
 		{
 			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
 
@@ -15,7 +15,7 @@ namespace RB
 			stateAnimation.SetPlayOnce(true);
 		}
 
-		~ShitSplash()
+		~ShitUpSplash()
 		{
 			IF_COUT
 			{

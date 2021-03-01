@@ -12,7 +12,7 @@
 #include "ShitGenerator.h"
 #include "ShitPosition.h"
 #include "ShitMoveDown.h"
-#include "ShitSplash.h"
+#include "ShitUpSplash.h"
 #include "PlayerDeath.h"
 #include "YesOrNo.h"
 

@@ -174,9 +174,6 @@
     <ClInclude Include="ShitPosition.h">
       <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
-    <ClInclude Include="ShitSplash.h">
-      <Filter>Source Files\State\Concrete States\Shit</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjList.h">
       <Filter>Source Files\GameObj</Filter>
     </ClInclude>
@@ -215,6 +212,9 @@
     </ClInclude>
     <ClInclude Include="PressEnterOff.h">
       <Filter>Source Files\State\Concrete States\UIElements</Filter>
+    </ClInclude>
+    <ClInclude Include="ShitUpSplash.h">
+      <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
