@@ -8,6 +8,6 @@ namespace RB
 	class DevSettings
 	{
 	public:
-		const static bool use_cout = true;
+		const static bool use_cout = false;
 	};
 }

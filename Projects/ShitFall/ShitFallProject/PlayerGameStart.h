@@ -14,10 +14,10 @@ namespace RB
 			{
 				std::cout << std::endl;
 				std::cout << "constructing State: GameStart" << std::endl;
-
-				stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
-				stateAnimation.SetDelayTime(TransitionDelayTable::PLAYER_IDLE);
 			}
+
+			stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
+			stateAnimation.SetDelayTime(TransitionDelayTable::PLAYER_IDLE);
 		}
 
 		~PlayerGameStart()
@@ -34,7 +34,7 @@ namespace RB
 		{
 			frameCount++;
 			
-			if (frameCount >= 50)
+			if (frameCount >= 30)
 			{
 				nextState = State::CreateState<PlayerIdle>();
 			}
