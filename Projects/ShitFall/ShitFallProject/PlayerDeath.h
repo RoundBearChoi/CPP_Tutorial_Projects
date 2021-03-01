@@ -17,7 +17,7 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerDeath" << std::endl; }
 
-			stateAnimation.SetParams((int)GameSpriteType::ko_sheet, 800, 80, 5, 1, 5, false);
+			stateAnimation.SetParams((int)GameSpriteType::ko_sheet_2, 800, 80, 5, 1, 5, false);
 			stateAnimation.SetDelayTime(1500);
 			stateAnimation.SetPlayOnce(true);
 		}
