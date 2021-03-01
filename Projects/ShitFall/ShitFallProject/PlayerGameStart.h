@@ -16,7 +16,7 @@ namespace RB
 				std::cout << "constructing State: GameStart" << std::endl;
 
 				stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
-				stateAnimation.SetDelayTime(30);
+				stateAnimation.SetDelayTime(TransitionDelayTable::PLAYER_IDLE);
 			}
 		}
 

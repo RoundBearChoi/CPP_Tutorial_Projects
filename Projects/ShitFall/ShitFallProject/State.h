@@ -3,6 +3,7 @@
 #include "GameData.h"
 #include "ObjData.h"
 #include "StateAnimation.h"
+#include "TransitionDelayTable.h"
 
 namespace RB
 {

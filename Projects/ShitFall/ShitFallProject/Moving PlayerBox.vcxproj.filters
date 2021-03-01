@@ -216,5 +216,8 @@
     <ClInclude Include="ShitUpSplash.h">
       <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
+    <ClInclude Include="TransitionDelayTable.h">
+      <Filter>Source Files\Renderer</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

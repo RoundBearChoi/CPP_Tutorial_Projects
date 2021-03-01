@@ -31,7 +31,7 @@ namespace RB
 
 			//set new spritesheet
 			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet_3, 720, 120, 6, 1, 6, false);
-			stateAnimation.SetDelayTime(45);
+			stateAnimation.SetDelayTime(TransitionDelayTable::SHIT_UPSPLASH);
 			stateAnimation.SetPlayOnce(true);
 		}
 
