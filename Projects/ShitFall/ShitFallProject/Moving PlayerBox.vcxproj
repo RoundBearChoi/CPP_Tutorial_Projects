@@ -33,6 +33,7 @@
     <ClInclude Include="ObjTag.h" />
     <ClInclude Include="GameSpriteType.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="ShitCenterSplash.h" />
     <ClInclude Include="StateController.h" />
     <ClInclude Include="ObjData.h" />
@@ -73,6 +74,12 @@
     <ClInclude Include="TitleIdle.h" />
     <ClInclude Include="TransitionDelayTable.h" />
     <ClInclude Include="YesOrNo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ShitFall.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="shiticon\shit.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

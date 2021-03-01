@@ -222,5 +222,12 @@
     <ClInclude Include="ShitCenterSplash.h">
       <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ShitFall.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="shiticon\shit.ico" />
   </ItemGroup>
 </Project>
