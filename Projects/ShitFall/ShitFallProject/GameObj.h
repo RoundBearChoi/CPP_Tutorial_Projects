@@ -62,13 +62,11 @@ namespace RB
 
 			olc::vf2d p1; //player top left position)
 			p1.x = _target->data.position.x - (_target->data.size.x / 2.0f);
-			p1.y = _target->data.position.y - (_target->data.size.y);
 
 			olc::vf2d p2; //shit top left position
 			p2.x = data.position.x - (data.size.x / 2.0f);
-			p2.y = data.position.y - (data.size.y / 2.0f);
 
-			if(p1.x < p2.x + data.size.x && p1.x + _target->data.size.y > p2.x)
+			if(p1.x < p2.x + data.size.x && p1.x + _target->data.size.x > p2.x)
 			{
 				return true;
 			}
