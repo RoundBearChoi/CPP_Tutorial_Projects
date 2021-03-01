@@ -49,7 +49,7 @@ namespace RB
 				}
 				else
 				{
-					nextState = State::CreateState<ShitUpSplash>();//objData.nextStateIndex = (int)ShitStateType::SHIT_SPLASH;
+					nextState = State::CreateState<ShitUpSplash>();
 				}
 			}
 		}

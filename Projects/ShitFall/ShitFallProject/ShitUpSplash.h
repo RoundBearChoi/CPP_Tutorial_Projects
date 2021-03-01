@@ -10,8 +10,8 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: ShitSplash" << std::endl; }
 
-			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet, 592, 74, 8, 1, 8, false);
-			stateAnimation.SetDelayTime(13);
+			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet_2, 720, 120, 6, 1, 6, false);
+			stateAnimation.SetDelayTime(25);
 			stateAnimation.SetPlayOnce(true);
 		}
 
@@ -27,8 +27,8 @@ namespace RB
 		void OnEnter(ObjData& objData, GameData& gameData) override
 		{
 			//change obj size
-			objData.size.x = 87.0f;
-			objData.size.y = 87.0f;
+			objData.size.x = 110.0f;
+			objData.size.y = 110.0f;
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
