@@ -51,7 +51,7 @@ namespace RB
 
 		AnimationData* GetRenderData()
 		{
-			return stateAnimation.GetRenderData(stateAnimation.GetDecalIndex());
+			return stateAnimation.GetRenderData();
 		}
 	};
 }

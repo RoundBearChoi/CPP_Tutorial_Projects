@@ -37,7 +37,7 @@ namespace RB
 			reverse = _reverse;
 		}
 
-		AnimationData* GetRenderData(int _decalIndex)
+		AnimationData* GetRenderData()
 		{
 			if (currentTile >= totalTiles)
 			{
@@ -68,15 +68,10 @@ namespace RB
 				currentTile++;
 			}
 
-			data.decalIndex = _decalIndex;
+			data.decalIndex = decalIndex;
 			data.reverseDecal = reverse;
 
 			return &data;
-		}
-
-		int GetDecalIndex()
-		{
-			return decalIndex;
 		}
 
 		void SetDelayTime(int _delayTime)
