@@ -34,7 +34,7 @@ namespace RB
 		{
 			frameCount++;
 			
-			if (frameCount >= 30)
+			if (frameCount >= 62)
 			{
 				nextState = State::CreateState<PlayerIdle>();
 			}

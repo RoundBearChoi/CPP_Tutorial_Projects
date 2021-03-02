@@ -8,11 +8,11 @@ namespace RB
 	class Input
 	{
 	private:
-		std::vector<int> buffer_A;
-		std::vector<int> buffer_D;
-
 		bool Pressed_A = false;
 		bool Pressed_D = false;
+
+		bool Queued_A = false;
+		bool Queued_D = false;
 
 		bool bStartGame = false;
 		bool bQuitGame = false;
@@ -23,31 +23,25 @@ namespace RB
 			//A
 			if (ptrEngine->GetKey(olc::Key::A).bPressed)
 			{
-				buffer_A.push_back(1);
 				Pressed_A = true;
+				Queued_A = true;
 			}
 			
 			if (ptrEngine->GetKey(olc::Key::A).bReleased)
 			{
-				if (buffer_A.size() > 0)
-				{
-					buffer_A.erase(buffer_A.begin());
-				}
+				Pressed_A = false;
 			}
 
 			//D
 			if (ptrEngine->GetKey(olc::Key::D).bPressed)
 			{
-				buffer_D.push_back(1);
 				Pressed_D = true;
+				Queued_D = true;
 			}
 
 			if (ptrEngine->GetKey(olc::Key::D).bReleased)
 			{
-				if (buffer_D.size() > 0)
-				{
-					buffer_D.erase(buffer_D.begin());
-				}
+				Pressed_D = false;
 			}
 
 			//start
@@ -63,12 +57,12 @@ namespace RB
 			bool left = false;
 			bool right = false;
 
-			if (buffer_A.size() > 0 || Pressed_A)
+			if (Pressed_A || Queued_A)
 			{
 				left = true;
 			}
 
-			if (buffer_D.size() > 0 || Pressed_D)
+			if (Pressed_D || Queued_D)
 			{
 				right = true;
 			}
@@ -89,10 +83,10 @@ namespace RB
 			return 0;
 		}
 
-		void ClearKeyPress()
+		void ClearKeyQueues()
 		{
-			Pressed_A = false;
-			Pressed_D = false;
+			Queued_A = false;
+			Queued_D = false;
 		}
 
 		bool StartGame()

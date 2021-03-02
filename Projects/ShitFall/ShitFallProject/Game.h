@@ -57,7 +57,7 @@ namespace RB
 				}
 
 				//only clear after update
-				input.ClearKeyPress();
+				input.ClearKeyQueues();
 
 				if (gameData.quitGame)
 				{
