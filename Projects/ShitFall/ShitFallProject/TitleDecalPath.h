@@ -16,33 +16,15 @@ namespace RB
 		{
 			TitleSpriteType spriteType = (TitleSpriteType)_index;
 
-			if (spriteType == TitleSpriteType::background)
+			switch (spriteType)
 			{
-				return "PNG files/background.png";
-			}
-			else if (spriteType == TitleSpriteType::title_line500x180)
-			{
-				return "PNG files/title_line500x180.png";
-			}
-			else if (spriteType == TitleSpriteType::playerbox_green)
-			{
-				return "PNG files/playerbox_green.png";
-			}
-			else if (spriteType == TitleSpriteType::press_enter300x90)
-			{
-				return "PNG files/press_enter300x90.png";
-			}
-			else if (spriteType == TitleSpriteType::shitfall_title)
-			{
-				return "PNG files/shitfall_title.png";
-			}
-			else if (spriteType == TitleSpriteType::pressenter)
-			{
-				return "PNG files/pressenter.png";
-			}
-			else if (spriteType == TitleSpriteType::idle_sheet)
-			{
-				return "PNG files/idle_sheet.png";
+			case TitleSpriteType::background: return "PNG files/background.png";
+			case TitleSpriteType::title_line500x180: return "PNG files/title_line500x180.png";
+			case TitleSpriteType::playerbox_green: return "PNG files/playerbox_green.png";
+			case TitleSpriteType::press_enter300x90: return "PNG files/press_enter300x90.png";
+			case TitleSpriteType::shitfall_title: return "PNG files/shitfall_title.png";
+			case TitleSpriteType::pressenter: return "PNG files/pressenter.png";
+			case TitleSpriteType::idle_sheet: return "PNG files/idle_sheet.png";
 			}
 
 			return "none";
