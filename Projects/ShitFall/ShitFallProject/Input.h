@@ -87,6 +87,7 @@ namespace RB
 		{
 			Queued_A = false;
 			Queued_D = false;
+			bStartGame = false;
 		}
 
 		bool StartGame()

@@ -62,6 +62,10 @@ namespace RB
 				{
 					sceneController.CreateScene(gameData.nextSceneType);
 				}
+				else if (gameData.F5Pressed)
+				{
+					sceneController.CreateScene(SceneType::TITLE_SCENE);
+				}
 
 				//only clear after update
 				input.ClearKeyQueues();
