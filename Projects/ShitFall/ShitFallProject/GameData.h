@@ -12,5 +12,6 @@ namespace RB
 		bool quitGame = false;
 		bool yPressed = false;
 		bool nPressed = false;
+		bool F5Pressed = false;
 	};
 }

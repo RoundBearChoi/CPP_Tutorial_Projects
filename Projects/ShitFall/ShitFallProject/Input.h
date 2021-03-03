@@ -94,40 +94,9 @@ namespace RB
 			return bStartGame;
 		}
 
-		bool GetESCPress(olc::PixelGameEngine* ptrEngine)
+		bool IsHeld(olc::PixelGameEngine* ptrEngine, olc::Key targetKey)
 		{
-			//quit
-			if (ptrEngine->GetKey(olc::Key::ESCAPE).bHeld)
-			{
-				IF_COUT
-				{
-					std::cout << std::endl;
-					std::cout << "---quitting---" << std::endl;
-				}
-
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-		bool GetYPress(olc::PixelGameEngine* ptrEngine)
-		{
-			if (ptrEngine->GetKey(olc::Key::Y).bHeld)
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-		bool GetNPress(olc::PixelGameEngine* ptrEngine)
-		{
-			if (ptrEngine->GetKey(olc::Key::N).bHeld)
+			if (ptrEngine->GetKey(targetKey).bHeld)
 			{
 				return true;
 			}

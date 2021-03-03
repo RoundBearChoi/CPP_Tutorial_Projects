@@ -26,8 +26,14 @@ namespace RB
 
 		bool OnUserUpdate(float fElapsedTime) override
 		{
-			if (input.GetESCPress(this))
+			if (input.IsHeld(this, olc::Key::ESCAPE))
 			{
+				IF_COUT
+				{
+					std::cout << std::endl;
+					std::cout << "---quitting---" << std::endl;
+				}
+
 				return false;
 			}
 
@@ -41,8 +47,9 @@ namespace RB
 				GameData gameData;
 				gameData.inputXAxis = input.GetHorizontalAxis();
 				gameData.startGame = input.StartGame();
-				gameData.yPressed = input.GetYPress(this);
-				gameData.nPressed = input.GetNPress(this);
+				gameData.yPressed = input.IsHeld(this, olc::Key::Y);
+				gameData.nPressed = input.IsHeld(this, olc::Key::N);
+				gameData.F5Pressed = input.IsHeld(this, olc::Key::F5);
 
 				fAccumulatedTime -= fTargetFrameTime;
 				fElapsedTime = fTargetFrameTime;
