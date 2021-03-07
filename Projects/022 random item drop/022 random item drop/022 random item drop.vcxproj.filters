@@ -5,9 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Source Files\Main">
-      <UniqueIdentifier>{cc26f833-0db9-4e1d-9ba5-b68c727d96e9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\WeaponData">
       <UniqueIdentifier>{11672acf-0b4d-4733-8dd7-77b98e20bf51}</UniqueIdentifier>
     </Filter>
@@ -46,6 +43,9 @@
     </Filter>
     <Filter Include="Source Files\TBD\WeaponMods\Implemntation">
       <UniqueIdentifier>{383191e3-9d39-488e-938f-e66e2a97d069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{cc26f833-0db9-4e1d-9ba5-b68c727d96e9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -104,12 +104,12 @@
       <Filter>Source Files\RandomWeapon</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>Source Files\Main</Filter>
+      <Filter>Source Files\main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="022 random item drop.cpp">
-      <Filter>Source Files\Main</Filter>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\main</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
