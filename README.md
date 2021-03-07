@@ -45,6 +45,8 @@ g++ -o sample main.cpp -lX11 -lGL -lpthread -lpng -lstdc++fs -std=c++17
 ./sample
 ```
 
+<br>
+
 # Tutorial Videos
 
 https://youtube.com/playlist?list=PLWYGofN_jX5Apmb8pJUD8NN3KskHW2lcy
