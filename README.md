@@ -4,6 +4,7 @@ Indie game developer from South Korea
 <br>
 https://youtube.com/roundbeargames
 
+![samplescreenshot](https://i.imgur.com/HDtWwa2.jpg)
 
 # Getting Started (Windows)
 
