@@ -52,10 +52,9 @@ namespace RB
 				gameData.F5Pressed = input.IsHeld(this, olc::Key::F5);
 
 				fAccumulatedTime -= fTargetFrameTime;
-				fElapsedTime = fTargetFrameTime;
 
-				sceneController.UpdateCurrentScene(this, gameData, fElapsedTime);
-				sceneController.RenderCurrentScene(true, this, fElapsedTime);
+				sceneController.UpdateCurrentScene(this, gameData);
+				sceneController.RenderCurrentScene(true, this);
 
 				//scene transition
 				if (gameData.nextSceneType != SceneType::NONE)
@@ -77,7 +76,7 @@ namespace RB
 			}
 			else
 			{
-				sceneController.RenderCurrentScene(false, this, fElapsedTime);
+				sceneController.RenderCurrentScene(false, this);
 			}
 
 			return true;
