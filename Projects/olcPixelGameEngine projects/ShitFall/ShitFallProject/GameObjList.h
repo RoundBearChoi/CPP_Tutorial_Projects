@@ -21,8 +21,8 @@ namespace RB
 
 		void CreateObjFromQueue(GameObj* obj)
 		{
-			std::vector<State*>& vecQueues = obj->ptrStateController->GetCreationQueues();
-			std::vector<ObjSpecs>& vecSpecs = obj->ptrStateController->GetCreationSpecs();
+			std::vector<State*>& vecQueues = obj->ptrStateController->currentState->vecCreateObjs;
+			std::vector<ObjSpecs>& vecSpecs = obj->ptrStateController->currentState->vecCreationSpecs;
 
 			for (int i = 0; i < vecQueues.size(); i++)
 			{
@@ -72,7 +72,7 @@ namespace RB
 
 			//every obj has a state controller
 			obj->ptrStateController = new StateController();
-			obj->ptrStateController->SetCurrentState(existingState);
+			obj->ptrStateController->currentState = existingState;
 
 			vecAllObjs.push_back(obj);
 			SetID(obj);
@@ -140,7 +140,7 @@ namespace RB
 
 			if (con != nullptr)
 			{
-				if (con->DeleteObj())
+				if (con->currentState->DeleteObj())
 				{
 					return true;
 				}

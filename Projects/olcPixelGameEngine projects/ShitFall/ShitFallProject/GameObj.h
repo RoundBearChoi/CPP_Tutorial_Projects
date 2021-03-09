@@ -73,7 +73,7 @@ namespace RB
 		{
 			if (ptrStateController != nullptr)
 			{
-				return ptrStateController->GetStateFrameCount();
+				return ptrStateController->currentState->GetFrameCount();
 			}
 			else
 			{

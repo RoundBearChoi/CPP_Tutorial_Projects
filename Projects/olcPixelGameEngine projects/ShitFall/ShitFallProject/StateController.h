@@ -7,10 +7,12 @@ namespace RB
 	class StateController
 	{
 	private:
-		State* currentState = nullptr;
+		
 		State* prevState = nullptr;
 
 	public:
+		State* currentState = nullptr;
+
 		StateController()
 		{
 			IF_COUT{ std::cout << "constructing StateController" << std::endl; }
@@ -35,11 +37,6 @@ namespace RB
 			}
 		}
 
-		void SetCurrentState(State* state)
-		{
-			currentState = state;
-		}
-
 		void UpdateObj(ObjData& objData, GameData& gameData)
 		{
 			if (prevState == nullptr || prevState != currentState)
@@ -50,16 +47,6 @@ namespace RB
 			currentState->UpdateState(objData, gameData);
 
 			prevState = currentState;
-		}
-
-		bool DeleteObj()
-		{
-			return currentState->DeleteObj();
-		}
-
-		int GetStateFrameCount()
-		{
-			return currentState->GetFrameCount();
 		}
 
 		AnimationData* GetStateRenderData(bool update, bool skipUpdate)
@@ -84,16 +71,6 @@ namespace RB
 				currentState = nextState;
 				currentState->nextState = nullptr;
 			}
-		}
-
-		std::vector<State*>& GetCreationQueues()
-		{
-			return currentState->vecCreateObjs;
-		}
-
-		std::vector<ObjSpecs>& GetCreationSpecs()
-		{
-			return currentState->vecCreationSpecs;
 		}
 
 		template <class T>
