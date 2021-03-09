@@ -35,15 +35,15 @@ namespace RB
 
 			//start slowmo
 			SlowUpdateMessage shit;
-			shit.targetFrameDelay = 50;
+			shit.targetFrameDelay = 80;
 			shit.targetType = ObjTag::SHIT;
 			
 			SlowUpdateMessage gen;
-			gen.targetFrameDelay = 50;
+			gen.targetFrameDelay = 80;
 			gen.targetType = ObjTag::SHIT_GENERATOR;
 			
 			SlowUpdateMessage player;
-			player.targetFrameDelay = 50;
+			player.targetFrameDelay = 80;
 			player.targetType = ObjTag::PLAYER;
 			
 			objData.vecSlowMoMessage.push_back(shit);
@@ -65,30 +65,7 @@ namespace RB
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			if (slowDownTimer == 0)
-			{
-				SlowUpdateMessage shit;
-				shit.targetFrameDelay = 80;
-				shit.targetType = ObjTag::SHIT;
-			
-				SlowUpdateMessage gen;
-				gen.targetFrameDelay = 80;
-				gen.targetType = ObjTag::SHIT_GENERATOR;
-			
-				SlowUpdateMessage player;
-				player.targetFrameDelay = 80;
-				player.targetType = ObjTag::PLAYER;
-			
-				objData.vecSlowMoMessage.push_back(shit);
-				objData.vecSlowMoMessage.push_back(gen);
-				objData.vecSlowMoMessage.push_back(player);
-			
-				slowDownTimer = 1;
-			}
-			else if (slowDownTimer < 0)
-			{
-				slowDownTimer++;
-			}
+
 		}
 	};
 }

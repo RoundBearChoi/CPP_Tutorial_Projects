@@ -78,7 +78,10 @@ namespace RB
 				}
 			}
 
-			vec.clear();
+			if (vec.size() > 0)
+			{
+				vec.clear();
+			}
 		}
 	};
 }
