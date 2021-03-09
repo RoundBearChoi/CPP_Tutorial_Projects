@@ -7,7 +7,6 @@ namespace RB
 	class StateController
 	{
 	private:
-		
 		State* prevState = nullptr;
 
 	public:

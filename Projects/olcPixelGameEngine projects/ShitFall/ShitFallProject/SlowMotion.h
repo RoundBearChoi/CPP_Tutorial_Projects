@@ -8,6 +8,7 @@ namespace RB
 	{
 	private:
 		std::vector<SlowUpdate> vecSlowUpdates;
+
 	public:
 		void UpdateSlowMoCounter()
 		{
