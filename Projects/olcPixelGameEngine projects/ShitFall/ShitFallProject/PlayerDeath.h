@@ -46,9 +46,9 @@ namespace RB
 			player.targetFrameDelay = 50;
 			player.targetType = ObjTag::PLAYER;
 			
-			objData.AddSlowMoMessage(shit);
-			objData.AddSlowMoMessage(gen);
-			objData.AddSlowMoMessage(player);
+			objData.vecSlowMoMessage.push_back(shit);
+			objData.vecSlowMoMessage.push_back(gen);
+			objData.vecSlowMoMessage.push_back(player);
 			
 			//show y or n
 			State* newState = State::CreateState<YesOrNo>();
@@ -79,9 +79,9 @@ namespace RB
 				player.targetFrameDelay = 80;
 				player.targetType = ObjTag::PLAYER;
 			
-				objData.AddSlowMoMessage(shit);
-				objData.AddSlowMoMessage(gen);
-				objData.AddSlowMoMessage(player);
+				objData.vecSlowMoMessage.push_back(shit);
+				objData.vecSlowMoMessage.push_back(gen);
+				objData.vecSlowMoMessage.push_back(player);
 			
 				slowDownTimer = 1;
 			}

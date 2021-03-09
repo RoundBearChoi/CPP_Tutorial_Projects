@@ -41,10 +41,12 @@ namespace RB
 
 		void AddSlowMo(GameObj* obj)
 		{
+			std::vector<SlowUpdateMessage>& vec = obj->data.vecSlowMoMessage;
+
 			//go through every queue
-			for (int messageIndex = 0; messageIndex < obj->data.GetSlowMoMessageCount(); messageIndex++)
+			for (int i = 0; i < vec.size(); i++)
 			{
-				SlowUpdateMessage message = obj->data.GetSlowMoMessage(messageIndex);
+				SlowUpdateMessage message = vec[i];
 
 				if (vecSlowUpdates.size() > 0)
 				{
@@ -76,7 +78,7 @@ namespace RB
 				}
 			}
 
-			obj->data.ClearSlowMoMessages();
+			vec.clear();
 		}
 	};
 }

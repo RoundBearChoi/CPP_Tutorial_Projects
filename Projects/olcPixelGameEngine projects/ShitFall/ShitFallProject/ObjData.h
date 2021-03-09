@@ -10,7 +10,6 @@ namespace RB
 	class ObjData
 	{
 	private:
-		std::vector<SlowUpdateMessage> vecSlowUpdateMessages;
 		int creationID = 0;
 
 	public:
@@ -19,6 +18,7 @@ namespace RB
 		ObjTag objTag = ObjTag::NONE;
 		OffsetType offsetType = OffsetType::NONE;
 		int decalIndex = 0;
+		std::vector<SlowUpdateMessage> vecSlowMoMessage;
 
 		~ObjData()
 		{
@@ -30,26 +30,6 @@ namespace RB
 			IF_COUT{ std::cout << "setting ObjData CreationID: " << _id << std::endl; }
 			
 			creationID = _id;
-		}
-
-		void AddSlowMoMessage(SlowUpdateMessage& _message)
-		{
-			vecSlowUpdateMessages.push_back(_message);
-		}
-
-		int GetSlowMoMessageCount()
-		{
-			return vecSlowUpdateMessages.size();
-		}
-
-		SlowUpdateMessage GetSlowMoMessage(int _index)
-		{
-			return vecSlowUpdateMessages[_index];
-		}
-
-		void ClearSlowMoMessages()
-		{
-			vecSlowUpdateMessages.clear();
 		}
 	};
 }
