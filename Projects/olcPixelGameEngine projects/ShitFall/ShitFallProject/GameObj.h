@@ -10,11 +10,9 @@ namespace RB
 {
 	class GameObj
 	{
-	private:
-		Renderer renderer;
-
 	public:
 		ObjData data;
+		Renderer renderer;
 		StateController* ptrStateController = nullptr;
 
 		GameObj(const ObjSpecs& specs)
@@ -26,6 +24,8 @@ namespace RB
 			data.objTag = specs.objTag;
 			data.offsetType = specs.offsetType;
 			data.decalIndex = specs.decalIndex;
+
+			renderer.SetObjData(&data);
 		}
 
 		~GameObj()
@@ -36,11 +36,6 @@ namespace RB
 			{
 				delete ptrStateController;
 			}
-		}
-
-		void Render(olc::PixelGameEngine* engine, olc::Decal* decal)
-		{
-			renderer.Render(engine, decal, data);
 		}
 
 		bool IsCollidingAgainst(GameObj* _target)

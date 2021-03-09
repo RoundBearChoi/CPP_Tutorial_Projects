@@ -207,7 +207,7 @@ namespace RB
 				{
 					if (vecAllObjs[i]->data.decalIndex != -1)
 					{
-						vecAllObjs[i]->Render(ptrEngine, decalLoader->GetDecal(vecAllObjs[i]->data.decalIndex));
+						vecAllObjs[i]->renderer.Render(ptrEngine, decalLoader->GetDecal(vecAllObjs[i]->data.decalIndex));
 					}
 				}
 			}
