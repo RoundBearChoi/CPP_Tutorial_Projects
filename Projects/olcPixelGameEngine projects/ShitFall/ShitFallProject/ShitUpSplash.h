@@ -11,7 +11,7 @@ namespace RB
 			IF_COUT{ std::cout << "constructing State: ShitUpSplash" << std::endl; }
 
 			//same as shitmovedown on first render
-			stateAnimation.SetParams((int)GameSpriteType::shit, 37, 37, 1, 1, 1, false);
+			animationController.SetParams((int)GameSpriteType::shit, 37, 37, 1, 1, 1, false);
 		}
 
 		~ShitUpSplash()
@@ -30,14 +30,14 @@ namespace RB
 			objData.size.y = 110.0f;
 
 			//set new spritesheet
-			stateAnimation.SetParams((int)GameSpriteType::upsplash_sheet_3, 720, 120, 6, 1, 6, false);
-			stateAnimation.SetDelayTime(TransitionDelayTable::SHIT_UPSPLASH);
-			stateAnimation.SetPlayOnce(true);
+			animationController.SetParams((int)GameSpriteType::upsplash_sheet_3, 720, 120, 6, 1, 6, false);
+			animationController.SetDelayTime(TransitionDelayTable::SHIT_UPSPLASH);
+			animationController.SetPlayOnce(true);
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override
 		{
-			if (stateAnimation.OnLastAnimationFrame())
+			if (animationController.OnLastAnimationFrame())
 			{
 				deleteObj = true;
 			}

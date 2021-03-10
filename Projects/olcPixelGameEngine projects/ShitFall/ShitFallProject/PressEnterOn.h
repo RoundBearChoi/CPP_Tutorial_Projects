@@ -13,7 +13,7 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: TitleFlickerOn" << std::endl; }
 
-			stateAnimation.SetParams((int)TitleSpriteType::pressenter, 300, 90, 1, 1, 1, false);
+			animationController.SetParams((int)TitleSpriteType::pressenter, 300, 90, 1, 1, 1, false);
 		}
 
 		~PressEnterOn()

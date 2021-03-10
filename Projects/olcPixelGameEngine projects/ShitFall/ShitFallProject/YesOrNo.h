@@ -15,7 +15,7 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: YesOrNo" << std::endl; }
 
-			stateAnimation.SetParams((int)GameSpriteType::shit_restart, 460, 330, 1, 1, 1, false);
+			animationController.SetParams((int)GameSpriteType::shit_restart, 460, 330, 1, 1, 1, false);
 		}
 
 		~YesOrNo()

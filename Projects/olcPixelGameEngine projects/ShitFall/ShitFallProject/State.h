@@ -2,7 +2,7 @@
 #include "olcPixelGameEngine.h"
 #include "GameData.h"
 #include "ObjData.h"
-#include "StateAnimation.h"
+#include "AnimationController.h"
 #include "TransitionDelayTable.h"
 
 namespace RB
@@ -14,7 +14,7 @@ namespace RB
 		bool deleteObj = false;
 
 	public:
-		StateAnimation stateAnimation;
+		AnimationController animationController;
 		State* nextState = nullptr;
 		std::vector<State*> vecCreateObjs;
 		std::vector<ObjSpecs> vecCreationSpecs;

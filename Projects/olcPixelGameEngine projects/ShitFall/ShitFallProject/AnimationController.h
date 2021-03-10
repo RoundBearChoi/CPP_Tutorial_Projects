@@ -4,7 +4,7 @@
 
 namespace RB
 {
-	class StateAnimation
+	class AnimationController
 	{
 	private:
 		//params

@@ -63,7 +63,7 @@
     <ClInclude Include="SlowUpdate.h" />
     <ClInclude Include="SlowUpdateMessage.h" />
     <ClInclude Include="State.h" />
-    <ClInclude Include="StateAnimation.h" />
+    <ClInclude Include="AnimationController.h" />
     <ClInclude Include="TitleDecalPath.h" />
     <ClInclude Include="PressEnterOff.h" />
     <ClInclude Include="PressEnterOn.h" />

@@ -120,7 +120,7 @@
     <ClInclude Include="AnimationData.h">
       <Filter>Source Files\State\Base</Filter>
     </ClInclude>
-    <ClInclude Include="StateAnimation.h">
+    <ClInclude Include="AnimationController.h">
       <Filter>Source Files\State\Base</Filter>
     </ClInclude>
     <ClInclude Include="GameDecalPath.h">

@@ -14,8 +14,8 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerIdle" << std::endl; }
 
-			stateAnimation.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
-			stateAnimation.SetDelayTime(TransitionDelayTable::PLAYER_IDLE);
+			animationController.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
+			animationController.SetDelayTime(TransitionDelayTable::PLAYER_IDLE);
 		}
 
 		~PlayerIdle()

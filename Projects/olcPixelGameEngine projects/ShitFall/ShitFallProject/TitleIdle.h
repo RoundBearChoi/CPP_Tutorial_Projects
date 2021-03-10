@@ -12,7 +12,7 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: TitleIdle" << std::endl; }
 
-			stateAnimation.SetParams((int)TitleSpriteType::shitfall_title, 500, 180, 1, 1, 1, false);
+			animationController.SetParams((int)TitleSpriteType::shitfall_title, 500, 180, 1, 1, 1, false);
 		}
 
 		~TitleIdle()

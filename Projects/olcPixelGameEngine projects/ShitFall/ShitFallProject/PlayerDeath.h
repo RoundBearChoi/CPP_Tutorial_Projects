@@ -17,9 +17,9 @@ namespace RB
 		{
 			IF_COUT{ std::cout << "constructing State: PlayerDeath" << std::endl; }
 
-			stateAnimation.SetParams((int)GameSpriteType::ko_sheet_2, 800, 80, 5, 1, 5, false);
-			stateAnimation.SetDelayTime(TransitionDelayTable::PLAYER_DEATH);
-			stateAnimation.SetPlayOnce(true);
+			animationController.SetParams((int)GameSpriteType::ko_sheet_2, 800, 80, 5, 1, 5, false);
+			animationController.SetDelayTime(TransitionDelayTable::PLAYER_DEATH);
+			animationController.SetPlayOnce(true);
 		}
 
 		~PlayerDeath()
