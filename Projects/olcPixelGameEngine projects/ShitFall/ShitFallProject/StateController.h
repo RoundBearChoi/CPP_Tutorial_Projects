@@ -48,18 +48,6 @@ namespace RB
 			prevState = currentState;
 		}
 
-		AnimationData* GetStateRenderData(bool update, bool skipUpdate)
-		{
-			if (currentState != nullptr)
-			{
-				return currentState->animationController.GetRenderData(update, skipUpdate);
-			}
-			else
-			{
-				return nullptr;
-			}
-		}
-
 		void MakeStateTransition()
 		{
 			State* nextState = currentState->nextState;

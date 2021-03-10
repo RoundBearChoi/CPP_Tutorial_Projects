@@ -13,7 +13,7 @@ namespace RB
 		{
 			if (obj->ptrStateController != nullptr)
 			{
-				AnimationData* data = obj->ptrStateController->GetStateRenderData(update, skipUpdate);
+				AnimationData* data = obj->ptrStateController->currentState->animationController.GetRenderData(update, skipUpdate);
 
 				if (data != nullptr)
 				{
