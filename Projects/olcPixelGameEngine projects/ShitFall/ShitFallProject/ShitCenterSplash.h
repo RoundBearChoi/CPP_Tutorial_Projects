@@ -34,8 +34,8 @@ namespace RB
 
 			//set new spritesheet
 			animationController.SetParams((int)GameSpriteType::centersplash_sheet, 880, 220, 4, 1, 4, false);
-			animationController.SetDelayTime(TransitionDelayTable::SHIT_CENTERSPLASH);
-			animationController.SetPlayOnce(true);
+			animationController.data.transitionDelay = (int)TransitionDelayTable::SHIT_CENTERSPLASH;
+			animationController.data.playOnce = true;
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

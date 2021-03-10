@@ -17,7 +17,7 @@ namespace RB
 			}
 
 			animationController.SetParams((int)GameSpriteType::idle_sheet, 300, 80, 6, 1, 6, false);
-			animationController.SetDelayTime(TransitionDelayTable::PLAYER_IDLE);
+			animationController.data.transitionDelay = (int)TransitionDelayTable::PLAYER_IDLE;
 		}
 
 		~PlayerGameStart()

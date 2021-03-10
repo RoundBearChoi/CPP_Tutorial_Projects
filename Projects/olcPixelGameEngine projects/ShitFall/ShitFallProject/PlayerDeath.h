@@ -18,8 +18,8 @@ namespace RB
 			IF_COUT{ std::cout << "constructing State: PlayerDeath" << std::endl; }
 
 			animationController.SetParams((int)GameSpriteType::ko_sheet_2, 800, 80, 5, 1, 5, false);
-			animationController.SetDelayTime(TransitionDelayTable::PLAYER_DEATH);
-			animationController.SetPlayOnce(true);
+			animationController.data.transitionDelay = (int)TransitionDelayTable::PLAYER_DEATH;
+			animationController.data.playOnce = true;
 		}
 
 		~PlayerDeath()

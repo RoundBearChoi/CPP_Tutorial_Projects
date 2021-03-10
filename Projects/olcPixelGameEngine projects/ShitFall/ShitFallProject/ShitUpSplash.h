@@ -31,8 +31,8 @@ namespace RB
 
 			//set new spritesheet
 			animationController.SetParams((int)GameSpriteType::upsplash_sheet_3, 720, 120, 6, 1, 6, false);
-			animationController.SetDelayTime(TransitionDelayTable::SHIT_UPSPLASH);
-			animationController.SetPlayOnce(true);
+			animationController.data.transitionDelay = (int)TransitionDelayTable::SHIT_UPSPLASH;
+			animationController.data.playOnce = true;
 		}
 
 		void UpdateState(ObjData& objData, GameData& gameData) override

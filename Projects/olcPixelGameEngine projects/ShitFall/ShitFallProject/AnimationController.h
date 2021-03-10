@@ -14,17 +14,9 @@ namespace RB
 		int tileCountY = 0;
 		int totalTiles = 0;
 
-		//status
-		int currentTile = 0;
-		bool playOnce = false;
-
+	public:
 		AnimationData data;
 
-		//next frame delay
-		int transitionDelay = 0;
-		int delayCount = 0;
-
-	public:
 		void SetParams(int _decalTypeIndex, int _totalWith, int _totalHeight, int _tileCountX, int _tileCountY, int _totalTileCount, bool _reverse)
 		{
 			data.decalTypeIndex = _decalTypeIndex;
@@ -39,15 +31,15 @@ namespace RB
 
 		AnimationData* GetRenderData(bool update, bool skipUpdate)
 		{
-			if (currentTile >= totalTiles)
+			if (data.currentTile >= totalTiles)
 			{
-				if (playOnce)
+				if (data.playOnce)
 				{
-					currentTile = totalTiles - 1;
+					data.currentTile = totalTiles - 1;
 				}
 				else
 				{
-					currentTile = 0;
+					data.currentTile = 0;
 				}
 			}
 
@@ -56,37 +48,27 @@ namespace RB
 
 			if (data.sourceSize.x != 0.0f && data.sourceSize.y > 0.0f)
 			{
-				data.sourcePos.x = (currentTile % tileCountX) * data.sourceSize.x;
-				data.sourcePos.y = floorf((float)currentTile / (float)tileCountX) * data.sourceSize.y;
+				data.sourcePos.x = (data.currentTile % tileCountX) * data.sourceSize.x;
+				data.sourcePos.y = floorf((float)data.currentTile / (float)tileCountX) * data.sourceSize.y;
 			}
 
 			if (update && !skipUpdate)
 			{
-				delayCount++;
+				data.delayCount++;
 
-				if (delayCount >= transitionDelay)
+				if (data.delayCount >= data.transitionDelay)
 				{
-					delayCount = 0;
-					currentTile++;
+					data.delayCount = 0;
+					data.currentTile++;
 				}
 			}
 
 			return &data;
 		}
 
-		void SetDelayTime(int _delayTime)
-		{
-			transitionDelay = _delayTime;
-		}
-
-		void SetPlayOnce(bool _once)
-		{
-			playOnce = _once;
-		}
-
 		bool OnLastAnimationFrame()
 		{
-			if (currentTile == totalTiles - 1)
+			if (data.currentTile == totalTiles - 1)
 			{
 				return true;
 			}
