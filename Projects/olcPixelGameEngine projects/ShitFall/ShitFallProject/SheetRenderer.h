@@ -69,7 +69,7 @@ namespace RB
 				}
 			}
 
-			olc::Decal* d = decalLoader->GetDecal(aniData->decalIndex);
+			olc::Decal* d = decalLoader->GetDecal(aniData->decalTypeIndex);
 			ptrEngine->DrawPartialWarpedDecal(d, points, aniData->sourcePos, aniData->sourceSize);
 		}
 	};

@@ -17,6 +17,7 @@ namespace RB
 		//status
 		int currentTile = 0;
 		bool playOnce = false;
+
 		AnimationData data;
 
 		//next frame delay
@@ -24,9 +25,9 @@ namespace RB
 		int delayCount = 0;
 
 	public:
-		void SetParams(int _decalIndex, int _totalWith, int _totalHeight, int _tileCountX, int _tileCountY, int _totalTileCount, bool _reverse)
+		void SetParams(int _decalTypeIndex, int _totalWith, int _totalHeight, int _tileCountX, int _tileCountY, int _totalTileCount, bool _reverse)
 		{
-			data.decalIndex = _decalIndex;
+			data.decalTypeIndex = _decalTypeIndex;
 			data.reverseDecal = _reverse;
 
 			totalWidth = _totalWith;
