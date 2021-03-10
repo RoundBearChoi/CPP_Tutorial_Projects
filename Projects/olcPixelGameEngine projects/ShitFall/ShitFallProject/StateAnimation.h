@@ -8,13 +8,11 @@ namespace RB
 	{
 	private:
 		//params
-		int decalIndex = 0;
 		int totalWidth = 0;
 		int totalHeight = 0;
 		int tileCountX = 0;
 		int tileCountY = 0;
 		int totalTiles = 0;
-		bool reverse = false;
 
 		//status
 		int currentTile = 0;
@@ -28,13 +26,14 @@ namespace RB
 	public:
 		void SetParams(int _decalIndex, int _totalWith, int _totalHeight, int _tileCountX, int _tileCountY, int _totalTileCount, bool _reverse)
 		{
-			decalIndex = _decalIndex;
+			data.decalIndex = _decalIndex;
+			data.reverseDecal = _reverse;
+
 			totalWidth = _totalWith;
 			totalHeight = _totalHeight;
 			tileCountX = _tileCountX;
 			tileCountY = _tileCountY;
 			totalTiles = _totalTileCount;
-			reverse = _reverse;
 		}
 
 		AnimationData* GetRenderData(bool update, bool skipUpdate)
@@ -70,9 +69,6 @@ namespace RB
 					currentTile++;
 				}
 			}
-
-			data.decalIndex = decalIndex;
-			data.reverseDecal = reverse;
 
 			return &data;
 		}
