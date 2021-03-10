@@ -26,9 +26,6 @@
     <Filter Include="Source Files\GameObj\Info">
       <UniqueIdentifier>{292fb07c-a99d-409c-b1e7-78b3e1e6d7de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\DecalLoader\enums">
-      <UniqueIdentifier>{9de2ba9c-7b15-4ab1-8662-48eaffb7d63d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Random">
       <UniqueIdentifier>{95b8caf3-d27f-4a99-b48f-2d39e3107fb0}</UniqueIdentifier>
     </Filter>
@@ -105,17 +102,11 @@
     <ClInclude Include="State.h">
       <Filter>Source Files\State\Base</Filter>
     </ClInclude>
-    <ClInclude Include="GameSpriteType.h">
-      <Filter>Source Files\DecalLoader\enums</Filter>
-    </ClInclude>
     <ClInclude Include="RandomInteger.h">
       <Filter>Source Files\Random</Filter>
     </ClInclude>
     <ClInclude Include="DecalLoader.h">
       <Filter>Source Files\DecalLoader\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="TitleSpriteType.h">
-      <Filter>Source Files\DecalLoader\enums</Filter>
     </ClInclude>
     <ClInclude Include="AnimationData.h">
       <Filter>Source Files\State\Base</Filter>
@@ -223,6 +214,12 @@
       <Filter>Source Files\State\Concrete States\Shit</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="GameSpriteType.h">
+      <Filter>Source Files\DecalLoader\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleSpriteType.h">
+      <Filter>Source Files\DecalLoader\Base</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ShitFall.rc" />
