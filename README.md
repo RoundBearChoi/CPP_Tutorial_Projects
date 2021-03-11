@@ -47,6 +47,25 @@ g++ -o sample main.cpp -lX11 -lGL -lpthread -lpng -lstdc++fs -std=c++17
 
 <br>
 
+# Getting Started (CMake)
+
+1. Download ZIP or clone repository
+
+2. Navigate to CMakeLists.txt (under "olcPixelGameEngine projects" folder) and compile
+
+```
+cmake .
+make
+./sample
+```
+
+<br>
+
 # Tutorial Videos
 
 https://youtube.com/playlist?list=PLWYGofN_jX5Apmb8pJUD8NN3KskHW2lcy
+
+<br>
+
+# C++ Fighting Game
+https://github.com/RoundBearChoi/CPP_FightingGame
