@@ -28,9 +28,7 @@ https://youtube.com/roundbeargames
 sudo apt install g++ build-essential libglu1-mesa-dev libpng-dev
 ```
 
-3. Navigate to a project folder
-
-4. Compile and run
+3. Navigate to a project folder and compile
 
 ```
 //for example, "001 thinking in terms of 1s and 0s" folder
