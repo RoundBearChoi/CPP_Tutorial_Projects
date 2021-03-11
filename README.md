@@ -25,8 +25,7 @@ https://youtube.com/roundbeargames
 2. Install compiler, build tools, and libraries
 
 ```
-sudo apt install g++
-sudo apt install build-essential libglu1-mesa-dev libpng-dev
+sudo apt install g++ build-essential libglu1-mesa-dev libpng-dev
 ```
 
 3. Navigate to a project folder
@@ -51,10 +50,15 @@ g++ -o sample main.cpp -lX11 -lGL -lpthread -lpng -lstdc++fs -std=c++17
 
 1. Download ZIP or clone repository
 
+2. Install CMake, compiler, build tools, and libraries
+
+```
+sudo apt install cmake g++ build-essential libglu1-mesa-dev libpng-dev
+```
+
 2. Navigate to CMakeLists.txt (under "olcPixelGameEngine projects" folder) and compile
 
 ```
-sudo apt install cmake
 cmake .
 make
 ./sample
