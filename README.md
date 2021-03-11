@@ -54,6 +54,7 @@ g++ -o sample main.cpp -lX11 -lGL -lpthread -lpng -lstdc++fs -std=c++17
 2. Navigate to CMakeLists.txt (under "olcPixelGameEngine projects" folder) and compile
 
 ```
+sudo apt install cmake
 cmake .
 make
 ./sample
